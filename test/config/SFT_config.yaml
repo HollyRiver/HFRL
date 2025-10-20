@@ -1,0 +1,38 @@
+## ScriptArguments
+model_name: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+dataset_path: "."
+
+## SFTConfig
+max_length: 512
+output_dir: "./llama-3.1-korean-8b-hf-20-epoch"
+report_to: "wandb"
+learning_rate: 5e-5
+lr_scheduler_type: "cosine_with_restarts"
+num_train_epochs: 4
+per_device_train_batch_size: 4
+per_device_eval_batch_size: 4
+gradient_accumulation_steps: 4
+optim: "adamw_torch_fused"
+logging_steps: 100
+save_strategy: "epoch"
+weight_decay: 0.01
+max_grad_norm: 0.5
+warmup_ratio: 0.03
+bf16: true
+tf32: true
+gradient_checkpointing: true
+packing: true
+dataloader_num_workers: 16
+push_to_hub: true
+dataset_kwargs:
+  add_special_tokens: false
+  append_concat_token: false
+lr_scheduler_kwargs:
+  num_cycles: 3
+
+## LoraArguments
+r: 64
+lora_alpha: 32
+lora_dropout: 0.05
+bias: "none"
+task_type: "CAUSAL_LM"
