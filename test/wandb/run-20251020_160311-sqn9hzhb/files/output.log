@@ -1,5 +1,5 @@
   0%|          | 0/4752 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
- 17%|█▋        | 788/4752 [23:26<1:52:15,  1.70s/it]
+ 21%|██▏       | 1021/4752 [30:30<1:51:20,  1.79s/it]
 {'loss': 1.9785, 'grad_norm': 0.26906296610832214, 'learning_rate': 3.461538461538462e-05, 'entropy': 2.1099669328331947, 'num_tokens': 674600.0, 'mean_token_accuracy': 0.5961013595759869, 'epoch': 0.08}
 {'loss': 1.2138, 'grad_norm': 0.26350486278533936, 'learning_rate': 4.983626547081478e-05, 'entropy': 1.3855409500002862, 'num_tokens': 1346111.0, 'mean_token_accuracy': 0.7384598824381828, 'epoch': 0.17}
 {'loss': 1.1768, 'grad_norm': 0.2566280663013458, 'learning_rate': 4.873874734038467e-05, 'entropy': 1.3338147839903831, 'num_tokens': 2018321.0, 'mean_token_accuracy': 0.7428656132519245, 'epoch': 0.25}
@@ -7,3 +7,6 @@
 {'loss': 1.1593, 'grad_norm': 0.273457795381546, 'learning_rate': 4.3663139212928354e-05, 'entropy': 1.2987461507320404, 'num_tokens': 3375668.0, 'mean_token_accuracy': 0.7438257718086243, 'epoch': 0.42}
 {'loss': 1.1437, 'grad_norm': 0.294454962015152, 'learning_rate': 3.989654566055541e-05, 'entropy': 1.280695060491562, 'num_tokens': 4048364.0, 'mean_token_accuracy': 0.7468733212351799, 'epoch': 0.51}
 {'loss': 1.1374, 'grad_norm': 0.31293222308158875, 'learning_rate': 3.5509225218772026e-05, 'entropy': 1.2750159677863122, 'num_tokens': 4719186.0, 'mean_token_accuracy': 0.7462937767803669, 'epoch': 0.59}
+{'loss': 1.1407, 'grad_norm': 0.30796459317207336, 'learning_rate': 3.0683993946598255e-05, 'entropy': 1.2843764787912368, 'num_tokens': 5393979.0, 'mean_token_accuracy': 0.745172198265791, 'epoch': 0.67}
+{'loss': 1.1292, 'grad_norm': 0.2971660792827606, 'learning_rate': 2.562191528964844e-05, 'entropy': 1.2741054579615594, 'num_tokens': 6064966.0, 'mean_token_accuracy': 0.7463225656747818, 'epoch': 0.76}
+{'loss': 1.1368, 'grad_norm': 0.29912421107292175, 'learning_rate': 2.0533921930591386e-05, 'entropy': 1.2810153526067733, 'num_tokens': 6738474.0, 'mean_token_accuracy': 0.7450082582235337, 'epoch': 0.84}
