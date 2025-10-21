@@ -23,6 +23,7 @@ import json
 import random
 import numpy as np
 
+os.environ["WANDB_MODE"] = "offline"    ## wandb sync --include-offline ./wandb/offline-*
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
 @dataclass  ## 데이터 보관 클래스를 간단하게 구축 가능: __init__, __repr__, __eq()__등의 메소드 자동 생성
@@ -37,6 +38,27 @@ class LoraArguments:
     lora_dropout: float = field(default = 0.05, metadata = {"help": "update matrics에서 dropout 적용 확률"})
     bias: str = field(default = "none", metadata = {"help": "update matrix에 bias를 학습할 것인지 선택"})
     task_type: str = field(default = "CAUSAL_LM", metadata = {"help": "학습할 모형이 무엇인지 지정"})
+
+
+def timer(func):
+    """
+    함수 실행 시간 출력
+    """
+    import time
+    import datetime
+
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+
+        sec = end - start
+        worktime = str(datetime.timedelta(seconds=sec)).split(".")[0]
+        print(f"Working Time: {worktime}")
+        return result
+
+    return wrapper
+
 
 def seeding(seed):
     """
@@ -58,7 +80,7 @@ def seeding(seed):
     os.environ["PYTHONHASHSEED"] = str(seed)    ## hash 알고리즘 관련
     os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"   ## oneDNN 옵션 해제. 수치 연산 순서 고정 (성능 저하, 속도 저하)
 
-
+@timer
 def main(script_args, training_args, lora_kwargs):
     ## loading dataset
     train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "train_dataset.json"), split = "train")
@@ -144,3 +166,5 @@ if __name__ == "__main__":
     # seeding(training_args.seed)
 
     main(script_args, training_args, lora_kwargs)
+
+    print("========== 학습 종료 ==========")
