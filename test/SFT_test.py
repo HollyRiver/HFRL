@@ -94,17 +94,43 @@ def main(script_args, training_args, lora_kwargs):
     tokenizer.pad_token = tokenizer.eos_token       ## 패딩할 토큰 설정
     tokenizer.padding_side = "left"                 ## 디코더이므로 왼쪽을 패딩 (마지막 토큰을 보고 생성)
 
-    ## 데이터에 템플릿 적용
-    def template_dataset(examples):
-        return {"text": tokenizer.apply_chat_template(examples["messages"], tokenize = False)}
-    
-    train_ds = train_ds.map(template_dataset, remove_columns = ["messages"])
-    test_ds = test_ds.map(template_dataset, remove_columns = ["messages"])
+    ## 데이터셋에 적합한 chat template 적용: generation 부분을 추가하여 assistant_only_loss 진행
+    LLAMA_3_CHAT_TEMPLATE = (
+        "{{ bos_token }}"
+        "{% for message in messages %}"
+            "{% if message['role'] == 'system' %}"
+                "{{ '<|start_header_id|>system<|end_header_id|>\n\n' + message['content'] + eos_token }}"
+            "{% elif message['role'] == 'user' %}"
+                "{{ '<|start_header_id|>user<|end_header_id|>\n\n' + message['content'] +  eos_token }}"
+            "{% elif message['role'] == 'assistant' %}"
+                "{{ '<|start_header_id|>assistant<|end_header_id|>\n\n'}}"
+                "{% generation %}"
+                "{{ message['content'] +  eos_token }}"
+                "{% endgeneration %}"
+            "{% endif %}"
+        "{% endfor %}"
+        "{%- if add_generation_prompt %}"
+        "{{- '<|start_header_id|>assistant<|end_header_id|>\n\n' }}"
+        "{%- endif %}"
+    )
 
-    ## 2개만 출력하여 확인
+    tokenizer.chat_template = LLAMA_3_CHAT_TEMPLATE
+
     print("======== Log a few random samples from the processed training set ========")
     for index in random.sample(range(len(train_ds)), 2):
-        print(train_ds[index]["text"])
+        print(tokenizer.apply_chat_template(train_ds[index]["messages"], tokenize = False))
+
+    # ## 데이터에 템플릿 적용: Conversation dataset 형태로 삽입 시 자동으로 처리 및 collator 적용
+    # def template_dataset(examples):
+    #     return {"text": tokenizer.apply_chat_template(examples["messages"], tokenize = False)}
+    
+    # train_ds = train_ds.map(template_dataset, remove_columns = ["messages"])
+    # test_ds = test_ds.map(template_dataset, remove_columns = ["messages"])
+
+    # ## 2개만 출력하여 확인
+    # print("======== Log a few random samples from the processed training set ========")
+    # for index in random.sample(range(len(train_ds)), 2):
+    #     print(train_ds[index]["text"])
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
@@ -138,6 +164,9 @@ def main(script_args, training_args, lora_kwargs):
         processing_class = tokenizer,
         peft_config = peft_config
     )
+
+    print("======== Log a first sample from the processed training set ========")
+    print(f"masking area: {next(iter(trainer.train_dataset))["assistant_masks"][:100]} ...")
 
     ## 학습이 중단된 경우 이어서 진행할 수 있도록 설정
     checkpoint = None
