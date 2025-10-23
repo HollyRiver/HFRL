@@ -1,0 +1,42 @@
+## ScriptArguments
+model_name: "meta-llama/Meta-Llama-3.1-8B-Instruct"   ## 사용할 모델명 (huggingface model name)
+dataset_path: "."                                     ## 데이터셋 저장 경로
+
+## SFTConfig
+max_length: 512                                       ## 모델이 수용 가능한 최대 시퀀스 길이
+output_dir: "./results/assistant-only-8-epoch-test"   ## 튜닝된 모델 저장 위치
+report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
+assistant_only_loss: true                             ## LM type dataset: 현재 손실 계산 시 LLM이 답변할 부분만 사용 (user, system messages 무시)
+learning_rate: 8e-5                                   ## update matrix 학습률
+lr_scheduler_type: "cosine_with_restarts"             ## 코사인 스케줄러 사용 + 학습률 초기화
+lr_scheduler_kwargs:
+  num_cycles: 5                                       ## 코사인 곡선 사이클 횟수 지정
+num_train_epochs: 8                                   ## 에폭
+per_device_train_batch_size: 4                        ## GPU당 배치 사이즈
+per_device_eval_batch_size: 4                         ## GPU당 배치 사이즈(평가)
+gradient_accumulation_steps: 4                        ## 그래디언트를 모아두었다가 한꺼번에 적용: 배치 사이즈를 키우는 효과
+do_eval: true
+eval_steps: 500
+eval_strategy: "steps"
+optim: "adamw_torch_fused"                            ## optimizer 설정
+logging_steps: 100                                    ## 로그 산출 빈도
+save_strategy: "epoch"                                ## 에폭별 모델 저장
+weight_decay: 0.01                                    ## l2-norm weight decay. 과적합 방지
+max_grad_norm: 0.5                                    ## 그래디언트 클리핑의 임계값 지정. 모든 파라미터의 그래디언트 합 norm의 임계값. exploding 방지
+warmup_ratio: 0.06                                    ## 초기 학습률 warmup 단계의 비중 설정: 총 스텝 중 비율
+bf16: true                                            ## 
+tf32: true                                            ## 
+gradient_checkpointing: true                          ## 그래디언트를 캐시에 저장하지 않고 필요할 때마다 계산하여 GPU 절약
+packing: true                                         ## 
+dataloader_num_workers: 8                             ## 데이터로더 워커 수: 보통 GPU 개수 * 4 정도 사용한다고 함
+push_to_hub: true                                     ## 허깅페이스에 모델 로드
+dataset_kwargs:
+  add_special_tokens: false                           ## 
+  append_concat_token: false                          ## 
+
+## LoraArguments
+r: 64                                                 ## update matrix의 rank. 작을수록 많이 압축하여 품질 저하됨, 메모리 많이 할당됨
+lora_alpha: 32                                        ## ∆Weight scaling factor. lora_alpha / r로 스케일링되며, 학습률 조정. 보통 1/2 수준으로 설정
+lora_dropout: 0.05                                    ## update matrics에서 dropout 적용 확률
+bias: "none"                                          ## update matrix에 bias를 학습할 것인지 선택
+task_type: "CAUSAL_LM"                                ## 튜닝 모형의 유형 지정
