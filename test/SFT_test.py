@@ -23,7 +23,9 @@ import json
 import random
 import numpy as np
 
-os.environ["WANDB_MODE"] = "offline"    ## wandb sync --include-offline ./wandb/offline-*
+## Zombie Process 발생 방지
+os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
 @dataclass  ## 데이터 보관 클래스를 간단하게 구축 가능: __init__, __repr__, __eq()__등의 메소드 자동 생성
@@ -95,6 +97,8 @@ def main(script_args, training_args, lora_kwargs):
     tokenizer.padding_side = "left"                 ## 디코더이므로 왼쪽을 패딩 (마지막 토큰을 보고 생성)
 
     ## 데이터셋에 적합한 chat template 적용: generation 부분을 추가하여 assistant_only_loss 진행
+    ## 모든 텍스트로 손실을 계산하고자 한다면 tokenizer에 기본으로 할당된 chat template로 충분
+    ## jinja2 template engine 구문. 파이썬 문법과 거의 동일
     LLAMA_3_CHAT_TEMPLATE = (
         "{{ bos_token }}"
         "{% for message in messages %}"
@@ -116,6 +120,7 @@ def main(script_args, training_args, lora_kwargs):
 
     tokenizer.chat_template = LLAMA_3_CHAT_TEMPLATE
 
+    ## 템플릿 적용사항 확인
     print("======== Log a few random samples from the processed training set ========")
     for index in random.sample(range(len(train_ds)), 2):
         print(tokenizer.apply_chat_template(train_ds[index]["messages"], tokenize = False))
@@ -137,7 +142,7 @@ def main(script_args, training_args, lora_kwargs):
         load_in_4bit = True,                    ## 4비트 양자화
         bnb_4bit_use_double_quant = True,       ## 추가 양자화로 성능 손실 없이 파라미터당 0.4bit 추가 절약
         bnb_4bit_quant_type = "nf4",            ## 양자화 데이터 타입 지정: 4비트 기반 모델 훈련 시 사용
-        bnb_4bit_compute_dtype = torch.bfloat16 ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, 계산은 양자화 없이
+        bnb_4bit_compute_dtype = torch.bfloat16 ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, attention 연산은 해당 포맷으로 역양자화하여 처리
     )
 
     ## 모델 로드 및 설정
@@ -145,10 +150,10 @@ def main(script_args, training_args, lora_kwargs):
         script_args.model_name,
         device_map = "cuda:0",
         use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
-        low_cpu_mem_usage = True,                   ## CPU RAM 사용량 적게...
-        attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용
+        low_cpu_mem_usage = True,                   ## CPU RAM 사용량 적게 사용...
+        attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.
         quantization_config = bnb_config,
-        dtype = torch.bfloat16                      ## Llama-3.1-8B의 자료형으로 설정
+        dtype = torch.bfloat16                      ## 가중치 로드 데이터 타입. Llama-3.1-8B의 자료형으로 설정
     )
 
     if training_args.gradient_checkpointing:
