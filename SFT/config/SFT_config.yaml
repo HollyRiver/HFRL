@@ -4,7 +4,7 @@ dataset_path: "."                                     ## 데이터셋 저장 경
 
 ## SFTConfig
 max_length: 512                                       ## 모델이 수용 가능한 최대 시퀀스 길이
-output_dir: "./results/llama-3.1-korean-8b-4-epoch"   ## 튜닝된 모델 저장 위치
+output_dir: "./results/all-text-4-epoch"              ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
 learning_rate: 5e-5                                   ## update matrix 학습률
 lr_scheduler_type: "cosine_with_restarts"             ## 코사인 스케줄러 사용 + 학습률 초기화
@@ -16,6 +16,9 @@ per_device_eval_batch_size: 4                         ## GPU당 배치 사이즈
 gradient_accumulation_steps: 4                        ## 그래디언트를 모아두었다가 한꺼번에 적용: 배치 사이즈를 키우는 효과
 optim: "adamw_torch_fused"                            ## optimizer 설정
 logging_steps: 100                                    ## 로그 산출 빈도
+do_eval: true
+eval_steps: 500
+eval_strategy: "steps"
 save_strategy: "epoch"                                ## 에폭별 모델 저장
 weight_decay: 0.01                                    ## l2-norm weight decay. 과적합 방지
 max_grad_norm: 0.5                                    ## 그래디언트 클리핑의 임계값 지정. 모든 파라미터의 그래디언트 합 norm의 임계값. exploding 방지

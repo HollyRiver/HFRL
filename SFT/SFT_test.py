@@ -40,6 +40,7 @@ class LoraArguments:
     lora_dropout: float = field(default = 0.05, metadata = {"help": "update matrics에서 dropout 적용 확률"})
     bias: str = field(default = "none", metadata = {"help": "update matrix에 bias를 학습할 것인지 선택"})
     task_type: str = field(default = "CAUSAL_LM", metadata = {"help": "학습할 모형이 무엇인지 지정"})
+    target_modules: list[str] = field(default = None, metadata = {"help": "학습에 반영할 모듈 설정"})
 
 
 def timer(func):
@@ -170,8 +171,9 @@ def main(script_args, training_args, lora_kwargs):
         peft_config = peft_config
     )
 
-    print("======== Log a first sample from the processed training set ========")
-    print(f"masking area: {next(iter(trainer.train_dataset))["assistant_masks"][:100]} ...")
+    if training_args.assistant_only_loss:
+        print("======== Log a first sample from the processed training set ========")
+        print(f"masking area: {next(iter(trainer.train_dataset))["assistant_masks"][:100]} ...")
 
     ## 학습이 중단된 경우 이어서 진행할 수 있도록 설정
     checkpoint = None
