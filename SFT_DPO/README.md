@@ -1,44 +1,27 @@
-<p align="center" width="100%">
-</p>
+# SFT + DPO Overview
 
-# Easy DPO
-- DPO 코드를 한국어로 조금 더 편하고 편리하게 정할 수 있는 공유용 코드 레포입니다.
+데이터 구축부터 SFT + DPO 과정을 전부 포함합니다. 데이터 구축 과정은 데이터별로 별도의 처리가 필요하며, 여기서 제시된 코드는 예시입니다. 깃허브에 지속적으로 업데이트될 예정입니다.
 
-- 요즘 LLM은 대부분 SFT 다음에 DPO로 allign을 잡아주게 됩니다.
+https://github.com/HollyRiver/HFRL/tree/main/SFT_DPO
 
-- trl 라이브러리의 기본 DPO예제를 더 편하게 이해하고 적용할 수 있도록 코드를 구성하였습니다.
+## Setup
+* 20GB의 VRAM 및 48GB의 CPU RAM (권장)
+* 구축된 아나콘다 환경 (cuda 12.8, Ubuntu 22.04 이상 추천)
 
-- 오픈소스 커뮤니티와 비기너들에게 유익한 정보를 공유할 수 있는 **Markr.AI팀**이 될 수 있도록 더 노력하겠습니다.
-  
-# DATASET 💾
-## 훈련데이터셋 📚
-
-- 훈련 Dataset은 기본적으로 두개의 pair가 구성이된 답변이 존재해야, 적절하게 훈련이 가능합니다.
-
-- 다음 표와 같이 데이터를 준비하시면 됩니다.
-  
-칼럼명: | question | response_j | response_k
--- | -- | -- | --
-**설명:** | **isntruction** | **선호답변** | **비선호 답변**
-
-
-
-# Train
-
-- 훈련 코드는 매우 간단하게 `sh`파일로 훈련이 가능하게 구성해 두었습니다. 적절한 인자를 넣어서 활용하시길 바랍니다.
-
-- sh 파일을 구성하시고, sh 파일을 구동하시면, 간편하게 훈련을 시킬 수 있도록 파일을 구성해 두었습니다.
-
-```python
-sh DPO_train.sh
+```
+conda env create -f LLM.ymal
+conda activate LLM
 ```
 
-- sh 파일에 적절한 인자를 넣어주는게 중요합니다.
+## Full Training Examples
 
-- 라이브러리 버전은 차후 제가 확인 후 다시 한번 공유 드릴 수 있도록 하겠습니다.
+```
+# data setting example
+nohup python dataset_setting.py &
 
+# sft training example
+nohup python SFT.py --config config/SFT_config.yaml &
 
-
-# Acknowledgement
-
-- 주식회사 마커의 LLM프로젝트를 학술적으로 연구하였으며, 학술적인 목적임을 알리는 바입니다.
+# dpo traning example
+nohup python DPO.py --config config/DPO_config.yaml &
+```
