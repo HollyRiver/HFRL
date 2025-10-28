@@ -6,7 +6,8 @@ https://github.com/HollyRiver/HFRL/tree/main/SFT_DPO
 
 ## Setup
 * 20GB의 VRAM 및 48GB의 CPU RAM (권장)
-* 구축된 아나콘다 환경 (cuda 12.8, Ubuntu 22.04 이상 추천)
+* 구축된 아나콘다 환경 (cuda 12.8, Ubuntu 20.04에서 구동시켰으나, Ubuntu 22.04 이상을 권장합니다. Ubuntu 20.04 버전에서는 flash-attention 실행을 위한 다운그레이드 및 GLibc 업데이트가 필요합니다.)
+* Dependencies installation: `pip install transformers bitsandbytes datasets sentencepiece accelerate trl peft flash-attn wandb openai pqdm`
 
 ```
 conda env create -f LLM.ymal
