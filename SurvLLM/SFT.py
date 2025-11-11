@@ -20,6 +20,7 @@ import logging
 import torch
 
 import os
+import glob
 import json
 import random
 import numpy as np
@@ -27,7 +28,7 @@ import pandas as pd
 import wandb
 
 ## Zombie Process 발생 방지
-os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/latest-run
 wandb.init(project = "RLHF")
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
@@ -88,7 +89,6 @@ class SaveInferenceResultsCallback(TrainerCallback):
                             max_new_tokens=1024,
                             eos_token_id=terminators,
                             pad_token_id=tokenizer.eos_token_id,
-                            ## 아래 옵션들은 그리디로 바뀔 수 있음
                             do_sample=False,
                             num_beams=3
                         )
@@ -260,6 +260,28 @@ if __name__ == "__main__":
     main(script_args, training_args, lora_kwargs)
 
     print("========== 학습 종료 ==========")
+
+    ## ========== 추론 파일 종합 ===========
+    input_folder_path = f"inference/{training_args.output_dir}/"
+    output_file_path = f"inference/{training_args.output_dir}/{training_args.output_dir.split("/")[-1]}.xlsx"
+
+    ## 폴더 내의 모든 .csv 파일을 찾기
+    file_list = glob.glob(input_folder_path + "*.csv")
+
+    ## 하나의 Excel 파일(Writer)에 시트를 추가하며 쓰기
+    with pd.ExcelWriter(output_file_path, engine='openpyxl') as writer:
+        ## 찾/은 파일 리스트를 순회
+        for file_path in file_list:
+            df = pd.read_csv(file_path)
+            
+            ## 시트 이름 만들기 (파일 경로에서 파일명만 추출)
+            base_name = os.path.basename(file_path)
+            sheet_name = os.path.splitext(base_name)[0]
+            
+            ## ExcelWriter에 'sheet_name'이라는 시트로 df 저장
+            df.to_excel(writer, sheet_name=sheet_name, index=False)
+
+    print(f"총 {len(file_list)}개의 파일이 '{output_file_path}' 파일 하나로 합쳐졌습니다.")
 
     ## ========== wandb 업로드 ==========
     # current_folders = set(next(os.walk("wandb"))[1])

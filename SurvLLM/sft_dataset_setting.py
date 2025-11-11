@@ -7,9 +7,8 @@ ds = datasets.Dataset.from_pandas(df_text)
 columns_to_remove = [f for f in list(ds.features) if f != "subject_id"]
 
 system_prompt = df_text.system[0]
-question = df_text.question[0]
 # system_prompt = "You are the world’s leading expert in survival analysis.\
-#  From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence.\
+#  From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence.\
 #  The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise."
 # question = "Please summarize the following discharge summary\
 #  in one sentence focusing on Chief Complaint, Physical Exam, and Admission Labs."
@@ -18,7 +17,7 @@ train_ds = ds.map(
     lambda sample:
     {"messages": [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": sample["question"] + "\n" + sample["text"]},
+        {"role": "user", "content": sample["text"]},
         {"role": "assistant", "content": sample["assistant"]}
     ]}
 )
@@ -33,6 +32,6 @@ test_ds = train_ds["test"]
 lst = []
 
 for idx in range(test_ds.num_rows):
-    lst.append({"subject_id": test_ds["subject_id"][idx], "label": test_ds["messages"][idx][2]["content"]})
+    lst.append({"subject_id": test_ds["subject_id"][idx], "label": test_ds["messages"][idx][2]["content"], "text": test_ds["messages"][idx][1]["content"]})
 
 pd.DataFrame(lst).to_csv("data/test_label.csv", index = False)

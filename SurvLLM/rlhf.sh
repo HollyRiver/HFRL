@@ -1,1 +1,1 @@
-nohup python SFT.py --config config/SFT_config.yaml > sft_log.txt &
+nohup python SFT.py --config config/SFT_config2.yaml > sft_log2.txt &

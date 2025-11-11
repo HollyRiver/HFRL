@@ -1,0 +1,582 @@
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+wandb: Tracking run with wandb version 0.22.2
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20251111_211236-6noaa5em
+training dataset size: 90
+test dataset size: 10
+======== Log a few random samples from the processed training set ========
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___                ___ No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Penicillins / Motrin Ib
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Throat tightness
+ 
+Major Surgical or Invasive Procedure:
+None
+ 
+History of Present Illness:
+___ year-old man transferred from ___ for treatment of throat 
+tightness and pneumonia. He is admitted to the ICU for closer 
+monitoring given concern of allergic reaction and history of 
+severe ___ reaction in ___.  
+
+His current symptoms started several days ago with URI-type 
+symptoms. Patient developed chest tightness, sore throat, dry 
+cough, and sensation of "lips feeling leathery" and dry over the 
+course of three days (since ___. He notes that his 
+girlfriend was sick with URI-type symptoms and he may have 
+picked something up from her.  
+  
+Over the weekend he had taken aspirin on-and-off for four days 
+(not containing Motrin per his report). Around this time he 
+developed worsening throat tightness, and he decided to go to 
+___ ED for further evaluation. From ___ ED he was 
+transferred to ___.  
+
+In the ED at ___, his initial vital signs were T 97.2, HR 92, 
+BP 148/108, RR 20, satting 95% RA. He was noted to be talking in 
+full sentences, although his voice was hoarse. On exam, there 
+was no stridor or wheezing. Labs were remarkable for a white 
+count of 9.5 with 72% polys, no bands. CBC was otherwise normal 
+with normal BMP. An EKG showed NSR with no ischemic changes. CXR 
+showed indistinctness of the left heart border with concern of 
+atalectasis versus pneumonia. Patient had already received 
+ceftriaxone at OSH for concern of pneumonia and was given 
+azithromycin here at ___. In addition he received 4 mg of 
+Zofran, 4 mg of morphine and 125 mg of methylprednisolone. 
+During his time in the ED he felt increasing throat tightness, 
+and due to the complicated history of ___ reaction, 
+he was admitted to the ICU for closer monitoring. Vitals at time 
+of transfer were T 97.8, HR 80, BP 140/80, RR 18, satting 97% 
+RA.  
+  
+Of note, in ___ the patient was admitted to ___ for SJS 
+involving the airway mucosa- his hospital course was complicated 
+by DVT and LUL pulmonary embolism. He had a long admission 
+requiring intubation (from ___ to ___ and ultimately 
+tracheostomy placement. He had presented originally with SOB and 
+fever three months after treatment of pneumonia with ceftriaxone 
+and levofloxacin. At presentation he had a vesicular rash. His 
+micro work-up was all negative with the exception of an elevated 
+IgM and IgG for Mycoplasma pneumonia. He had a deep skin biopsy 
+that showed erythema multiforme. He was initially treated with 
+vancomycin, acyclovir, ceftriaxone, which was later changed to 
+levofloxacin, and then to azithromycin (for a 21-day course 
+total of antibiotics). During the admission, he had thick 
+blood-tinged expectorant from his lungs felt to be consistent 
+with desquamation caused by ___ syndrome. Note is 
+made from that discharge summary that he had a very traumatic 
+intubation and that the anesthesiologist performing the 
+procedure saw a desquamated, ulcerated, and "raw-appearing" 
+posterior pharynx.  
+  
+REVIEW OF SYSTEMS:  
+Positive for subjective fevers/chills over the last few days. 
+Also with intermittent stomach pain. No diarrhea. No nausea or 
+vomiting. No urinary symptoms. No rash or joint pain.  
+ 
+Past Medical History:
+Mycoplasma pneumonia infection complicated by SJS, DVT and PE 
+(___) 
+ 
+Social History:
+___
+Family History:
+NC
+ 
+Physical Exam:
+ HR 78, BP 147/95, RR 17, sat 97%  
+General: young man, no acute distress, +hoarse voice  
+HEENT: no conjuntival injection or edema; no tongue swelling; 
+oropharynx clear with no erythmea or exudate; small blistering 
+along inferior gingival surface, otherwise clear buccal and 
+palate mucosal without ulceration or erosion  
+Cardiovascular: RRR, normal s1/s2, no murmurs  
+Pulmonary: coarse expiratory sounds diffusely, no wheezes, no 
+stridor over anterior or lateral neck  
+Abdominal: soft, non-tender, normal bowel sounds  
+Extremities: warm and well-perfused, non-edematous, 2+ dp pulses 
+ 
+Neurological: AAOx3, moving all extremities  
+Skin: no rashes  
+ 
+Pertinent Results:
+___ 12:24AM BLOOD WBC-9.5 RBC-4.98# Hgb-15.3# Hct-45.5# 
+MCV-91 MCH-30.7 MCHC-33.7 RDW-13.6 Plt ___
+___ 12:24AM BLOOD ___ PTT-24.8 ___
+___ 12:24AM BLOOD Glucose-92 UreaN-14 Creat-1.0 Na-142 
+K-4.1 Cl-102 HCO3-28 AnGap-16
+___ 03:41AM BLOOD Calcium-9.0 Phos-2.8# Mg-2.1
+
+CXR IMPRESSION: Probable lingual scarring. No evidence of 
+pneumonia.
+
+CT CHEST (PRELIM): Bronchiectasis, no pneumonia
+ 
+Brief Hospital Course:
+# Shortness of breath: Pt presented with ___ days of lethargy, 
+cough, congestion and possible lingular infiltrate on chest 
+x-ray. Exam was remarkable for coarse breath sounds diffusely, 
+L>R.  Pt was started on empiric Levofloxacin and steroids for 
+possible SJS. HE was notably tachycardic and dehydrated on exam, 
+he was given 2liters of IVF and HR trended down with increased 
+UOP.  Pt was started on nebs and reported improved breathing and 
+cough. Due to abnormal findings on CT chest from ___, he 
+underwent a follow up CT which was notable for resolution of 
+nodules and subtle ___ opacities.  Levofloxacin was 
+initially continued for CAP and pt was called out to floor but 
+on the floor it was thought that his symptoms were mainly due to 
+URI like process so abx were discontinued. the pt was discharged 
+with supportive care on albuterol/ipratropium, fluticasone 
+inhalers. he is to f/u with his PCP in the next week.
+
+# History of ___ sydrome: occurred in the setting of 
+Motrin use and Mycoplasma pneumoniae infection. Currently 
+patient with no evidence of mucosal sloughing or rash. Steroids 
+started empirically and stopped after resolution of oral & 
+throat discomfort, no evidence of rash. On discharge the pt was 
+stable without any evidence of SJS.
+ 
+Medications on Admission:
+none
+ 
+Discharge Medications:
+1. Acetaminophen 325 mg Tablet Sig: ___ Tablets PO Q6H (every 6 
+hours) as needed for pain or fever for 10 days.
+Disp:*60 Tablet(s)* Refills:*0*
+2. Menthol-Cetylpyridinium 3 mg Lozenge Sig: One (1) Lozenge 
+Mucous membrane PRN (as needed) as needed for cough or sore 
+throat for 10 days.
+Disp:*30 Lozenge(s)* Refills:*0*
+3. Ipratropium-Albuterol ___ mcg/Actuation Aerosol Sig: ___ 
+Puffs Inhalation Q6H (every 6 hours) as needed for wheezing or 
+sob for 10 days.
+Disp:*1 inhaler* Refills:*0*
+4. Fluticasone 110 mcg/Actuation Aerosol Sig: Two (2) Puff 
+Inhalation BID (2 times a day) for 10 days.
+Disp:*1 inhaler* Refills:*0*
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Acute bronchitis vs Viral syndrome with reactive airways
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+ 
+Discharge Instructions:
+You were admitted due to shortness of breath and cough. At first 
+there was concern that you could develop symptoms similar to 
+your past admission for ___ syndrome. You were given 
+IV steroids and antibiotics and transferred to the ICU for 
+monitoring. You fortunately did not develop any life threatening 
+respiratory symptoms or any concerning symptoms for 
+___. It is thought that you likely suffer from a 
+viral illness with reactive airways, and that antibiotics are 
+not needed. You should take fluticasone inhaler for 10 days, 
+albuterol/ipratropium inhaler, tylenol, and cepacol as needed 
+for the next few days to control your wheezing and respiratory 
+symptoms. There were no other changes to your medications.
+
+Please take all medications as prescribed.
+Please follow up with all appointments.
+Please do not hesitate to return to the hospital with any 
+concerning symptoms at all.
+
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A male patient presented with throat tightness; on physical examination, BP 147/95, HR 78, RR 17, and Temp NA; admission labs showed WBC 9.5, RBC 4.98, Hgb 15.3, Hct 45.5, Plt NA, MCV 91, MCH 30.7, MCHC 33.7, RDW 13.6, and Glucose 92; the most diagnostically relevant finding was bronchiectasis without pneumonia on chest CT.<|eot_id|>
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___                        Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: NEUROSURGERY
+ 
+Allergies: 
+strawberries
+ 
+Attending: ___.
+ 
+Chief Complaint:
+seizures, left frontal cavernous malformation 
+ 
+Major Surgical or Invasive Procedure:
+Left Crani and resection of Cav Malformation ___
+
+ 
+History of Present Illness:
+This is a ___ year old female was admitted to ___ on ___ 
+following a
+new onset of recurrent seizures. Upon admission to ___ the
+patient was started on keppra and continued to have seizures
+through that, and ultimately required keppra, Dilantin, and
+vimpat for cessation of seizure activity. During the workup, her
+OSH MRI revealed a cavernous malformation, and she was therefore
+transferred to ___ for further neurosurgical evaluation for
+possible resection of the cavernous malformation. 
+ 
+Past Medical History:
+obesity
+HTN
+diabetes 
+OSA on CPAP 
+ 
+Social History:
+___
+Family History:
+nc
+ 
+Physical Exam:
+ADMISSION:
+
+Mental status: Awake and alert, cooperative with exam, normal
+affect.
+Orientation: Oriented to person, place, and date.
+Language: Speech fluent with good comprehension and repetition.
+No dysarthria or paraphasic errors.
+
+Cranial Nerves:
+I: Not tested
+II: Pupils equally round and reactive to light, 2 to 1mm
+bilaterally. 
+III, IV, VI: Extraocular movements intact bilaterally without
+nystagmus.
+V, VII: Facial strength and sensation intact and symmetric.
+VIII: Hearing intact to voice.
+XII: Tongue midline without fasciculations.
+
+Motor: Normal bulk and tone bilaterally. No abnormal movements,
+tremors. Strength full power ___ throughout. No pronator drift
+
+Sensation: Intact to light touch
+
+DISCHARGE:
+___pproximated
+sutures intact
+strength full
+sensation intact
+no pronator drift
+pupils equal and reactive
+ 
+Pertinent Results:
+___ - MRI WAND:
+1. Stable left inferior frontal cavernous malformation. No new 
+intracranial lesions. 
+
+___ - CT Head without Contrast:
+IMPRESSION:  
+  
+Expected appearance status post left frontal approach 
+craniotomy. No evidence of unexpected acute hemorrhage or 
+territorial infarction. 
+
+CXR ___ 
+IMPRESSION:  
+  
+There is patchy and linear atelectasis or scarring in both lung 
+bases.  There is no pneumothorax or CHF. There is stable 
+cardiomegaly. The aorta is tortuous. Degenerative changes are 
+present in the spine.. 
+
+ 
+Brief Hospital Course:
+Patient was transferred from ___ for 
+continued care and workup of left frontal cavernous 
+malformation. Patient was admitted to the Neurosurgery service. 
+
+On ___, patient is neurologically and hemodynamically intact. 
+Epilepsy consulted for assistance in managing antiepileptic's. 
+Corrected Dilantin level 6.2, patient received 1.3g Dilantin 
+bolus and TID dosing of Dilantin also increased. 
+
+On ___, the patient's neurological exam remained stable. 
+Surgical planning for ___ Left craniotomy for cavernous 
+malformatin resection with ___. The patient's Dilantin 
+level 13.9, neurology aware and did not recommend any changes to 
+dosage. 
+
+On ___, the patient remained neurologically stable on 
+examination. She underwent pre-operative planning in 
+anticipation for the OR. Her AEDs were changed to IV in 
+anticipation for the OR. 
+
+On ___, the patient was taken to the operating room and 
+underwent a left craniotomy for resection of cavernous 
+malformation. She tolerated the procedure well and was extubated 
+in the operating room. She was then transferred to the PACU for 
+close monitoring. She underwent a non-contrast head CT 
+post-operatively. 
+
+On ___, The patient was transferred to floor. Dilantin level 7. 
+Neuro recommending giving 300mg IV bolus and increasing standing 
+dose to 200mg TID. The Foley was discontinued. The patient was 
+mobilized out of bed to the chair. 
+ 
+On ___, The patient was improving nicely and her exam was 
+neurologically intact.  The patient mobilized to the bathroom 
+with minimal assistance.  The patient had a Poor appetite but 
+taking POs. The incentive spirometry was encouraged.  The 
+patient was compliant and was weaned to 1 liter of oxygen via 
+nasal cannula.  With the oxygen off the patient would desaturate 
+to the high ___.   The Dilantin level was 9.5 today.  This was 
+discussed with neurology who is managing her seizure medications 
+and no changes were made in therapy. 
+
+On ___, The patient was off all nasal cannula oxygen.  The 
+patient oxygen ranged from 91 - 95 %.  When the patient o2 
+saturation was 91 % it quickly increased to 98 % on room air 
+with use of the incentive spirometry and deep breathing.  The 
+patient denies shortness of breath or chest pain.  The patient 
+denies productive cough.  The chest X ray from the day prior was 
+reviewed by neurosurgery and radiology and consistent with 
+patchy and linear atelectasis or scarring in both lung bases.  
+There is no pneumothorax or CHF. There is stable cardiomegaly.  
+The findings were discussed with the neurosurgery fellow and it 
+was determined the patient was asymptomatic and would continue 
+with mobilization and use of her incentive spirometry.  The 
+patient and the patients daughter were looking forward to a 
+discharge to home and agreed that if the patient developed a 
+fever/cough/ or shortness of breath she would present to the ED 
+or her PCP after discharge.  The patient was evaluated by 
+physical therapy that recommended that she be discharged to home 
+with ___.  The patient was neurologically intact at the time of 
+discharge and the incision was well approximated.  The patient 
+was tolerating a regular diet and voiding on her own. 
+
+ 
+
+ 
+Medications on Admission:
+levothyroxine 150mcg daily
+lisinopril 10mg daily 
+aspirin 81mg daily 
+naproxen 220mg q12h
+omeprazole 20mg 
+Dilantin 100mg TID
+Lacosamide 100mg BID 
+Keppra 1500 BID 
+ 
+Discharge Medications:
+1. Acetaminophen 325-650 mg PO Q6H:PRN fever/pain 
+2. Docusate Sodium 100 mg PO BID 
+RX *docusate sodium [Colace] 100 mg 1 capsule(s) by mouth twice 
+a day Disp #*60 Capsule Refills:*1
+3. LACOSamide 100 mg PO BID 
+RX *lacosamide [Vimpat] 100 mg 1 tablet(s) by mouth twice a day 
+Disp #*60 Tablet Refills:*0
+4. LeVETiracetam 1500 mg PO BID 
+RX *levetiracetam [Keppra] 750 mg 2 tablet(s) by mouth twice a 
+day Disp #*60 Tablet Refills:*0
+5. Levothyroxine Sodium 150 mcg PO DAILY 
+6. Lisinopril 10 mg PO DAILY 
+7. Omeprazole 20 mg PO DAILY 
+8. Phenytoin Sodium Extended 200 mg PO TID 
+RX *phenytoin sodium extended [Dilantin Extended] 100 mg 2 
+capsule(s) by mouth three times a day Disp #*60 Capsule 
+Refills:*1
+9. OxycoDONE (Immediate Release)  ___ mg PO Q4H:PRN pain 
+do not drive while taking 
+RX *oxycodone 5 mg ___ tablet(s) by mouth q4 PRN Disp #*65 
+Tablet Refills:*0
+10. Senna 8.6 mg PO BID 
+RX *sennosides [senna] 8.6 mg 1 tab by mouth twice a day Disp 
+#*60 Capsule Refills:*0
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+cavernous malformation
+
+ 
+Discharge Condition:
+neurologically intact 
+full strength 
+sensation intact
+face symmetric
+pupils equal and reactive
+sutures intact - well approximated
+
+ 
+Discharge Instructions:
+Discharge Instructions
+
+ 
+
+ 
+
+ 
+
+Surgery:
+
+쨌     
+쨌     You had surgery to resect the cavernous malformation. You 
+incision should be kept dry until sutures are removed. 
+
+ 
+
+ 
+
+Activity
+
+쨌     We recommend that you avoid heavy lifting, running, 
+climbing, or other strenuous exercise until your follow-up 
+appointment.
+
+쨌     You make take leisurely walks and slowly increase your 
+activity at your own pace. ___ try to do too much all at once.
+
+쨌     You make take a shower. 
+
+쨌     No driving while taking any narcotic or sedating 
+medication. 
+
+쨌     You experienced a SEIZURES while admitted, you must 
+refrain from driving. 
+
+ 
+
+ 
+
+Medications
+
+쨌     Resume your normal medications and begin new medications 
+as directed.
+
+쨌 YOU MAY RESUME YOUR ASPIRIN 81 mg daily one week after your 
+surgery on ___.  You may resume your home dose of 
+naproxsyn anytime. 
+ 
+쨌     Please do NOT take any blood thinning medication (Plavix, 
+Coumadin) until cleared by the neurosurgeon. 
+
+YOUR Seizure medications are :
+
+LACOSamide 100 mg PO/NG BID 
+Phenytoin Sodium Extended 200 mg PO TID 
+LeVETiracetam 1500 mg PO BID 
+
+You have been discharged on Keppra (Levetiracetam). This 
+medication helps to prevent seizures. Please continue this 
+medication until follow-up. It is important that you take this 
+medication consistently and on time. 
+
+쨌     You have been prescribed Dilantin (Phenytoin) for 
+anti-seizure medicine, take it as prescribed and follow up with 
+laboratory blood drawing in one week.  This can be drawn at your 
+PCP혪s office, but please have the results faxed to ___.
+
+쨌     You may use Acetaminophen (Tylenol) for minor discomfort 
+if you are not otherwise restricted from taking this medication.
+
+ 
+
+What You ___ Experience:
+
+쨌     Mild to moderate headaches that last several days to a few 
+weeks.
+
+쨌     Difficulty with short term memory. 
+
+쨌     Fatigue is very normal
+
+쨌     Constipation is common. Be sure to drink plenty of fluids 
+and eat a high-fiber diet. If you are taking narcotics 
+(prescription pain medications), try an over-the-counter stool 
+softener.
+
+ 
+
+ 
+
+ 
+
+When to Call Your Doctor at ___ for:
+
+쨌     Severe pain, swelling, redness or drainage from the 
+incision site or puncture site. 
+
+쨌     Fever greater than 101.5 degrees Fahrenheit
+
+쨌     Constipation
+
+쨌     Blood in your stool or urine
+
+쨌     Nausea and/or vomiting
+
+쨌     Extreme sleepiness and not being able to stay awake
+
+쨌     Severe headaches not relieved by pain relievers
+
+쨌     Seizures
+
+쨌     Any new problems with your vision or ability to speak
+
+쨌     Weakness or changes in sensation in your face, arms, or 
+leg
+
+ 
+
+Call ___ and go to the nearest Emergency Room if you experience 
+any of the following:
+
+쨌     Sudden numbness or weakness in the face, arm, or leg
+
+쨌     Sudden confusion or trouble speaking or understanding
+
+쨌     Sudden trouble walking, dizziness, or loss of balance or 
+coordination
+
+쨌     Sudden severe headaches with no known reason
+
+ 
+
+ 
+
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with seizures and left frontal cavernous malformation; on physical examination, BP NA, HR NA, RR NA, and Temp NA; admission labs showed WBC NA, RBC NA, Hgb NA, Hct NA, Plt NA, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose NA; the most diagnostically relevant finding was a left inferior frontal cavernous malformation on brain MRI.<|eot_id|>
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:17,  5.68s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:12<00:12,  6.08s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:16<00:05,  5.44s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  3.44s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.28s/it]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+======== Log a first sample from the processed training set ========
+masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
+  0%|          | 0/1440 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
+  0%|          | 1/1440 [00:06<2:40:50,  6.71s/it]  0%|          | 2/1440 [00:13<2:37:12,  6.56s/it]  0%|          | 3/1440 [00:19<2:34:36,  6.46s/it]  0%|          | 4/1440 [00:25<2:27:41,  6.17s/it]  0%|          | 5/1440 [00:31<2:28:28,  6.21s/it]  0%|          | 6/1440 [00:32<1:48:00,  4.52s/it]  0%|          | 7/1440 [00:38<2:00:09,  5.03s/it]  1%|          | 8/1440 [00:45<2:11:22,  5.50s/it]  1%|          | 9/1440 [00:51<2:17:48,  5.78s/it]  1%|          | 10/1440 [00:58<2:21:53,  5.95s/it]  1%|          | 11/1440 [01:04<2:24:30,  6.07s/it]  1%|          | 12/1440 [01:10<2:26:26,  6.15s/it]
