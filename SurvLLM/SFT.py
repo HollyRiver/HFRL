@@ -23,10 +23,12 @@ import os
 import json
 import random
 import numpy as np
+import pandas as pd
+import wandb
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
-
+wandb.init(project = "RLHF")
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
 @dataclass  ## 데이터 보관 클래스를 간단하게 구축 가능: __init__, __repr__, __eq()__등의 메소드 자동 생성
@@ -42,6 +44,63 @@ class LoraArguments:
     bias: str = field(default = "none", metadata = {"help": "update matrix에 bias를 학습할 것인지 선택"})
     task_type: str = field(default = "CAUSAL_LM", metadata = {"help": "학습할 모형이 무엇인지 지정"})
     target_modules: list[str] = field(default = None, metadata = {"help": "학습에 반영할 모듈 설정"})
+
+class SaveInferenceResultsCallback(TrainerCallback):
+    def __init__(self, trainer, test_dataset, model_name):
+        super().__init__()
+        self.trainer = trainer 
+        self.test_dataset = test_dataset
+        self.output_dir = f"inference/{model_name}"
+        os.makedirs(self.output_dir, exist_ok=True)
+
+    def on_save(self, args, state, control, **kwargs):
+        ## Multi-GPU 사용 시 메인 프로세스에서만 실행되도록 하여 중복 저장을 방지
+        if state.is_world_process_zero:
+            epoch = int(state.epoch) # 현재 epoch 번호
+            output_path = os.path.join(self.output_dir, f"epoch_{epoch}_results.csv")
+            
+            print(f"\nEpoch {epoch} 종료. 테스트 데이터셋 추론 시작...")
+            
+            ## 현재 모델 획득, 추론 모드로 설정
+            model = self.trainer.model.eval()
+            tokenizer = self.trainer.tokenizer
+
+            results = []
+
+            with torch.no_grad():
+                with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                    for idx in range(self.test_dataset.num_rows):
+                        messages = self.test_dataset[idx]["messages"][:2]
+                        subject_id = self.test_dataset[idx]["subject_id"]
+
+                        input_ids = tokenizer.apply_chat_template(
+                            messages,
+                            add_generation_prompt=True,
+                            return_tensors="pt"
+                        ).to(model.device)
+
+                        terminators = [
+                            tokenizer.eos_token_id,
+                        ]
+
+                        outputs = model.generate(
+                            input_ids,
+                            max_new_tokens=1024,
+                            eos_token_id=terminators,
+                            pad_token_id=tokenizer.eos_token_id,
+                            ## 아래 옵션들은 그리디로 바뀔 수 있음
+                            do_sample=False,
+                            num_beams=3
+                        )
+                        
+                        response = outputs[0][input_ids.shape[-1]:]
+                        generation = tokenizer.decode(response, skip_special_tokens=True)
+                        results.append({"subject_id": subject_id, "generation": generation})
+
+            # epoch별 파일 저장
+            pd.DataFrame(results).to_csv(output_path, index = False)
+            
+            print(f"Epoch {epoch} 추론 결과 저장 완료: {output_path}")
 
 
 def timer(func):
@@ -90,6 +149,8 @@ def main(script_args, training_args, lora_kwargs):
     train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "sft_train_dataset.json"), split = "train")
     test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "sft_test_dataset.json"), split = "train")
 
+    print(f"training dataset size: {train_ds.num_rows}\ntest dataset size: {test_ds.num_rows}")
+
     ## 토크나이저 로드 및 설정
     tokenizer = AutoTokenizer.from_pretrained(
         script_args.model_name,
@@ -126,18 +187,6 @@ def main(script_args, training_args, lora_kwargs):
     print("======== Log a few random samples from the processed training set ========")
     for index in random.sample(range(len(train_ds)), 2):
         print(tokenizer.apply_chat_template(train_ds[index]["messages"], tokenize = False))
-
-    # ## 데이터에 템플릿 적용: Conversation dataset 형태로 삽입 시 자동으로 처리 및 collator 적용
-    # def template_dataset(examples):
-    #     return {"text": tokenizer.apply_chat_template(examples["messages"], tokenize = False)}
-    
-    # train_ds = train_ds.map(template_dataset, remove_columns = ["messages"])
-    # test_ds = test_ds.map(template_dataset, remove_columns = ["messages"])
-
-    # ## 2개만 출력하여 확인
-    # print("======== Log a few random samples from the processed training set ========")
-    # for index in random.sample(range(len(train_ds)), 2):
-    #     print(train_ds[index]["text"])
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
@@ -181,8 +230,8 @@ def main(script_args, training_args, lora_kwargs):
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
 
-    # inference_callback = SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds)
-    # trainer.add_callback(inference_callback)
+    inference_callback = SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
+    trainer.add_callback(inference_callback)
 
     trainer.train(resume_from_checkpoint = checkpoint)
     trainer.save_model()
@@ -190,7 +239,7 @@ def main(script_args, training_args, lora_kwargs):
 
 if __name__ == "__main__":
     os.makedirs("wandb", exist_ok = True)
-    initial_folders = set(next(os.walk("wandb"))[1])
+    # initial_folders = set(next(os.walk("wandb"))[1])
 
     parser = TrlParser((ScriptArguments, SFTConfig, LoraArguments))         ## 따로 저장된 파라미터 파싱
     script_args, training_args, lora_args = parser.parse_args_and_config()
@@ -213,6 +262,7 @@ if __name__ == "__main__":
     print("========== 학습 종료 ==========")
 
     ## ========== wandb 업로드 ==========
-    current_folders = set(next(os.walk("wandb"))[1])
-    new_folders = current_folders - initial_folders
-    os.system(f"wandb sync --include-offline ./wandb/{list(current_folders)[0]}")
+    # current_folders = set(next(os.walk("wandb"))[1])
+    # new_folders = current_folders - initial_folders
+    # os.system(f"wandb sync --include-offline ./wandb/{list(current_folders)[0]}")
+    os.system(f"wandb sync --include-offline wandb/latest-run")
