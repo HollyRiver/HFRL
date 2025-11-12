@@ -262,8 +262,9 @@ if __name__ == "__main__":
     print("========== 학습 종료 ==========")
 
     ## ========== 추론 파일 종합 ===========
-    input_folder_path = f"inference/{training_args.output_dir}/"
-    output_file_path = f"inference/{training_args.output_dir}/{training_args.output_dir.split("/")[-1]}.xlsx"
+    od = training_args.output_dir.split("/")[-1]
+    input_folder_path = f"inference/{od}/"
+    output_file_path = f"inference/{od}/{od}.xlsx"
 
     ## 폴더 내의 모든 .csv 파일을 찾기
     file_list = glob.glob(input_folder_path + "*.csv")

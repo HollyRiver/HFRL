@@ -1,6 +1,12 @@
 import pandas as pd
 import datasets
 import re
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--target", type = str, default = None, help = "변환할 파일 이름")
+
+args = parser.parse_args()
 
 def remove_hangul_from_messages(sample):
     hangul_pattern = r"[\uAC00-\uD7A3]"
@@ -21,16 +27,11 @@ def remove_hangul_from_messages(sample):
     return sample
 
 ## 원시 데이터 로드
-df_text = pd.read_csv("data/data_sample_20251111_01.csv", encoding = "cp949")
+df_text = pd.read_csv(f"data/{args.target}", encoding = "cp949")
 ds = datasets.Dataset.from_pandas(df_text)
 columns_to_remove = [f for f in list(ds.features) if f != "subject_id"]
 
-system_prompt = df_text.system[0]
-# system_prompt = "You are the world’s leading expert in survival analysis.\
-#  From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence.\
-#  The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise."
-# question = "Please summarize the following discharge summary\
-#  in one sentence focusing on Chief Complaint, Physical Exam, and Admission Labs."
+system_prompt = pd.read_csv("data/data_sample_20251111_01.csv", encoding = "cp949").system[0]
 
 train_ds = ds.map(
     lambda sample:
@@ -38,20 +39,14 @@ train_ds = ds.map(
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": sample["text"]},
         {"role": "assistant", "content": sample["assistant"]}
+    ]} if "assistant" in sample.keys() else
+    {"messages": [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": sample["text"]}
     ]}
 )
 
 train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
 train_ds = train_ds.map(remove_hangul_from_messages)
-train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
 
-train_ds["train"].to_json("data/sft_train_dataset.json", orient = "records")
-train_ds["test"].to_json("data/sft_test_dataset.json", orient = "records")
-
-test_ds = train_ds["test"]
-lst = []
-
-for idx in range(test_ds.num_rows):
-    lst.append({"subject_id": test_ds["subject_id"][idx], "label": test_ds["messages"][idx][2]["content"], "text": test_ds["messages"][idx][1]["content"]})
-
-pd.DataFrame(lst).to_excel("data/test_label.xlsx", index = False)
+train_ds.to_json(f"data/{args.target.split(".")[0]}.json", orient = "records")

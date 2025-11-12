@@ -2,11 +2,13 @@ import pandas as pd
 import glob
 import os
 
+od = "lr2e-6"
+
 ## 엑셀 파일들이 있는 폴더 경로
-input_folder_path = "../SurvLLM/inference/lr5e-6/"
+input_folder_path = f"../SurvLLM/inference/{od}/"
 
 ## 결과물로 저장할 엑셀 파일 경로
-output_file_path = "../SurvLLM/inference/lr5e-6/lr5e-6.xlsx"
+output_file_path = f"../SurvLLM/inference/{od}/{od}.xlsx"
 
 ## 폴더 내의 모든 .csv 파일을 찾기
 file_list = glob.glob(input_folder_path + "*.csv")
