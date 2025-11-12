@@ -1,3 +1,5 @@
+## nohup python sft_generation.py --model_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
+
 import os
 import argparse
 import torch
@@ -11,6 +13,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type = str, default = None, help = "model path")
     parser.add_argument("--output_name", type = str, default = "for_dpo_5_gen.csv")
+    parser.add_argument("--gen_nums", type = int, default = 5)
     args = parser.parse_args()
 
     model_name = args.model_name
@@ -30,7 +33,7 @@ if __name__ == "__main__":
         ith_inference = {"subject_id" : gen_ds[idx]["subject_id"]}
         ith_inference["text"] = gen_ds[idx]["messages"][1]["content"]
 
-        for i in range(5):
+        for i in range(args.gen_nums):
             input_ids = tokenizer.apply_chat_template(
                             gen_ds[idx]["messages"],
                             add_generation_prompt=True,

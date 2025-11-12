@@ -8,13 +8,10 @@ from dataclasses import dataclass, field, fields    ## For TrlParser
 from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig,
-    set_seed,
-    TrainerCallback
+    set_seed
 )
-from trl import SFTTrainer, SFTConfig, TrlParser, setup_chat_format
+from trl import SFTTrainer, SFTConfig, TrlParser
 from peft import LoraConfig
-
-from sklearn.model_selection import train_test_split
 
 import logging
 import torch
@@ -26,6 +23,7 @@ import random
 import numpy as np
 import pandas as pd
 import wandb
+import utils
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/latest-run
@@ -45,62 +43,6 @@ class LoraArguments:
     bias: str = field(default = "none", metadata = {"help": "update matrix에 bias를 학습할 것인지 선택"})
     task_type: str = field(default = "CAUSAL_LM", metadata = {"help": "학습할 모형이 무엇인지 지정"})
     target_modules: list[str] = field(default = None, metadata = {"help": "학습에 반영할 모듈 설정"})
-
-class SaveInferenceResultsCallback(TrainerCallback):
-    def __init__(self, trainer, test_dataset, model_name):
-        super().__init__()
-        self.trainer = trainer 
-        self.test_dataset = test_dataset
-        self.output_dir = f"inference/{model_name}"
-        os.makedirs(self.output_dir, exist_ok=True)
-
-    def on_save(self, args, state, control, **kwargs):
-        ## Multi-GPU 사용 시 메인 프로세스에서만 실행되도록 하여 중복 저장을 방지
-        if state.is_world_process_zero:
-            epoch = int(state.epoch) # 현재 epoch 번호
-            output_path = os.path.join(self.output_dir, f"epoch_{epoch}_results.csv")
-            
-            print(f"\nEpoch {epoch} 종료. 테스트 데이터셋 추론 시작...")
-            
-            ## 현재 모델 획득, 추론 모드로 설정
-            model = self.trainer.model.eval()
-            tokenizer = self.trainer.tokenizer
-
-            results = []
-
-            with torch.no_grad():
-                with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                    for idx in range(self.test_dataset.num_rows):
-                        messages = self.test_dataset[idx]["messages"][:2]
-                        subject_id = self.test_dataset[idx]["subject_id"]
-
-                        input_ids = tokenizer.apply_chat_template(
-                            messages,
-                            add_generation_prompt=True,
-                            return_tensors="pt"
-                        ).to(model.device)
-
-                        terminators = [
-                            tokenizer.eos_token_id,
-                        ]
-
-                        outputs = model.generate(
-                            input_ids,
-                            max_new_tokens=1024,
-                            eos_token_id=terminators,
-                            pad_token_id=tokenizer.eos_token_id,
-                            do_sample=False,
-                            num_beams=3
-                        )
-                        
-                        response = outputs[0][input_ids.shape[-1]:]
-                        generation = tokenizer.decode(response, skip_special_tokens=True)
-                        results.append({"subject_id": subject_id, "generation": generation})
-
-            # epoch별 파일 저장
-            pd.DataFrame(results).to_csv(output_path, index = False)
-            
-            print(f"Epoch {epoch} 추론 결과 저장 완료: {output_path}")
 
 
 def timer(func):
@@ -230,7 +172,7 @@ def main(script_args, training_args, lora_kwargs):
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
 
-    inference_callback = SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
+    inference_callback = utils.SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
     trainer.add_callback(inference_callback)
 
     trainer.train(resume_from_checkpoint = checkpoint)
@@ -262,27 +204,7 @@ if __name__ == "__main__":
     print("========== 학습 종료 ==========")
 
     ## ========== 추론 파일 종합 ===========
-    od = training_args.output_dir.split("/")[-1]
-    input_folder_path = f"inference/{od}/"
-    output_file_path = f"inference/{od}/{od}.xlsx"
-
-    ## 폴더 내의 모든 .csv 파일을 찾기
-    file_list = glob.glob(input_folder_path + "*.csv")
-
-    ## 하나의 Excel 파일(Writer)에 시트를 추가하며 쓰기
-    with pd.ExcelWriter(output_file_path, engine='openpyxl') as writer:
-        ## 찾/은 파일 리스트를 순회
-        for file_path in file_list:
-            df = pd.read_csv(file_path)
-            
-            ## 시트 이름 만들기 (파일 경로에서 파일명만 추출)
-            base_name = os.path.basename(file_path)
-            sheet_name = os.path.splitext(base_name)[0]
-            
-            ## ExcelWriter에 'sheet_name'이라는 시트로 df 저장
-            df.to_excel(writer, sheet_name=sheet_name, index=False)
-
-    print(f"총 {len(file_list)}개의 파일이 '{output_file_path}' 파일 하나로 합쳐졌습니다.")
+    utils.excel_integrate(training_args.output_dir.split("/")[-1])
 
     ## ========== wandb 업로드 ==========
     # current_folders = set(next(os.walk("wandb"))[1])
