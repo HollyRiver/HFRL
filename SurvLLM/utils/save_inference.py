@@ -58,6 +58,6 @@ class SaveInferenceResultsCallback(TrainerCallback):
                         results.append({"subject_id": subject_id, "generation": generation})
 
             # epoch별 파일 저장
-            pd.DataFrame(results).to_csv(output_path, index = False)
+            pd.DataFrame(results).to_csv(output_path, index = False, encoding = "utf-8-sig")
             
             print(f"Epoch {epoch} 추론 결과 저장 완료: {output_path}")

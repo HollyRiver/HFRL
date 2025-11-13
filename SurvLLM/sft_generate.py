@@ -1,4 +1,4 @@
-## nohup python sft_generation.py --model_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
+## nohup python sft_generate.py --model_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
 
 import os
 import argparse
@@ -58,4 +58,4 @@ if __name__ == "__main__":
 
         results.append(ith_inference)
 
-    pd.DaraFrame(results).to_csv(f"data/{args.output_name}")
+    pd.DataFrame(results).to_csv(f"data/{args.output_name}", encoding = "utf-8-sig")
