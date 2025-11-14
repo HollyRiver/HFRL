@@ -4,11 +4,11 @@ adapter_name: "results/test"                          ## SFT 완료 어뎁터
 dataset_path: "./data"                                ## 데이터셋 저장 경로
 
 ## DPOConfig
-max_length: 32768                                     ## 모델이 수용 가능한 최대 시퀀스 길이
-max_prompt_length: 31744                              ## 최대 프롬프트 시퀀스 길이 (1024 뺐음)
-output_dir: "./results/dpo-test"                      ## 튜닝된 모델 저장 위치
+max_length: 2048                                      ## 모델이 수용 가능한 최대 시퀀스 길이
+max_prompt_length: 1536                               ## 최대 프롬프트 시퀀스 길이
+output_dir: "./results/dpo-reuse"                     ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
-run_name: "dpo-test"                                  ## wandb 전달 이름
+run_name: "dpo-with-sft-adapter"                      ## wandb 전달 이름
 learning_rate: 5e-7                                   ## update matrix 학습률. 1e-7을 표준으로 증가시키며 확인
 lr_scheduler_type: "cosine_with_min_lr"               ## 코사인 스케줄러 사용 + 최소 학습률 지정 (최대의 10%)
 lr_scheduler_kwargs:
@@ -18,8 +18,7 @@ per_device_train_batch_size: 4                        ## GPU당 배치 사이즈
 per_device_eval_batch_size: 4                         ## GPU당 배치 사이즈(평가)
 gradient_accumulation_steps: 2                        ## 그래디언트를 모아두었다가 한꺼번에 적용: 배치 사이즈를 키우는 효과
 do_eval: true                                         ## evaluation loss 계산 (전체 eval dataset을 대상으로 산출하므로, 꽤 많은 시간이 소요됨.)
-# eval_steps: 500
-eval_strategy: "epoch"                                ## epoch마다 평가
+eval_strategy: "epoch"                                ## epoch마다 모델이 저장되므로, 실제로는 이를 기준으로 계산하는 전략이 유효할 것으로 판단됨
 optim: "adamw_torch_fused"                            ## optimizer 설정
 logging_steps: 100                                    ## 로그 산출 빈도
 save_strategy: "epoch"                                ## 에폭별 모델 저장
@@ -32,7 +31,7 @@ gradient_checkpointing: true                          ## 그래디언트를 캐�
 dataloader_num_workers: 4                             ## 데이터로더 워커 수: 보통 GPU 개수 * 4 정도 사용한다고 함
 remove_unused_columns: false                          ##
 beta: 0.1                                             ## DPO loss 온도. 적을수록 reference model을 무시
-loss_type: "sigmoid"                                  ## loss function (default)
+# loss_type: "ipo"
 padding_free: true                                    ## 패딩없이 텍스트를 하나의 시퀀스로  flash attention 사용 필수
 model_adapter_name: "train"
 ref_adapter_name: "reference"

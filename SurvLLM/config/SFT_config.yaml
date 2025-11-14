@@ -6,6 +6,7 @@ dataset_path: "./data"                                ## 데이터셋 저장 경
 max_length: 32768                                     ## 모델이 수용 가능한 최대 시퀀스 길이. 너무 긴 시퀀스가 일부라면 이를 잘 조절하여 truncation할 수 있음.
 output_dir: "./results/lr5e-6"                        ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
+run_name: "lr5-6"
 assistant_only_loss: true                             ## LM type dataset: 현재 손실 계산 시 LLM이 답변할 부분만 사용 (user, system messages 무시)
 learning_rate: 5e-6                                   ## update matrix 학습률. 1e-4를 표준으로 감소시키며 확인
 lr_scheduler_type: "cosine_with_restarts"             ## 코사인 스케줄러 사용 + 학습률 초기화

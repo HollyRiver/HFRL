@@ -1,4 +1,4 @@
-## nohup python sft_generate.py --model_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
+## nohup python sft_generate.py --adapter_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
 
 import os
 import argparse
@@ -6,20 +6,35 @@ import torch
 import pandas as pd
 from datasets import load_dataset
 from tqdm.auto import tqdm
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from peft import PeftConfig, PeftModel
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", type = str, default = None, help = "model path")
+    parser.add_argument("--adapter_name", type = str, default = None, help = "STF model path")
     parser.add_argument("--output_name", type = str, default = "for_dpo_5_gen.csv")
     parser.add_argument("--gen_nums", type = int, default = 5)
     args = parser.parse_args()
 
-    model_name = args.model_name
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit = True,
+        bnb_4bit_use_double_quant = True,
+        bnb_4bit_quant_type = "nf4",
+        bnb_4bit_compute_dtype = torch.bfloat16
+    )
 
-    model = AutoModelForCausalLM.from_pretrained(model_name, use_cache = False, device_map = "cuda:0", dtype = torch.bfloat16)
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast = True)
+    config = PeftConfig.from_pretrained(args.adapter_name)
+    model = AutoModelForCausalLM.from_pretrained(
+        config.base_model_name_or_path,
+        quantization_config = bnb_config,
+        use_cache = True,
+        dtype = torch.bfloat16,
+        device_map = "cuda:0"
+    )
+
+    model = PeftModel.from_pretrained(model, args.adapter_name)
+    tokenizer = AutoTokenizer.from_pretrained(args.adapter_name, use_fast = True)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token_id = tokenizer.eos_token_id
     tokenizer.padding_side = "left"

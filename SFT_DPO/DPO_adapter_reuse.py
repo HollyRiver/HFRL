@@ -20,7 +20,7 @@ import numpy as np
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
-wandb.init(project = "RLHF")
+wandb.init(project = "huggingface")
 
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장

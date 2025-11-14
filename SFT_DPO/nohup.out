@@ -1,0 +1,20 @@
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.04s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:09,  4.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.71s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  2.97s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.54s/it]
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/peft/mapping_func.py:73: UserWarning: You are trying to modify a model with PEFT for a second time. If you want to reload the model with a different config, make sure to call `.unload()` before.
+  warnings.warn(
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:196: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+wandb: Tracking run with wandb version 0.22.2
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /root/HFRL/SFT_DPO/wandb/offline-run-20251114_164546-cta8jhcf
+wandb: Detected [huggingface_hub.inference, openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+  0%|          | 0/6854 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
+/root/miniconda3/envs/LLM/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+  0%|          | 1/6854 [00:04<9:03:13,  4.76s/it]  0%|          | 2/6854 [00:07<6:44:37,  3.54s/it]  0%|          | 3/6854 [00:10<6:17:33,  3.31s/it]  0%|          | 4/6854 [00:13<6:08:10,  3.22s/it]  0%|          | 5/6854 [00:16<5:50:24,  3.07s/it]  0%|          | 6/6854 [00:19<5:47:37,  3.05s/it]  0%|          | 7/6854 [00:22<5:50:09,  3.07s/it]  0%|          | 8/6854 [00:26<6:39:00,  3.50s/it]  0%|          | 9/6854 [00:30<6:52:38,  3.62s/it]  0%|          | 10/6854 [00:33<6:32:15,  3.44s/it]  0%|          | 11/6854 [00:38<7:00:53,  3.69s/it]  0%|          | 12/6854 [00:42<7:14:28,  3.81s/it]  0%|          | 13/6854 [00:45<7:00:28,  3.69s/it]  0%|          | 14/6854 [00:48<6:51:23,  3.61s/it]  0%|          | 15/6854 [00:51<6:27:12,  3.40s/it]  0%|          | 16/6854 [00:54<6:10:06,  3.25s/it]  0%|          | 17/6854 [00:58<6:16:08,  3.30s/it]
