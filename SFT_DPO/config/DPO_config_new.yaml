@@ -33,5 +33,5 @@ remove_unused_columns: false                          ##
 beta: 0.1                                             ## DPO loss 온도. 적을수록 reference model을 무시
 # loss_type: "ipo"
 padding_free: true                                    ## 패딩없이 텍스트를 하나의 시퀀스로  flash attention 사용 필수
-model_adapter_name: "train"
+model_adapter_name: "policy"
 ref_adapter_name: "reference"

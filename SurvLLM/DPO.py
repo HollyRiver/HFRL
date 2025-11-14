@@ -130,7 +130,7 @@ def main(script_args, training_args):
         model,
         script_args.adapter_name,
         is_trainable=True,
-        adapter_name="train",
+        adapter_name="policy",
     )
 
     model.load_adapter(script_args.adapter_name, adapter_name = "reference")
