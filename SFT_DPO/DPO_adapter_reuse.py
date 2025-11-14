@@ -1,5 +1,5 @@
 ## ↓ run
-## nohup python DPO.py --config config/DPO_config.yaml & > dpo_config.out
+## nohup python DPO_adapter_reuse.py --config config/DPO_config_new.yaml & > dpo_config.out
 
 ## imports
 from datasets import load_dataset
@@ -130,7 +130,7 @@ def main(script_args, training_args):
         model,
         script_args.adapter_name,
         is_trainable=True,
-        adapter_name="train",
+        adapter_name="policy",
     )
 
     model.load_adapter(script_args.adapter_name, adapter_name = "reference")
