@@ -4,21 +4,23 @@
 ## imports
 from datasets import load_dataset
 from trl import DPOConfig, DPOTrainer, TrlParser
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, set_seed
 import torch
 
-from peft import LoraConfig
+from peft import PeftModel
 
-from dataclasses import dataclass, field, fields
+from dataclasses import dataclass, field
 import argparse
 
 import os
 import json
+import wandb
 import random
 import numpy as np
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+wandb.init(project = "huggingface")
 
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
@@ -26,15 +28,7 @@ os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --inc
 class ScriptArguments:
     dataset_path: str = field(default = None, metadata = {"help": "dataset directory"})
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
-
-@dataclass
-class LoraArguments:
-    r: int = field(default = 64, metadata = {"help": "update matrix의 rank. 작을수록 많이 압축하여 품질 저하됨, 메모리 많이 할당됨"})
-    lora_alpha: int = field(default = 32, metadata = {"help": "∆Weight scaling factor. lora_alpha / r로 스케일링되며, 학습률 조정. 보통 1/2 수준으로 설정"})
-    lora_dropout: float = field(default = 0.05, metadata = {"help": "update matrics에서 dropout 적용 확률"})
-    bias: str = field(default = "none", metadata = {"help": "update matrix에 bias를 학습할 것인지 선택"})
-    task_type: str = field(default = "CAUSAL_LM", metadata = {"help": "학습할 모형이 무엇인지 지정"})
-    target_modules: list[str] = field(default = None, metadata = {"help": "학습에 반영할 모듈 설정"})
+    adapter_name: str = field(default = None, metadata = {"help": "SFT 완료된 어뎁터"})
 
 
 def timer(func):
@@ -78,7 +72,7 @@ def seeding(seed):
     os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"   ## oneDNN 옵션 해제. 수치 연산 순서 고정 (성능 저하, 속도 저하)
 
 @timer
-def main(script_args, training_args, lora_kwargs):
+def main(script_args, training_args):
     ## loading dataset
     train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_train_dataset.json"), split = "train")
     test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_test_dataset.json"), split = "train")
@@ -131,11 +125,18 @@ def main(script_args, training_args, lora_kwargs):
         dtype = torch.bfloat16                      ## 가중치 로드 데이터 타입. Llama-3.1-8B의 자료형으로 설정
     )
 
+    ## 어뎁터 부착
+    model = PeftModel.from_pretrained(
+        model,
+        script_args.adapter_name,
+        is_trainable=True,
+        adapter_name="policy",
+    )
+
+    model.load_adapter(script_args.adapter_name, adapter_name = "reference")
+
     if training_args.gradient_checkpointing:
         model.gradient_checkpointing_enable()
-
-    peft_config = LoraConfig(**lora_kwargs)
-
 
     trainer = DPOTrainer(
         model,
@@ -143,8 +144,7 @@ def main(script_args, training_args, lora_kwargs):
         args = training_args,
         train_dataset= train_ds,
         eval_dataset = test_ds,
-        processing_class = tokenizer,
-        peft_config = peft_config
+        processing_class = tokenizer
     )
 
     ## 학습이 중단된 경우 이어서 진행할 수 있도록 설정
@@ -157,22 +157,14 @@ def main(script_args, training_args, lora_kwargs):
 
 
 if __name__ == "__main__":
-    parser = TrlParser((ScriptArguments, DPOConfig, LoraArguments))         ## 따로 저장된 파라미터 파싱
-    script_args, training_args, lora_args = parser.parse_args_and_config()
-
-    ## Lora Config에 유효한 입력값만 받을 수 있도록 커스터마이징. 원래 TrlParser에는 LoraConfig를 넣지 못함
-    valid_keys = LoraConfig.__init__.__code__.co_varnames
-    lora_kwargs = {
-        f.name: getattr(lora_args, f.name)
-        for f in fields(lora_args)
-        if f.name in valid_keys
-    }
+    parser = TrlParser((ScriptArguments, DPOConfig))         ## 따로 저장된 파라미터 파싱
+    script_args, training_args = parser.parse_args_and_config()
 
     if training_args.gradient_checkpointing:
         training_args.gradient_checkpointing_kwargs = {"use_reentrant": True}
 
     # seeding(training_args.seed)
 
-    main(script_args, training_args, lora_kwargs)
+    main(script_args, training_args)
 
     print("========== 학습 종료 ==========")
