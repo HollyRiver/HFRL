@@ -3,6 +3,23 @@
 * [meta-llama/Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) 모델을 튜닝하여 장문의 텍스트에서 중요한 단서를 1차적으로 추출
 * [QLoRA](https://arxiv.org/abs/2305.14314), [Load to adapter twice](https://huggingface.co/docs/trl/dpo_trainer#using-option-3---load-the-adapter-twice) 사용
 
+
+## Setup
+* 20GB의 VRAM 및 48GB의 CPU RAM (권장)
+* 구축된 아나콘다 환경 (cuda 12.8, Ubuntu 20.04에서 구동시켰으나, Ubuntu 22.04 이상을 권장합니다. Ubuntu 20.04 버전에서는 flash-attention 실행을 위한 다운그레이드 및 GLibc 업데이트가 필요합니다.)
+* Dependencies installation:
+```
+pip3 install torch torchvision
+pip install transformers bitsandbytes datasets sentencepiece accelerate trl peft flash-attn wandb openai pqdm
+```
+
+or
+
+```
+conda env create -f LLM.ymal
+conda activate LLM
+```
+
 ## SFT 실험
 
 ### 1차 실험 결과 (1e-4)
