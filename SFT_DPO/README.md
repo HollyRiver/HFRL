@@ -26,3 +26,7 @@ nohup python SFT.py --config config/SFT_config.yaml &
 # dpo traning example
 nohup python DPO.py --config config/DPO_config.yaml &
 ```
+
+## 기타
+
+* legacy가 붙은 파일은 잘못된 파일입니다. 일부 코드만 수정하면 일반 LoRA에서 활용될 여지가 있어 남겨두나, 수정 없이 절대로 사용하지 말아주세요. 어뎁터 로드 과정과 훈련 모듈 설정 자체가 잘못되었습니다.
