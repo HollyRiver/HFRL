@@ -1,3 +1,5 @@
+# SFT 실험
+
 ## 1차 실험 결과 (1e-4)
 
 * test dataset의 예측된 값들은 마지막 수치를 나이브하게 가져오고 있다는 것을 확인. 과적합될수록 해당 경향은 강해짐
@@ -28,3 +30,10 @@
 * text 데이터에 체온 화씨/섭씨 혼용되고 있음 -> 섭씨 온도 출력: 34.0°C
 * 적어도 수치값에 한정해서는 없는 값을 지어내서 제시하지는 않는듯
 * Glucose를 많이 틀림
+
+# DPO 실험
+
+## 기타 (https://medium.com/@bnjmn_marie/dont-merge-your-lora-adapter-into-a-4-bit-llm-65b6da287997)
+
+* SFT를 QLoRA로 학습 후 merge할 경우, 결과가 뭉개짐. 아직 QLoRA merge 방법은 없음.
+* 병합 이후 다시 양자화하여 DPO adpater를 부착, 학습할 경우 SFT 모델이 왜곡됨. 따라서 모델을 병합하지 않고, SFT adapter를 DPO로 튜닝하는 것이 가장 효과적인 방법임.

@@ -1,0 +1,4 @@
+**/results
+# *.json
+# **/data
+**/inference
