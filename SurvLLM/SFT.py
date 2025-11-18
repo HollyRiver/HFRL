@@ -143,7 +143,7 @@ def main(script_args, training_args, lora_kwargs):
         script_args.model_name,
         device_map = "cuda:0",
         use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
-        low_cpu_mem_usage = True,                   ## CPU RAM 사용량 적게 사용...
+        low_cpu_mem_usage = False,
         attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.
         quantization_config = bnb_config,
         dtype = torch.bfloat16                      ## 가중치 로드 데이터 타입. Llama-3.1-8B의 자료형으로 설정
@@ -174,6 +174,10 @@ def main(script_args, training_args, lora_kwargs):
 
     inference_callback = utils.SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
     trainer.add_callback(inference_callback)
+
+    print("수동 디버깅...")
+    print(trainer.model.hf_device_map)
+    print(trainer.model.dtype)
 
     trainer.train(resume_from_checkpoint = checkpoint)
     trainer.save_model()

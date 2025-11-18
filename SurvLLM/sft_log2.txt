@@ -1,0 +1,703 @@
+wandb: Tracking run with wandb version 0.23.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20251117_140152-5zoidonz
+training dataset size: 90
+test dataset size: 10
+======== Log a few random samples from the processed training set ========
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___               Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Penicillins
+ 
+Attending: ___.
+ 
+Chief Complaint:
+chest pain
+ 
+Major Surgical or Invasive Procedure:
+Cardiac catheterization ___
+ 
+History of Present Illness:
+___ y/o M hx HIV, HTN, HL, history of MI treated medically in 
+past, presents with sudden onset chest pain and syncope. 
+
+Patient reports he was at the bar ___ night). He had ~6 ___ 
+lights. He went to the restroom and said that he could not 
+urinate. Then he acutely developed diaphoresis with severe pain 
+in the left side of his chest that radiated down to his abdomen. 
+He felt very hot, nauseous, and passed out.  He states it felt 
+like being stabbed. He did not remember if goes to back or arms. 
+He thinks people witnessed event but unsure how long he lost 
+consciousness. When he awoke, he had a contusion over his right 
+clavicle and right forehead, consistent with traumatic injury 
+during syncopal event. Reports confusion when he woke up, no 
+incontinence of stool. He noticed his jeans were wet but unsure 
+if he was incontinent. He reports history of MI, medically 
+managed (prior in ___ ___ but no stents or CABG.
+
+-In the ED initial vitals were: 97.7 68 109/66 24 100% RA 
+-Labs/studies notable for: Na 132->139, K 3.0->4.9, bicarb 15, 
+trop neg x2, lactate 5.2 that improved to 2.3, lipase 36, LFTs 
+neg, 
+-Utox was negative. Serum tox 108 but otherwise neg. 
+-Patient was given: 40 meq KCl with 1L D5NS, efavirenz 600 mg, 
+Truvada 1 tab, atorva 20 mg, atenolol 50 mg, 1L NS bolus
+-CTA chest/abd/pelvis showed no acute aortic pathology and 
+negative for dissection. No PE. Minimal edema. CXR showed low 
+lung volumes 
+-He underwent exercise stress, where he exercised for 9.5 
+minutes ___ protocol (estimated peak MET 10.5). He had 
+left-sided ___ chest discomfort at 3 minutes of recovery that 
+resolved after 2 minutes. He was noted at that time to have 
+0.5-1 mm horizontal/downsloping STD in V4-V6. Given these 
+findings, cardiolgoy recommended admission to ___.
+-Vitals on transfer:  98.5 64 126/61 15 98% RA 
+
+On the floor the patient did not have any complaints of chest 
+pressure or pain. 
+
+REVIEW OF SYSTEMS:
+Positive per HPI.
+
+Cardiac review of systems is notable for absence of chest pain, 
+dyspnea on exertion, paroxysmal nocturnal dyspnea, orthopnea, 
+ankle edema, palpitations, syncope, or presyncope.
+
+On further review of systems, denies fevers or chills. Denies 
+any prior history of stroke, TIA, deep venous thrombosis, 
+pulmonary embolism, bleeding at the time of surgery, myalgias, 
+joint pains, cough, hemoptysis, black stools or red stools. 
+Denies exertional buttock or calf pain. All of the other review 
+of systems were negative.
+
+ 
+Past Medical History:
+1. CARDIAC RISK FACTORS
+No Diabetes
++ Hypertension
++ Dyslipidemia
+2. OTHER PAST MEDICAL HISTORY
+- HIV
+ 
+Social History:
+___
+Family History:
+Father passed away at age ___ of a massive heart attack. 
+ 
+Physical Exam:
+ADMISSION EXAM
+=================
+VS: 98.2 104/46 72 16 99% RA
+GENERAL: Well developed, well nourished female in NAD. Oriented 
+x3. Mood, affect appropriate.
+HEENT: Normocephalic atraumatic. Sclera anicteric. PERRL. EOMI. 
+Conjunctiva were pink. No pallor or cyanosis of the oral mucosa. 
+
+NECK: Supple. JVP not elevated.
+CARDIAC: Regular rate and rhythm. Normal S1, S2. No murmurs, 
+rubs, or gallops. No thrills or lifts.
+LUNGS: No chest wall deformities or tenderness. Respiration is 
+unlabored with no accessory muscle use. No crackles, wheezes or 
+rhonchi.
+ABDOMEN: Soft, non-tender, non-distended. No hepatomegaly. No 
+splenomegaly.
+EXTREMITIES: Warm, well perfused. No clubbing, cyanosis, or 
+peripheral edema.
+SKIN: No significant skin lesions or rashes.
+PULSES: Distal pulses palpable and symmetric.
+NEURO: CNII-XII intact, no deficits, moves all extremities well 
+
+DISCHARGE EXAM
+=============
+Death exam performed:
+Pupils 6mm, fixed, non-reactive
+No carotid flow auscultated
+No breath sounds auscultated
+ 
+Pertinent Results:
+ADMISSION LABS
+================
+___ 01:35AM BLOOD WBC-9.4# RBC-4.12* Hgb-12.7* Hct-37.2* 
+MCV-90 MCH-30.8 MCHC-34.1 RDW-13.7 RDWSD-44.6 Plt ___
+___ 01:35AM BLOOD Neuts-59.1 ___ Monos-9.1 Eos-1.3 
+Baso-1.2* Im ___ AbsNeut-5.57 AbsLymp-2.71 AbsMono-0.86* 
+AbsEos-0.12 AbsBaso-0.11*
+___ 01:35AM BLOOD Glucose-169* UreaN-16 Creat-0.9 Na-132* 
+K-3.0* Cl-98 HCO3-15* AnGap-22*
+___ 01:35AM BLOOD cTropnT-<0.01
+___ 06:30AM BLOOD cTropnT-<0.01
+___ 01:35AM BLOOD Lipase-36
+___ 01:35AM BLOOD Albumin-4.0 Calcium-8.4 Phos-2.4* Mg-2.1
+___ 07:30AM BLOOD calTIBC-280 Ferritn-107 TRF-215
+___ 01:35AM BLOOD ASA-NEG ___ Acetmnp-NEG 
+Bnzodzp-NEG Barbitr-NEG Tricycl-NEG
+___ 01:47AM BLOOD Lactate-5.2*
+
+INTERIM LABS
+=============
+___ 05:36AM BLOOD Lactate-2.3*
+___ 07:26AM BLOOD Lactate-1.4
+
+DISCHARGE LABS
+==============
+___ 09:53PM BLOOD Glucose-146* UreaN-5* Creat-0.8 Na-147* 
+K-3.7 Cl-123* HCO3-18* AnGap-10
+___ 09:53PM BLOOD Calcium-7.1* Phos-3.0 Mg-1.9
+___ 11:24AM BLOOD Osmolal-364*
+___ 06:24AM BLOOD WBC-9.4 RBC-3.37* Hgb-10.2* Hct-31.1* 
+MCV-92 MCH-30.3 MCHC-32.8 RDW-14.3 RDWSD-47.9* Plt Ct-24*
+
+MICROBIOLOGY
+==============
+___ 3:00 pm IMMUNOLOGY      Source: Venipuncture. 
+
+                            **FINAL REPORT ___
+
+   HIV-1 Viral Load/Ultrasensitive (Final ___: 
+      HIV-1 RNA is not detected. 
+      Performed using the Cobas Ampliprep / Cobas Taqman HIV-1 
+Test v2.0. 
+      Detection Range: ___ copies/mL. 
+      This test is approved for monitoring HIV-1 viral load in 
+known
+      HIV-positive patients. It is not approved for diagnosis of 
+acute HIV
+      infection. 
+      In symptomatic acute HIV infection (acute retroviral 
+syndrome), the
+      viral load is usually very high (>>1000 copies/mL). If 
+acute HIV
+      infection is clinically suspected and there is a 
+detectable but low
+      viral load, please contact the laboratory for 
+interpretation. 
+      It is recommended that any NEW positive HIV-1 viral load 
+result, in
+      the absence of positive serology, be confirmed by 
+submitting a new
+      sample FOR HIV-1 PCR, in addition to serological testing. 
+
+IMAGING/STUDIES
+===============
+CTA ___ chest/abd/pelvis
+IMPRESSION: 
+ 
+1. No acute aortic pathology. Specifically, there is no aortic 
+aneurysm or dissection. 
+2. No acute pulmonary embolus. 
+3. Minimal pulmonary edema and atelectasis. 
+4. Sigmoid diverticulosis. 
+
+CXR ___. Low lung volumes and minimal bronchovascular crowding and 
+edema. 
+2. No focal pneumonia or pneumothorax. 
+
+STRESS ___
+INTERPRETATION: This ___ year old man with a history of NSTEMI 
+___, 
+HIV, HTN and HL was referred to the lab from the ER following 
+negative serial cardiac markers for evaluation of chest 
+discomfort and syncope. 
+The patient exercised for 9.5 minutes of ___ protocol and 
+stopped 
+for fatigue. The estimated peak MET capacity was 10.5 which 
+represents an average functional capacity for his age. No arm, 
+neck, back or chest discomfort was reported by the patient 
+during exercise. At 3 minutes of recovery, he noted a left sided 
+___ chest discomfort that resolved with rest by 5 minutes of 
+recovery. No ST segment changes were observed during exercise. 
+At 3 minutes of recovery, there was 0.5-1 mm 
+horizontal/downsloping STD in V4-6. This resolved by 7 minutes 
+of recovery. The rhythm was sinus with 1 apb. Appropriate 
+hemodynamic response to exercise and recovery on beta blocker 
+therapy. 
+
+CARDIAC CATH ___
+Coronary Anatomy
+Dominance: Left
+* Left Main Coronary Artery
+The LMCA is normal.
+* Left Anterior Descending
+The LAD is normal.
+* Circumflex
+The Circumflex is dominant.
+The ___ Marginal has a 50% stenosis with a benign FFR of 0.91.
+The left PDA has a 90% stenosis.
+* Right Coronary Artery
+The RCA is nondominant and normal.
+
+Impressions:
+Successful PCI of PDA branch of dominant Cx with 2.25 by 12 
+Promus with good result.
+Benign FFR of OM1.
+
+Recommendations
+ASA and plavix.
+Aggrastat for 4 hrs.
+
+TTE ___
+The left atrium is normal in size. No atrial septal defect is 
+seen by 2D or color Doppler. The estimated right atrial pressure 
+is ___ mmHg. Normal left ventricular wall thickness, cavity 
+size, and regional/global systolic function (biplane LVEF = 60 
+%). The estimated cardiac index is normal (>=2.5L/min/m2). There 
+is no ventricular septal defect. Right ventricular chamber size 
+and free wall motion are normal. The aortic root is mildly 
+dilated at the sinus level. The aortic valve leaflets (3) appear 
+structurally normal with good leaflet excursion and no aortic 
+stenosis or aortic regurgitation. The mitral valve appears 
+structurally normal with trivial mitral regurgitation. There is 
+no mitral valve prolapse. The estimated pulmonary artery 
+systolic pressure is normal. There is no pericardial effusion. 
+
+IMPRESSION: Normal biventricular cavity sizes with preserved 
+regional and global biventricular systolic function. No 
+pericardial effusion identified. Mildly dilated aortic sinus. 
+
+CLINICAL IMPLICATIONS: 
+Based on ___ AHA endocarditis prophylaxis recommendations, the 
+echo findings indicate prophylaxis is NOT recommended. Clinical 
+decisions regarding the need for prophylaxis should be based on 
+clinical and echocardiographic data.
+
+CTA HEAD/NECK ___. 3.6 x 4.8 cm mixed density left frontal intraparenchymal 
+hemorrhage with substantial mass effect resulting in partial 
+effacement of the left lateral ventricle and third ventricles 
+and rightward 1 cm shift of normally midline structures.  There 
+is effacement of the bilateral perimesencephalic cisterns, 
+concern for herniation. 
+2. The right ventricle demonstrates enlarged temporal horn, 
+concerning for 
+entrapment and developing hydrocephalus. 
+3. There is extension of hemorrhage into the left lateral 
+ventricle with 
+hyperdense blood also seen within the fourth ventricle and the 
+quadrigeminal plate cistern. 
+4. A hyperdense subdural hematoma along the left lateral 
+convexity measuring approximately 8 mm in maximum dimension from 
+the inner table. 
+5. Head CTA is notable for complete lack of visualization of the 
+P3 branches of the left posterior cerebral artery and partial 
+effacement of the A2 branch of the left anterior cerebral artery 
+from extensive mass effect and midline shift. 
+6. A 1-2 mm outpouching arising from the medial aspect of the 
+left cavernous internal carotid artery may represent an 
+infundibulum of a branch vessel however a tiny aneurysm cannot 
+be excluded. 
+7. Unremarkable neck CTA. 
+
+ 
+Brief Hospital Course:
+___ y/o M hx HIV, HTN, HL, NSTEMI ___ treated medically in past, 
+who was admitted with sudden onset chest pain and syncope s/p 
+positive stress test ___. Underwent cardiac catheterization 
+on ___ with DES to PDA. Subsequently had a syncopal episode with 
+nausea/diaphoresis on ___ with sinus pause (5 seconds, 11 
+seconds) after returning from cardiac catheterization and was 
+transferred to the CCU. Sinus pause thought to be related to AV 
+nodal dysfunction ___ catheterization vs. vasovagal episode. EKG 
+and R sided EKG were performed, which did not show any evidence 
+of ischemia. Pt was started on metoprolol on ___ (6.25 q 6 
+hours) and received one dose on the morning of the ___. Of note, 
+post-cath labs revealed platelet count of 5. 
+
+Shortly after arrival to CCU, patient was noted to have 
+decreased alertness and difficulty following commands. He had 
+received 100 mcg fentanyl during case and was originally thought 
+his AMS may be due to an adverse effect of fentanyl, however 
+concern for bleeding secondary to severe thrombocytopenia 
+prompted further evaluation. A stroke code was called. Neurology 
+evaluated the patient and agreed that a stat head noncontrast CT 
+was necessary. CT scan revealed intraparenchymal hemorrhage of 
+frontal lobe (left), blood into lateral and left fourth 
+ventricle, subdural hemorrhage over entire left cerebral 
+convexity and along the falx, and 1.5 cm of R ward shift and 
+effacement of the basal cisterns.
+
+Neurosurgery saw the patient immediately and determined that 
+intervention would be futile. They recommended platelet 
+transfusion and medications to control intracranial pressure 
+until the family could be present at the bedside. Patient's 
+family in ___ was notified of the situation and made travel 
+arrangements. In the interim, patient developed central Diabetes 
+Insipidus with hypernatremia, and further electrolyte 
+abnormalities stemming from increased urine output. This was 
+treated with ddAVP, insulin, and free water, along with 
+electrolyte repletion. Electrolyte abnormalities were resolved 
+by the time the family arrived. No definitive cause of the 
+incident was determined. The family determined the patient would 
+be made CMO. He was extubated and expired peacefully within 
+minutes.
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. ATRIPLA (efavirenz-emtricitabin-tenofov) ___ mg oral 
+DAILY 
+2. Atorvastatin 20 mg PO QPM 
+3. Atenolol 50 mg PO DAILY 
+
+ 
+Discharge Medications:
+None
+ 
+Discharge Disposition:
+Expired
+ 
+Discharge Diagnosis:
+intracerebral hemorrhage
+ 
+Discharge Condition:
+Expired
+ 
+Discharge Instructions:
+None
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A male patient presented with chest pain; on physical examination, BP 104/46, HR 72, RR 16, and Temp 98.2; admission labs showed WBC 9.4, RBC 4.12, Hgb 12.7, Hct 37.2, Plt NA, MCV 90, MCH 30.8, MCHC 34.1, RDW 13.7, and Glucose 169; the most diagnostically relevant finding was a large left frontal intraparenchymal hemorrhage with intraventricular and subdural extension on head CT scan.<|eot_id|>
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___                      Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Optiray 350 / gabapentin
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Hemoptysis
+ 
+Major Surgical or Invasive Procedure:
+___: Bronchoscopy 
+
+ 
+History of Present Illness:
+Ms ___ is a ___ yo F with COPD on oxygen and multifocal 
+adenocarcinoma of the lung followed conservatively with imaging 
+who is transferred from OSH with dyspnea and new hemopysis.  
+ 
+Patient reports several weeks of increasing congestion and 
+headaches. On ___ she noticed increasing dyspnea on exertion 
+and at rest. The next day, she was started on amoxicillin by her 
+PCP for possible sinus infection. She developed worsening cough 
+and by ___ she noted bloody streaks in sputum, and then some 
+small clots. On ___ developed worsening hemoptysis and 
+presented to OSH ED. There, she was hemodynamically stable with 
+HCT 37 on presentation. Non-contrast CT of the lungs was 
+perfromed which showed known right nodule and multiple 
+progressive left sided nodules. She was admitted to the floor 
+where she had two episodes of small hemoptysis, which has since 
+stopped. She was given a dose of 60mg prednisone for presumed 
+COPD exacerbation. She is being transferred to ___ for further 
+management.  
+ 
+On arrival to the floor, patient denies recent fevers or chills. 
+She does note chronic night sweats, which are unchanged. She 
+also reports chronic pleuritic chest pain, which has worsened 
+over the last several months. She continues to have mild cough 
+without hemoptysis and dyspnea at rest. She has baseline mild 
+orthopnea and requires 2.5L O2 at home. She reports a good 
+appetitis and denies nausea, vomiting or diarrhea. Also denies 
+dysuria, new joint pains, or new rashes. ROS is otherwise 
+unremarkable.  
+
+ 
+Past Medical History:
+PAST ONCOLOGIC HISTORY:  
+--___ underwent left upper lobectomy for stage IB non-small 
+cell lung cancer at ___. She was started on 
+selenium trial at that time for prevention of future lung 
+cancers.  
+--___, a follow-up CT scan demonstrated a new 0.8 cm 
+nodule in the right upper lobe.  
+--___, Ms. ___ underwent a wedge resection for this 
+lesion. She was also treated with brachytherapy at that time. 
+This lesion was consistent with non-small cell lung cancer as 
+well. Unfortunately, we do not have the slides or path reports 
+for these lesions.  
+-- ___ CT chest showed a 1.5 cm right upper lobe lung 
+lesion in the anterior wall of a longstanding cystic lesion. It 
+is unclear from the notes whether or not this nodule was a 
+remnant of the lesion found in ___ or if it was a different 
+focus of disease. --___ PET-CT demonstrated this 
+nodule, which had an SUV of 2.0. There was no mediastinal or 
+hilar adenopathy. Ms. ___ was evaluated by thoracic surgery at 
+___, who felt that due to her poor pulmonary function, she was 
+too risky a candidate for surgical intervention.  
+--___ Ms. ___ underwent CT-guided biopsy of the right 
+upper lobe lesion, which showed well-differentiated 
+adenocarcinoma. Tumor cells were positive for TTF-1 and CK7 and 
+focally positive for CK20. Ms. ___ then underwent RFA by Dr. 
+___ tolerated this fairly well.  
+--___: A PET-CT performed on ___ showed a 3.8 x 
+2.0 cm mass in the peripheral right upper lobe with an SUV of 
+11.5 and as such, the decision was made to treat Ms. ___ with 
+CyberKnife ___ for salvage of local persistence of the right 
+upper lobe lesion. Ms. ___ finished CyberKnife therapy on 
+___, and continued to be followed with serial CT 
+scans.  
+--___: A CT scan of the chest, and another one on ___, showed 3 slowly growing left lung lesions, likely foci of 
+metastases.  
+-- ___: CT showed that these lesions were continuing to grow 
+in size, now measuring: 9 x 9 mm, 8 x 9 mm and 10 x 8 mm (all 
+about 4mm in ___.  
+-- ___: A CT scan of the chest showed no mediastinal or 
+hilar adenopathy; the right upper lobe lung mass, previously 
+treated with RFA and then CyberKnife ___ showed an increase in 
+size to 5.3 x 2.9 cm compared with 2.2 x 1.6 cm on the prior 
+scan from ___ left lower lobe nodules had all 
+increased in size to 1.2 x 1.1 cm, 1.4 x 1.2 cm, and 1.5 x 1.1 
+cm compared with 0.9 x 0.9 cm, 1.1 x 0.8 cm, and 1.0 x 1.0 cm 
+respectively.  
+-- ___: CT scan of the chest, without contrast, showed no 
+mediastinal or hilar adenopathy; there was mild increase in the 
+right upper lobe lung lesion, which had previously been treated 
+with CyberKnife, now measuring 3.5 x 2.0 cm compared with ___ three solid nodules clustered in the left lower lobe 
+of the lung had all increased in size, with a reference lesion 
+measuring 1.6 x 1.5 cm compared with 1.5 x 1.1 cm on the prior 
+scan; there were no new lesions.  
+-- ___: followup CT scan of the chest without contrast, 
+which was compared to a prior examination from ___ and showed no hilar or mediastinal adenopathy; there was 
+slight increase in soft tissue density in the region of the 
+fiducial marker in the right upper lobe of unclear significance; 
+three solid lobulated nodules in the left lower lobe, the 
+largest of which measured 2.7 x 1.9 cm, previously measured 1.6 
+x 1.5 cm; all three lesions showed interval growth and are 
+becoming more confluent; there were no new lesions; there was 
+evidence of severe emphysema.
+  
+PAST MEDICAL HISTORY:  
+- CHRONIC OBSTRUCTIVE PULMONARY DISEASE (?FEV1, but likely 
+severe)  
+- HYPOTHYROIDISM  
+- HYPERLIPIDEMIA  
+- PSORIASIS  
+- DEPRESSION (h/o suicide attempt at age ___  
+- OSTEOPENIA  
+
+ 
+Social History:
+___
+Family History:
+Son: ESOPHAGEAL CANCER  
+Father: ___, COLON CANCER  
+
+ 
+Physical Exam:
+ADMISSION EXAM:  
+VS: 98.4 124/60 80 20 100%___  
+GENERAL: Pleasant, well appearing woman in NAD  
+HEENT: NC/AT, EOMI, PERRL, dry MM  
+CARDIAC: RRR, normal S1 & S2, without murmurs, S3 or S4  
+LUNG: Speaking quickly in short sentences. Moderate air movement 
+without signficant wheeze or adventitial sound.  
+ABD: +BS, soft, NT/ND, no rebound or guarding  
+EXT: No lower extremity pitting edema  
+PULSES: 2+DP pulses bilaterally  
+NEURO: CN II-XII intact AAOx3 FTN and HTS intact  
+SKIN: Warm and dry, without rashes  
+
+DISCHARGE EXAM:
+VS: 98.1 137/70 80 20 100% on 3L NC
+GENERAL: Pleasant, well appearing woman in NAD  
+HEENT: NC/AT, EOMI, PERRL, dry MM  
+CARDIAC: RRR, normal S1 & S2, without murmurs, S3 or S4  
+LUNG: Speaking quickly in short sentences. Moderate air movement 
+without signficant wheeze or adventitial sound.  
+ABD: +BS, soft, NT/ND, no rebound or guarding  
+EXT: No lower extremity pitting edema  
+PULSES: 2+DP pulses bilaterally  
+NEURO: CN II-XII intact AAOx3 FTN and HTS intact  
+SKIN: Warm and dry, without rashes  
+
+ 
+Pertinent Results:
+___ 09:00PM   ___ PTT-27.6 ___
+___ 09:00PM   PLT COUNT-203
+___ 09:00PM   NEUTS-92.0* LYMPHS-5.0* MONOS-2.6 EOS-0.4 
+BASOS-0
+___ 09:00PM   WBC-13.8*# RBC-3.85* HGB-11.7* HCT-34.4* 
+MCV-89 MCH-30.2 MCHC-33.9 RDW-14.1
+___ 09:00PM   CALCIUM-9.6 PHOSPHATE-2.9 MAGNESIUM-2.1
+___ 09:00PM   cTropnT-<0.01
+___ 09:00PM   ALT(SGPT)-12 AST(SGOT)-11 ALK PHOS-75 TOT 
+BILI-0.2
+___ 09:00PM   estGFR-Using this
+___ 09:00PM   GLUCOSE-144* UREA N-21* CREAT-0.6 SODIUM-141 
+POTASSIUM-4.2 CHLORIDE-102 TOTAL CO2-31 ANION GAP-12
+
+___HEST W/O CONTRAST  
+Continued interval progression of malignancy: three growing left 
+lower lobe pulmonary nodules and mild increase in peripheral 
+bulk of the right upper lobe lung mass. No new lesions 
+identified.  
+
+___ Imaging BONE SCAN  
+No definite evidence of metastatic disease.  
+
+___hest without contrast  
+"Enlarging pulmonary densities bilaterally as detailed, one area 
+on the right and 4 areas on the left, consistent with worsening 
+neoplasm"  
+
+ 
+Brief Hospital Course:
+Ms ___ is a ___ yo F with COPD on oxygen and multifocal 
+adenocarcinoma of the lung followed conservatively with imaging 
+who is transferred from OSH with dyspnea and new hemopysis.  
+ 
+ACUTE ISSUES:  
+# Hemoptysis: Differential diagnosis includes infection vs 
+bleeding from tumor mass vs PE. Favor tumor given lack of clear 
+infectious symptoms and no clear evidence of DVT on exam. In 
+comparison with her prior scans, it seems that there has been 
+interval worsening of her tumor burden. The interventional 
+pulmonary service was consulted and a bronchoscopy was performed 
+on ___ for possible coagulation of bleeding. Findings included 2 
+small telangiectasias which were coagulated and no large source 
+of bleeding that could be identified. She was treated for 
+possible community acquired pneumonia with ceftriaxone/azithro 
+as her scans are difficult to to evaluate for infection given 
+multifocal malignancy. She never had an elevated WBC count or 
+fevers while hospitalized but in light of her worsening dyspnea 
+on exertion and her hemoptysis she will continue to be covered 
+with levofloxacin as an outpatient to complete a course of 
+pneumonia with the last day of antibiotics being ___. She was 
+encouraged to return to ___ promptly if she has any further 
+episodes of hemoptysis.
+
+# Dyspnea: Multiple possible etiologies: could consider 
+worsening tumor burden +/- PNA, pneumonitis from hemorrhage, 
+COPD exacerbation, PE, or cardiac cause. Favor tumor burden with 
+possible pneumonitis. Notably, is on chronic prednisone without 
+PCP prophylaxis so bactrim was initiated while admitted and 
+should be continued as an outpatient. There was low concern for 
+cardiac etiolgoy of her dyspnea as she had negative troponins on 
+admission and had no events on telemetry. Her home COPD regimen 
+of advair, prednisone, tiotroprium, and albuterol nebs PRN was 
+continued. 
+
+# Lung Cancer-It seems that her tumor burden is increasing which 
+suggests she may require treatment in the future. She should 
+follow up with her primary oncologist to discuss her options if 
+she desires treatment.  
+
+# Hypothryoidism-Stable, home levothyroxine continued.  
+
+Transitional Issues:
+-The patient was treated with bactrim for PCP prophylaxis as she 
+has been taking chronic prednisone without PCP ___. She 
+should continue this medication as long as she is receiving 
+prednisone.
+-Please ensure the patient is able to cope at home as she has 
+been more dyspneic recently and reports struggling to shower 
+without her oxygen. She may require some services at home 
+although she refuses help at this time.  
+
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Albuterol Inhaler ___ PUFF IH Q4H:PRN SOB 
+2. Calcium 500 With D (calcium carbonate-vitamin D3) 500 
+mg(1,250mg) -400 unit oral BID 
+3. Fluticasone-Salmeterol Diskus (250/50)  2 INH IH BID 
+4. Levothyroxine Sodium 100 mcg PO DAILY 
+5. Metoprolol Tartrate 25 mg PO BID 
+6. PredniSONE 10 mg PO DAILY 
+7. Tiotropium Bromide 1 CAP IH DAILY 
+8. Verapamil SR 180 mg PO Q24H 
+9. Aspirin 81 mg PO DAILY 
+
+ 
+Discharge Medications:
+1. Fluticasone-Salmeterol Diskus (250/50)  2 INH IH BID 
+2. Levothyroxine Sodium 100 mcg PO DAILY 
+3. Metoprolol Tartrate 25 mg PO BID 
+4. PredniSONE 10 mg PO DAILY 
+5. Tiotropium Bromide 1 CAP IH DAILY 
+6. Verapamil SR 180 mg PO Q24H 
+7. Albuterol Inhaler ___ PUFF IH Q4H:PRN SOB 
+8. Aspirin 81 mg PO DAILY 
+9. Calcium 500 With D (calcium carbonate-vitamin D3) 500 
+mg(1,250mg) -400 unit oral BID 
+10. Levofloxacin 750 mg PO DAILY Duration: 4 Days 
+RX *levofloxacin [Levaquin] 750 mg 1 tablet(s) by mouth daily 
+Disp #*4 Tablet Refills:*0
+11. Sulfameth/Trimethoprim SS 1 TAB PO DAILY 
+RX *sulfamethoxazole-trimethoprim 400 mg-80 mg 1 tablet(s) by 
+mouth daily Disp #*30 Tablet Refills:*0
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+# Primary: Hemoptysis, Lung Cancer, Emphysema
+
+# Secondary: Non small cell lung cancer
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms ___, 
+
+You were transfered to ___ because you were coughing up blood. 
+This resolved on its own. There are two likely casues of this: 
+(1) infection, which we are treating with antibiotics and (2) 
+your cancer, for which you underwent a bronchoscopy. This didn't 
+show any active bleeding, though two small potential areas of 
+bleed were cauterized. As you are no longer coughing up blood, 
+we are sending you home with antibotics. Please continue taking 
+your levofloxacin as prescribed through ___. We also are 
+sending you home with a new antibiotic called bactrim because 
+you are on long term steroids and this antibiotic can prevent a 
+dangerous lung infection. You should take it daily while you are 
+on prednisone. If you cough up blood again, come to the hospital 
+immeadiately, so a bronchoscopy can be done with 24 hours of the 
+bleed. We wish you all the best in your continued care.
+
+Sincerely,
+
+Your ___ Team
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with hemoptysis; on physical examination, BP 124/60, HR 80, RR 20 and Temp 98.4; admission labs showed WBC 13.8, RBC 3.85, Hgb 11.7, Hct 34.4, Plt 203, MCV 89, MCH 30.2, MCHC 33.9, RDW 14.1, and Glucose 144; the most diagnostically relevant finding was two small endobronchial telangiectasias identified and coagulated on bronchoscopy.<|eot_id|>
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.94s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.27s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:09<00:03,  3.33s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.52s/it]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+======== Log a first sample from the processed training set ========
+masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
+수동 디버깅...
+{'': device(type='cuda', index=0)}
+torch.bfloat16
+  0%|          | 0/1440 [00:00<?, ?it/s]Casting fp32 inputs back to torch.bfloat16 for flash-attn compatibility.
+  0%|          | 1/1440 [00:07<2:57:58,  7.42s/it]  0%|          | 2/1440 [00:14<2:58:23,  7.44s/it]
