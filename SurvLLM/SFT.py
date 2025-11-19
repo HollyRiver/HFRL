@@ -29,6 +29,9 @@ import utils
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/latest-run
 wandb.init(project = "RLHF")
 
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.backends.cudnn.allow_tf32 = True
+
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
 @dataclass  ## 데이터 보관 클래스를 간단하게 구축 가능: __init__, __repr__, __eq()__등의 메소드 자동 생성
 class ScriptArguments:
@@ -143,7 +146,7 @@ def main(script_args, training_args, lora_kwargs):
         script_args.model_name,
         device_map = "cuda:0",
         use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
-        low_cpu_mem_usage = False,
+        low_cpu_mem_usage = True,
         attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.
         quantization_config = bnb_config,
         dtype = torch.bfloat16                      ## 가중치 로드 데이터 타입. Llama-3.1-8B의 자료형으로 설정
@@ -175,10 +178,6 @@ def main(script_args, training_args, lora_kwargs):
     inference_callback = utils.SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
     trainer.add_callback(inference_callback)
 
-    print("수동 디버깅...")
-    print(trainer.model.hf_device_map)
-    print(trainer.model.dtype)
-
     trainer.train(resume_from_checkpoint = checkpoint)
     trainer.save_model()
 
@@ -197,9 +196,6 @@ if __name__ == "__main__":
         for f in fields(lora_args)
         if f.name in valid_keys
     }
-
-    if training_args.gradient_checkpointing:
-        training_args.gradient_checkpointing_kwargs = {"use_reentrant": True}
 
     # seeding(training_args.seed)
 

@@ -1,25 +1,40 @@
-from datasets import load_dataset
+import pandas as pd
+import datasets
+from utils import remove_hangul
 
 ## 원시 데이터 로드
-ds = load_dataset("argilla/ultrafeedback-binarized-preferences-cleaned")
+df = pd.read_csv("data/gen_data_20251118_for_dpo.csv", encoding = "utf-8").\
+    loc[lambda _df : _df.tie == "N"]
+df_text = pd.read_csv("data/data_sample_20251111_01.csv", encoding = "cp949")
+system_prompt = df_text.system[0]
 
-ds_split = ds["train"].train_test_split(test_size = 0.5, seed = 42)
+ds = datasets.Dataset.from_pandas(df)
+columns_to_remove = [f for f in list(ds.features) if f not in ["subject_id", "chosen", "rejected"]]
 
-## For SFT
-sft_ds = ds_split["train"]
-sft_ds = sft_ds.rename_column("chosen", "messages").remove_columns([col for col in sft_ds.column_names if col != "chosen"]).train_test_split(test_size = 0.1, seed = 42)
-sft_ds["train"].to_json("./data/sft_train_dataset.json", orient = "records")
-sft_ds["test"].to_json("./data/sft_test_dataset.json", orient = "records")
-
-## Implicit Prompt -> Explicit Prompt
-dpo_ds = ds_split["test"].map(
+## Explicit format
+train_ds = ds.map(
     lambda sample: {
-        "prompt": [{"role": "user", "content": sample["prompt"]}],
-        "chosen": [content for content in sample["chosen"] if content["role"] == "assistant"],
-        "rejected": [content for content in sample["rejected"] if content["role"] == "assistant"]
+        "prompt": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": sample["text"]}
+            ],
+        "chosen": [{"role": "assistant", "content": sample["chosen"]}],
+        "rejected": [{"role": "assistant", "content": sample["rejected"]}]
     }
 )
 
-dpo_ds = dpo_ds.remove_columns([col for col in dpo_ds.column_names if col not in ["prompt", "chosen", "rejected"]]).train_test_split(test_size = 0.1, seed = 42)
-dpo_ds["train"].to_json("./data/dpo_train_dataset.json", orient = "records")
-dpo_ds["test"].to_json("./data/dpo_test_dataset.json", orient = "records")
+train_ds = train_ds.map(lambda sample: remove_hangul(sample, column = "prompt"))
+train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
+train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
+
+train_ds["train"].to_json("data/dpo_train_dataset.json", orient = "records")
+train_ds["test"].to_json("data/dpo_test_dataset.json", orient = "records")
+
+test_ds = train_ds["test"]
+
+lst = []
+
+for idx in range(test_ds.num_rows):
+    lst.append({"subject_id": test_ds["subject_id"][idx], "chosen": test_ds[idx]["chosen"][0]["content"], "rejected": test_ds[idx]["rejected"][0]["content"], "text": test_ds[idx]["prompt"][1]["content"]})
+
+pd.DataFrame(lst).to_excel("data/dpo_test_label.xlsx", index = False)

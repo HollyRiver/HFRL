@@ -1,4 +1,4 @@
-## nohup python sft_generate.py --adapter_name="results/lr5e-6/checkpoint-450" --output_name="gen_data.csv" --gen_nums=5 &
+## nohup python sft_generate.py --adapter_name="adapter/Zip-Llama-sft" --output_name="gen_data.csv" --gen_nums=1 --temp=0.4 &
 
 import os
 import argparse
@@ -15,6 +15,7 @@ if __name__ == "__main__":
     parser.add_argument("--adapter_name", type = str, default = None, help = "STF model path")
     parser.add_argument("--output_name", type = str, default = "for_dpo_5_gen.csv")
     parser.add_argument("--gen_nums", type = int, default = 5)
+    parser.add_argument("--temp", type = float, default = 0.7)
     args = parser.parse_args()
 
     bnb_config = BitsAndBytesConfig(
@@ -67,7 +68,7 @@ if __name__ == "__main__":
                     eos_token_id=terminators,
                     pad_token_id=tokenizer.eos_token_id,
                     do_sample=True,
-                    temperature=1.0,
+                    temperature=args.temp,
                     top_p = 0.95
                 )
 

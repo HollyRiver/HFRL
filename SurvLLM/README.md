@@ -1,4 +1,4 @@
-# 생존 분석을 위한 텍스트 언어 모델 튜닝 
+# 생존 분석을 위한 텍스트 언어 모델 튜닝
 
 * [meta-llama/Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) 모델을 튜닝하여 장문의 텍스트에서 중요한 단서를 1차적으로 추출
 * [QLoRA](https://arxiv.org/abs/2305.14314), [Load to adapter twice](https://huggingface.co/docs/trl/dpo_trainer#using-option-3---load-the-adapter-twice) 사용

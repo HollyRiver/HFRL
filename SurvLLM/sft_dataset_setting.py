@@ -1,24 +1,6 @@
 import pandas as pd
 import datasets
-import re
-
-def remove_hangul_from_messages(sample):
-    hangul_pattern = r"[\uAC00-\uD7A3]"
-
-    cleaned_messages = []
-    for message in sample["messages"]:
-        # content 값에서 한글을 제거
-        cleaned_content = re.sub(hangul_pattern, "", message["content"])
-        
-        # 정제된 content로 메시지 딕셔너리 재생성
-        cleaned_messages.append({
-            "role": message["role"],
-            "content": cleaned_content
-        })
-    
-    # 정제된 messages 리스트를 샘플에 다시 할당
-    sample["messages"] = cleaned_messages
-    return sample
+from utils import remove_hangul
 
 ## 원시 데이터 로드
 df_text = pd.read_csv("data/data_sample_20251111_01.csv", encoding = "cp949")
@@ -42,7 +24,7 @@ train_ds = ds.map(
 )
 
 train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
-train_ds = train_ds.map(remove_hangul_from_messages)
+train_ds = train_ds.map(lambda sample: remove_hangul(sample, column = "messages"))
 train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
 
 train_ds["train"].to_json("data/sft_train_dataset.json", orient = "records")

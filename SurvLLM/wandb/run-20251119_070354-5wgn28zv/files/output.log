@@ -1,0 +1,12 @@
+wandb: Detected [huggingface_hub.inference, openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.73s/it]
+You are using a per_device_train_batch_size of 1 with padding-free training. Using a batch size of 1 anihilate the benefits of padding-free training. Please consider increasing the batch size to at least 2.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+  0%|          | 0/3564 [00:00<?, ?it/s]/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+ 19%|█▉        | 692/3564 [27:46<1:42:23,  2.14s/it]
+{'loss': 0.6898, 'grad_norm': 8.71703815460205, 'learning_rate': 9.999873360091987e-08, 'rewards/chosen': -0.010038924403488636, 'rewards/rejected': -0.017574256286025047, 'rewards/accuracies': 0.5493273735046387, 'rewards/margins': 0.007535333279520273, 'logps/chosen': -39.48562240600586, 'logps/rejected': -45.200904846191406, 'logits/chosen': -1.0267997980117798, 'logits/rejected': -1.0310955047607422, 'epoch': 0.25}
+{'loss': 0.6755, 'grad_norm': 6.481503963470459, 'learning_rate': 9.894823780672369e-08, 'rewards/chosen': -0.0577835887670517, 'rewards/rejected': -0.09676610678434372, 'rewards/accuracies': 0.5852017998695374, 'rewards/margins': 0.03898252546787262, 'logps/chosen': -39.049720764160156, 'logps/rejected': -45.786346435546875, 'logits/chosen': -1.0365246534347534, 'logits/rejected': -1.0285835266113281, 'epoch': 0.5}
+{'loss': 0.6606, 'grad_norm': 7.823216438293457, 'learning_rate': 9.598270153744719e-08, 'rewards/chosen': -0.09790898859500885, 'rewards/rejected': -0.17482098937034607, 'rewards/accuracies': 0.652466356754303, 'rewards/margins': 0.07691202312707901, 'logps/chosen': -39.08365249633789, 'logps/rejected': -45.11280059814453, 'logits/chosen': -1.045897364616394, 'logits/rejected': -1.0430352687835693, 'epoch': 0.75}

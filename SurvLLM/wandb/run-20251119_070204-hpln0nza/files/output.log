@@ -1,0 +1,41 @@
+wandb: Detected [huggingface_hub.inference, openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+Loading checkpoint shards: 100%|██████████| 4/4 [00:09<00:00,  2.29s/it]
+You are using a per_device_train_batch_size of 1 with padding-free training. Using a batch size of 1 anihilate the benefits of padding-free training. Please consider increasing the batch size to at least 2.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+  0%|          | 0/3564 [00:00<?, ?it/s]/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/HFRL/SurvLLM/DPO.py", line 167, in <module>
+    main(script_args, training_args)
+  File "/root/HFRL/SurvLLM/DPO.py", line 45, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/HFRL/SurvLLM/DPO.py", line 157, in main
+    trainer.train(resume_from_checkpoint = checkpoint)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/transformers/trainer.py", line 2316, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/transformers/trainer.py", line 4020, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/trl/trainer/dpo_trainer.py", line 1826, in compute_loss
+    loss, metrics = self.get_batch_loss_metrics(model, inputs, train_eval="train")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/trl/trainer/dpo_trainer.py", line 1749, in get_batch_loss_metrics
+    ref_chosen_logps, ref_rejected_logps = self.compute_ref_log_probs(batch)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/trl/trainer/dpo_trainer.py", line 939, in compute_ref_log_probs
+    with self.null_ref_context():
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/trl/trainer/dpo_trainer.py", line 930, in null_ref_context
+    self.model.set_adapter(self.model_adapter_name or "default")
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/peft_model.py", line 1472, in set_adapter
+    raise ValueError(f"Adapter {adapter_name} not found.")
+ValueError: Adapter train not found.

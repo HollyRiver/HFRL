@@ -1,0 +1,49 @@
+wandb: Detected [huggingface_hub.inference, openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.55s/it]
+Traceback (most recent call last):
+  File "/root/HFRL/SurvLLM/DPO.py", line 169, in <module>
+    main(script_args, training_args)
+  File "/root/HFRL/SurvLLM/DPO.py", line 45, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/HFRL/SurvLLM/DPO.py", line 131, in main
+    model = PeftModel.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/peft_model.py", line 560, in from_pretrained
+    model = MODEL_TYPE_TO_PEFT_MODEL_MAPPING[config.task_type](
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/peft_model.py", line 1885, in __init__
+    super().__init__(model, peft_config, adapter_name, **kwargs)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/peft_model.py", line 129, in __init__
+    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 295, in __init__
+    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 801, in inject_adapter
+    self._create_and_replace(
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 249, in _create_and_replace
+    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/lora/model.py", line 336, in _create_new_module
+    new_module = dispatcher(target, adapter_name, lora_config=lora_config, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 609, in dispatch_bnb_4bit
+    new_module = Linear4bit(target, adapter_name, **fourbit_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/lora/bnb.py", line 345, in __init__
+    self.update_layer(
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 193, in update_layer
+    self.lora_dropout.update(nn.ModuleDict({adapter_name: lora_dropout_layer}))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/nn/modules/container.py", line 539, in __init__
+    self.update(modules)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/nn/modules/container.py", line 611, in update
+    self[key] = module
+    ~~~~^^^^^
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/nn/modules/container.py", line 546, in __setitem__
+    self.add_module(key, module)
+  File "/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/nn/modules/module.py", line 654, in add_module
+    raise KeyError(f"attribute '{name}' already exists")
+KeyError: "attribute 'train' already exists"

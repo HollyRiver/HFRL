@@ -3,7 +3,7 @@ model_name: "meta-llama/Meta-Llama-3.1-8B-Instruct"   ## 사용할 모델명 (hu
 dataset_path: "./data"                                ## 데이터셋 저장 경로
 
 ## SFTConfig
-max_length: 32768                                     ## 모델이 수용 가능한 최대 시퀀스 길이. 너무 긴 시퀀스가 일부라면 이를 잘 조절하여 truncation할 수 있음.
+max_length: 16384                                     ## 모델이 수용 가능한 최대 시퀀스 길이. 너무 긴 시퀀스가 일부라면 이를 잘 조절하여 truncation할 수 있음.
 output_dir: "./results/lr5e-6"                        ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
 run_name: "lr5-6"
@@ -30,6 +30,8 @@ warmup_ratio: 0.03                                    ## 초기 학습률 warmup
 bf16: true                                            ## bf16 정밀도 활성화: 모델 내부 연산 수행
 tf32: true                                            ## nvidia TensorFormat-32 활성화: fp32로 수행되어야 하는 일부 연산을 가속
 gradient_checkpointing: true                          ## 그래디언트를 캐시에 저장하지 않고 필요할 때마다 계산하여 GPU 절약
+gradient_checkpointing_kwargs:
+  use_reentrant: true
 packing: true                                         ## 가능한 경우 여러 텍스트 시퀀스를 한 행에 병합하여 패딩으로 낭비되는 공간을 줄임. 데이터 시퀀스 길이 편차가 심할 때 유용. padding_free도 자동으로 활성화됨
 dataloader_num_workers: 4                             ## 데이터로더 워커 수: 보통 GPU 개수 * 4 정도 사용한다고 함
 push_to_hub: true                                     ## 허깅페이스에 모델 로드

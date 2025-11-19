@@ -19,9 +19,11 @@ import random
 import numpy as np
 
 ## Zombie Process 발생 방지
-os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+# os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
 wandb.init(project = "RLHF")
 
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.backends.cudnn.allow_tf32 = True
 
 ## TrlParser에 들어갈 class들을 커스터마이징: 하이퍼파라미터 저장
 @dataclass  ## 데이터 보관 클래스를 간단하게 구축 가능: __init__, __repr__, __eq()__등의 메소드 자동 생성
@@ -134,13 +136,16 @@ def main(script_args, training_args):
     )
 
     model.load_adapter(script_args.adapter_name, adapter_name = "reference")
+    model.set_adapter("policy")
+
+    training_args.model_adapter_name = "policy"
+    training_args.ref_adapter_name = "reference"
 
     if training_args.gradient_checkpointing:
         model.gradient_checkpointing_enable()
 
     trainer = DPOTrainer(
         model,
-        ref_model = None,               ## ref 모델을 None으로 놓게 되면 SFT + adapter가 붙은 모델에서 adapter를 떼고, policy에 따른 최적화를 진행하게 됩니다. 두개의 모델을 로드할 필요가 없어 메모리 이득을 꾀할 수 있습니다.
         args = training_args,
         train_dataset= train_ds,
         eval_dataset = test_ds,
@@ -160,11 +165,11 @@ if __name__ == "__main__":
     parser = TrlParser((ScriptArguments, DPOConfig))         ## 따로 저장된 파라미터 파싱
     script_args, training_args = parser.parse_args_and_config()
 
-    if training_args.gradient_checkpointing:
-        training_args.gradient_checkpointing_kwargs = {"use_reentrant": True}
-
     # seeding(training_args.seed)
 
     main(script_args, training_args)
 
     print("========== 학습 종료 ==========")
+
+    ## ========== wandb 업로드 ==========
+    os.system(f"wandb sync --include-offline wandb/latest-run")
