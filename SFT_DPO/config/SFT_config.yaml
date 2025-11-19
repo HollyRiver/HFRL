@@ -1,5 +1,5 @@
 ## ScriptArguments
-model_name: "meta-llama/Meta-Llama-3.1-8B-Instruct"   ## 사용할 모델명 (huggingface model name)
+model_name: "meta-llama/Llama-3.1-8B-Instruct"   ## 사용할 모델명 (huggingface model name)
 dataset_path: "./data"                                     ## 데이터셋 저장 경로
 
 ## SFTConfig

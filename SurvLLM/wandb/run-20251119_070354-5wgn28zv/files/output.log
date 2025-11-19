@@ -6,7 +6,4898 @@ You are using a per_device_train_batch_size of 1 with padding-free training. Usi
 The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
   0%|          | 0/3564 [00:00<?, ?it/s]/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   warnings.warn(
- 19%|█▉        | 692/3564 [27:46<1:42:23,  2.14s/it]
+ 25%|██▌       | 891/3564 [35:46<1:21:21,  1.83s/it]
+100%|██████████| 198/198 [01:57<00:00,  1.88it/s]
 {'loss': 0.6898, 'grad_norm': 8.71703815460205, 'learning_rate': 9.999873360091987e-08, 'rewards/chosen': -0.010038924403488636, 'rewards/rejected': -0.017574256286025047, 'rewards/accuracies': 0.5493273735046387, 'rewards/margins': 0.007535333279520273, 'logps/chosen': -39.48562240600586, 'logps/rejected': -45.200904846191406, 'logits/chosen': -1.0267997980117798, 'logits/rejected': -1.0310955047607422, 'epoch': 0.25}
 {'loss': 0.6755, 'grad_norm': 6.481503963470459, 'learning_rate': 9.894823780672369e-08, 'rewards/chosen': -0.0577835887670517, 'rewards/rejected': -0.09676610678434372, 'rewards/accuracies': 0.5852017998695374, 'rewards/margins': 0.03898252546787262, 'logps/chosen': -39.049720764160156, 'logps/rejected': -45.786346435546875, 'logits/chosen': -1.0365246534347534, 'logits/rejected': -1.0285835266113281, 'epoch': 0.5}
-{'loss': 0.6606, 'grad_norm': 7.823216438293457, 'learning_rate': 9.598270153744719e-08, 'rewards/chosen': -0.09790898859500885, 'rewards/rejected': -0.17482098937034607, 'rewards/accuracies': 0.652466356754303, 'rewards/margins': 0.07691202312707901, 'logps/chosen': -39.08365249633789, 'logps/rejected': -45.11280059814453, 'logits/chosen': -1.045897364616394, 'logits/rejected': -1.0430352687835693, 'epoch': 0.75}
+  warnings.warn(
+ 50%|█████     | 1782/3564 [1:15:33<55:21,  1.86s/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+ 50%|█████     | 1783/3564 [1:15:41<19:18:41, 39.04s/it]No files have been modified since last commit. Skipping to prevent empty commit.
+ 75%|███████▌  | 2673/3564 [1:53:23<30:50,  2.08s/root/anaconda3/envs/RLHF/lib/python3.12/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+No files have been modified since last commit. Skipping to prevent empty commit.
+
+
+
+
+
+100%|██████████| 3564/3564 [2:31:16<00:00,  2.55s/it]
+
+
+
+New Data Upload               : |          |  0.00B /  0.00B            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  10%|▉         | 67.1MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 39.3kB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  10%|▉         | 67.1MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 39.3kB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  19%|█▊        |  126MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 39.3kB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  25%|██▍       |  168MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          |  594kB /  671MB            
+
+
+
+New Data Upload               :   1%|          |  555kB / 67.1MB, 1.39MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  31%|███       |  210MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          |  594kB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  36%|███▌      |  243MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          |  594kB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  42%|████▏     |  285MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          |  594kB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  47%|████▋     |  319MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 1.15MB /  671MB            
+
+
+
+New Data Upload               :   1%|          | 1.11MB /  134MB,  925kB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  54%|█████▎    |  361MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 1.15MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  60%|█████▉    |  403MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.26MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 2.23MB /  134MB, 1.39MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  66%|██████▌   |  444MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.26MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.26MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  512MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.26MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  82%|████████▏ |  554MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.82MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 2.78MB /  134MB, 1.16MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  87%|████████▋ |  587MB /  671MB            
+
+
+  ...adapter_model.safetensors:   0%|          | 2.82MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  92%|█████████▏|  621MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 3.37MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 3.33MB /  134MB, 1.19MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▊|  663MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 3.37MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 3.37MB /  671MB            
+
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 3.93MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 3.89MB /  201MB, 1.14MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 5.05MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 5.01MB /  201MB, 1.39MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 5.61MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 5.57MB /  201MB, 1.46MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 5.61MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 6.16MB /  671MB            
+
+
+
+New Data Upload               :   2%|▏         | 6.12MB /  268MB, 1.46MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 7.84MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 7.80MB /  268MB, 1.77MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|          | 7.84MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|▏         | 8.95MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 8.91MB /  268MB, 1.86MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   1%|▏         | 9.51MB /  671MB            
+
+
+
+New Data Upload               :   4%|▎         | 9.47MB /  268MB, 1.89MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 10.6MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 10.6MB /  335MB, 2.04MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 10.6MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 12.3MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 12.3MB /  402MB, 2.19MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 12.9MB /  671MB            
+
+
+
+New Data Upload               :   3%|▎         | 12.8MB /  402MB, 2.21MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 15.1MB /  671MB            
+
+
+
+New Data Upload               :   4%|▎         | 15.0MB /  402MB, 2.51MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   2%|▏         | 15.6MB /  671MB            
+
+
+
+New Data Upload               :   4%|▍         | 15.6MB /  402MB, 2.52MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   3%|▎         | 17.3MB /  671MB            
+
+
+
+New Data Upload               :   4%|▍         | 17.3MB /  402MB, 2.70MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   3%|▎         | 19.0MB /  671MB            
+
+
+
+New Data Upload               :   5%|▍         | 19.0MB /  402MB, 2.87MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   3%|▎         | 20.7MB /  671MB            
+
+
+
+New Data Upload               :   4%|▍         | 20.6MB /  470MB, 3.03MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   3%|▎         | 21.8MB /  671MB            
+
+
+
+New Data Upload               :   5%|▍         | 21.8MB /  470MB, 3.11MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   3%|▎         | 23.5MB /  671MB            
+
+
+
+New Data Upload               :   5%|▍         | 23.4MB /  470MB, 3.25MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   4%|▍         | 26.3MB /  671MB            
+
+
+
+New Data Upload               :   6%|▌         | 26.2MB /  470MB, 3.54MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   4%|▍         | 26.8MB /  671MB            
+
+
+
+New Data Upload               :   6%|▌         | 26.8MB /  470MB, 3.52MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   4%|▍         | 29.1MB /  671MB            
+
+
+
+New Data Upload               :   6%|▌         | 29.0MB /  470MB, 3.72MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   4%|▍         | 29.6MB /  671MB            
+
+
+
+New Data Upload               :   6%|▋         | 29.6MB /  470MB, 3.70MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   5%|▍         | 33.5MB /  671MB            
+
+
+
+New Data Upload               :   7%|▋         | 33.5MB /  470MB, 4.08MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   5%|▌         | 35.2MB /  671MB            
+
+
+
+New Data Upload               :   7%|▋         | 35.2MB /  537MB, 4.19MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   6%|▌         | 38.0MB /  671MB            
+
+
+
+New Data Upload               :   7%|▋         | 38.0MB /  537MB, 4.41MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   6%|▌         | 40.2MB /  671MB            
+
+
+
+New Data Upload               :   7%|▋         | 40.2MB /  604MB, 4.57MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   6%|▋         | 42.5MB /  671MB            
+
+
+
+New Data Upload               :   7%|▋         | 42.4MB /  604MB, 4.71MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   7%|▋         | 45.8MB /  671MB            
+
+
+
+New Data Upload               :   8%|▊         | 45.8MB /  604MB, 4.98MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   7%|▋         | 49.2MB /  671MB            
+
+
+
+New Data Upload               :   8%|▊         | 49.1MB /  604MB, 5.23MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   8%|▊         | 51.4MB /  671MB            
+
+
+
+New Data Upload               :   9%|▊         | 51.4MB /  604MB, 5.35MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   8%|▊         | 55.3MB /  671MB            
+
+
+
+New Data Upload               :   9%|▉         | 55.3MB /  604MB, 5.64MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   9%|▊         | 58.1MB /  671MB            
+
+
+
+New Data Upload               :  10%|▉         | 58.1MB /  604MB, 5.81MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:   9%|▉         | 59.2MB /  671MB            
+
+
+
+New Data Upload               :  10%|▉         | 59.2MB /  604MB, 5.80MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  10%|▉         | 64.8MB /  671MB            
+
+
+
+New Data Upload               :  11%|█         | 64.8MB /  604MB, 6.35MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  10%|█         | 69.3MB /  671MB            
+
+
+
+New Data Upload               :  11%|█▏        | 69.3MB /  604MB, 6.74MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  11%|█         | 72.7MB /  671MB            
+
+
+
+New Data Upload               :  12%|█▏        | 72.6MB /  604MB, 7.06MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  11%|█▏        | 76.6MB /  671MB            
+
+
+
+New Data Upload               :  13%|█▎        | 76.5MB /  604MB, 7.45MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  12%|█▏        | 81.0MB /  671MB            
+
+
+
+New Data Upload               :  13%|█▎        | 81.0MB /  604MB, 7.89MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  13%|█▎        | 87.2MB /  671MB            
+
+
+
+New Data Upload               :  14%|█▍        | 87.2MB /  604MB, 8.44MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  14%|█▎        | 91.1MB /  671MB            
+
+
+
+New Data Upload               :  15%|█▌        | 91.1MB /  604MB, 8.82MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  14%|█▍        | 95.6MB /  671MB            
+
+
+
+New Data Upload               :  16%|█▌        | 95.5MB /  604MB, 9.15MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  15%|█▍        |  101MB /  671MB            
+
+
+
+New Data Upload               :  17%|█▋        |  101MB /  604MB, 9.64MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  16%|█▌        |  106MB /  671MB            
+
+
+
+New Data Upload               :  18%|█▊        |  106MB /  604MB, 10.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  17%|█▋        |  111MB /  671MB            
+
+
+
+New Data Upload               :  18%|█▊        |  111MB /  604MB, 10.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  17%|█▋        |  113MB /  671MB            
+
+
+
+New Data Upload               :  19%|█▉        |  113MB /  604MB, 10.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  18%|█▊        |  121MB /  671MB            
+
+
+
+New Data Upload               :  20%|█▉        |  121MB /  604MB, 11.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  19%|█▊        |  125MB /  671MB            
+
+
+
+New Data Upload               :  21%|██        |  125MB /  604MB, 11.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  20%|█▉        |  132MB /  671MB            
+
+
+
+New Data Upload               :  22%|██▏       |  132MB /  604MB, 12.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  20%|██        |  136MB /  671MB            
+
+
+
+New Data Upload               :  23%|██▎       |  136MB /  604MB, 13.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  21%|██        |  143MB /  671MB            
+
+
+
+New Data Upload               :  24%|██▎       |  143MB /  604MB, 13.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  22%|██▏       |  150MB /  671MB            
+
+
+
+New Data Upload               :  25%|██▍       |  150MB /  604MB, 14.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  23%|██▎       |  154MB /  671MB            
+
+
+
+New Data Upload               :  25%|██▌       |  154MB /  604MB, 14.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  24%|██▍       |  162MB /  671MB            
+
+
+
+New Data Upload               :  27%|██▋       |  162MB /  604MB, 15.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  25%|██▍       |  168MB /  671MB            
+
+
+
+New Data Upload               :  28%|██▊       |  168MB /  604MB, 15.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  26%|██▌       |  173MB /  671MB            
+
+
+
+New Data Upload               :  29%|██▊       |  173MB /  604MB, 16.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  26%|██▋       |  177MB /  671MB            
+
+
+
+New Data Upload               :  29%|██▉       |  177MB /  604MB, 16.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  28%|██▊       |  186MB /  671MB            
+
+
+
+New Data Upload               :  31%|███       |  186MB /  604MB, 17.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  29%|██▊       |  192MB /  671MB            
+
+
+
+New Data Upload               :  32%|███▏      |  192MB /  604MB, 17.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  29%|██▉       |  196MB /  671MB            
+
+
+
+New Data Upload               :  33%|███▎      |  196MB /  604MB, 18.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  30%|██▉       |  200MB /  671MB            
+
+
+
+New Data Upload               :  33%|███▎      |  200MB /  604MB, 18.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  31%|███       |  206MB /  671MB            
+
+
+
+New Data Upload               :  34%|███▍      |  206MB /  604MB, 19.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  31%|███       |  209MB /  671MB            
+
+
+
+New Data Upload               :  35%|███▍      |  209MB /  604MB, 19.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  32%|███▏      |  215MB /  671MB            
+
+
+
+New Data Upload               :  36%|███▌      |  215MB /  604MB, 19.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  33%|███▎      |  221MB /  671MB            
+
+
+
+New Data Upload               :  37%|███▋      |  221MB /  604MB, 20.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  33%|███▎      |  222MB /  671MB            
+
+
+
+New Data Upload               :  37%|███▋      |  222MB /  604MB, 20.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  34%|███▍      |  229MB /  671MB            
+
+
+
+New Data Upload               :  38%|███▊      |  229MB /  604MB, 20.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  35%|███▌      |  237MB /  671MB            
+
+
+
+New Data Upload               :  39%|███▉      |  237MB /  604MB, 21.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  36%|███▋      |  245MB /  671MB            
+
+
+
+New Data Upload               :  41%|████      |  245MB /  604MB, 21.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  37%|███▋      |  251MB /  671MB            
+
+
+
+New Data Upload               :  37%|███▋      |  251MB /  671MB, 22.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  38%|███▊      |  256MB /  671MB            
+
+
+
+New Data Upload               :  38%|███▊      |  256MB /  671MB, 22.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  39%|███▉      |  260MB /  671MB            
+
+
+
+New Data Upload               :  39%|███▉      |  260MB /  671MB, 22.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  40%|████      |  269MB /  671MB            
+
+
+
+New Data Upload               :  40%|████      |  269MB /  671MB, 23.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  41%|████      |  274MB /  671MB            
+
+
+
+New Data Upload               :  41%|████      |  274MB /  671MB, 24.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  42%|████▏     |  282MB /  671MB            
+
+
+
+New Data Upload               :  42%|████▏     |  282MB /  671MB, 24.4MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  43%|████▎     |  287MB /  671MB            
+
+
+
+New Data Upload               :  43%|████▎     |  287MB /  671MB, 24.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  44%|████▎     |  293MB /  671MB            
+
+
+
+New Data Upload               :  44%|████▎     |  293MB /  671MB, 25.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  45%|████▍     |  300MB /  671MB            
+
+
+
+New Data Upload               :  45%|████▍     |  300MB /  671MB, 25.4MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  46%|████▌     |  306MB /  671MB            
+
+
+
+New Data Upload               :  46%|████▌     |  306MB /  671MB, 25.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  46%|████▌     |  310MB /  671MB            
+
+
+
+New Data Upload               :  46%|████▌     |  310MB /  671MB, 25.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  47%|████▋     |  318MB /  671MB            
+
+
+
+New Data Upload               :  47%|████▋     |  317MB /  671MB, 26.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  48%|████▊     |  325MB /  671MB            
+
+
+
+New Data Upload               :  48%|████▊     |  325MB /  671MB, 26.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  49%|████▉     |  330MB /  671MB            
+
+
+
+New Data Upload               :  49%|████▉     |  330MB /  671MB, 27.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  50%|█████     |  337MB /  671MB            
+
+
+
+New Data Upload               :  50%|█████     |  337MB /  671MB, 27.4MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  51%|█████     |  342MB /  671MB            
+
+
+
+New Data Upload               :  51%|█████     |  342MB /  671MB, 27.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  52%|█████▏    |  348MB /  671MB            
+
+
+
+New Data Upload               :  52%|█████▏    |  348MB /  671MB, 27.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  53%|█████▎    |  356MB /  671MB            
+
+
+
+New Data Upload               :  53%|█████▎    |  356MB /  671MB, 28.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  54%|█████▍    |  364MB /  671MB            
+
+
+
+New Data Upload               :  54%|█████▍    |  364MB /  671MB, 28.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  55%|█████▌    |  370MB /  671MB            
+
+
+
+New Data Upload               :  55%|█████▌    |  370MB /  671MB, 28.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  56%|█████▌    |  375MB /  671MB            
+
+
+
+New Data Upload               :  56%|█████▌    |  375MB /  671MB, 28.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  57%|█████▋    |  381MB /  671MB            
+
+
+
+New Data Upload               :  57%|█████▋    |  381MB /  671MB, 28.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  58%|█████▊    |  386MB /  671MB            
+
+
+
+New Data Upload               :  58%|█████▊    |  386MB /  671MB, 28.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  58%|█████▊    |  388MB /  671MB            
+
+
+
+New Data Upload               :  58%|█████▊    |  388MB /  671MB, 28.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  59%|█████▉    |  395MB /  671MB            
+
+
+
+New Data Upload               :  59%|█████▉    |  395MB /  671MB, 28.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  59%|█████▉    |  399MB /  671MB            
+
+
+
+New Data Upload               :  59%|█████▉    |  399MB /  671MB, 28.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  60%|█████▉    |  400MB /  671MB            
+
+
+
+New Data Upload               :  60%|█████▉    |  400MB /  671MB, 28.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  61%|██████    |  408MB /  671MB            
+
+
+
+New Data Upload               :  61%|██████    |  408MB /  671MB, 28.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  62%|██████▏   |  414MB /  671MB            
+
+
+
+New Data Upload               :  62%|██████▏   |  414MB /  671MB, 28.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  62%|██████▏   |  419MB /  671MB            
+
+
+
+New Data Upload               :  62%|██████▏   |  419MB /  671MB, 28.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  63%|██████▎   |  422MB /  671MB            
+
+
+
+New Data Upload               :  63%|██████▎   |  421MB /  671MB, 28.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  64%|██████▍   |  430MB /  671MB            
+
+
+
+New Data Upload               :  64%|██████▍   |  430MB /  671MB, 28.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  64%|██████▍   |  433MB /  671MB            
+
+
+
+New Data Upload               :  64%|██████▍   |  433MB /  671MB, 28.4MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  65%|██████▌   |  438MB /  671MB            
+
+
+
+New Data Upload               :  65%|██████▌   |  438MB /  671MB, 28.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  66%|██████▌   |  442MB /  671MB            
+
+
+
+New Data Upload               :  66%|██████▌   |  442MB /  671MB, 28.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  67%|██████▋   |  447MB /  671MB            
+
+
+
+New Data Upload               :  67%|██████▋   |  447MB /  671MB, 27.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  67%|██████▋   |  451MB /  671MB            
+
+
+
+New Data Upload               :  67%|██████▋   |  451MB /  671MB, 27.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  68%|██████▊   |  454MB /  671MB            
+
+
+
+New Data Upload               :  68%|██████▊   |  454MB /  671MB, 27.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  68%|██████▊   |  458MB /  671MB            
+
+
+
+New Data Upload               :  68%|██████▊   |  458MB /  671MB, 27.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  68%|██████▊   |  460MB /  671MB            
+
+
+
+New Data Upload               :  68%|██████▊   |  460MB /  671MB, 26.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  69%|██████▉   |  463MB /  671MB            
+
+
+
+New Data Upload               :  69%|██████▉   |  463MB /  671MB, 26.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  70%|██████▉   |  467MB /  671MB            
+
+
+
+New Data Upload               :  70%|██████▉   |  467MB /  671MB, 26.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  70%|██████▉   |  469MB /  671MB            
+
+
+
+New Data Upload               :  70%|██████▉   |  469MB /  671MB, 26.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  70%|███████   |  470MB /  671MB            
+
+
+
+New Data Upload               :  70%|███████   |  470MB /  671MB, 25.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  70%|███████   |  472MB /  671MB            
+
+
+
+New Data Upload               :  70%|███████   |  471MB /  671MB, 25.7MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  473MB /  671MB            
+
+
+
+New Data Upload               :  71%|███████   |  473MB /  671MB, 25.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  474MB /  671MB            
+
+
+
+New Data Upload               :  71%|███████   |  474MB /  671MB, 24.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+
+New Data Upload               :  71%|███████   |  478MB /  671MB, 25.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  71%|███████   |  478MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  72%|███████▏  |  481MB /  671MB            
+
+
+
+New Data Upload               :  72%|███████▏  |  481MB /  671MB, 22.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  72%|███████▏  |  482MB /  671MB            
+
+
+
+New Data Upload               :  72%|███████▏  |  482MB /  671MB, 21.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  72%|███████▏  |  484MB /  671MB            
+
+
+
+New Data Upload               :  72%|███████▏  |  484MB /  671MB, 21.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  72%|███████▏  |  484MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  72%|███████▏  |  486MB /  671MB            
+
+
+
+New Data Upload               :  72%|███████▏  |  486MB /  671MB, 19.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  487MB /  671MB            
+
+
+
+New Data Upload               :  73%|███████▎  |  487MB /  671MB, 19.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  487MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  488MB /  671MB            
+
+
+
+New Data Upload               :  73%|███████▎  |  488MB /  671MB, 18.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  488MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  489MB /  671MB            
+
+
+
+New Data Upload               :  73%|███████▎  |  489MB /  671MB, 17.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  489MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  491MB /  671MB            
+
+
+
+New Data Upload               :  73%|███████▎  |  491MB /  671MB, 16.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  73%|███████▎  |  492MB /  671MB            
+
+
+
+New Data Upload               :  73%|███████▎  |  492MB /  671MB, 15.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+
+New Data Upload               :  74%|███████▎  |  494MB /  671MB, 15.4MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▎  |  494MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  496MB /  671MB            
+
+
+
+New Data Upload               :  74%|███████▍  |  496MB /  671MB, 11.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  496MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  498MB /  671MB            
+
+
+
+New Data Upload               :  74%|███████▍  |  498MB /  671MB, 11.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  498MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  498MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  74%|███████▍  |  498MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  501MB /  671MB            
+
+
+
+New Data Upload               :  75%|███████▍  |  501MB /  671MB, 9.87MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  501MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  501MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  501MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  501MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  503MB /  671MB            
+
+
+
+New Data Upload               :  75%|███████▍  |  503MB /  671MB, 7.16MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▍  |  503MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▌  |  504MB /  671MB            
+
+
+
+New Data Upload               :  75%|███████▌  |  504MB /  671MB, 6.51MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▌  |  504MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  75%|███████▌  |  506MB /  671MB            
+
+
+
+New Data Upload               :  75%|███████▌  |  506MB /  671MB, 5.74MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  507MB /  671MB            
+
+
+
+New Data Upload               :  76%|███████▌  |  507MB /  671MB, 5.58MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  509MB /  671MB            
+
+
+
+New Data Upload               :  76%|███████▌  |  509MB /  671MB, 5.41MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  509MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  509MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  509MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▌  |  509MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▋  |  513MB /  671MB            
+
+
+
+New Data Upload               :  76%|███████▋  |  512MB /  671MB, 4.29MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▋  |  513MB /  671MB            
+
+
+
+New Data Upload               :  76%|███████▋  |  513MB /  671MB, 4.24MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▋  |  513MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  76%|███████▋  |  513MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  515MB /  671MB            
+
+
+
+New Data Upload               :  77%|███████▋  |  515MB /  671MB, 3.96MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  515MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  516MB /  671MB            
+
+
+
+New Data Upload               :  77%|███████▋  |  516MB /  671MB, 3.80MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  516MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  516MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  519MB /  671MB            
+
+
+
+New Data Upload               :  77%|███████▋  |  519MB /  671MB, 4.02MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  520MB /  671MB            
+
+
+
+New Data Upload               :  77%|███████▋  |  520MB /  671MB, 3.80MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  77%|███████▋  |  520MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  78%|███████▊  |  521MB /  671MB            
+
+
+
+New Data Upload               :  78%|███████▊  |  521MB /  671MB, 3.69MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  78%|███████▊  |  523MB /  671MB            
+
+
+
+New Data Upload               :  78%|███████▊  |  523MB /  671MB, 3.85MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  78%|███████▊  |  526MB /  671MB            
+
+
+
+New Data Upload               :  78%|███████▊  |  526MB /  671MB, 3.96MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▊  |  528MB /  671MB            
+
+
+
+New Data Upload               :  79%|███████▊  |  528MB /  671MB, 4.02MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▊  |  528MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▉  |  529MB /  671MB            
+
+
+
+New Data Upload               :  79%|███████▉  |  529MB /  671MB, 4.07MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▉  |  532MB /  671MB            
+
+
+
+New Data Upload               :  79%|███████▉  |  532MB /  671MB, 4.35MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▉  |  532MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  79%|███████▉  |  532MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  80%|███████▉  |  536MB /  671MB            
+
+
+
+New Data Upload               :  80%|███████▉  |  536MB /  671MB, 4.40MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  80%|███████▉  |  536MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  80%|████████  |  538MB /  671MB            
+
+
+
+New Data Upload               :  80%|████████  |  538MB /  671MB, 4.29MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  80%|████████  |  540MB /  671MB            
+
+
+
+New Data Upload               :  80%|████████  |  540MB /  671MB, 4.51MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  81%|████████  |  543MB /  671MB            
+
+
+
+New Data Upload               :  81%|████████  |  543MB /  671MB, 4.79MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  81%|████████▏ |  546MB /  671MB            
+
+
+
+New Data Upload               :  81%|████████▏ |  546MB /  671MB, 5.06MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  81%|████████▏ |  547MB /  671MB            
+
+
+
+New Data Upload               :  81%|████████▏ |  547MB /  671MB, 5.17MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  82%|████████▏ |  550MB /  671MB            
+
+
+
+New Data Upload               :  82%|████████▏ |  550MB /  671MB, 5.50MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  83%|████████▎ |  555MB /  671MB            
+
+
+
+New Data Upload               :  83%|████████▎ |  555MB /  671MB, 5.72MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  83%|████████▎ |  555MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  83%|████████▎ |  557MB /  671MB            
+
+
+
+New Data Upload               :  83%|████████▎ |  557MB /  671MB, 5.83MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  84%|████████▎ |  562MB /  671MB            
+
+
+
+New Data Upload               :  84%|████████▎ |  562MB /  671MB, 6.27MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  84%|████████▍ |  566MB /  671MB            
+
+
+
+New Data Upload               :  84%|████████▍ |  566MB /  671MB, 6.66MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  85%|████████▍ |  568MB /  671MB            
+
+
+
+New Data Upload               :  85%|████████▍ |  567MB /  671MB, 6.82MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  85%|████████▍ |  570MB /  671MB            
+
+
+
+New Data Upload               :  85%|████████▍ |  570MB /  671MB, 6.82MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  85%|████████▌ |  574MB /  671MB            
+
+
+
+New Data Upload               :  85%|████████▌ |  574MB /  671MB, 7.15MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  86%|████████▌ |  579MB /  671MB            
+
+
+
+New Data Upload               :  86%|████████▌ |  579MB /  671MB, 7.65MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  87%|████████▋ |  583MB /  671MB            
+
+
+
+New Data Upload               :  87%|████████▋ |  583MB /  671MB, 8.09MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  87%|████████▋ |  585MB /  671MB            
+
+
+
+New Data Upload               :  87%|████████▋ |  585MB /  671MB, 8.25MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  88%|████████▊ |  590MB /  671MB            
+
+
+
+New Data Upload               :  88%|████████▊ |  590MB /  671MB, 8.53MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  89%|████████▊ |  594MB /  671MB            
+
+
+
+New Data Upload               :  89%|████████▊ |  594MB /  671MB, 8.97MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  89%|████████▉ |  598MB /  671MB            
+
+
+
+New Data Upload               :  89%|████████▉ |  598MB /  671MB, 9.19MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  90%|████████▉ |  601MB /  671MB            
+
+
+
+New Data Upload               :  90%|████████▉ |  601MB /  671MB, 9.52MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  90%|████████▉ |  603MB /  671MB            
+
+
+
+New Data Upload               :  90%|████████▉ |  603MB /  671MB, 9.52MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  90%|█████████ |  606MB /  671MB            
+
+
+
+New Data Upload               :  90%|█████████ |  606MB /  671MB, 9.69MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  91%|█████████ |  611MB /  671MB            
+
+
+
+New Data Upload               :  91%|█████████ |  611MB /  671MB, 9.96MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  92%|█████████▏|  614MB /  671MB            
+
+
+
+New Data Upload               :  92%|█████████▏|  614MB /  671MB, 10.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  92%|█████████▏|  616MB /  671MB            
+
+
+
+New Data Upload               :  92%|█████████▏|  616MB /  671MB, 10.5MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  92%|█████████▏|  619MB /  671MB            
+
+
+
+New Data Upload               :  92%|█████████▏|  619MB /  671MB, 10.8MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  93%|█████████▎|  621MB /  671MB            
+
+
+
+New Data Upload               :  93%|█████████▎|  621MB /  671MB, 11.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  93%|█████████▎|  625MB /  671MB            
+
+
+
+New Data Upload               :  93%|█████████▎|  625MB /  671MB, 11.1MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  93%|█████████▎|  627MB /  671MB            
+
+
+
+New Data Upload               :  93%|█████████▎|  627MB /  671MB, 11.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  94%|█████████▍|  631MB /  671MB            
+
+
+
+New Data Upload               :  94%|█████████▍|  631MB /  671MB, 11.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  94%|█████████▍|  634MB /  671MB            
+
+
+
+New Data Upload               :  94%|█████████▍|  634MB /  671MB, 11.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  94%|█████████▍|  634MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  95%|█████████▍|  637MB /  671MB            
+
+
+
+New Data Upload               :  95%|█████████▍|  637MB /  671MB, 12.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  95%|█████████▌|  638MB /  671MB            
+
+
+
+New Data Upload               :  95%|█████████▌|  638MB /  671MB, 11.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  95%|█████████▌|  639MB /  671MB            
+
+
+
+New Data Upload               :  95%|█████████▌|  639MB /  671MB, 12.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  95%|█████████▌|  641MB /  671MB            
+
+
+
+New Data Upload               :  95%|█████████▌|  641MB /  671MB, 12.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  95%|█████████▌|  641MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  641MB /  671MB            
+
+
+
+New Data Upload               :  96%|█████████▌|  641MB /  671MB, 11.9MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  641MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  644MB /  671MB            
+
+
+
+New Data Upload               :  96%|█████████▌|  644MB /  671MB, 12.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  644MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  644MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▌|  644MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▋|  646MB /  671MB            
+
+
+
+New Data Upload               :  96%|█████████▋|  646MB /  671MB, 11.6MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▋|  646MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▋|  647MB /  671MB            
+
+
+
+New Data Upload               :  96%|█████████▋|  647MB /  671MB, 11.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▋|  647MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  96%|█████████▋|  647MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  648MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  648MB /  671MB, 11.0MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  648MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  648MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  648MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  648MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  648MB /  671MB, 10.3MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  650MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  650MB /  671MB, 10.2MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  650MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  650MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  650MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  652MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  651MB /  671MB, 9.50MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  652MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  652MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  652MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  652MB /  671MB, 8.42MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  652MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+
+New Data Upload               :  97%|█████████▋|  653MB /  671MB, 8.15MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  97%|█████████▋|  653MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  655MB /  671MB            
+
+
+
+New Data Upload               :  98%|█████████▊|  655MB /  671MB, 5.94MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  655MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  655MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  655MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  657MB /  671MB            
+
+
+
+New Data Upload               :  98%|█████████▊|  657MB /  671MB, 4.95MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  657MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  657MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  657MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  657MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  658MB /  671MB            
+
+
+
+New Data Upload               :  98%|█████████▊|  658MB /  671MB, 3.63MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  658MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  658MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  658MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  660MB /  671MB            
+
+
+
+New Data Upload               :  98%|█████████▊|  660MB /  671MB, 2.50MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  660MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  660MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  98%|█████████▊|  660MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▊|  661MB /  671MB            
+
+
+
+New Data Upload               :  99%|█████████▊|  661MB /  671MB, 2.17MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▊|  661MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▊|  661MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▊|  661MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  663MB /  671MB            
+
+
+
+New Data Upload               :  99%|█████████▉|  663MB /  671MB, 2.15MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  663MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  663MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  664MB /  671MB            
+
+
+
+New Data Upload               :  99%|█████████▉|  664MB /  671MB, 1.99MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  664MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  664MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  664MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  666MB /  671MB            
+
+
+
+New Data Upload               :  99%|█████████▉|  666MB /  671MB, 1.85MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  666MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  666MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  666MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  667MB /  671MB            
+
+
+
+New Data Upload               :  99%|█████████▉|  667MB /  671MB, 1.91MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  667MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  667MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors:  99%|█████████▉|  667MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  669MB /  671MB            
+
+
+
+New Data Upload               : 100%|█████████▉|  669MB /  671MB, 1.89MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  669MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  669MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  669MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+
+New Data Upload               : 100%|█████████▉|  671MB /  671MB, 1.89MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|█████████▉|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+
+New Data Upload               : 100%|██████████|  671MB /  671MB, 1.41MB/s  
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...-lr1e-7/training_args.bin: 100%|██████████| 6.93kB / 6.93kB            
+
+
+  ...dpo-lr1e-7/tokenizer.json: 100%|██████████| 17.2MB / 17.2MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+  ...adapter_model.safetensors: 100%|██████████|  671MB /  671MB            
+
+
+
+
+New Data Upload               : 100%|██████████|  671MB /  671MB, 1.33MB/s  
+{'eval_loss': 0.6262031197547913, 'eval_runtime': 118.2776, 'eval_samples_per_second': 1.674, 'eval_steps_per_second': 1.674, 'eval_rewards/chosen': -0.18423812091350555, 'eval_rewards/rejected': -0.34449276328086853, 'eval_rewards/accuracies': 0.7121211886405945, 'eval_rewards/margins': 0.16025464236736298, 'eval_logps/chosen': -41.86866760253906, 'eval_logps/rejected': -49.72153091430664, 'eval_logits/chosen': -1.05070960521698, 'eval_logits/rejected': -1.0351661443710327, 'epoch': 1.0}
+{'loss': 0.6517, 'grad_norm': 4.806541442871094, 'learning_rate': 9.123134776696607e-08, 'rewards/chosen': -0.18991462886333466, 'rewards/rejected': -0.2924097776412964, 'rewards/accuracies': 0.7056179642677307, 'rewards/margins': 0.10249514132738113, 'logps/chosen': -40.71577835083008, 'logps/rejected': -49.28071975708008, 'logits/chosen': -1.0456410646438599, 'logits/rejected': -1.0399386882781982, 'epoch': 1.0}
+{'loss': 0.6359, 'grad_norm': 7.642498970031738, 'learning_rate': 8.490121630474697e-08, 'rewards/chosen': -0.2337321937084198, 'rewards/rejected': -0.3845733106136322, 'rewards/accuracies': 0.6704035997390747, 'rewards/margins': 0.15084108710289001, 'logps/chosen': -41.69954299926758, 'logps/rejected': -47.93137741088867, 'logits/chosen': -1.0438467264175415, 'logits/rejected': -1.0401012897491455, 'epoch': 1.25}
+{'loss': 0.6164, 'grad_norm': 6.1224446296691895, 'learning_rate': 7.726814205493419e-08, 'rewards/chosen': -0.28308120369911194, 'rewards/rejected': -0.4953714907169342, 'rewards/accuracies': 0.7152466177940369, 'rewards/margins': 0.21229030191898346, 'logps/chosen': -41.086063385009766, 'logps/rejected': -50.6845817565918, 'logits/chosen': -1.0442650318145752, 'logits/rejected': -1.0440491437911987, 'epoch': 1.5}
+{'loss': 0.6256, 'grad_norm': 8.335984230041504, 'learning_rate': 6.866473553542768e-08, 'rewards/chosen': -0.33110707998275757, 'rewards/rejected': -0.536470890045166, 'rewards/accuracies': 0.6928251385688782, 'rewards/margins': 0.20536381006240845, 'logps/chosen': -41.67353057861328, 'logps/rejected': -50.03883743286133, 'logits/chosen': -1.0610414743423462, 'logits/rejected': -1.0576869249343872, 'epoch': 1.75}
+{'eval_loss': 0.5818099975585938, 'eval_runtime': 118.31, 'eval_samples_per_second': 1.674, 'eval_steps_per_second': 1.674, 'eval_rewards/chosen': -0.3824425935745239, 'eval_rewards/rejected': -0.6975231766700745, 'eval_rewards/accuracies': 0.747474730014801, 'eval_rewards/margins': 0.3150807023048401, 'eval_logps/chosen': -43.8507080078125, 'eval_logps/rejected': -53.251834869384766, 'eval_logits/chosen': -1.0591261386871338, 'eval_logits/rejected': -1.0445284843444824, 'epoch': 2.0}
+{'loss': 0.6126, 'grad_norm': 15.333134651184082, 'learning_rate': 5.946588940474274e-08, 'rewards/chosen': -0.3521081209182739, 'rewards/rejected': -0.6075068712234497, 'rewards/accuracies': 0.680898904800415, 'rewards/margins': 0.255398690700531, 'logps/chosen': -42.70378494262695, 'logps/rejected': -51.38943099975586, 'logits/chosen': -1.0509086847305298, 'logits/rejected': -1.0492204427719116, 'epoch': 2.0}
+{'loss': 0.5917, 'grad_norm': 12.451170921325684, 'learning_rate': 5.007244254842856e-08, 'rewards/chosen': -0.41746294498443604, 'rewards/rejected': -0.7422240376472473, 'rewards/accuracies': 0.7219731211662292, 'rewards/margins': 0.3247610926628113, 'logps/chosen': -43.32914352416992, 'logps/rejected': -53.08409118652344, 'logits/chosen': -1.0511287450790405, 'logits/rejected': -1.0471515655517578, 'epoch': 2.25}
+{'loss': 0.6045, 'grad_norm': 5.4878010749816895, 'learning_rate': 4.089371356099782e-08, 'rewards/chosen': -0.44030463695526123, 'rewards/rejected': -0.7336416244506836, 'rewards/accuracies': 0.6860986351966858, 'rewards/margins': 0.29333698749542236, 'logps/chosen': -43.11449432373047, 'logps/rejected': -51.35731506347656, 'logits/chosen': -1.0579434633255005, 'logits/rejected': -1.0564290285110474, 'epoch': 2.5}
+{'loss': 0.5983, 'grad_norm': 5.3090620040893555, 'learning_rate': 3.232966472530765e-08, 'rewards/chosen': -0.4289461374282837, 'rewards/rejected': -0.7541523575782776, 'rewards/accuracies': 0.6973094344139099, 'rewards/margins': 0.32520613074302673, 'logps/chosen': -41.31965255737305, 'logps/rejected': -50.47001266479492, 'logits/chosen': -1.0567790269851685, 'logits/rejected': -1.0575240850448608, 'epoch': 2.75}
+{'eval_loss': 0.5634904503822327, 'eval_runtime': 118.344, 'eval_samples_per_second': 1.673, 'eval_steps_per_second': 1.673, 'eval_rewards/chosen': -0.48696818947792053, 'eval_rewards/rejected': -0.8857495188713074, 'eval_rewards/accuracies': 0.7323232293128967, 'eval_rewards/margins': 0.3987813889980316, 'eval_logps/chosen': -44.895965576171875, 'eval_logps/rejected': -55.13409423828125, 'eval_logits/chosen': -1.0645235776901245, 'eval_logits/rejected': -1.0502002239227295, 'epoch': 3.0}
+{'loss': 0.6076, 'grad_norm': 4.51318359375, 'learning_rate': 2.475347369237185e-08, 'rewards/chosen': -0.5523306131362915, 'rewards/rejected': -0.8734747171401978, 'rewards/accuracies': 0.6764044761657715, 'rewards/margins': 0.32114407420158386, 'logps/chosen': -45.17044448852539, 'logps/rejected': -55.565834045410156, 'logits/chosen': -1.0626620054244995, 'logits/rejected': -1.0602256059646606, 'epoch': 3.0}
+{'loss': 0.596, 'grad_norm': 9.443093299865723, 'learning_rate': 1.849527229907591e-08, 'rewards/chosen': -0.493105411529541, 'rewards/rejected': -0.8374975323677063, 'rewards/accuracies': 0.713004469871521, 'rewards/margins': 0.3443920612335205, 'logps/chosen': -43.59946060180664, 'logps/rejected': -53.265052795410156, 'logits/chosen': -1.0561491250991821, 'logits/rejected': -1.0562747716903687, 'epoch': 3.25}
+{'loss': 0.5975, 'grad_norm': 5.687197685241699, 'learning_rate': 1.3827761103336891e-08, 'rewards/chosen': -0.5379627346992493, 'rewards/rejected': -0.8946693539619446, 'rewards/accuracies': 0.7017937302589417, 'rewards/margins': 0.3567065894603729, 'logps/chosen': -44.577117919921875, 'logps/rejected': -54.1917839050293, 'logits/chosen': -1.0655009746551514, 'logits/rejected': -1.0627151727676392, 'epoch': 3.5}
+{'loss': 0.5833, 'grad_norm': 5.094869136810303, 'learning_rate': 1.0954326482033907e-08, 'rewards/chosen': -0.5160324573516846, 'rewards/rejected': -0.8905445337295532, 'rewards/accuracies': 0.726457417011261, 'rewards/margins': 0.37451204657554626, 'logps/chosen': -43.49293518066406, 'logps/rejected': -53.08834457397461, 'logits/chosen': -1.061206340789795, 'logits/rejected': -1.0527867078781128, 'epoch': 3.75}
+{'eval_loss': 0.5588374137878418, 'eval_runtime': 118.1915, 'eval_samples_per_second': 1.675, 'eval_steps_per_second': 1.675, 'eval_rewards/chosen': -0.5333862900733948, 'eval_rewards/rejected': -0.9590174555778503, 'eval_rewards/accuracies': 0.7323232293128967, 'eval_rewards/margins': 0.4256310760974884, 'eval_logps/chosen': -45.36014938354492, 'eval_logps/rejected': -55.86677932739258, 'eval_logits/chosen': -1.0656274557113647, 'eval_logits/rejected': -1.0513612031936646, 'epoch': 4.0}
+{'train_runtime': 9076.8073, 'train_samples_per_second': 0.785, 'train_steps_per_second': 0.393, 'train_loss': 0.6215958943136881, 'epoch': 4.0}
