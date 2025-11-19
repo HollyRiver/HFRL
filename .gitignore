@@ -1,4 +1,6 @@
-**/results
 *.json
+*.safetensors
+**/results
 **/data
 **/inference
+**/adapter
