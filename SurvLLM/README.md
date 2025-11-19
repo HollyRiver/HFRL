@@ -5,9 +5,9 @@
 
 
 ## Setup
-* 20GB의 VRAM 및 48GB의 CPU RAM (권장)
+* 100GB의 VRAM 및 200GB의 CPU RAM (권장). 입력되는 최대 시퀀스 길이를 더 길게 설정한다면 이보다 많이 필요합니다. (해당 문서에서는 16,384)
 * 구축된 아나콘다 환경 (cuda 12.8, Ubuntu 20.04에서 구동시켰으나, Ubuntu 22.04 이상을 권장합니다. Ubuntu 20.04 버전에서는 flash-attention 실행을 위한 다운그레이드 및 GLibc 업데이트가 필요합니다.)
-* Dependencies installation: `pip install transformers bitsandbytes datasets sentencepiece accelerate trl peft wandb openai pqdm`, pytorch와 flash-attention 설치는 부가적으로 수행해주세요. flash-attention-2가 사용되었습니다.
+* Dependencies installation: `pip install transformers bitsandbytes datasets sentencepiece accelerate trl peft wandb openai pqdm`, pytorch와 flash-attention, vllm 설치는 부가적으로 수행해주세요. flash-attention-2가 사용되었습니다.
 
 ```
 conda env create -f LLM.ymal
@@ -51,5 +51,7 @@ conda activate LLM
 
 ### 기타 (https://medium.com/@bnjmn_marie/dont-merge-your-lora-adapter-into-a-4-bit-llm-65b6da287997)
 
-* SFT를 QLoRA로 학습 후 merge할 경우, 결과가 뭉개짐. 아직 QLoRA merge 방법은 없음.
 * 병합 이후 다시 양자화하여 DPO adpater를 부착, 학습할 경우 SFT 모델이 왜곡됨. 따라서 모델을 병합하지 않고, SFT adapter를 DPO로 튜닝하는 것이 가장 효과적인 방법임.
+* 최종 DPO를 마친 모델은 병합하여 추론하는 것이 바람직하나, 여러 시도를 해봤음에도 결과가 왜곡되었음. 스크래치로 구현하면 방법이 있을지도... 참고 문서가 거의 없음.
+* QLoRA로 학습 후 어뎁터와 병합할 경우, 결과가 뭉개짐. 아직 효과적인 QLoRA merge를 지원하는 공식적인 방법은 없?음.
+* 추론 및 빌드는 어뎁터를 병합하지 않았더라도 vllm을 무조건 활용하세요. 처음 컴파일 하는데 시간이 많이 걸리긴 하지만, cpp 기반 + 유동 배치 활용이라는 점에서 몇백배는 더 빠른 퍼포먼스를 보여줍니다.

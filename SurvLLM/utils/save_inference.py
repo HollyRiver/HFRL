@@ -46,11 +46,10 @@ class SaveInferenceResultsCallback(TrainerCallback):
 
                         outputs = model.generate(
                             input_ids,
-                            max_new_tokens=1024,
+                            max_new_tokens=512,
                             eos_token_id=terminators,
                             pad_token_id=tokenizer.eos_token_id,
-                            do_sample=False,
-                            num_beams=3
+                            do_sample=False ## greedy search
                         )
                         
                         response = outputs[0][input_ids.shape[-1]:]

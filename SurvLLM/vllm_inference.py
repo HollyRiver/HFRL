@@ -1,0 +1,67 @@
+## nohup python vllm_inference.py --gpu_memory_util=0.45 &
+
+from vllm import LLM, SamplingParams
+from vllm.lora.request import LoRARequest
+import torch
+from datasets import load_dataset
+from transformers import AutoTokenizer
+import argparse
+import pandas as pd
+import os
+
+## apply chat template
+def template_dataset(example):
+    return {"prompt": tokenizer.apply_chat_template(example["messages"], tokenize = False, add_generation_prompt = True)}
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--base_model_path", type = str, default = "base_model/Llama-3.1-8B-Instruct-nf4", help = "base model (nf4 양자화 후 저장, 개조된 토크나이저 포함) path")
+    parser.add_argument("--adapter_path", type = str, default = "adapter/Zip-Llama-aligned", help = "adapter config path")
+    parser.add_argument("--inference_data", type = str, default = "data/inference_data.json", help = "추론 프롬프트 파일 위치 (json type). messages column에 프롬프트가 전부 정리되어 있어야 합니다.")
+    parser.add_argument("--output_dir", type = str, default = "data/inference_result.csv", help = "생성 결과 파일 저장 위치")
+    parser.add_argument("--gpu_memory_util", type = float, default = 0.5)
+
+    args = parser.parse_args()
+
+    base_model_path = args.base_model_path
+    adapter_path = args.adapter_path
+
+    llm = LLM(
+        model= base_model_path,
+        dtype=torch.bfloat16,
+        trust_remote_code = True,
+        max_model_len = 32768,
+        gpu_memory_utilization = args.gpu_memory_util,
+        enable_lora = True,
+        max_lora_rank = 64
+    )
+
+    sampling_params = SamplingParams(
+        temperature = 0.4,
+        top_p = 0.9,
+        max_tokens = 512
+    )
+
+    tokenizer = AutoTokenizer.from_pretrained(base_model_path, use_fast = True)
+    inference_data = load_dataset("json", data_files = args.inference_data, split = "train")
+    inference_data = inference_data.map(template_dataset, remove_columns = ["messages"])
+    prompts = inference_data["prompt"]
+
+    outputs = llm.generate(
+        prompts, 
+        sampling_params,
+        lora_request = LoRARequest("adapter", 1, os.path.join(adapter_path, "policy"))
+    )
+
+    data = []
+    idx = inference_data["subject_id"]
+
+    for idx, output in zip(idx, outputs):
+        row = {
+            "subject_id": idx,
+            "generated_text": output.outputs[0].text.strip()
+        }
+        data.append(row)
+
+    df = pd.DataFrame(data)
+    df.to_csv("data/inference_result.csv", index=False, encoding="utf-8-sig")
