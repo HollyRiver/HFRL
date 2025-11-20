@@ -5,10 +5,10 @@ import os
 
 def excel_integrate(input_name):
     ## 엑셀 파일들이 있는 폴더 경로
-    input_folder_path = f"inference/{input_name}/"
+    input_folder_path = f"logs/{input_name}/"
 
     ## 결과물로 저장할 엑셀 파일 경로
-    output_file_path = f"inference/{input_name}/{input_name}.xlsx"
+    output_file_path = f"logs/{input_name}/{input_name}.xlsx"
 
     ## 폴더 내의 모든 .csv 파일을 찾기
     file_list = glob.glob(input_folder_path + "*.csv")

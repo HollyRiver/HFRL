@@ -11,7 +11,7 @@ class SaveInferenceResultsCallback(TrainerCallback):
         super().__init__()
         self.trainer = trainer 
         self.test_dataset = test_dataset
-        self.output_dir = f"inference/{model_name}"
+        self.output_dir = f"logs/{model_name}"
         os.makedirs(self.output_dir, exist_ok=True)
 
     def on_save(self, args, state, control, **kwargs):
