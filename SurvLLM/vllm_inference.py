@@ -20,6 +20,7 @@ if __name__ == "__main__":
     parser.add_argument("--inference_data", type = str, default = "data/inference_data.json", help = "추론 프롬프트 파일 위치 (json type). messages column에 프롬프트가 전부 정리되어 있어야 합니다.")
     parser.add_argument("--output_dir", type = str, default = "data/inference_result.csv", help = "생성 결과 파일 저장 위치")
     parser.add_argument("--gpu_memory_util", type = float, default = 0.5)
+    parser.add_argument("--sampling", type = bool, default = True, help = "샘플링 여부")
 
     args = parser.parse_args()
 
@@ -36,11 +37,18 @@ if __name__ == "__main__":
         max_lora_rank = 64
     )
 
-    sampling_params = SamplingParams(
-        temperature = 0.4,
-        top_p = 0.9,
-        max_tokens = 512
-    )
+    if args.sampling:
+        sampling_params = SamplingParams(
+            temperature = 0.4,
+            top_p = 0.9,
+            max_tokens = 512
+        )
+
+    else:
+        sampling_params = SamplingParams(
+            temperature = 0.0,
+            max_tokens = 512
+        )
 
     tokenizer = AutoTokenizer.from_pretrained(base_model_path, use_fast = True)
     inference_data = load_dataset("json", data_files = args.inference_data, split = "train")

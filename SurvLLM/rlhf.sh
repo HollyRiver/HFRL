@@ -1,3 +1,4 @@
+## 여기 있는거 한번에 다 안돼요. 성능상 한번에 해도 안되고.
 nohup python sft_dataset_setting.py &&
 
 nohup python SFT.py --config config/SFT_config.yaml > sft_log.txt &&
@@ -11,9 +12,12 @@ nohup python dpo_dataset_setting.py &&
 
 nohup python DPO.py --config config/DPO_config.yaml > dpo_log.txt &&
 
+nohup python gel_llama_nf4.py &&
+
 ## DPO에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트를 입력
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
                                --adapter_path="adapter/Zip-Llama-aligned"\
                                --inference_data="data/inference_data.json"\
-                               --output_dir="data/inference_result.csv"\
+                               --output_dir="data/inference_result_greedy.csv"\
+                               --sampling=False\
                                --gpu_memory_util=0.45 &&
