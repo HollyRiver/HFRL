@@ -3,5 +3,5 @@
 **/base_model
 **/results
 **/data
-**/inference
+**/logs
 **/adapter
