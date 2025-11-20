@@ -21,6 +21,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", type = str, default = "data/inference_result.csv", help = "생성 결과 파일 저장 위치")
     parser.add_argument("--gpu_memory_util", type = float, default = 0.5)
     parser.add_argument("--sampling", type = bool, default = True, help = "샘플링 여부")
+    parser.add_argument("--repetition_penalty", type = float, default = 1.0, help = "반복적 생성에 의한 패널티. 1.0 초과하여 설정 시 적용됨")
 
     args = parser.parse_args()
 
@@ -41,13 +42,15 @@ if __name__ == "__main__":
         sampling_params = SamplingParams(
             temperature = 0.4,
             top_p = 0.9,
-            max_tokens = 512
+            max_tokens = 512,
+            repetition_penalty = args.repetition_penalty
         )
 
     else:
         sampling_params = SamplingParams(
             temperature = 0.0,
-            max_tokens = 512
+            max_tokens = 512,
+            repetition_penalty = args.repetition_penalty
         )
 
     tokenizer = AutoTokenizer.from_pretrained(base_model_path, use_fast = True)
