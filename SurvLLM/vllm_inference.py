@@ -1,12 +1,5 @@
 ## nohup python vllm_inference.py --gpu_memory_util=0.45 &
 
-import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-os.environ["VLLM_USE_V1"] = "0" 
-os.environ["NCCL_P2P_DISABLE"] = "1"
-os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn" # Python 3.12 필수 설정
-
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 import torch
@@ -14,6 +7,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer
 import argparse
 import pandas as pd
+import os
 
 ## apply chat template
 def template_dataset(example):
