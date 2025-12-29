@@ -1,5 +1,12 @@
 ## nohup python vllm_inference.py --gpu_memory_util=0.45 &
 
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["VLLM_USE_V1"] = "0" 
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn" # Python 3.12 필수 설정
+
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 import torch
@@ -7,7 +14,6 @@ from datasets import load_dataset
 from transformers import AutoTokenizer
 import argparse
 import pandas as pd
-import os
 
 ## apply chat template
 def template_dataset(example):
@@ -22,6 +28,7 @@ if __name__ == "__main__":
     parser.add_argument("--gpu_memory_util", type = float, default = 0.5)
     parser.add_argument("--sampling", type = bool, default = True, help = "샘플링 여부")
     parser.add_argument("--repetition_penalty", type = float, default = 1.0, help = "반복적 생성에 의한 패널티. 1.0 초과하여 설정 시 적용됨")
+    parser.add_argument("--seed", type = int, default = None, help = "시드 설정")
 
     args = parser.parse_args()
 
@@ -43,6 +50,7 @@ if __name__ == "__main__":
             temperature = 0.4,
             top_p = 0.9,
             max_tokens = 512,
+            seed = args.seed,
             repetition_penalty = args.repetition_penalty
         )
 
@@ -50,6 +58,7 @@ if __name__ == "__main__":
         sampling_params = SamplingParams(
             temperature = 0.0,
             max_tokens = 512,
+            seed = args.seed,
             repetition_penalty = args.repetition_penalty
         )
 
