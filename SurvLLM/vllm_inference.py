@@ -1,5 +1,13 @@
 ## nohup python vllm_inference.py --gpu_memory_util=0.45 &
 
+import os
+
+## vLLM 왜이래... 되긴 됐는데...
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["VLLM_USE_V1"] = "0" 
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 import torch
@@ -7,7 +15,6 @@ from datasets import load_dataset
 from transformers import AutoTokenizer
 import argparse
 import pandas as pd
-import os
 
 ## apply chat template
 def template_dataset(example):
@@ -78,4 +85,4 @@ if __name__ == "__main__":
         data.append(row)
 
     df = pd.DataFrame(data)
-    df.to_csv("data/inference_result.csv", index=False, encoding="utf-8-sig")
+    df.to_csv(args.output_dir, index=False, encoding="utf-8-sig")
