@@ -179,6 +179,11 @@ def main(script_args, training_args, lora_kwargs):
     trainer.add_callback(inference_callback)
 
     trainer.train(resume_from_checkpoint = checkpoint)
+
+    ## (분산 GPU 사용 시) 중간 체크포인트는 분할되어 저장, 훈련 종료 후 전체 상태 딕셔너리로 저장
+    if trainer.is_fsdp_enabled:
+        trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT")
+
     trainer.save_model()
 
 
