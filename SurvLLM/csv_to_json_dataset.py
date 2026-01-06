@@ -8,22 +8,29 @@ csv 파일을 json 포맷의 SFT/DPO/Inference dataset으로 변환하기 위한
 시스템 프롬프트는 txt 파일로 저장되어 입력됩니다. 프롬프트를 변경하고 싶으면 해당 파일을 수정하세요.
 
 SFT csv dataset input format:
-    requirements: subject_id, text, assistant columns
-        subject_id: 각 row의 식별을 위한 인덱스입니다.
-        text: user prompt입니다.
-        assistant: assistant text입니다.
+    SFT 작업 수행에 필요한 데이터셋의 csv 포맷
+
+    requirements:
+        csv 파일 상에서 필요한 column 이름
+        subject_id: 텍스트 인덱스. 해당 부분은 식별을 위한 사항이므로, reset_index를 통해 임의로 설정하거나 코드를 수정하여 제거해도 무방
+        text: 시스템 프롬프트 다음에 기재될 Input Text.
+        assistant: 모델이 학습할 Output Text. 직접 라벨링하거나(Human Feedback) 기계로 라벨링(AI Feedback)
 
 DPO csv dataset input format:
-    requirements: subject_id, text, chosen, rejected columns
-        subject_id: 각 row의 식별을 위한 인덱스입니다.
-        text: user prompt입니다.
-        chosen: assistant text 중 선호되는 출력입니다.
-        rejected: assistant text 중 비선호되는 출력입니다.
+    DPO 작업 수행에 필요한 데이터셋의 csv 포맷
+
+    requirements:
+        subject_id: 텍스트 인덱스
+        text: Input Text
+        chosen: Input Text에 대한 답변으로써 선호되는 텍스트
+        rejected: Input Text에 대한 답변으로써 chosen보다 선호되지 못하는 텍스트
 
 Inference csv dataset input format:
-    requirements: subject_id, text columns
-        subject_id: 각 row의 식별을 위한 인덱스입니다.
-        text: user prompt입니다.
+    LLM으로부터 생성 작업을 수행하기 위해 필요한 데이터셋의 csv 포맷
+
+    requirements:
+        subject_id: 텍스트 인덱스
+        text: Input Text. 해당 텍스트에 대한 답변을 반환하는 것이 목적
 """
 
 if __name__ == "__main__":
