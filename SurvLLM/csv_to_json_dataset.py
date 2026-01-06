@@ -9,12 +9,21 @@ csv 파일을 json 포맷의 SFT/DPO/Inference dataset으로 변환하기 위한
 
 SFT csv dataset input format:
     requirements: subject_id, text, assistant columns
+        subject_id: 각 row의 식별을 위한 인덱스입니다.
+        text: user prompt입니다.
+        assistant: assistant text입니다.
 
 DPO csv dataset input format:
     requirements: subject_id, text, chosen, rejected columns
+        subject_id: 각 row의 식별을 위한 인덱스입니다.
+        text: user prompt입니다.
+        chosen: assistant text 중 선호되는 출력입니다.
+        rejected: assistant text 중 비선호되는 출력입니다.
 
 Inference csv dataset input format:
     requirements: subject_id, text columns
+        subject_id: 각 row의 식별을 위한 인덱스입니다.
+        text: user prompt입니다.
 """
 
 if __name__ == "__main__":
