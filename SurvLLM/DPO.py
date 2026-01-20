@@ -109,16 +109,17 @@ def main(script_args, training_args):
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
-        load_in_4bit = True,                    ## 4비트 양자화
-        bnb_4bit_use_double_quant = True,       ## 추가 양자화로 성능 손실 없이 파라미터당 0.4bit 추가 절약
-        bnb_4bit_quant_type = "nf4",            ## 양자화 데이터 타입 지정: 4비트 기반 모델 훈련 시 사용
-        bnb_4bit_compute_dtype = torch.bfloat16 ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, attention 연산은 해당 포맷으로 역양자화하여 처리
+        load_in_4bit = True,                        ## 4비트 양자화
+        bnb_4bit_use_double_quant = True,           ## 추가 양자화로 성능 손실 없이 파라미터당 0.4bit 추가 절약
+        bnb_4bit_quant_type = "nf4",                ## 양자화 데이터 타입 지정: 4비트 기반 모델 훈련 시 사용
+        bnb_4bit_compute_dtype = torch.bfloat16,    ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, attention 연산은 해당 포맷으로 역양자화하여 처리
+        bnb_4bit_quant_storage = torch.bfloat16 if script_args.multi_gpu else None
     )
 
     ## 모델 로드 및 설정
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name,
-        device_map = "cuda:0",
+        device_map = None if script_args.multi_gpu else "cuda:0",
         use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
         low_cpu_mem_usage = True,                   ## CPU RAM 사용량 적게 사용...
         attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.
@@ -158,6 +159,11 @@ def main(script_args, training_args):
         checkpoint = training_args.resume_from_checkpoint
 
     trainer.train(resume_from_checkpoint = checkpoint)
+
+    ## (분산 GPU 사용 시) 중간 체크포인트는 분할되어 저장, 훈련 종료 후 전체 상태 딕셔너리로 저장
+    if trainer.is_fsdp_enabled:
+        trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT")
+
     trainer.save_model()
 
 

@@ -1,0 +1,833 @@
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260120_035506-k691cw1n
+wandb: Tracking run with wandb version 0.23.1
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260120_035506-ipc7w51d
+[Gloo] Rank [Gloo] Rank 01 is connected to  is connected to 11 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 11
+
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+training dataset size: 90
+test dataset size: 10
+training dataset size: 90
+test dataset size: 10
+======== Log a few random samples from the processed training set ========
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___                    Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: SURGERY
+ 
+Allergies: 
+Patient recorded as having No Known Allergies to Drugs
+ 
+Attending: ___.
+ 
+Chief Complaint:
+self inflicted stab wound to upper abdomen x 2
+ 
+Major Surgical or Invasive Procedure:
+s/p ex-lap, repair of laceration to liver and stomach
+ 
+History of Present Illness:
+Ms. ___ is a ___ year old female with a h/o DM, htn, HL, 
+bipolar disorder s/p multiple past suicide attempts brought to 
+___ via helicopter after self imbedding two kitchen knives 
+into her abdomen. Pt was brought directly to the operating room 
+from the helicoter. with laceration of stomach and liver. 
+laceration of stomach and liver. In the operating room pt 
+underwent exploratory laparotomy; hepatorrhaphy; closure of 
+anterior and posterior gastric lacerations; left tube 
+thoracostomy; attempted right tube thoracostomy. 
+ 
+Past Medical History:
+PMH: HTN, diabetes, ulcers 
+
+Past Psych Hx: Past psych hx: states she had a "nervous 
+breakdown" in ___ that resulted in her first hospitalization in 
+___. States she has had 10 hospitalizations but none since ___. 
+3 suicide attempts (all pill overdose) between ___ denies 
+history of violence to others.
+
+ 
+Social History:
+___
+Family History:
+non contributory
+ 
+Physical Exam:
+At discharge:
+99 97.7 88 147/82 18 96% RA
+AOX3 NAD
+RRR
+CTAB
+Abd soft, non distended appropriately tender at incision
+Edma: minimal
+ 
+Pertinent Results:
+___ 12:12PM BLOOD WBC-7.7 RBC-3.28* Hgb-9.5* Hct-29.4* 
+MCV-90 MCH-28.9 MCHC-32.2 RDW-15.3 Plt ___
+___ 12:45PM BLOOD WBC-11.3* RBC-3.31* Hgb-9.6* Hct-28.9* 
+MCV-87 MCH-29.0 MCHC-33.2 RDW-15.3 Plt ___
+___ 07:15AM BLOOD WBC-10.8 RBC-3.15* Hgb-9.0* Hct-27.1* 
+MCV-86 MCH-28.5 MCHC-33.2 RDW-15.1 Plt ___
+___ 08:40PM BLOOD Hct-28.3*
+___ 11:30AM BLOOD WBC-12.8* RBC-3.38* Hgb-9.7* Hct-29.0* 
+MCV-86 MCH-28.7 MCHC-33.4 RDW-15.4 Plt ___
+___ 07:15AM BLOOD WBC-15.1* RBC-3.63* Hgb-10.3* Hct-31.2* 
+MCV-86 MCH-28.5 MCHC-33.2 RDW-15.5 Plt ___
+___ 03:40AM BLOOD WBC-16.0*# RBC-4.20# Hgb-12.2# Hct-35.7* 
+MCV-85 MCH-29.0 MCHC-34.1 RDW-15.8* Plt ___
+___ 11:36PM BLOOD Hct-36.2#
+___ 05:59PM BLOOD WBC-8.7 RBC-3.12* Hgb-9.1* Hct-27.2* 
+MCV-87 MCH-29.3 MCHC-33.6 RDW-15.5 Plt ___
+___ 03:50PM BLOOD WBC-10.0 RBC-3.39* Hgb-9.6* Hct-29.3* 
+MCV-87 MCH-28.4 MCHC-32.9 RDW-14.8 Plt ___
+___ 12:12PM BLOOD Plt ___
+___ 07:15AM BLOOD Plt ___
+
+CXR ___
+There is no evident pneumothorax. There are low lung volumes. 
+Small bibasal atelectasis have improved. There are small pleural 
+effusion. NG tube tip is in the stomach. 
+
+ECHO: ___
+The left atrium is elongated. Left ventricular wall thicknesses 
+and cavity size are normal. Due to suboptimal technical quality, 
+a focal wall motion abnormality cannot be fully excluded. 
+Overall left ventricular systolic function is normal (LVEF>55%). 
+Right ventricular chamber size and free wall motion are normal. 
+The diameters of aorta at the sinus, ascending and arch levels 
+are normal. The aortic valve leaflets (3) appear structurally 
+normal with good leaflet excursion and no aortic regurgitation. 
+The mitral valve leaflets are mildly thickened. There is no 
+mitral valve prolapse. Trivial mitral regurgitation is seen. The 
+estimated pulmonary artery systolic pressure is normal. There is 
+no pericardial effusion. 
+
+ 
+Brief Hospital Course:
+In the operating room pt underwent exploratory laparotomy; 
+hepatorrhaphy (fix of liver laceration); closure of anterior and 
+posterior gastric lacerations; left tube thoracostomy; attempted 
+right tube thoracostomy (no tube was placed). Pt did get 
+transfused 3 units of blood and platelets in the operating room 
+for acute blood loss from ___ wounds. 
+
+Pt was stable throughout surgery and recovered without 
+complications. Pt was thus transferred directly to the floor 
+from the PACU. Vital signs were stable.  Her HTC (initially 35) 
+dropped to 27 on POD 3 (___) but then stabilize and rose to 29 
+on its own without additional transfusions.  On ___ left chest 
+tube was removed without complications (no pneumothorax). On 
+___ NGT was removed without incident.
+
+During her stay pt had intermit ant tachycardia (at one point to 
+130s) most likely secondary to pain as pt did not understand or 
+did not use PCA. Pt was also complained of some chest pain that 
+waxed and waned but pt did indicated that she had had similar 
+chest discomfort for months (prior the this incident). Pain is 
+usually associated with "racing thoughts". Pain was always minor 
+and never associated with any diaphoresis, nausea, vomiting or 
+signs of acute distress. Pt had cardiac enzymes x3 which were 
+negative, and got several EKG (shows unchanged LBBB) and ECHOs 
+which was within normal limits. Cardiology consult suggested 
+that pain did not sound cardiac especially in light of negative 
+enzymes and normal ECHO. Cardiology suggest that her left bundle 
+branch block is chronic and can be investigated as an out 
+patient. They suggest out patient stress test in the future. 
+During her stay pt got a psychiatry consult who suggested 
+restarting home medications, 1:1 sitter and discharge to 
+inpatient psychiatry unit.
+
+Over the weekend pts diet was advanced to regular with no 
+complications, chest tubes were removed without complication (no 
+pneumothorax). Pt was placed back on home medications. Pt on 
+discharge has been tolerating regular diet, ambulating, passing 
+flatus, making urine and vital signs have been stable for 
+several days. On day of discharge staples were removed. 
+ 
+Medications on Admission:
+___: metformin 500", glypizide XL 2.5', priolosec 40", lamictal 
+200 qAM/100 qPM, simvastatin 10', levothyroxine 0.125', 
+metoprolol 25', lisinopril 5', Wellbutrin XL 300', primidone 
+25", periactin 6", geodon 40 TID, meclizine 25 q8h prn, ativan 
+1'/2 qHS
+ 
+Discharge Medications:
+1. Lamotrigine 100 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+2. Ziprasidone HCl 40 mg Capsule Sig: One (1) Capsule PO QHS 
+(once a day (at bedtime)).  
+3. Aspirin 325 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+4. Hydromorphone 4 mg Tablet Sig: One (1) Tablet PO Q4H (every 4 
+hours) as needed for Pain.  
+5. Pantoprazole 40 mg Tablet, Delayed Release (E.C.) Sig: One 
+(1) Tablet, Delayed Release (E.C.) PO Q24H (every 24 hours).  
+6. Levothyroxine 125 mcg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+7. Metoprolol Tartrate 25 mg Tablet Sig: One (1) Tablet PO BID 
+(2 times a day).  
+8. Lisinopril 5 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+
+9. Primidone 50 mg Tablet Sig: .25 Tablet PO BID (2 times a 
+day). Tablet(s) 
+10. Acetaminophen 325 mg Tablet Sig: One (1) Tablet PO Q6H 
+(every 6 hours) as needed for pain.  
+
+ 
+Discharge Disposition:
+Extended Care
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+self inflicted liver and stomach laceration
+
+ 
+Discharge Condition:
+stable, alert and oriented x3, ambulating, tolerating regular 
+diet, no acute distress
+
+ 
+Discharge Instructions:
+Your injuries included laceration of stomach and liver which 
+were closed in surgery. You recieved some blood. You had a chest 
+tube in your chest which was removed. You recoved well. 
+
+Please call your doctor or nurse practitioner or return to the 
+Emergency Department for any of the following:
+
+*You experience new chest pain, pressure, squeezing or 
+tightness.
+
+*New or worsening cough, shortness of breath, or wheeze.
+ 
+*If you are vomiting and cannot keep down fluids or your 
+medications.
+ 
+*You are getting dehydrated due to continued vomiting, diarrhea, 
+ or other reasons. Signs of dehydration include dry mouth, rapid 
+heartbeat, or feeling dizzy or faint when standing.
+ 
+*You see blood or dark/black material when you vomit or have a 
+bowel movement.
+ 
+*You experience burning when you urinate, have blood in your 
+urine, or experience a discharge.
+ 
+*Your pain in not improving. Call or return immediately if your 
+pain is getting worse or changes location or moving to your 
+chest or back.
+
+*You have shaking chills, or fever greater than 101.5 degrees 
+Fahrenheit or 38 degrees Celsius. Redness or swelling, drainage  
+of your incision
+
+*Any change in your symptoms, or any new symptoms that concern 
+you.
+ 
+Please resume all regular home medications. We have also 
+suggested you take some medications for pain.
+ 
+Please get plenty of rest, continue to ambulate several times 
+per day, and drink adequate amounts of fluids. Avoid lifting 
+weights greater than ___ lbs until you follow-up with your 
+surgeon.
+ 
+Avoid driving or operating heavy machinery while taking pain 
+medications. 
+
+You may shower, but do not soak or bath or swim for another 2 
+weeks until your follow up appointment.
+
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with self-inflicted stab wound to upper abdomen; on physical examination, BP NA, HR NA, RR NA and Temp NA; admission labs showed WBC 10.0, RBC 3.39, Hgb 9.6, Hct 29.3, Plt NA, MCV 87, MCH 28.4, MCHC 32.9, RDW 14.8, and Glucose NA; the most diagnostically relevant finding was lacerations of the liver and stomach from self-inflicted stab wounds, confirmed intraoperatively.<|eot_id|>
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: ORTHOPAEDICS
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+R calf pain
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ F w/ ___ weeks of R calf swelling and acute increase in pain 
+since 3:30am ___ (day of admission).  Pt innitially noted 
+RLE swelling on ___ without any pain/discomfort. She 
+underwent a negative U/S for DVT by her PCP and had noted a 
+slight improvement of her symptoms since then. The day of 
+admission she awoke to intense pain and swelling in the calf and 
+was unable bear weight on her RLE due to pain.  Pt denies any 
+trauma to the area, denies fever/chills. Of note, she takes a 
+cardio class on ___ for the past year but has not 
+chnaged/increased her activity.  Additionally, pt had similar 
+episode of swelling ___ years ago in the same location that 
+spontaneously resolved and occured without pain.
+ 
+Past Medical History:
+HTN
+ 
+Social History:
+___
+Family History:
+noncontributory
+ 
+Physical Exam:
+A&O x 3 
+Calm and comfortable 
+  
+BUE skin clean and intact 
+No tenderness, deformity, erythema, edema, induration or
+ecchymosis 
+Arms and forearm compartments soft 
+No pain with passive motion 
+Axillary, Radial, Median, Ulnar SILT 
+EPL FPL EIP EDC FDP FDI fire 
+2+ radial pulses 
+
+RLE: skin clean and intact, no erythema, pulses 2+ ___ 
+R posterior calf/gastrocnemius is markedly swollen compared to L
+with increased pain with passive dorsiflexion at ankle.  Able to
+dorsiflex the great toe easily and pt able to actively dorsiflex
+although not as easily as on L.  Mild TTP over compartments. 
+Posterior compartments are more tense than lateral and anterior. 
+
+No knee or hip pain, ROM intact at hip and knee.  Pt unable to
+dorsiflex fully at ankle without increased pain. Saphenous,
+Sural, Deep peroneal, Superficial peroneal SILT 
+
+LLE exam is normal
+
+ 
+Pertinent Results:
+___ 03:00PM BLOOD WBC-6.4 RBC-4.60 Hgb-13.2 Hct-36.8 
+MCV-80* MCH-28.6 MCHC-35.8* RDW-15.5 Plt ___
+___ 03:00PM BLOOD Neuts-64.3 ___ Monos-3.4 
+Eos-11.7* Baso-0.2
+___ 03:00PM BLOOD ___ PTT-25.7 ___
+___ 03:00PM BLOOD Glucose-99 UreaN-11 Creat-1.1 Na-137 
+K-3.3 Cl-98 HCO3-28 AnGap-14
+___ 03:00PM BLOOD CRP-40.5*
+___ 03:45PM BLOOD RheuFac-6
+ 
+Brief Hospital Course:
+Mrs. ___ presented to the Emergency Department complaining 
+of acute RLE pain/swelling. She was evaluated by the 
+Orthopaedics department and underwent compartment pressure 
+measurement. She was found to have elevated pressures but no 
+signs of neurovascular compromise. Fasciotomy was not indicated. 
+She was admitted for further evaluation and monitoring. On the 
+floor, pt's exam improved without further intervention. Medical 
+and Rheumatologic consultation was obtained, however, no clear 
+evidence of a rheumatologic or infectious process was 
+identified. She remained hemodynamically stable with her pain 
+was controlled. She progressed with physical therapy to improve 
+her strength and mobility. She was discharged in stable 
+condition with instructions to follow up with her PCP later this 
+week or next. At the time of discharge her RLE was significantly 
+less swollen and less painful. Pt was able to ambulate with 
+minima pain but required crutches/cane to help with stability.
+
+ 
+Medications on Admission:
+- Chlorthalidone
+- Ambien prn
+
+ 
+Discharge Medications:
+1. acetaminophen 325 mg Tablet Sig: ___ Tablets PO Q6H (every 6 
+hours) as needed for pain.  
+2. chlorthalidone 25 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+3. zolpidem 5 mg Tablet Sig: One (1) Tablet PO HS (at bedtime) 
+as needed for insomnia.  
+4. oxycodone 5 mg Tablet Sig: 0.5 Tablet PO Q6H (every 6 hours): 
+do not drive while taking narcotic pain medications.
+Disp:*15 Tablet(s)* Refills:*0*
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+R calf/leg acute focal myositis
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+Activity: 
+-Continue to be full weight bearing on your right leg. 
+
+Other Instructions
+- Resume your regular diet. 
+- Avoid nicotine products to optimize healing. 
+
+- Resume your home medications. Take all medications as 
+instructed. 
+
+-You have also been given Additional Medications to control your 
+pain. Please allow 72 hours for refill of narcotic 
+prescriptions, so plan ahead. You can either have them mailed to 
+your home or pick them up at the clinic located on ___ 2. We 
+are not allowed to call in narcotic (oxycontin, oxycodone, 
+percocet) prescriptions to the pharmacy. In addition, we are 
+only allowed to write for pain medications for 90 days from the 
+date of surgery.
+
+If you have questions, concerns or experience any of the below 
+danger signs then please call your doctor at ___ or go 
+to your local emergency room.
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with right calf pain; on physical examination, BP NA, HR NA, RR NA, and Temp NA; admission labs showed WBC 6.4, RBC 4.6, Hgb 13.2, Hct 36.8, Plt NA, MCV 80, MCH 28.6, MCHC 35.8, RDW 15.5, and Glucose 99; the most diagnostically relevant finding was right calf swelling and tenderness with elevated compartment pressure.<|eot_id|>
+======== Log a few random samples from the processed training set ========
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___              Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: OBSTETRICS/GYNECOLOGY
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Induction of labor for postdates
+ 
+Major Surgical or Invasive Procedure:
+vaginal delivery
+
+ 
+Physical Exam:
+___ 0016 Temp: 98.7 PO BP: 120/74 R Sitting HR: 76 RR: 18
+Pain Score: ___ 
+General: NAD, A&Ox3
+Lungs: Normal work of breathing
+Abd: soft, nontender, fundus firm 3cm  below umbilicus
+Lochia: minimal
+Extremities: no calf tenderness, no edema
+
+ 
+Pertinent Results:
+___ 09:49PM   CREAT-0.8
+___ 09:49PM   ALT(SGPT)-18 AST(SGOT)-30
+___ 09:49PM   URIC ACID-7.2*
+___ 09:49PM   WBC-17.6* RBC-3.91 HGB-12.0 HCT-34.9 MCV-89 
+MCH-30.7 MCHC-34.4 RDW-13.3 RDWSD-43.3
+___ 09:49PM   PLT COUNT-106*
+___ 09:09PM URINE  HOURS-RANDOM CREAT-131 TOT PROT-472 
+PROT/CREA-3.6*
+___ 09:09PM URINE  COLOR-Yellow APPEAR-Clear SP ___
+___ 09:09PM URINE  BLOOD-TR* NITRITE-NEG PROTEIN-100* 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-6.5 
+LEUK-NEG
+___ 09:09PM URINE  RBC-4* WBC-2 BACTERIA-FEW* YEAST-NONE 
+EPI-0 TRANS EPI-<1
+___ 09:09PM URINE  MUCOUS-RARE*
+___ 09:00PM URINE  COLOR-Yellow APPEAR-Clear SP ___
+___ 09:00PM URINE  BLOOD-TR* NITRITE-NEG PROTEIN-100* 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-6.5 
+LEUK-NEG
+___ 09:00PM URINE  RBC-1 WBC-1 BACTERIA-NONE YEAST-NONE 
+EPI-0
+___ 09:00PM URINE  HYALINE-1*
+___ 09:00PM URINE  MUCOUS-RARE*
+___ 12:05PM   CREAT-0.8
+___ 12:05PM   estGFR-Using this
+___ 12:05PM   AST(SGOT)-29
+___ 12:05PM   URIC ACID-7.4*
+___ 11:01AM   WBC-10.2* RBC-4.18 HGB-12.7 HCT-37.3 MCV-89 
+MCH-30.4 MCHC-34.0 RDW-13.3 RDWSD-43.7
+___ 11:01AM   PLT COUNT-118*
+ 
+Brief Hospital Course:
+This is a ___ year old G2P2 who underwent a spontaneous vaginal 
+delivery complicated by severe preeclampsia which was severe by 
+blood pressures. 
+
+Patient progressed to fully dilated in 7 hours and delivered 10 
+hours after arrival. She was ruled in for preeclampsia in 
+immediate postpartum period due to sustained severe range blood 
+pressures more than 4 hours apart and started on magnesium for 
+seizure prophylaxis although asymptomatic. During postpartum 
+days 2 through 4, she continued to have sustained severe range 
+blood pressures and was started on a standing dose of 30mg 
+Nifedipine which was uptitrated to 30mg BID. Serum labs were 
+notable for a platelet count of 118 which remained stable for 
+the remainder of her stay. 
+
+During her stay she also complained of a ___ headache that was 
+relieved with tylenol and compazine. 
+
+The remainder of her postpartum course was uncomplicated. Her 
+vaginal bleeding was within normal limits. She tolerated a 
+regular diet, voided spontaneously without issue, and ambulated 
+independently. By postpartum day four after vaginal delivery, 
+she was deemed stable for discharge with a plan set for 
+postpartum follow up. 
+
+ 
+Discharge Medications:
+1.  Ibuprofen 600 mg PO Q6H:PRN Moderate Pain  
+2.  NIFEdipine (Extended Release) 30 mg PO BID  
+3.  Acetaminophen ___ mg PO Q6H:PRN Mild Pain  
+4.  Docusate Sodium 100 mg PO BID:PRN Constipation  
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+SVD ___
+GIRL
+3165 grams
+Severe Pre Eclampsia
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+see ob sheet
+pelvic rest x 6 weeks
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with induction of labor for postdates; on physical examination, BP 120/74, HR 76, RR 18, and Temp 98.7; admission labs showed WBC 10.2, RBC 4.18, Hgb 12.7, Hct 37.3, Plt 118, MCV 89, MCH 30.4, MCHC 34.0, RDW 13.3, and Glucose NA; the most diagnostically relevant finding was sustained severe-range blood pressures.<|eot_id|>
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: SURGERY
+ 
+Allergies: 
+Sulfa (Sulfonamide Antibiotics)
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Colon Cancer
+ 
+Major Surgical or Invasive Procedure:
+___- laparoscopic right hemicolectomy
+___- exploratory laparotomy
+ 
+History of Present Illness:
+___ female with a PMH significant for HLD who presents to the 
+colorectal surgery clinic after she was found to have a 
+fungating mass with ulceration in the proximal ascending colon 
+as well as multiple polyps on screening colonoscopy at ___ 
+___. Multiple polyps were removed at that time and she was 
+referred to ___ for further evaluation. She underwent an 
+additional colonoscopy on ___ with the removal of multiple 
+pedunculated polyps as well as biopsy of the fungating mass. 
+Pathology of the mass confirmed adenocarcinoma. She denies any 
+recent abdominal pain, weight loss, fevers, chills, of bloody 
+stools. She also notes that over the past year she has episodes 
+of fecal incontinence multiple times per week. She denies any 
+history of straining or pain with defecation. She notes that her 
+bowel movements are regular. She has three children.
+
+ 
+Past Medical History:
+Hyperlipidemia, ___
+
+ 
+Social History:
+___
+Family History:
+Colon Cancer  mother         
+Cancer (other)   
+___ mother and father    
+ 
+Physical Exam:
+General: Ambulating the inpatient ward independently. Pain 
+controlled on oral agents. Tolerating a regular diet and passing 
+flatus. 
+VS: 98.4, 98.1, 75, 121/58, 18, 96%RA
+Neruo: A&OX3
+Lungs: No shortness of breath, lungs clear.
+Abd: Obese, soft, midline incision intact and cloased with 
+dermabond without drainage.
+Lower Ext: no significant edema in bilateral lower extremities.
+ 
+Pertinent Results:
+___ 06:15AM BLOOD WBC-12.7* RBC-3.24* Hgb-10.0* Hct-28.6* 
+MCV-88 MCH-30.8 MCHC-34.9 RDW-14.4 Plt ___
+___ 11:47PM BLOOD WBC-15.1* RBC-3.45* Hgb-10.6* Hct-30.0* 
+MCV-87 MCH-30.8 MCHC-35.4* RDW-14.5 Plt ___
+___ 04:10PM BLOOD WBC-15.8* RBC-3.44* Hgb-10.7* Hct-29.7* 
+MCV-87 MCH-31.3 MCHC-36.1* RDW-14.2 Plt ___
+___ 03:18AM BLOOD WBC-15.9* RBC-4.07*# Hgb-12.6# Hct-35.9*# 
+MCV-88 MCH-31.1 MCHC-35.2* RDW-13.3 Plt ___
+___ 12:01AM BLOOD Hct-25.7*
+___ 10:33PM BLOOD WBC-13.2*# RBC-3.00*# Hgb-9.2*# 
+Hct-27.5*# MCV-92 MCH-30.5 MCHC-33.3 RDW-12.8 Plt ___
+___ 04:50PM BLOOD Hct-37.7
+___ 03:18AM BLOOD Neuts-91.5* Lymphs-5.5* Monos-2.8 Eos-0.1 
+Baso-0
+___ 06:15AM BLOOD Glucose-90 UreaN-11 Creat-0.6 Na-143 
+K-3.7 Cl-109* HCO3-30 AnGap-8
+___ 03:18AM BLOOD Glucose-189* UreaN-14 Creat-0.6 Na-138 
+K-4.1 Cl-106 HCO3-23 AnGap-13
+___ 10:33PM BLOOD Glucose-151* UreaN-13 Creat-0.6 Na-138 
+K-3.9 Cl-104 HCO3-26 AnGap-12
+___:50PM BLOOD Na-141 K-3.8 Cl-104
+___ 06:15AM BLOOD Calcium-8.0* Phos-1.8*# Mg-1.9
+___ 03:18AM BLOOD Calcium-7.4* Phos-3.8 Mg-1.8
+___ 04:50PM BLOOD Mg-2.2
+___ 08:25AM BLOOD WBC-8.1 RBC-3.23* Hgb-9.9* Hct-28.9* 
+MCV-90 MCH-30.7 MCHC-34.3 RDW-14.3 Plt ___
+ 
+Brief Hospital Course:
+Ms ___ was admitted to the colorectal surgery service on 
+___ after undergoing a planned laparoscopic right 
+hemicolectomy. She tolerated the procedure well and was 
+extubated in the OR prior to recovering in the PACU. For full 
+details of the procedure please see the dictated operative 
+report. That evening she was noted to be hypotensive and 
+tachycardic unresponsive to a 1L fluid bolus. Her Hct was 25.7 
+for which she received 2 U PRBC. She was taken back that evening 
+to the OR for an exploratory laparotomy where she was noted to 
+have a bleeding mesenteric blood vessel, which was ligated. Her 
+post op Hct was 35.9 with improved hemodynamic stability. She 
+was extubated in the OR but was taken to the ICU for monitoring 
+overnight. Post op she was kept NPO with IVF and a foley. Her 
+Hct was checked every 4 hours and slowly trended down over POD 1 
+from 35.9 to 33.3 to 29.7. Because she remained hemodynamically 
+stable she was transferred to the main surgical floor that 
+evening and her diet was advanced to sips. On POD 2 her diet was 
+advanced to clears and she was put on maintenance IV fluids. The 
+nusring staff continued to attempt to wean her O2 however, she 
+was 89% on room air, she denied shortness of breath. THe patient 
+had recieved a large amount of volume when taken to the 
+operating room for the second time and this was thought to be 
+the cause of the oxygen requirment. By the morning of 
+post-operative day three, the patient was weaned from O2 and her 
+saturation was 96% on room air. Her lungs were clear bilaterally 
+to ascultation. The patient reported passing flatus on the 
+morning of post-opreative day three. She was given a regular 
+diet which she tolerated well. She was ambulating the inpatient 
+unit independently. The patient was hemodynamically stable but 
+in the afternoon, she reported feeling week. Given her hospital 
+course, discharge was postponed, and the patient was monitored 
+overnight. On the morning of ___, the patient's hematocrit 
+was 28.9 which was stable from 48 hours before which was 28.6. 
+She was tolerating a regular diet and discharged home with 
+appropriate discharge instructions.  
+
+Include in Brief Hospital Course for Every Patient and check of 
+boxes that apply:
+Post-Surgical Complications During Inpatient Admission:
+[ ] Post-Operative Ileus resolving w/o NGT
+[ ] Post-Operative Ileus requiring management with NGT
+[ ] UTI
+[ ] Wound Infection
+[ ] Anastomotic Leak
+[ ] Staple Line Bleed
+[ ] Congestive Heart failure 
+[ ] ARF
+[ ] Acute Urinary retention, failure to void after Foley D/C'd
+[ ] Acute Urinary Retention requiring discharge with Foley 
+Catheter
+[ ] DVT
+[ ] Pneumonia
+[ ] Abscess
+[x] Post-operative bleeding, taken back to OR POD 0 from PACU
+[ ] None
+
+Social Issues Causing a Delay in Discharge:
+[ ] Delay in organization of ___ services
+[ ] Difficulty finding appropriate rehabilitation hospital 
+disposition.
+[ ] Lack of insurance coverage for ___ services
+[ ] Lack of insurance coverage for prescribed medications.
+[ ] Family not agreeable to discharge plan.
+[ ] Patient knowledge deficit related to ileostomy delaying 
+discharge. 
+[x] No social factors contributing in delay of discharge.
+
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Atorvastatin 10 mg PO DAILY 
+
+ 
+Discharge Medications:
+1. Atorvastatin 10 mg PO DAILY 
+2. OxycoDONE (Immediate Release)  ___ mg PO Q4H:PRN pain 
+Do not drink alcohol or drive a car while taking this 
+medication. 
+RX *oxycodone 5 mg ___ tablet(s) by mouth every four (4) hours 
+Disp #*35 Tablet Refills:*0
+3. Acetaminophen 650 mg PO Q6H:PRN pain 
+do not take more than 3000mg of tylenol in 24 hours. do not 
+drink alcohol. 
+RX *acetaminophen 325 mg ___ tablet(s) by mouth every six (6) 
+hours Disp #*40 Tablet Refills:*0
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Colon Adenocarcinoma 
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+You were admitted to the hospital after laparoscopic right 
+hemicolectomy for colon adenocarcinoma and post-operative 
+bleeding requiring exploratory laparotomy. You have recovered 
+from this procedure well and you are now ready to return home. 
+Samples from your colon were taken and this tissue has been sent 
+to the pathology department for analysis. You will receive these 
+pathology results at your follow-up appointment. If there is an 
+urgent need for the surgeon to contact you regarding these 
+results they will contact you before this time. You have 
+tolerated a regular diet, passing gas and your pain is 
+controlled with pain medications by mouth. You may return home 
+to finish your recovery.
+
+Because of the bleeding post-operatively, it is important to 
+monitor yourself for signs and symptoms of bleeding: weakness, 
+fatigue, fast heart beat, fainting, abdominal distension. Please 
+call the office if you have any of these issues. If it is an 
+emergency, please call the office. 
+                            
+Please monitor your bowel function closely. You may or may not 
+have had a bowel movement prior to your discharge which is 
+acceptable, however it is important that you have a bowel 
+movement in the next ___ days. After anesthesia it is not 
+uncommon for patients to have some decrease in bowel function 
+but you should not have prolonged constipation. Some loose stool 
+and passing of small amounts of dark, old appearing blood are 
+expected. However, if you notice that you are passing bright red 
+blood with bowel movements or having loose stool without 
+improvement please call the office or go to the emergency room 
+if the symptoms are severe. If you are taking narcotic pain 
+medications there is a risk that you will have some 
+constipation. Please take an over the counter stool softener 
+such as Colace, and if the symptoms do not improve call the 
+office. If you have any of the following symptoms please call 
+the office for advice or go to the emergency room if severe: 
+increasing abdominal distension, increasing abdominal pain, 
+nausea, vomiting, inability to tolerate food or liquids, 
+prolonged loose stool, or extended constipation.
+ 
+You have a long vertical incision on your abdomen that is closed 
+with staples. This incision can be left open to air or covered 
+with a dry sterile gauze dressing if the staples become 
+irritated from clothing. The staples will stay in place until 
+your first post-operative visit at which time they can be 
+removed in the clinic, most likely by the office nurse. Please 
+monitor the incision for signs and symptoms of infection 
+including: increasing redness at the incision, opening of the 
+incision, increased pain at the incision line, draining of 
+white/green/yellow/foul smelling drainage, or if you develop a 
+fever. Please call the office if you develop these symptoms or 
+go to the emergency room if the symptoms are severe. You may 
+shower, let the warm water run over the incision line and pat 
+the area dry with a towel, do not rub.
+ 
+No heavy lifting for at least 6 weeks after surgery unless 
+instructed otherwise by Dr. ___ Dr. ___. You may 
+gradually increase your activity as tolerated but clear heavy 
+exercise with Dr. ___.
+ 
+You will be prescribed a small amount of the pain medication 
+Oxycodone. Please take this medication exactly as prescribed. 
+You may take Tylenol as recommended for pain. Please do not take 
+more than 4000mg of Tylenol daily. Do not drink alcohol while 
+taking narcotic pain medication or Tylenol. Please do not drive 
+a car while taking narcotic pain medication.
+ 
+Thank you for allowing us to participate in your care! Our hope 
+is that you will have a quick return to your life and usual 
+activities. Good luck!
+
+ 
+Followup Instructions:
+___
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+A female patient presented with Colon cancer; on physical examination, BP 121/58, HR 75, RR 18, and Temp 98.4; admission labs showed WBC 15.9, RBC 4.07, Hgb 12.6, Hct 35.9, Plt NA, MCV 88, MCH 31.1, MCHC 35.2, RDW 13.3, and Glucose 189; the most diagnostically relevant finding was a fungating ulcerated mass in the proximal ascending colon confirmed as adenocarcinoma on biopsy.<|eot_id|>
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.69s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.79s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.96s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.96s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.08s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.57s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.08s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.59s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.09s/it]
+======== Log a first sample from the processed training set ========
+masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+======== Log a first sample from the processed training set ========
+masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+/root/anaconda3/envs/LLM/lib/python3.12/site-packages/accelerate/accelerator.py:1992: UserWarning: Upcasted low precision parameters in Linear because mixed precision turned on in FSDP. Affects: weight.
+  warnings.warn(
+/root/anaconda3/envs/LLM/lib/python3.12/site-packages/accelerate/accelerator.py:1998: UserWarning: FSDP upcast of low precision parameters may affect the precision of model checkpoints.
+  warnings.warn(
+  0%|          | 0/1360 [00:00<?, ?it/s]  0%|          | 1/1360 [00:12<4:43:50, 12.53s/it]  0%|          | 2/1360 [00:17<3:01:14,  8.01s/it]  0%|          | 3/1360 [00:22<2:34:33,  6.83s/it]  0%|          | 4/1360 [00:27<2:17:19,  6.08s/it]  0%|          | 5/1360 [00:32<2:07:08,  5.63s/it]  0%|          | 6/1360 [00:37<2:00:57,  5.36s/it]  1%|          | 7/1360 [00:42<1:57:09,  5.20s/it]  1%|          | 8/1360 [00:47<1:56:12,  5.16s/it]  1%|          | 9/1360 [00:52<1:54:36,  5.09s/it]  1%|          | 10/1360 [00:57<1:54:39,  5.10s/it]  1%|          | 11/1360 [01:02<1:54:19,  5.09s/it]  1%|          | 12/1360 [01:07<1:53:33,  5.05s/it]  1%|          | 13/1360 [01:12<1:52:53,  5.03s/it]  1%|          | 14/1360 [01:17<1:52:39,  5.02s/it]  1%|          | 15/1360 [01:22<1:53:11,  5.05s/it]  1%|          | 16/1360 [01:27<1:53:08,  5.05s/it]  1%|▏         | 17/1360 [01:32<1:54:54,  5.13s/it]  1%|▏         | 18/1360 [01:38<1:56:21,  5.20s/it]  1%|▏         | 19/1360 [01:43<1:53:24,  5.07s/it]  1%|▏         | 20/1360 [01:47<1:51:59,  5.01s/it]  2%|▏         | 21/1360 [01:52<1:51:05,  4.98s/it]  2%|▏         | 22/1360 [01:57<1:50:19,  4.95s/it]  2%|▏         | 23/1360 [02:02<1:50:18,  4.95s/it]  2%|▏         | 24/1360 [02:07<1:49:46,  4.93s/it]  2%|▏         | 25/1360 [02:12<1:49:42,  4.93s/it]  2%|▏         | 26/1360 [02:17<1:49:42,  4.93s/it]  2%|▏         | 27/1360 [02:22<1:49:42,  4.94s/it]  2%|▏         | 28/1360 [02:27<1:49:37,  4.94s/it]  2%|▏         | 29/1360 [02:32<1:49:56,  4.96s/it]  2%|▏         | 30/1360 [02:37<1:51:07,  5.01s/it]  2%|▏         | 31/1360 [02:42<1:51:09,  5.02s/it]  2%|▏         | 32/1360 [02:47<1:50:41,  5.00s/it]  2%|▏         | 33/1360 [02:52<1:50:31,  5.00s/it]  2%|▎         | 34/1360 [02:57<1:51:33,  5.05s/it]  3%|▎         | 35/1360 [03:02<1:53:16,  5.13s/it]  3%|▎         | 36/1360 [03:07<1:51:56,  5.07s/it]  3%|▎         | 37/1360 [03:12<1:51:18,  5.05s/it]  3%|▎         | 38/1360 [03:17<1:51:18,  5.05s/it]  3%|▎         | 39/1360 [03:22<1:51:17,  5.06s/it]  3%|▎         | 40/1360 [03:27<1:50:33,  5.03s/it]  3%|▎         | 41/1360 [03:32<1:49:54,  5.00s/it]  3%|▎         | 42/1360 [03:37<1:49:58,  5.01s/it]  3%|▎         | 43/1360 [03:42<1:50:30,  5.03s/it]  3%|▎         | 44/1360 [03:47<1:50:05,  5.02s/it]  3%|▎         | 45/1360 [03:52<1:50:12,  5.03s/it]  3%|▎         | 46/1360 [03:57<1:49:21,  4.99s/it]  3%|▎         | 47/1360 [04:03<1:50:17,  5.04s/it]  4%|▎         | 48/1360 [04:08<1:50:38,  5.06s/it]  4%|▎         | 49/1360 [04:13<1:51:38,  5.11s/it]  4%|▎         | 50/1360 [04:18<1:50:56,  5.08s/it]  4%|▍         | 51/1360 [04:23<1:52:13,  5.14s/it]  4%|▍         | 52/1360 [04:29<1:56:30,  5.34s/it]  4%|▍         | 53/1360 [04:34<1:57:08,  5.38s/it]  4%|▍         | 54/1360 [04:40<1:58:11,  5.43s/it]  4%|▍         | 55/1360 [04:46<1:59:14,  5.48s/it]  4%|▍         | 56/1360 [04:51<2:00:43,  5.55s/it]  4%|▍         | 57/1360 [04:57<2:01:18,  5.59s/it]  4%|▍         | 58/1360 [05:03<2:02:45,  5.66s/it]  4%|▍         | 59/1360 [05:08<2:00:10,  5.54s/it]  4%|▍         | 60/1360 [05:22<2:53:34,  8.01s/it]  4%|▍         | 61/1360 [05:27<2:34:31,  7.14s/it]  5%|▍         | 62/1360 [05:32<2:22:05,  6.57s/it]  5%|▍         | 63/1360 [05:38<2:14:42,  6.23s/it]  5%|▍         | 64/1360 [05:43<2:10:21,  6.04s/it]  5%|▍         | 65/1360 [05:49<2:07:37,  5.91s/it]  5%|▍         | 66/1360 [05:54<2:03:19,  5.72s/it]  5%|▍         | 67/1360 [06:00<2:03:33,  5.73s/it]  5%|▌         | 68/1360 [06:06<2:05:03,  5.81s/it]  5%|▌         | 69/1360 [06:12<2:07:33,  5.93s/it]  5%|▌         | 70/1360 [06:17<2:03:25,  5.74s/it]  5%|▌         | 71/1360 [06:28<2:36:49,  7.30s/it]  5%|▌         | 72/1360 [06:34<2:23:35,  6.69s/it]  5%|▌         | 73/1360 [06:39<2:18:16,  6.45s/it]  5%|▌         | 74/1360 [06:45<2:12:34,  6.19s/it]  6%|▌         | 75/1360 [06:51<2:09:29,  6.05s/it]  6%|▌         | 76/1360 [06:58<2:13:56,  6.26s/it]  6%|▌         | 77/1360 [07:04<2:15:39,  6.34s/it]  6%|▌         | 78/1360 [07:11<2:18:05,  6.46s/it]  6%|▌         | 79/1360 [07:17<2:18:14,  6.48s/it]  6%|▌         | 80/1360 [07:24<2:18:48,  6.51s/it]  6%|▌         | 81/1360 [07:31<2:20:01,  6.57s/it]  6%|▌         | 82/1360 [07:37<2:19:06,  6.53s/it]  6%|▌         | 83/1360 [07:44<2:18:54,  6.53s/it]  6%|▌         | 84/1360 [07:50<2:18:12,  6.50s/it]  6%|▋         | 85/1360 [07:55<2:10:24,  6.14s/it]                                                   {'loss': 1.106, 'grad_norm': 0.5884970426559448, 'learning_rate': 4.947736552407993e-06, 'entropy': 2.177560660418342, 'num_tokens': 1335960.0, 'mean_token_accuracy': 0.7642430929576649, 'epoch': 5.0}
+  6%|▋         | 85/1360 [07:55<2:10:24,  6.14s/it]  6%|▋         | 86/1360 [08:01<2:10:25,  6.14s/it]  6%|▋         | 87/1360 [08:07<2:08:27,  6.05s/it]  6%|▋         | 88/1360 [08:13<2:03:27,  5.82s/it]  7%|▋         | 89/1360 [08:18<2:02:31,  5.78s/it]  7%|▋         | 90/1360 [08:24<2:00:29,  5.69s/it]  7%|▋         | 91/1360 [08:29<1:59:27,  5.65s/it]  7%|▋         | 92/1360 [08:35<1:59:44,  5.67s/it]  7%|▋         | 93/1360 [08:41<1:59:59,  5.68s/it]  7%|▋         | 94/1360 [08:47<2:03:27,  5.85s/it]  7%|▋         | 95/1360 [08:53<2:06:27,  6.00s/it]  7%|▋         | 96/1360 [09:00<2:10:01,  6.17s/it]  7%|▋         | 97/1360 [09:08<2:21:41,  6.73s/it]  7%|▋         | 98/1360 [09:17<2:36:05,  7.42s/it]  7%|▋         | 99/1360 [09:26<2:46:11,  7.91s/it]  7%|▋         | 100/1360 [09:31<2:29:33,  7.12s/it]  7%|▋         | 101/1360 [09:37<2:22:13,  6.78s/it]  8%|▊         | 102/1360 [09:43<2:13:00,  6.34s/it]  8%|▊         | 103/1360 [09:53<2:39:12,  7.60s/it]  8%|▊         | 104/1360 [09:58<2:23:17,  6.85s/it]  8%|▊         | 105/1360 [10:04<2:14:03,  6.41s/it]  8%|▊         | 106/1360 [10:10<2:10:52,  6.26s/it]  8%|▊         | 107/1360 [10:15<2:05:28,  6.01s/it]  8%|▊         | 108/1360 [10:21<2:07:13,  6.10s/it]  8%|▊         | 109/1360 [10:28<2:13:44,  6.41s/it]  8%|▊         | 110/1360 [10:36<2:18:13,  6.63s/it]  8%|▊         | 111/1360 [10:43<2:20:35,  6.75s/it]  8%|▊         | 112/1360 [10:50<2:22:57,  6.87s/it]  8%|▊         | 113/1360 [10:56<2:21:15,  6.80s/it]  8%|▊         | 114/1360 [11:04<2:23:43,  6.92s/it]  8%|▊         | 115/1360 [11:10<2:22:47,  6.88s/it]  9%|▊         | 116/1360 [11:17<2:22:56,  6.89s/it]  9%|▊         | 117/1360 [11:24<2:23:32,  6.93s/it]  9%|▊         | 118/1360 [11:30<2:14:11,  6.48s/it]  9%|▉         | 119/1360 [11:35<2:07:29,  6.16s/it]  9%|▉         | 120/1360 [11:41<2:07:12,  6.16s/it]  9%|▉         | 121/1360 [11:47<2:03:41,  5.99s/it]  9%|▉         | 122/1360 [11:53<2:03:11,  5.97s/it]  9%|▉         | 123/1360 [11:59<2:03:52,  6.01s/it]  9%|▉         | 124/1360 [12:06<2:09:04,  6.27s/it]  9%|▉         | 125/1360 [12:13<2:13:00,  6.46s/it]  9%|▉         | 126/1360 [12:19<2:11:55,  6.41s/it]  9%|▉         | 127/1360 [12:26<2:13:59,  6.52s/it]

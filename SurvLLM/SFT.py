@@ -37,6 +37,7 @@ torch.backends.cudnn.allow_tf32 = True
 class ScriptArguments:
     dataset_path: str = field(default = None, metadata = {"help": "dataset directory"})
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
+    multi_gpu: bool = field(default = False, metadata = {"help": "Multi-GPU 사용 여부"})
 
 @dataclass
 class LoraArguments:
@@ -128,23 +129,25 @@ def main(script_args, training_args, lora_kwargs):
 
     tokenizer.chat_template = LLAMA_3_CHAT_TEMPLATE
 
-    ## 템플릿 적용사항 확인
-    print("======== Log a few random samples from the processed training set ========")
-    for index in random.sample(range(len(train_ds)), 2):
-        print(tokenizer.apply_chat_template(train_ds[index]["messages"], tokenize = False))
+    ## 템플릿 적용사항 확인 (메인 프로세스에서만 해당 작업 수행, multi-GPU 사용 시 필요)
+    with training_args.main_process_first():
+        print("======== Log a few random samples from the processed training set ========")
+        for index in random.sample(range(len(train_ds)), 2):
+            print(tokenizer.apply_chat_template(train_ds[index]["messages"], tokenize = False))
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
-        load_in_4bit = True,                    ## 4비트 양자화
-        bnb_4bit_use_double_quant = True,       ## 추가 양자화로 성능 손실 없이 파라미터당 0.4bit 추가 절약
-        bnb_4bit_quant_type = "nf4",            ## 양자화 데이터 타입 지정: 4비트 기반 모델 훈련 시 사용
-        bnb_4bit_compute_dtype = torch.bfloat16 ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, attention 연산은 해당 포맷으로 역양자화하여 처리
+        load_in_4bit = True,                        ## 4비트 양자화
+        bnb_4bit_use_double_quant = True,           ## 추가 양자화로 성능 손실 없이 파라미터당 0.4bit 추가 절약
+        bnb_4bit_quant_type = "nf4",                ## 양자화 데이터 타입 지정: 4비트 기반 모델 훈련 시 사용
+        bnb_4bit_compute_dtype = torch.bfloat16,    ## Llama-3.1-8B의 학습 자료형. 저장은 4비트지만, attention 연산은 해당 포맷으로 역양자화하여 처리
+        bnb_4bit_quant_storage = torch.bfloat16 if script_args.multi_gpu else None
     )
 
     ## 모델 로드 및 설정
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name,
-        device_map = "cuda:0",
+        device_map = None if script_args.multi_gpu else "cuda:0",
         use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
         low_cpu_mem_usage = True,
         attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.

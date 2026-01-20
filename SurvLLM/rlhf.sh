@@ -6,6 +6,10 @@ nohup python csv_to_json_dataset.py --target="data/data_sample_20251111_01.csv"\
                                     --system="data/system_prompt.txt" &&
 
 nohup python SFT.py --config config/SFT_config.yaml > sft_log.txt &&
+## multi GPU 사용 시 fsdp_config_qlora.yaml 파일에서 num_processes에 GPU 숫자만 수정하여 아래를 전부 입력
+# nohup env \
+# accelerate launch --config_file "config/fsdp_config_qlora.yaml" \
+# SFT.py --config config/SFT_config_multi_GPU.yaml > sft_test.log &
 
 ## SFT에서 온전한 모델을 픽스하고, 해당 어뎁터를 삽입
 ## temperature 설정은 1.0 정도로 해야 다양한 결과 나옴

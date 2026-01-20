@@ -14,32 +14,14 @@ conda env create -f LLM.ymal
 conda activate LLM
 ```
 
-## SFT 실험
+## FSDP-QLoRA
 
-### 1차 실험 결과 (1e-4)
+* [Fully Sharded Data Parallel](https://huggingface.co/docs/peft/main/en/accelerate/fsdp#use-peft-qlora-and-fsdp-for-finetuning-large-models-on-multiple-gpus)
+* [FSDP-QLoRA](https://huggingface.co/docs/bitsandbytes/main/fsdp_qlora)
+* Multi-GPU 환경에서는 accelerator 모듈을 이용하여 분산 학습을 수행해야 합니다.
+* 양자화 없이 학습하는 경우 FSDP를 아무런 문제 없이 바로 작동시킬 수 있습니다. 하지만 QLoRA의 경우 특정한 방법론을 적용하기 위해 코드를 약간 수정해야 합니다. 위 두 개 링크를 참고해주세요.
 
-* test dataset의 예측된 값들은 마지막 수치를 나이브하게 가져오고 있다는 것을 확인. 과적합될수록 해당 경향은 강해짐
-* eval loss는 계속해서 증가하였음
-* Learning rate를 조정할 필요가 있는듯 -> 초반부 결과는 조금 나았음. 과적합됨
-
-### 2차 실험 결과 (1e-5)
-
-* 초반에 손실이 많이 줄어들고 이후 수렴하는 형태
-* 15 epoch / 35 epoch / 40 epoch의 성능이 나쁘지 않았음
-* 전반적으로 형태는 유사하게 따라가려 하고 있음. 다만, 수치를 끌어올 때 대푯값이 아닌 가장 마지막에 기재된 수치를 가져오는 경향이 있음. 과적합의 영향 또는 온도 설정의 여파로 사료됨
-> 온도의 문제인지 확인하기 위해 빔 서치로 추론한 결과와 비교해볼 필요 있음
-
-### 3차 실험 (5e-6)
-
-* 수치값 기준 50/40/30 epoch가 거의 동일, 가장 성능 좋았음. 50 epoch이 가장 훌륭함 (정성적 평가 안함)
-* 50 epoch이 지금껏 중에 가장 훌륭함 (수치값 기준. 정성적 평가 안함)
-
-### 4차 실험 (2e-6)
-
-* 3차 실험과 거의 동일한 결과. 3차 실험에서의 모델을 사용하는 것이 나을듯
-
-
-### 기타
+## 기타
 
 * 시스템 프롬프트에 어떤 값을 가져와야 하는지를 조금 더 명시해야 한다고 판단됨
 * 훈련 데이터셋 규모가 너무 작음. 일반화에 어려움을 겪을 가능성 높음
