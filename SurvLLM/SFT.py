@@ -178,8 +178,9 @@ def main(script_args, training_args, lora_kwargs):
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
 
-    inference_callback = utils.SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
-    trainer.add_callback(inference_callback)
+    if script_args.multi_gpu:
+        inference_callback = utils.SaveInferenceResultsCallback(trainer=trainer, test_dataset=test_ds, model_name=training_args.output_dir.split("/")[-1])
+        trainer.add_callback(inference_callback)
 
     trainer.train(resume_from_checkpoint = checkpoint)
 

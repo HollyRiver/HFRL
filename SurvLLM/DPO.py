@@ -7,7 +7,7 @@ from trl import DPOConfig, DPOTrainer, TrlParser
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, set_seed
 import torch
 
-from peft import PeftModel
+from peft import PeftModel, prepare_model_for_kbit_training
 
 from dataclasses import dataclass, field
 import argparse
@@ -31,6 +31,7 @@ class ScriptArguments:
     dataset_path: str = field(default = None, metadata = {"help": "dataset directory"})
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
     adapter_name: str = field(default = None, metadata = {"help": "SFT 완료된 어뎁터"})
+    multi_gpu: bool = field(default = False, metadata = {"help": "Multi-GPU 사용 여부"})
 
 
 def timer(func):
@@ -139,11 +140,25 @@ def main(script_args, training_args):
     model.load_adapter(script_args.adapter_name, adapter_name = "reference")
     model.set_adapter("policy")
 
-    training_args.model_adapter_name = "policy"
-    training_args.ref_adapter_name = "reference"
-
     if training_args.gradient_checkpointing:
         model.gradient_checkpointing_enable()
+
+    if script_args.multi_gpu:
+        model.enable_input_require_grads()
+        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": True})
+        model.config.use_cache = False
+        
+        print("\n[FSDP FINAL SOLUTION] Converting EVERYTHING to bfloat16 (Adapters + LayerNorms)...")
+    
+        # 1. 모든 파라미터 순회
+        for _, param in model.named_parameters():
+            if param.dtype == torch.float32:
+                param.data = param.data.to(torch.bfloat16)
+
+        print("✅ All target parameters cast to bfloat16.")
+
+    training_args.model_adapter_name = "policy"
+    training_args.ref_adapter_name = "reference"
 
     trainer = DPOTrainer(
         model,
