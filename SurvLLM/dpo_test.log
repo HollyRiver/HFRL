@@ -1,8 +1,8 @@
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260121_062103-m089mzcv
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260122_084636-alnj8fz7
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260121_062103-fjx2v5m0
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260122_084636-2kilwjgw
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404

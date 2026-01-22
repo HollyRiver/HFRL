@@ -5,8 +5,8 @@ dataset_path: "./data"                                ## 데이터셋 저장 경
 multi_gpu: true
 
 ## DPOConfig: L40S x2에서 VRAM 터질 수 있음...
-max_length: 12012                                     ## 모델이 수용 가능한 최대 시퀀스 길이
-max_prompt_length: 11500                              ## 최대 프롬프트 시퀀스 길이 (512 뺐음)
+max_length: 11012                                     ## 모델이 수용 가능한 최대 시퀀스 길이
+max_prompt_length: 10500                              ## 최대 프롬프트 시퀀스 길이 (512 뺐음)
 output_dir: "./results/dpo-multi-test"                ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
 run_name: "dpo-multi-test"                            ## wandb 전달 이름
@@ -32,7 +32,7 @@ tf32: true                                            ## nvidia TensorFormat-32 
 gradient_checkpointing: true                          ## fdsp의 경우 activation_checkpointing을 활성화해야함
 gradient_checkpointing_kwargs:
   use_reentrant: true
-dataloader_num_workers: 4                             ## 데이터로더 워커 수: 보통 GPU 개수 * 4 정도 사용한다고 함
+dataloader_num_workers: 2                             ## 데이터로더 워커 수: 보통 GPU 개수 * 4 정도 사용한다고 함
 remove_unused_columns: false                          ##
 beta: 0.1                                             ## DPO loss 온도. 적을수록 reference model을 무시
 loss_type: "sigmoid"                                  ## loss function (default)

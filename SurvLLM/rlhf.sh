@@ -26,7 +26,7 @@ nohup python csv_to_json_dataset.py --target="data/gen_data_20251118_for_dpo.csv
 nohup python DPO.py --config config/DPO_config.yaml > dpo_log.txt &&
 ## Adapter Twice Load로 일단 되긴 하는데, 메모리 더 많이 먹음...
 # nohup env \
-# PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True accelerate launch --config_file "config/fsdp_config_qlora_dpo.yaml" \
+# NCCL_TIMEOUT=600 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True accelerate launch --config_file "config/fsdp_config_qlora_dpo.yaml" \
 # DPO.py --config config/DPO_config_multi_GPU.yaml > dpo_test.log &
 
 nohup python gen_llama_nf4.py &&
