@@ -1,8 +1,10 @@
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260122_084636-alnj8fz7
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260127_012739-7qj8gdby
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260122_084636-2kilwjgw
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260127_012739-04etxqmm
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.08s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.17s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.63s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.46s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.20s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.73s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.86s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.45s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.00s/it]

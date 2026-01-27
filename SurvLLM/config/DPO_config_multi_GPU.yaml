@@ -5,8 +5,8 @@ dataset_path: "./data"                                ## 데이터셋 저장 경
 multi_gpu: true
 
 ## DPOConfig: L40S x2에서 VRAM 터질 수 있음...
-max_length: 11012                                     ## 모델이 수용 가능한 최대 시퀀스 길이
-max_prompt_length: 10500                              ## 최대 프롬프트 시퀀스 길이 (512 뺐음)
+max_length: 8192                                      ## 모델이 수용 가능한 최대 시퀀스 길이
+max_prompt_length: 7680                               ## 최대 프롬프트 시퀀스 길이 (512 뺐음)
 output_dir: "./results/dpo-multi-test"                ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
 run_name: "dpo-multi-test"                            ## wandb 전달 이름
