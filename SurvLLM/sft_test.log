@@ -1,11 +1,11 @@
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260120_041950-ixmi70zi
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260205_124426-t6ktijcg
 wandb: Tracking run with wandb version 0.23.1
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260120_041950-k1dbkfi1
-[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
-[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260205_124426-t61isl8v
+[Gloo] Rank [Gloo] Rank 10 is connected to  is connected to 11 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 11
+
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
 When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
 training dataset size: 90
@@ -203,499 +203,509 @@ A female patient presented with left shoulder pain status post mechanical fall; 
 You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
 
  
-Name:  ___                Unit No:   ___
+Name:  ___             Unit No:   ___
  
 Admission Date:  ___              Discharge Date:   ___
  
-Date of Birth:  ___             Sex:   M
+Date of Birth:  ___             Sex:   F
  
-Service: PSYCHIATRY
+Service: SURGERY
  
 Allergies: 
-Patient recorded as having No Known Allergies to Drugs
+Sulfa (Sulfonamide Antibiotics)
  
 Attending: ___.
  
 Chief Complaint:
-Patient refused to give a chief complaint on initial 
-presentation.
-
+Colon Cancer
  
 Major Surgical or Invasive Procedure:
-None.
+___- laparoscopic right hemicolectomy
+___- exploratory laparotomy
  
 History of Present Illness:
-Mr. ___ was sleeping since arriving to ___ ED by 
-ambulance after the patient mother called ___ for concerns about 
-safety. The brief history the patient did give upon arrival was 
-inconsistent and confusing. His mother gave the following 
-history, some of which is corroborated with old records from 
-___.  Mother states pt. was first diagnosed with paranoid 
-schizophrenia one year ago.  He began acting oddly ___ days ago. 
- He seemed to be talking and laughing to self. On the morning of 
-presentation, pt. asked his mother several times if he could 
-fight his ___ y/o brother.  He took himself to his room but 
-eventually came out and began punching his brother.  Mother and 
-brother were able to contain him and call ___.
+___ female with a PMH significant for HLD who presents to the 
+colorectal surgery clinic after she was found to have a 
+fungating mass with ulceration in the proximal ascending colon 
+as well as multiple polyps on screening colonoscopy at ___ 
+___. Multiple polyps were removed at that time and she was 
+referred to ___ for further evaluation. She underwent an 
+additional colonoscopy on ___ with the removal of multiple 
+pedunculated polyps as well as biopsy of the fungating mass. 
+Pathology of the mass confirmed adenocarcinoma. She denies any 
+recent abdominal pain, weight loss, fevers, chills, of bloody 
+stools. She also notes that over the past year she has episodes 
+of fecal incontinence multiple times per week. She denies any 
+history of straining or pain with defecation. She notes that her 
+bowel movements are regular. She has three children.
 
-On presentation to the inpatient psychiatric unit, the patient 
-continued to be a limited historian, noting that he feels that 
-zyprexa is a helpful medication for him, but stating that he 
-does not remember hitting his brother and does not recall if he 
-sees a psychiatrist. During the interview he appeared internally 
-stimulated, looking around. He was pleasant and cooperative and 
-in good behavioral control, but at times laughing and making 
-inappropriate statements. He stated that in the past he gets 
-angry when others "make fun of me" "tease me" or "call me 
-names." He denied all psychotic symptoms. Denied symptoms of 
-depression. Limited understanding of why he is in the hospital.
  
 Past Medical History:
-No known medical problems.
+Hyperlipidemia, ___
 
-Past Psychiatric History: Per Omr, was diagnosed with 
-schizophrenia approximately ___ year ago. Last hospitalization was 
-at the ___ in ___. He had threatened to kill mother and self 
-prior to that. He also has history of being at ___ 
-x1 month in ___. No known history of suicide attempts. 
-No
-current psychiatris treators.
  
 Social History:
 ___
 Family History:
-No known family psychiatric history.
+Colon Cancer  mother         
+Cancer (other)   
+___ mother and father    
  
 Physical Exam:
-Physical exam was unremarkable, well-nourished man in no acute 
-distress with no pertinent abnormal findings.
-Admit mental status exam:
-Alert, guarded, "Okay" mood blunted, restricted affect. 
-Presently denies SI/HI/AH/VH. TP linear with simple questions, 
-though difficult to assess given sparse speech. No delusions 
-elicited. Speech soft but clear. No tics, tremors,
-or mannerisms. Cogntively lucid.
+General: Ambulating the inpatient ward independently. Pain 
+controlled on oral agents. Tolerating a regular diet and passing 
+flatus. 
+VS: 98.4, 98.1, 75, 121/58, 18, 96%RA
+Neruo: A&OX3
+Lungs: No shortness of breath, lungs clear.
+Abd: Obese, soft, midline incision intact and cloased with 
+dermabond without drainage.
+Lower Ext: no significant edema in bilateral lower extremities.
  
 Pertinent Results:
-140  102  25   AGap=17 
----------------< 117 
-3.9  25  1.0  
-
-Serum toxicology negative.
-No urine sample given.
-
-     13.4
-4.2  >---<  183 
-     40.0  
-N:61.7 L:30.7 M:5.8 E:1.1 Bas:0.7 
+___ 06:15AM BLOOD WBC-12.7* RBC-3.24* Hgb-10.0* Hct-28.6* 
+MCV-88 MCH-30.8 MCHC-34.9 RDW-14.4 Plt ___
+___ 11:47PM BLOOD WBC-15.1* RBC-3.45* Hgb-10.6* Hct-30.0* 
+MCV-87 MCH-30.8 MCHC-35.4* RDW-14.5 Plt ___
+___ 04:10PM BLOOD WBC-15.8* RBC-3.44* Hgb-10.7* Hct-29.7* 
+MCV-87 MCH-31.3 MCHC-36.1* RDW-14.2 Plt ___
+___ 03:18AM BLOOD WBC-15.9* RBC-4.07*# Hgb-12.6# Hct-35.9*# 
+MCV-88 MCH-31.1 MCHC-35.2* RDW-13.3 Plt ___
+___ 12:01AM BLOOD Hct-25.7*
+___ 10:33PM BLOOD WBC-13.2*# RBC-3.00*# Hgb-9.2*# 
+Hct-27.5*# MCV-92 MCH-30.5 MCHC-33.3 RDW-12.8 Plt ___
+___ 04:50PM BLOOD Hct-37.7
+___ 03:18AM BLOOD Neuts-91.5* Lymphs-5.5* Monos-2.8 Eos-0.1 
+Baso-0
+___ 06:15AM BLOOD Glucose-90 UreaN-11 Creat-0.6 Na-143 
+K-3.7 Cl-109* HCO3-30 AnGap-8
+___ 03:18AM BLOOD Glucose-189* UreaN-14 Creat-0.6 Na-138 
+K-4.1 Cl-106 HCO3-23 AnGap-13
+___ 10:33PM BLOOD Glucose-151* UreaN-13 Creat-0.6 Na-138 
+K-3.9 Cl-104 HCO3-26 AnGap-12
+___:50PM BLOOD Na-141 K-3.8 Cl-104
+___ 06:15AM BLOOD Calcium-8.0* Phos-1.8*# Mg-1.9
+___ 03:18AM BLOOD Calcium-7.4* Phos-3.8 Mg-1.8
+___ 04:50PM BLOOD Mg-2.2
+___ 08:25AM BLOOD WBC-8.1 RBC-3.23* Hgb-9.9* Hct-28.9* 
+MCV-90 MCH-30.7 MCHC-34.3 RDW-14.3 Plt ___
  
 Brief Hospital Course:
-#) Psychosis: ___ y/o man who carries the diagnosis of chronic 
-paranoid schizophrenia who was admitted after disorganized and 
-agressive behavior toward his brother. Mr. ___ limited 
-cooperation on admit hindered an initial comprehensive 
-evaluation, though he was without behavioral outbursts after 
-being started back on zyprexa in the emergency department. 
-Zyprexa was uptitrated while on the inpatient unit and Risperdal 
-was added. He tolerated both of these medications well, finding 
-them helpful in terms of his thoughts and audiotry 
-hallucinations. While on the inpatient unit, Mr. ___ had 
-limited participation in groups and had a marked lack of content 
-to his speech. On discharge mental status exam, he appeared less 
-preoccupied with internal stimuli but still had a poverty of 
-speech (although was able to discuss a wider range of topics). 
-His affect was flat and odd at times. He denied audiovisual 
-hallucinations, and denied homicidality or suicidal ideation. 
-Both insight and judgement were impaired, as evidence by his 
-lack of insight into his chronic mental illness. However, he 
-consistently remained in good behavioral control and was 
-accepting of medications during this hospitalization. The 
-administration of a risperdal consta injection was discussed 
-during the course of the hospitalization with him and his 
-mother, however the ___ refused this stating that he would 
-take his pills by mouth. 
+Ms ___ was admitted to the colorectal surgery service on 
+___ after undergoing a planned laparoscopic right 
+hemicolectomy. She tolerated the procedure well and was 
+extubated in the OR prior to recovering in the PACU. For full 
+details of the procedure please see the dictated operative 
+report. That evening she was noted to be hypotensive and 
+tachycardic unresponsive to a 1L fluid bolus. Her Hct was 25.7 
+for which she received 2 U PRBC. She was taken back that evening 
+to the OR for an exploratory laparotomy where she was noted to 
+have a bleeding mesenteric blood vessel, which was ligated. Her 
+post op Hct was 35.9 with improved hemodynamic stability. She 
+was extubated in the OR but was taken to the ICU for monitoring 
+overnight. Post op she was kept NPO with IVF and a foley. Her 
+Hct was checked every 4 hours and slowly trended down over POD 1 
+from 35.9 to 33.3 to 29.7. Because she remained hemodynamically 
+stable she was transferred to the main surgical floor that 
+evening and her diet was advanced to sips. On POD 2 her diet was 
+advanced to clears and she was put on maintenance IV fluids. The 
+nusring staff continued to attempt to wean her O2 however, she 
+was 89% on room air, she denied shortness of breath. THe patient 
+had recieved a large amount of volume when taken to the 
+operating room for the second time and this was thought to be 
+the cause of the oxygen requirment. By the morning of 
+post-operative day three, the patient was weaned from O2 and her 
+saturation was 96% on room air. Her lungs were clear bilaterally 
+to ascultation. The patient reported passing flatus on the 
+morning of post-opreative day three. She was given a regular 
+diet which she tolerated well. She was ambulating the inpatient 
+unit independently. The patient was hemodynamically stable but 
+in the afternoon, she reported feeling week. Given her hospital 
+course, discharge was postponed, and the patient was monitored 
+overnight. On the morning of ___, the patient's hematocrit 
+was 28.9 which was stable from 48 hours before which was 28.6. 
+She was tolerating a regular diet and discharged home with 
+appropriate discharge instructions.  
 
-#) Recent assaultiveness: It is unclear if there are pending 
-legal charges. 51 A was filed by emergency room physicians. 
-There were no acute behavioral issues on the inpatient unit. 
-Multiple attempts (with no response) were made by social work 
-staff to contact Mr. ___ parole officer.
+Include in Brief Hospital Course for Every Patient and check of 
+boxes that apply:
+Post-Surgical Complications During Inpatient Admission:
+[ ] Post-Operative Ileus resolving w/o NGT
+[ ] Post-Operative Ileus requiring management with NGT
+[ ] UTI
+[ ] Wound Infection
+[ ] Anastomotic Leak
+[ ] Staple Line Bleed
+[ ] Congestive Heart failure 
+[ ] ARF
+[ ] Acute Urinary retention, failure to void after Foley D/C'd
+[ ] Acute Urinary Retention requiring discharge with Foley 
+Catheter
+[ ] DVT
+[ ] Pneumonia
+[ ] Abscess
+[x] Post-operative bleeding, taken back to OR POD 0 from PACU
+[ ] None
 
-#) Safety: The patient was maintained on Check status q 15 min 
-denying SI/HI and was accepting treatment. He did not present as 
-a behavioral problem through out the course of his 
-hospitalization. 
+Social Issues Causing a Delay in Discharge:
+[ ] Delay in organization of ___ services
+[ ] Difficulty finding appropriate rehabilitation hospital 
+disposition.
+[ ] Lack of insurance coverage for ___ services
+[ ] Lack of insurance coverage for prescribed medications.
+[ ] Family not agreeable to discharge plan.
+[ ] Patient knowledge deficit related to ileostomy delaying 
+discharge. 
+[x] No social factors contributing in delay of discharge.
 
-#) Collateral: Frequent contact was had with the patient's 
-mother, who was actively involved in the patient's 
-hospitalization. Hospital records from ___ were also 
-reviewed. The patient's former therapist, ___, 
-___, at ___ in 
-___, ___ was contacted. Ms. ___ only saw the patient 
-once and that appoinment was in ___. Ms. ___ 
-stated that their ___ center is not equipped to 
-care from Mr. ___ on discharge.
-
-#) Outpatient services: Despite extensive efforts, ___ services 
-were not able to be setup by discharge. The patient's mother and 
-the patient were both instructed on the importance of medication 
-adherance in order to decrease symptoms of psychosis and 
-subsequently decrease the risk of aggressive & violent 
-behavioral. The patient's mother reported that she would ensure 
-daily medication adherance and would call ___ at the onset of 
-worrisome behavior (such as increased irritibleness, auditory 
-hallucinations, poor self-care, increased aggression, and 
-increased social isolation.). The patient was ultimately 
-agreeable to attending a partial program for faytime structure 
-and ongoing monitoring, his mother will be taking him to this 
-program on a daily basis and assuring his attendance to 
-outpaitent followup. At time of discharge, with treated 
-psychotic symptoms, the patient did not present as an acute risk 
-to himself or others, however, his ongoing chronic risk was 
-explained in detail to both him and his mother. The mother 
-understands that if the ___ again becomes medication 
-non-complaint, can not successfully follow up with comprehensive 
-outpatient treatment, or has any evidence of increasing 
-psychotic symptoms, that he should be brought back to the 
-emergency room or 911 called. 
  
 Medications on Admission:
-None.
+The Preadmission Medication list is accurate and complete.
+1. Atorvastatin 10 mg PO DAILY 
+
  
 Discharge Medications:
-- Olazapine 10 mg q am, 20 mg q HS
-- Risperdal 3 mg po BID
-- Hydrochlorothiazide 25 mg po daily
-- Simvastatin 10 mg po QHS
+1. Atorvastatin 10 mg PO DAILY 
+2. OxycoDONE (Immediate Release)  ___ mg PO Q4H:PRN pain 
+Do not drink alcohol or drive a car while taking this 
+medication. 
+RX *oxycodone 5 mg ___ tablet(s) by mouth every four (4) hours 
+Disp #*35 Tablet Refills:*0
+3. Acetaminophen 650 mg PO Q6H:PRN pain 
+do not take more than 3000mg of tylenol in 24 hours. do not 
+drink alcohol. 
+RX *acetaminophen 325 mg ___ tablet(s) by mouth every six (6) 
+hours Disp #*40 Tablet Refills:*0
+
  
 Discharge Disposition:
-Home with Service
+Home
  
 Discharge Diagnosis:
-I. Schizophrenia. Chronic Paranoid. Acute Exacerbation leading 
-to violence and ongoing psychotic symptoms. 
-II. Defer
-III. Healthy
-IV. legal problems, limited education 
-V. 40
+Colon Adenocarcinoma 
 
  
 Discharge Condition:
-General: improved grooming, eye contact more appropriate, 
-looking
-stated age, no signs of cogwheeling
-Speech: poverty of speech
-Mood/Affect: 'fine'/restricted
-T. Form: limited
-T. Content: denies hallucinations. appearing less paranoid and
-less preoccupied, than on admission, ongoing limited thought
-content expressed. No suicidal or homicidal ideation 
-Cognition : a and o x 3
-J/I: impaired
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
  
 Discharge Instructions:
-If you feel like you want to hurt somebody else or yourself, 
-increased aggressiveness, or are hearing voices, then you need 
-to call your doctor or visit your nearest emergency department 
-by calling 911 immediately.
+You were admitted to the hospital after laparoscopic right 
+hemicolectomy for colon adenocarcinoma and post-operative 
+bleeding requiring exploratory laparotomy. You have recovered 
+from this procedure well and you are now ready to return home. 
+Samples from your colon were taken and this tissue has been sent 
+to the pathology department for analysis. You will receive these 
+pathology results at your follow-up appointment. If there is an 
+urgent need for the surgeon to contact you regarding these 
+results they will contact you before this time. You have 
+tolerated a regular diet, passing gas and your pain is 
+controlled with pain medications by mouth. You may return home 
+to finish your recovery.
+
+Because of the bleeding post-operatively, it is important to 
+monitor yourself for signs and symptoms of bleeding: weakness, 
+fatigue, fast heart beat, fainting, abdominal distension. Please 
+call the office if you have any of these issues. If it is an 
+emergency, please call the office. 
+                            
+Please monitor your bowel function closely. You may or may not 
+have had a bowel movement prior to your discharge which is 
+acceptable, however it is important that you have a bowel 
+movement in the next ___ days. After anesthesia it is not 
+uncommon for patients to have some decrease in bowel function 
+but you should not have prolonged constipation. Some loose stool 
+and passing of small amounts of dark, old appearing blood are 
+expected. However, if you notice that you are passing bright red 
+blood with bowel movements or having loose stool without 
+improvement please call the office or go to the emergency room 
+if the symptoms are severe. If you are taking narcotic pain 
+medications there is a risk that you will have some 
+constipation. Please take an over the counter stool softener 
+such as Colace, and if the symptoms do not improve call the 
+office. If you have any of the following symptoms please call 
+the office for advice or go to the emergency room if severe: 
+increasing abdominal distension, increasing abdominal pain, 
+nausea, vomiting, inability to tolerate food or liquids, 
+prolonged loose stool, or extended constipation.
+ 
+You have a long vertical incision on your abdomen that is closed 
+with staples. This incision can be left open to air or covered 
+with a dry sterile gauze dressing if the staples become 
+irritated from clothing. The staples will stay in place until 
+your first post-operative visit at which time they can be 
+removed in the clinic, most likely by the office nurse. Please 
+monitor the incision for signs and symptoms of infection 
+including: increasing redness at the incision, opening of the 
+incision, increased pain at the incision line, draining of 
+white/green/yellow/foul smelling drainage, or if you develop a 
+fever. Please call the office if you develop these symptoms or 
+go to the emergency room if the symptoms are severe. You may 
+shower, let the warm water run over the incision line and pat 
+the area dry with a towel, do not rub.
+ 
+No heavy lifting for at least 6 weeks after surgery unless 
+instructed otherwise by Dr. ___ Dr. ___. You may 
+gradually increase your activity as tolerated but clear heavy 
+exercise with Dr. ___.
+ 
+You will be prescribed a small amount of the pain medication 
+Oxycodone. Please take this medication exactly as prescribed. 
+You may take Tylenol as recommended for pain. Please do not take 
+more than 4000mg of Tylenol daily. Do not drink alcohol while 
+taking narcotic pain medication or Tylenol. Please do not drive 
+a car while taking narcotic pain medication.
+ 
+Thank you for allowing us to participate in your care! Our hope 
+is that you will have a quick return to your life and usual 
+activities. Good luck!
+
  
 Followup Instructions:
 ___
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
-A male patient presented without a stated chief complaint, as he refused to provide one; on physical examination, BP NA, HR NA, RR NA and Temp NA; admission labs showed WBC NA, RBC 4.2, Hgb 13.4, Hct 40.0, Plt 183, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose 117; the most diagnostically relevant finding was flat and odd affect, poverty of speech, impaired insight and judgment, and evidence of internal preoccupation on mental status examination.<|eot_id|>
+A female patient presented with Colon cancer; on physical examination, BP 121/58, HR 75, RR 18, and Temp 98.4; admission labs showed WBC 15.9, RBC 4.07, Hgb 12.6, Hct 35.9, Plt NA, MCV 88, MCH 31.1, MCHC 35.2, RDW 13.3, and Glucose 189; the most diagnostically relevant finding was a fungating ulcerated mass in the proximal ascending colon confirmed as adenocarcinoma on biopsy.<|eot_id|>
 ======== Log a few random samples from the processed training set ========
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
 You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
 
  
-Name:  ___                   Unit No:   ___
+Name:  ___                Unit No:   ___
  
 Admission Date:  ___              Discharge Date:   ___
  
 Date of Birth:  ___             Sex:   F
  
-Service: MEDICINE
+Service: CARDIOTHORACIC
  
 Allergies: 
-No Known Allergies / Adverse Drug Reactions
+Sulfa (Sulfonamide Antibiotics) / Penicillins / Macrobid / 
+lactose / adhesive tape / codeine / Bactrim
  
-Attending: ___
+Attending: ___.
  
 Chief Complaint:
-shortness of breath
+Cough
  
 Major Surgical or Invasive Procedure:
-- cardiac catheterization (___)
+___
+1.  Robotic-assisted right upper lobectomy.
+2.  Mediastinal lymph node dissection
 
  
 History of Present Illness:
-___ y/o woman with a PMH of T2DM, HLD, HTN, subclavian stenosis, 
-lichen simplex ___ esophagus (followed by GI), 
-and tobacco use, who presented with chest pain, diaphoresis, 
-troponinemia (peak troponin-T 0.15)and new T-wave inversions 
-concerning for NSTEMI. She reports that she was cooking fried 
-chicken, when she developed GERD-like symptoms, with associated 
-diaphoresis. Her son found her. No syncope; no fall or 
-headstrike. No chest pain or shortness of breath. Review of 
-systems otherwise negative.
+Ms. ___ is a ___ yo female, never
+smoker, with history of IBS and GERD. Had a CXR for persistent
+cough, which revealed a possible peripheral right upper lobe
+infiltrate. Was treated with antibiotics and had a repeat chest
+x-ray, which re-demonstrated the infiltrate. Chest CT on ___
+revealed a lobulated 1.9 x 1.2 cm nodule in the right upper 
+lobe.
+Subsequent PET-CT, showed moderate uptake of the nodule with an
+SUV of 2.1. Referred for evaluation and management.
+
+She reports feeling fairly well. Other than the dry chronic
+cough "tickle" in her throat, occasional hoarseness , she denies
+any significant cardiopulmonary symptoms. She is quite active ,
+able to walk 2 flights of stairs with no DOE, no hemoptysis,
+fever, chills, night sweats, weight loss, HA, visual changes,
+neurologic changes. She had left first rib resection in ___ for
+?thoracic outlet syndrome, occasional neck pain, back pain not
+required any pain medication. No other complaints.
+
+She was referred to IP for a bronchoscopy/EBUS and bronchoscopy 
+showed near complete obstruction of the posterior bronchus of 
+the RUL that seems to arise from intrinsic andextrinsic mass. 
+hyper-vascular in appearance. LN > 5mm were
+sampled and TBNA and brushing was done. Malignant cells were 
+found and she presents now for surgical resection.
+
  
 Past Medical History:
-___ ESOPHAGUS                                             
-COLONIC POLYPS                                                  
-DIABETES MELLITUS                                               
-ECZEMA                                                          
-ELEVATED ALKALINE PHOSPHATASE                                   
-FATTY LIVER                                                     
-HIATAL HERNIA                                                   
-HYDRONEPHROSIS                                                  
-HYPERLIPIDEMIA                                                  
-POST-MENOPAUSAL BLEEDING                                        
-TOBACCO ABUSE                                                   
-SUBCLAVIAN STENOSIS                                             
-ELEVATED IOP                                                    
-LICHEN SIMPLEX ___                                        
-PRURIGO NODULARIS                                               
-PALMOPLANTAR KERATODERMA                                        
-PSORIASIS                                                       
-H/O ABNORMAL MAMMOGRAM     
+PAST MEDICAL HISTORY:
+Nontoxic multinodular goiter
+Sleep apnea?
+Raynaud's phenomenon
+Lactose intolerance
+Bilateral sensorineural hearing loss
+IBS
+Dystrophy of vulva
+Osteoporosis
+Postmenopausal disorder
+Dysfunction of Eustachian tube
+Atrophic vaginitis
+MRSA carrier
+GERD
+Prepatellar bursitis
+Sprain of sacroiliac ligament
+Vasovagal syncope
+s/p ___ surgery (R)
+s/p resection 1st rib (L) ___
+s/p tonsillectomy, adenoidectomy
+s/p myringotomy and tubes
+
  
 Social History:
 ___
 Family History:
-No family history of arrhythmia, early MIs, or sudden cardiac 
-death. 
+Mother- adenocarcinoma of vulva
+Father- cataract, a fib, esophageal cancer, stroke
+Siblings- brother: hyperlipidemia
+___- son: sleep apnea
+Other- maternal GM: uterine cancer; cousin: breast cancer
+
  
 Physical Exam:
-=======================
-ADMISSION PHYSICAL EXAM
-=======================
-VSS
- General: Elderly black woman, pleasant, in NAD.  
- HEENT: Anicteric sclerae, EOMs intact.  
- Neck: No JVD. Neck supple.  
- CV: Bradycardic, regular, no MRGs.  
- Pulm: CTA b/l; no wheezes, rhonchi, or rales.  
- Abd: Soft, non-tender, non-distended.  
- Ext: Warm and well-perfused. 
- Skin: Scattered patches of lighter skin, with evidence of 
-lichenification over distal extremities with vitiligo.  
- Neuro: A&Ox3; CNs II-XII grossly intact. Distal sensation 
-intact to light touch. Gait deferred.  
+BP: 144/71. Heart Rate: 65. O2 Saturation%: 100. Weight: 121.7
+(With Shoes). Temperature: 97.2. Resp. Rate: 16. Pain Score: 0.
+GENERAL        
+[x] WN/WD  [x] NAD  [x] AAO  [ ] abnormal findings:
 
-=======================
-DISCHARGE PHYSICAL EXAM
-=======================
-Weight: 78.4 kg  
- VS: 98.4 56-60 95-120/48-64 18 98% RA  
- General: Elderly black woman, pleasant, in NAD.  
- HEENT: Anicteric sclerae, EOMs intact.  
- Neck: No JVD. Neck supple.  
- CV: Bradycardic, regular, no MRGs.  
- Pulm: CTA b/l; no wheezes, rhonchi, or rales.  
- Abd: Soft, non-tender, non-distended.  
- Ext: Warm and well-perfused. R radial dressing with strong 
-pulses.  
- Skin: Scattered patches of lighter skin, with evidence of 
-lichenification over distal extremities with vitiligo.  
- Neuro: A&Ox3; CNs II-XII grossly intact. Distal sensation 
-intact to light touch. Gait deferred.  
+HEENT          
+[x] NC/AT   [x] EOMI   [x] PERRL/A   [x] Anicteric
+[x] OP/NP mucosa normal     [x] Tongue midline
+[x] Palate symmetric  [x] Neck supple/NT/without mass
+[x] Trachea midline [x] Thyroid nl size/contour
+[ ] Abnormal findings:
+
+RESPIRATORY    
+[x] CTA/P     [x] Excursion normal     [x] No fremitus
+[x] No egophony    [x] No spine/CVAT
+[ ] Abnormal findings:
+
+CARDIOVASCULAR 
+[x] RRR    [x] No m/r/g    [x] No JVD   [x] PMI nl  [x] No edema
+[x] Peripheral pulses nl    [x] No abd/carotid bruit
+[ ] Abnormal findings:
+
+GI             
+[x] Soft    [x] NT   [x] ND  [x] No mass/HSM   [x] No hernia
+[ ] Abnormal findings:
+
+GU             [x] Deferred  
+[ ] Nl genitalia    [ ] Nl pelvic/testicular exam    [ ] Nl DRE
+[ ] Abnormal findings:
+
+NEURO          
+[x] Strength intact/symmetric    [x] Sensation intact/ symmetric
+[x] Reflexes nl     [x] No facial asymmetry [x] Cognition intact
+[x] Cranial nerves intact   [ ] Abnormal findings:
+
+MS         
+[x] No clubbing   [x] No cyanosis   [x] No edema   [x] Gait nl
+[x] No tenderness  [x] Tone/align/ROM nl   [x] Palpation nl
+[x] Nails nl   [ ] Abnormal findings:
+
+LYMPH NODES   
+[x] Cervical nl      [x] Supraclavicular nl     [x] Axillary nl
+[x] Inguinal nl   [ ] Abnormal findings:
+
+SKIN           
+[x] No rashes/lesions/ulcers
+[x] No induration/nodules/tightening     [ ] Abnormal findings:
+
+PSYCHIATRIC    
+[x] Nl judgment/insight    [x] Nl memory   [x] Nl mood/affect
+[ ] Abnormal findings:
 
  
 Pertinent Results:
-==============
-ADMISSION LABS
-==============
-___ 09:50PM BLOOD WBC-12.4* RBC-3.55* Hgb-11.2 Hct-33.8* 
-MCV-95 MCH-31.5 MCHC-33.1 RDW-13.2 RDWSD-46.1 Plt ___
-___ 09:50PM BLOOD Neuts-62.2 ___ Monos-8.2 Eos-1.2 
-Baso-0.3 Im ___ AbsNeut-7.69* AbsLymp-3.45 AbsMono-1.01* 
-AbsEos-0.15 AbsBaso-0.04
-___ 09:50PM BLOOD Plt ___
-___ 09:50PM BLOOD Glucose-172* UreaN-19 Creat-1.3* Na-137 
-K-3.5 Cl-103 HCO3-21* AnGap-17
-___ 09:50PM BLOOD cTropnT-<0.01
-___ 10:50PM BLOOD Lactate-2.1*
-.
-============
-INTERIM LABS
-============
-___ 09:10AM BLOOD WBC-10.7* RBC-3.68* Hgb-11.4 Hct-35.4 
-MCV-96 MCH-31.0 MCHC-32.2 RDW-13.3 RDWSD-46.8* Plt ___
-___ 05:16AM BLOOD Glucose-124* UreaN-16 Creat-1.0 Na-140 
-K-4.1 Cl-107 HCO3-22 AnGap-15
-___ 07:34PM BLOOD Glucose-282* UreaN-12 Creat-1.0 Na-137 
-K-3.6 Cl-103 HCO3-24 AnGap-14
-___ 05:16AM BLOOD cTropnT-0.15*
-___ 07:34PM BLOOD CK-MB-25* cTropnT-1.02*
-___ 05:21AM BLOOD Lactate-1.0
-.
-==============
-DISCHARGE LABS
-==============
-___ 04:45AM BLOOD WBC-9.7 RBC-3.22* Hgb-9.9* Hct-30.7* 
-MCV-95 MCH-30.7 MCHC-32.2 RDW-13.2 RDWSD-45.7 Plt ___
-___ 04:45AM BLOOD Glucose-133* UreaN-14 Creat-1.0 Na-140 
-K-4.9 Cl-107 HCO3-23 AnGap-15
-.
-===============
-IMAGING/STUDIES
-===============
-CHEST (PORTABLE AP) (___):
-FINDINGS:  
-The lungs are clear without focal consolidation, pleural 
-effusion or 
-pneumothorax.  There is no pulmonary edema.  The heart is normal 
-in size, and the mediastinal contours are normal. 
+                    ___  RBC Hgb  Hct MCV MCH  MCHC  RDW  RDWSD 
+Plt Ct 
+___ 04:32    8.4 4.24 11.2 36.4 86 26.4 30.8* 15.2 47.2*  
+ 223 
+
+ 
+                  Glucose UreaN Creat Na   K   Cl HCO3 AnGap 
+___ 04:32    125*1  15    0.7  140 4.5 ___ 
+ 
+___ CXR :
+In comparison with the study of ___, there has been a 
+right VATS 
+procedure with upper lobe resection and chest tube in place.  No 
+evidence of pneumothorax. Elevation of the right 
+hemidiaphragmatic contour.  No evidence of vascular congestion 
+or acute focal pneumonia or pleural effusion 
   
-IMPRESSION:  
-No acute cardiopulmonary process. 
 
-CARDIAC CATHETERIZATION (___):
-Coronary Anatomy
-Dominance: Right
-Left Main Coronary Artery: There was a 50% ostial left main 
-stenosis.
-Left anterior descending: The LAD has some mild plaquing with no 
-significant obstructive disease. The
-___ Diagonal is a small branch has a moderate ostial lesion.
-Circumflex: The Circumflex has mild atherosclerosis with no 
-significant obstructive lesions.
-Right Coronary Artery: There is a 90% stenosis in the ostium of 
-the RCA with calcification. The vessel
-had a TIMI flow of 2 and has moderate calcification noted in the 
-origin. . An intervention was performed
-on the ostial RCA with a final stenosis of 0%. There were no 
-lesion complications.
-
-Impressions:
-1. 50% left main stenosis with a 90% ostial RCA
-2. Successful drug eluting stent of the ostium of the RCA
-Recommendations
-1. Aspirin - clopidogrel
-2. Medical therapy
-
-ECHO (___):  
- Conclusions  
- The left atrium is normal in size. No atrial septal defect is 
-seen by 2D or color Doppler. The estimated right atrial pressure 
-is ___ mmHg. Left ventricular wall thicknesses and cavity size 
-are normal. There is mild regional left ventricular systolic 
-dysfunction with hypokinesis of the basal-mid inferior wall. The 
-remaining segments contract normally (LVEF = 55%). Tissue 
-Doppler imaging suggests an increased left ventricular filling 
-pressure (PCWP>18mmHg). Right ventricular chamber size and free 
-wall motion are normal. The diameters of aorta at the sinus, 
-ascending and arch levels are normal. The aortic valve leaflets 
-(3) are mildly thickened. No aortic regurgitation is seen. The 
-mitral valve leaflets are structurally normal. The mitral valve 
-leaflets are myxomatous. There is no mitral valve prolapse. 
-Physiologic mitral regurgitation is seen (within normal limits). 
-The estimated pulmonary artery systolic pressure is normal. 
-There is no pericardial effusion.  
- Compared with the prior study (images unavailable for review) 
-of ___, regional left ventricular systolic dysfunction is 
-new. Other findings are similar  
  
 Brief Hospital Course:
-___ is a ___ y/o woman with a PMH of T2DM, HLD, HTN, 
-subclavian stenosis, lichen simplex ___ 
-esophagus (followed by GI), and tobacco use, who presented with 
-chest pain, diaphoresis, troponinemia (peak troponin-T 0.15)and 
-new T-wave inversions concerning for NSTEMI. 
-.
-# NSTEMI. She underwent cardiac catheterization, which 
-demonstrated an ostial lesion for which she a drug eluting 
-stent. Post-procedure echo demonstrated LVEF 55% with mild 
-regional left ventricular systolic dysfunction with hypokinesis 
-of the basal-mid inferior wall. Unable to be started on beta 
-blockers because of her heart rates in the ___. She was 
-continued on aspirin and started on Plavix 75 mg daily. She was 
-switched to atorvastatin 80 mg daily. 
-.
-# Lichen simplex. Continued home clobetasol, hydroxyzine, and 
-triamcinolone cream.
-.
-# T2DM. Metformin was held, and she was continued on 20 units 
-glargine with insulin sliding scale.
-.
-# ___ esophagus/GERD. She was switched to pantoprazole for 
-___ because of clopidogrel. 
-.
-#HTN. Continued lisinopril 10 mg daily.
-.
-===================
-TRANSITIONAL ISSUES
-===================
-# Discharge weight: 78.4
-# Discharge creatinine: 1.0
-# Medication changes. Switched to atorvastatin 80 mg daily. Will 
-require ___ year of dual anti-platelet therapy with clopidogrel. 
-Switched from omeprazole to pantoprazole. 
-# Beta blockade. Unable to start beta blocker because of heart 
-rates in the ___. Please consider restarting at your discretion. 
+Ms. ___ was admitted to the hospital and taken to the 
+Operating Room where she underwent a robotic-assisted right 
+upper lobectomy and mediastinal lymph node dissection. She 
+tolerated the procedure well and returned to the PACU in stable 
+condition. She maintained stable hemodynamics and her pain was 
+controlled with Tylenol only.  Her ___ drain put out a minimal 
+amount of thin, bloody fluid amd had no air leak. Her chest xray 
+showed no pneumothorax or fluid collection.
 
-# CODE: FULL
-# CONTACT: Son ___ ___
+Following transfer to the Surgical floor she progressed well. 
+Her ___ drain remained with minimal output and her pain was 
+also minimal, controlled with Tylenol and Toradol. She was able 
+to cough and deep breath effectively and her oxygen was weaned 
+off with room air saturations of 97%.  Her port sites were 
+healing well. Her ___ drain was removed on post op day #1 and 
+her post pull chest xray revealed a stable tiny right apical 
+pneumothorax. Her oxygen was weaned off and her room air 
+saturations were 97%. She preferred not to use any narcotics and 
+her pain remained controlled with Tylenol and occasional 
+Toradol. She will be transitioned to Ibuprofen to use at home.
+
+She was up and walking frequently and using her incentive 
+spirometer appropriately. After an uneventful recovery she was 
+discharged to home on ___ and will follow up with Dr. ___ 
+in 2 weeks.
+
  
-___ on Admission:
+Medications on Admission:
 The Preadmission Medication list is accurate and complete.
-1. Aspirin 81 mg PO DAILY 
-2. Clobetasol Propionate 0.05% Ointment 1 Appl TP BID:PRN rash 
-3. Halobetasol Propionate 0.05 % topical BID 
-4. HydrOXYzine 35 mg PO QHS:PRN itching 
-5. Glargine 20 Units Breakfast
-6. Lisinopril 10 mg PO DAILY 
-7. MetFORMIN (Glucophage) 850 mg PO BID 
-8. Omeprazole 20 mg PO BID 
-9. Pravastatin 80 mg PO QPM 
-10. Triamcinolone Acetonide 0.1% Ointment 1 Appl TP BID:PRN rash 
-
-11. Vitamin D 1000 UNIT PO DAILY 
+1. Lactobacillus acidophilus 1 billion cell oral DAILY 
+2. LOPERamide 2 mg PO DAILY 
+3. Alendronate Sodium 70 mg PO QMON 
+4. calcium polycarbophil 1250 mg oral DAILY 
+5. Clobetasol Propionate 0.05% Ointment 1 Appl TP 2X/WEEK 
+(MO,FR) 
+6. estradiol 0.01 % (0.1 mg/gram) vaginal 3X/WEEK 
+7. Multivitamins 1 TAB PO DAILY 
+8. Aspirin 81 mg PO DAILY 
+9. FLUoxetine 15 mg PO DAILY 
+10. Vitamin D 800 UNIT PO DAILY 
 
  
 Discharge Medications:
-1. Atorvastatin 80 mg PO QPM 
-RX *atorvastatin 80 mg 1 (one) tablet(s) by mouth daily Disp 
-#*30 Tablet Refills:*0
-2. Aspirin 81 mg PO DAILY 
-3. Clobetasol Propionate 0.05% Ointment 1 Appl TP BID:PRN rash 
-4. Glargine 20 Units Breakfast
-5. Triamcinolone Acetonide 0.1% Ointment 1 Appl TP BID:PRN rash 
-6. Clopidogrel 75 mg PO DAILY 
-RX *clopidogrel 75 mg 1 (one) tablet(s) by mouth daily Disp #*30 
-Tablet Refills:*0
-7. Pantoprazole 40 mg PO Q24H GERD 
-RX *pantoprazole 40 mg 1 (one) tablet(s) by mouth daily Disp 
-#*30 Tablet Refills:*0
-8. Halobetasol Propionate 0.05 % topical BID 
-9. HydrOXYzine 35 mg PO QHS:PRN itching 
-10. Lisinopril 10 mg PO DAILY 
-RX *lisinopril 10 mg 1 tablet(s) by mouth daily Disp #*30 Tablet 
-Refills:*0
-11. MetFORMIN (Glucophage) 850 mg PO BID 
-12. Vitamin D 1000 UNIT PO DAILY 
+1.  Acetaminophen 1000 mg PO Q8H 
+RX *acetaminophen 500 mg 2 tablet(s) by mouth every eight (8) 
+hours Disp #*100 Tablet Refills:*0 
+2.  Docusate Sodium 100 mg PO BID 
+RX *docusate sodium 100 mg 1 capsule(s) by mouth twice a day 
+Disp #*60 Capsule Refills:*0 
+3.  Ibuprofen 600 mg PO Q8H:PRN Pain - Mild 
+RX *ibuprofen 600 mg 1 tablet(s) by mouth every eight (8) hours 
+Disp #*50 Tablet Refills:*1 
+4.  Lidocaine 5% Patch 1 PTCH TD QPM 
+RX *lidocaine 5 % 1 patch Q ___ Disp #*15 Patch Refills:*0 
+5.  Alendronate Sodium 70 mg PO QMON  
+6.  Aspirin 81 mg PO DAILY  
+7.  calcium polycarbophil 1250 mg oral DAILY  
+8.  Clobetasol Propionate 0.05% Ointment 1 Appl TP 2X/WEEK 
+(MO,FR)  
+9.  estradiol 0.01 % (0.1 mg/gram) vaginal 3X/WEEK  
+10.  FLUoxetine 15 mg PO DAILY  
+11.  Lactobacillus acidophilus 1 billion cell oral DAILY  
+12.  LOPERamide 2 mg PO DAILY  
+13.  Multivitamins 1 TAB PO DAILY  
+14.  Vitamin D 800 UNIT PO DAILY  
 
  
 Discharge Disposition:
 Home
  
 Discharge Diagnosis:
-================= 
-PRIMARY DIAGNOSES 
-================= 
-- non-ST segment-elevation myocardial infarction 
-- hypertension 
- 
-=================== 
-SECONDARY DIAGNOSES 
-=================== 
-- type 2 diabetes mellitus 
-- tobacco use 
-- lichen simplex ___ 
-- hyperlipidemia 
-- ___ esophagus/gastroesophageal reflux disease 
+Right upper lobe carcinoid tumor.
 
  
 Discharge Condition:
@@ -705,243 +715,268 @@ Activity Status: Ambulatory - Independent.
 
  
 Discharge Instructions:
-Dear ___
+* You were admitted to the hospital for lung surgery and you've 
+recovered well. You are now ready for discharge. 
 
-___ was a pleasure taking care of you at the ___ 
-___. 
+* Continue to use your incentive spirometer 10 times an hour 
+while awake.
 
-You were admitted because you had a heart attack. You underwent 
-cardiac catheterization which revealed a blockage in one of your 
-arteries. You had one stent placed. 
+* Check your incisions daily and report any increased redness or 
+drainage.   Cover the area with a gauze pad if it is draining.
 
-It is very important to take all of your heart healthy 
-medications. 
+* Your chest tube dressing may be removed in 48 hours.  If it 
+starts to drain, cover it with a clean dry dressing and change 
+it  as needed to keep site clean and dry.
 
-You are now on aspirin. You need to take aspirin everyday. If 
-you stop taking aspirin, you risk the stent clotting and death. 
-Do not stop taking aspirin unless you are told by your 
-cardiologist. No other doctor can tell you to stop taking this 
-medication. 
+* You may need pain medication once you are home but you can 
+wean it over the next week as the discomfort resolves.  Make 
+sure that you have regular bowel movements while on narcotic 
+pain medications as they are constipating which can cause more 
+problems.  Use a stool softener or gentle laxative to stay 
+regular.
 
-You are now on Plavix (also known as clopidogrel). This 
-medication helps keep your stent open. Do not stop taking plavix 
-unless you are told by your cardiologist. No other doctor can 
-tell you to stop taking this medication. 
+* No driving while taking narcotic pain medication.
 
-We wish you all the best, 
+* Take Tylenol on a standing basis to avoid more opiod use.
 
-Your ___ Cardiology team
+* Continue to stay well hydrated and eat well to heal your 
+incisions
 
+* No heavy lifting > 10 lbs for 4 weeks.
+
+* Shower daily. Wash incision with mild soap & water, rinse, pat 
+dry
+  * No tub bathing, swimming or hot tubs until incision healed
+  * No lotions or creams to incision site
+
+* Walk ___ times a day and gradually increase your activity as 
+you can tolerate.
+
+ Call Dr. ___ ___ if you experience:
+  -Fevers > 101 or chills
+  -Increased shortness of breath, chest pain or any other 
+symptoms that concern you.
+
+** If pathology specimens were sent at the time of surgery, the 
+reports will be reviewed with you in detail at your follow up 
+appointment. This will give both you and your doctor time to 
+understand the pathology, its implications and discuss options 
+going forward.**
+
+ 
+
+ 
  
 Followup Instructions:
 ___
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
-A female patient presented with shortness of breath; on physical examination, BP NA, HR NA, RR NA, and Temp NA; admission labs showed WBC 12.4, RBC 3.55, Hgb 11.2, Hct 33.8, Plt NA, MCV 95, MCH 31.5, MCHC 33.1, RDW 13.2, and Glucose 172; the most diagnostically relevant finding was 90% ostial stenosis of the right coronary artery on cardiac catheterization.<|eot_id|>
+A female patient presented with cough; on physical examination, BP 144/71, HR 65, RR 16, and Temp 97.2; admission labs showed WBC 8.4, RBC 4.24, Hgb 11.2, Hct 36.4, Plt 223, MCV 86, MCH 26.4, MCHC 30.8, RDW 15.2, and Glucose 125; the most diagnostically relevant finding was near-complete obstruction of the right upper lobe bronchus by an endobronchial mass on bronchoscopy.<|eot_id|>
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
 You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs (Pertinent Results) and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
 
  
-Name:  ___                ___ No:   ___
+Name:  ___.                  Unit No:   ___
  
 Admission Date:  ___              Discharge Date:   ___
  
 Date of Birth:  ___             Sex:   M
  
-Service: MEDICINE
+Service: SURGERY
  
 Allergies: 
-Penicillins / Motrin Ib
+Erythromycin Base
  
 Attending: ___.
  
 Chief Complaint:
-Throat tightness
+abdominal pain
  
 Major Surgical or Invasive Procedure:
-None
+Laparoscopic cholecystectomy
+
  
 History of Present Illness:
-___ year-old man transferred from ___ for treatment of throat 
-tightness and pneumonia. He is admitted to the ICU for closer 
-monitoring given concern of allergic reaction and history of 
-severe ___ reaction in ___.  
+___ M w/ known cholelithiasis presents with RUQ pain. 
+Patient reports severe RUQ pain which woke him from sleep at 3 
+AM
+today.  He reports having had pizza and wine last night for
+dinner.  He had crampy epigastric and RUQ pain which awoke him 
+at
+3 AM last night and gradually worsened to ___ RUQ pain.  He
+reports associated nausea without emesis.  He also has had
+associated gastric reflux.  He denies fevers, chills, diarrhea,
+or constipation.  Of note, he had similar symptoms in ___ of 
+this
+year and was seen at an OSH in ___.  A RUQ U/S peroformed
+demonstrated gall stones.  He was offered surgery at that time,
+but his pain resolved and he declined the surgery as he was
 
-His current symptoms started several days ago with URI-type 
-symptoms. Patient developed chest tightness, sore throat, dry 
-cough, and sensation of "lips feeling leathery" and dry over the 
-course of three days (since ___. He notes that his 
-girlfriend was sick with URI-type symptoms and he may have 
-picked something up from her.  
-  
-Over the weekend he had taken aspirin on-and-off for four days 
-(not containing Motrin per his report). Around this time he 
-developed worsening throat tightness, and he decided to go to 
-___ ED for further evaluation. From ___ ED he was 
-transferred to ___.  
-
-In the ED at ___, his initial vital signs were T 97.2, HR 92, 
-BP 148/108, RR 20, satting 95% RA. He was noted to be talking in 
-full sentences, although his voice was hoarse. On exam, there 
-was no stridor or wheezing. Labs were remarkable for a white 
-count of 9.5 with 72% polys, no bands. CBC was otherwise normal 
-with normal BMP. An EKG showed NSR with no ischemic changes. CXR 
-showed indistinctness of the left heart border with concern of 
-atalectasis versus pneumonia. Patient had already received 
-ceftriaxone at OSH for concern of pneumonia and was given 
-azithromycin here at ___. In addition he received 4 mg of 
-Zofran, 4 mg of morphine and 125 mg of methylprednisolone. 
-During his time in the ED he felt increasing throat tightness, 
-and due to the complicated history of ___ reaction, 
-he was admitted to the ICU for closer monitoring. Vitals at time 
-of transfer were T 97.8, HR 80, BP 140/80, RR 18, satting 97% 
-RA.  
-  
-Of note, in ___ the patient was admitted to ___ for SJS 
-involving the airway mucosa- his hospital course was complicated 
-by DVT and LUL pulmonary embolism. He had a long admission 
-requiring intubation (from ___ to ___ and ultimately 
-tracheostomy placement. He had presented originally with SOB and 
-fever three months after treatment of pneumonia with ceftriaxone 
-and levofloxacin. At presentation he had a vesicular rash. His 
-micro work-up was all negative with the exception of an elevated 
-IgM and IgG for Mycoplasma pneumonia. He had a deep skin biopsy 
-that showed erythema multiforme. He was initially treated with 
-vancomycin, acyclovir, ceftriaxone, which was later changed to 
-levofloxacin, and then to azithromycin (for a 21-day course 
-total of antibiotics). During the admission, he had thick 
-blood-tinged expectorant from his lungs felt to be consistent 
-with desquamation caused by ___ syndrome. Note is 
-made from that discharge summary that he had a very traumatic 
-intubation and that the anesthesiologist performing the 
-procedure saw a desquamated, ulcerated, and "raw-appearing" 
-posterior pharynx.  
-  
-REVIEW OF SYSTEMS:  
-Positive for subjective fevers/chills over the last few days. 
-Also with intermittent stomach pain. No diarrhea. No nausea or 
-vomiting. No urinary symptoms. No rash or joint pain.  
  
 Past Medical History:
-Mycoplasma pneumonia infection complicated by SJS, DVT and PE 
-(___) 
+PMH: symptomatic cholelithiasis, HTN, HLD
+
+PSH: open appendectomy
+
  
 Social History:
 ___
 Family History:
-NC
+Brother with DM-2. Both parents alive in their ___, his
+father has HTN.  His children are healthy.
+
  
 Physical Exam:
- HR 78, BP 147/95, RR 17, sat 97%  
-General: young man, no acute distress, +hoarse voice  
-HEENT: no conjuntival injection or edema; no tongue swelling; 
-oropharynx clear with no erythmea or exudate; small blistering 
-along inferior gingival surface, otherwise clear buccal and 
-palate mucosal without ulceration or erosion  
-Cardiovascular: RRR, normal s1/s2, no murmurs  
-Pulmonary: coarse expiratory sounds diffusely, no wheezes, no 
-stridor over anterior or lateral neck  
-Abdominal: soft, non-tender, normal bowel sounds  
-Extremities: warm and well-perfused, non-edematous, 2+ dp pulses 
- 
-Neurological: AAOx3, moving all extremities  
-Skin: no rashes  
+VS: 96.2 84 138/77 20 99% 
+Gen: NAD, AOx3
+Neck: supple, trachea midline, no LAD
+HEENT: MMM, Anicteric, EOM-I
+___: reg
+Pulm: no resp distress
+Abd: S/ND/TTP RUQ, -___, no rebound or guarding
+___: no LLE
+
  
 Pertinent Results:
-___ 12:24AM BLOOD WBC-9.5 RBC-4.98# Hgb-15.3# Hct-45.5# 
-MCV-91 MCH-30.7 MCHC-33.7 RDW-13.6 Plt ___
-___ 12:24AM BLOOD ___ PTT-24.8 ___
-___ 12:24AM BLOOD Glucose-92 UreaN-14 Creat-1.0 Na-142 
-K-4.1 Cl-102 HCO3-28 AnGap-16
-___ 03:41AM BLOOD Calcium-9.0 Phos-2.8# Mg-2.1
+___ 06:05AM   WBC-4.6 RBC-4.47* HGB-14.2 HCT-40.0 MCV-90 
+MCH-31.7 MCHC-35.4* RDW-13.1
+___ 06:05AM   NEUTS-53.7 ___ MONOS-7.5 EOS-1.5 
+BASOS-1.6
+___ 06:05AM   PLT COUNT-243
+___ 06:05AM   ALT(SGPT)-32 AST(SGOT)-27 ALK PHOS-59 TOT 
+BILI-0.4
+___ 06:05AM   LIPASE-70*
 
-CXR IMPRESSION: Probable lingual scarring. No evidence of 
-pneumonia.
+___ Liver US :
+1. Distended gallbladder wall, containing multiple mobile 
+stones, with a 
+large CBD. There is no wall thickening, pericholecystic fluid, 
+and no 
+sonographic ___ sign is elicited. A distal obstructing 
+stone within the CBD is a possibility. The findings are less 
+compatible with cholecystitis, but a HIDA scan can be performed 
+to assess for emptying. 
+2. Echogenic and coarsened liver, most compatible with fatty 
+infiltration. A more advanced process such as fibrosis/cirrhosis 
+cannot be excluded with this technique. 
 
-CT CHEST (PRELIM): Bronchiectasis, no pneumonia
  
 Brief Hospital Course:
-# Shortness of breath: Pt presented with ___ days of lethargy, 
-cough, congestion and possible lingular infiltrate on chest 
-x-ray. Exam was remarkable for coarse breath sounds diffusely, 
-L>R.  Pt was started on empiric Levofloxacin and steroids for 
-possible SJS. HE was notably tachycardic and dehydrated on exam, 
-he was given 2liters of IVF and HR trended down with increased 
-UOP.  Pt was started on nebs and reported improved breathing and 
-cough. Due to abnormal findings on CT chest from ___, he 
-underwent a follow up CT which was notable for resolution of 
-nodules and subtle ___ opacities.  Levofloxacin was 
-initially continued for CAP and pt was called out to floor but 
-on the floor it was thought that his symptoms were mainly due to 
-URI like process so abx were discontinued. the pt was discharged 
-with supportive care on albuterol/ipratropium, fluticasone 
-inhalers. he is to f/u with his PCP in the next week.
+Mr. ___ was evaluated by the Acute Care service in the 
+Emergency Room and based on his past history and recurrent pain 
+he was taken to the Operating Room on ___ and underwent a 
+laparoscopic cholecystectomy.  He tolerated the procedure well 
+and returned to the PACU in stable condition.  He maintained 
+stable hemodynamics and his pain was well controlled.
 
-# History of ___ sydrome: occurred in the setting of 
-Motrin use and Mycoplasma pneumoniae infection. Currently 
-patient with no evidence of mucosal sloughing or rash. Steroids 
-started empirically and stopped after resolution of oral & 
-throat discomfort, no evidence of rash. On discharge the pt was 
-stable without any evidence of SJS.
+Following transfer to the Surgical floor he continued to make 
+good progress.  He was started on a liquid diet which was 
+gradually advanced to regular and he tolerated it well. He was 
+up and walking independently and had adequate pain relief.  His 
+port sites were dry
+After an uncomplicated recovery he was discharged to home on 
+___ and will follow up in the ___ in ___ weeks.
  
 Medications on Admission:
-none
+Simvastatin 20', Sertraline 50', Amlodipine 5'
+   
+
  
 Discharge Medications:
-1. Acetaminophen 325 mg Tablet Sig: ___ Tablets PO Q6H (every 6 
-hours) as needed for pain or fever for 10 days.
-Disp:*60 Tablet(s)* Refills:*0*
-2. Menthol-Cetylpyridinium 3 mg Lozenge Sig: One (1) Lozenge 
-Mucous membrane PRN (as needed) as needed for cough or sore 
-throat for 10 days.
-Disp:*30 Lozenge(s)* Refills:*0*
-3. Ipratropium-Albuterol ___ mcg/Actuation Aerosol Sig: ___ 
-Puffs Inhalation Q6H (every 6 hours) as needed for wheezing or 
-sob for 10 days.
-Disp:*1 inhaler* Refills:*0*
-4. Fluticasone 110 mcg/Actuation Aerosol Sig: Two (2) Puff 
-Inhalation BID (2 times a day) for 10 days.
-Disp:*1 inhaler* Refills:*0*
+1. oxycodone 5 mg Tablet Sig: ___ Tablets PO Q4H (every 4 hours) 
+as needed for pain.
+Disp:*40 Tablet(s)* Refills:*0*
+2. simvastatin 10 mg Tablet Sig: Two (2) Tablet PO DAILY 
+(Daily).  
+3. sertraline 50 mg Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+ 
+4. acetaminophen 325 mg Tablet Sig: Two (2) Tablet PO Q6H (every 
+6 hours) as needed for pain or fever.  
+5. omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO DAILY (Daily).  
+6. amlodipine 5 mg Tablet Sig: One (1) Tablet PO once a day.  
+
  
 Discharge Disposition:
 Home
  
 Discharge Diagnosis:
-Acute bronchitis vs Viral syndrome with reactive airways
+Acute cholecystitis
+
  
 Discharge Condition:
 Mental Status: Clear and coherent.
 Level of Consciousness: Alert and interactive.
 Activity Status: Ambulatory - Independent.
+
  
 Discharge Instructions:
-You were admitted due to shortness of breath and cough. At first 
-there was concern that you could develop symptoms similar to 
-your past admission for ___ syndrome. You were given 
-IV steroids and antibiotics and transferred to the ICU for 
-monitoring. You fortunately did not develop any life threatening 
-respiratory symptoms or any concerning symptoms for 
-___. It is thought that you likely suffer from a 
-viral illness with reactive airways, and that antibiotics are 
-not needed. You should take fluticasone inhaler for 10 days, 
-albuterol/ipratropium inhaler, tylenol, and cepacol as needed 
-for the next few days to control your wheezing and respiratory 
-symptoms. There were no other changes to your medications.
+You are being discharged on medications to treat the pain from 
+your operation. These medications will make you drowsy and 
+impair your ability to drive a motor vehicle or operate 
+machinery safely. You MUST  refrain from such activities while 
+taking these medications.
 
-Please take all medications as prescribed.
-Please follow up with all appointments.
-Please do not hesitate to return to the hospital with any 
-concerning symptoms at all.
+ 
+
+ 
+
+Please call your doctor or return to the emergency room if you 
+have any of the following:
+ 
+
+ * You experience new chest pain, pressure, squeezing or 
+ tightness.
+ 
+* New or worsening cough or wheezing.
+ 
+* If you are vomiting and cannot keep in fluids or your 
+ medications.
+ 
+* You are getting dehydrated due to continued vomiting, 
+ diarrhea or other reasons. Signs of dehydration include dry 
+ mouth, rapid heartbeat or feeling dizzy or faint when standing.
+ 
+* You see blood or dark/black material when you vomit or have a 
+ bowel movement.
+ 
+
+* You have shaking chills, or a fever greater than 101.5 (F) 
+ degrees or 38(C) degrees.
+ 
+* Any serious change in your symptoms, or any new symptoms that 
+ concern you. 
+ 
+* Please resume all regular home medications and take any new 
+meds 
+ as ordered.  
+
+Activity:
+No heavy lifting of items ___ pounds for 6 weeks. You may 
+resume moderate
+exercise at your discretion, no abdominal exercises.
+
+Wound Care:
+You may remove the dressings tomorrow.
+
+You may shower, no tub baths or swimming. 
+
+If there is clear drainage from your incisions, cover with 
+clean, dry gauze. 
+Your steri-strips will fall off on their own. Please remove any 
+remaining strips ___ days after surgery.
+Please call the doctor if you have increased pain, swelling, 
+redness, or drainage from the incision sites.
 
  
 Followup Instructions:
 ___
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
-A male patient presented with throat tightness; on physical examination, BP 147/95, HR 78, RR 17, and Temp NA; admission labs showed WBC 9.5, RBC 4.98, Hgb 15.3, Hct 45.5, Plt NA, MCV 91, MCH 30.7, MCHC 33.7, RDW 13.6, and Glucose 92; the most diagnostically relevant finding was bronchiectasis without pneumonia on chest CT.<|eot_id|>
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.60s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.81s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:08,  4.01s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.15s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.82s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.99s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.43s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.99s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.03s/it]
+A male patient presented with abdominal pain; on physical examination, BP 138/77, HR 84, RR 20, and Temp 96.2; admission labs showed WBC 4.6, RBC 4.47, Hgb 14.2, Hct 40.0, Plt 243, MCV 90, MCH 31.7, MCHC 35.4, RDW 13.1, and Glucose NA; the most diagnostically relevant finding was a distended gallbladder containing multiple mobile stones and a dilated common bile duct, suggesting possible distal obstruction, as demonstrated on abdominal ultrasound.<|eot_id|>
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:14,  4.97s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.03s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:09<00:09,  4.68s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:09<00:09,  4.80s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.03s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.52s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.23s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.32s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  2.73s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:13<00:00,  3.43s/it]
 ======== Log a first sample from the processed training set ========
 masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
 The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
@@ -952,9 +987,9 @@ The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and g
   warnings.warn(
 /root/anaconda3/envs/LLM/lib/python3.12/site-packages/accelerate/accelerator.py:1998: UserWarning: FSDP upcast of low precision parameters may affect the precision of model checkpoints.
   warnings.warn(
-  0%|          | 0/1360 [00:00<?, ?it/s]  0%|          | 1/1360 [00:10<3:53:09, 10.29s/it]  0%|          | 2/1360 [00:15<2:43:18,  7.22s/it]  0%|          | 3/1360 [00:20<2:22:49,  6.31s/it]  0%|          | 4/1360 [00:25<2:10:56,  5.79s/it]  0%|          | 5/1360 [00:30<2:03:47,  5.48s/it]  0%|          | 6/1360 [00:35<1:59:57,  5.32s/it]  1%|          | 7/1360 [00:40<1:57:29,  5.21s/it]  1%|          | 8/1360 [00:45<1:55:51,  5.14s/it]  1%|          | 9/1360 [00:50<1:54:07,  5.07s/it]  1%|          | 10/1360 [00:55<1:53:39,  5.05s/it]  1%|          | 11/1360 [01:00<1:53:39,  5.05s/it]  1%|          | 12/1360 [01:05<1:53:05,  5.03s/it]W0120 04:21:22.378000 1554197 site-packages/torch/distributed/elastic/agent/server/api.py:725] Received 1 death signal, shutting down workers
-W0120 04:21:22.380000 1554197 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1554286 closing signal SIGHUP
-W0120 04:21:22.381000 1554197 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1554287 closing signal SIGHUP
+  0%|          | 0/880 [00:00<?, ?it/s]  0%|          | 1/880 [00:12<3:01:33, 12.39s/it]  0%|          | 2/880 [00:19<2:12:24,  9.05s/it]  0%|          | 3/880 [00:26<2:00:35,  8.25s/it]  0%|          | 4/880 [00:33<1:52:41,  7.72s/it]  1%|          | 5/880 [00:40<1:49:59,  7.54s/it]  1%|          | 6/880 [00:47<1:46:35,  7.32s/it]  1%|          | 7/880 [00:54<1:43:49,  7.14s/it]  1%|          | 8/880 [01:01<1:42:48,  7.07s/it]  1%|          | 9/880 [01:07<1:41:32,  6.99s/it]  1%|          | 10/880 [01:14<1:40:42,  6.94s/it]  1%|▏         | 11/880 [01:22<1:42:28,  7.08s/it]  1%|▏         | 12/880 [01:29<1:43:15,  7.14s/it]  1%|▏         | 13/880 [01:36<1:41:56,  7.05s/it]  2%|▏         | 14/880 [01:43<1:42:21,  7.09s/it]  2%|▏         | 15/880 [01:50<1:42:05,  7.08s/it]  2%|▏         | 16/880 [01:57<1:41:32,  7.05s/it]  2%|▏         | 17/880 [02:04<1:42:14,  7.11s/it]  2%|▏         | 18/880 [02:12<1:42:52,  7.16s/it]  2%|▏         | 19/880 [02:19<1:44:51,  7.31s/it]  2%|▏         | 20/880 [02:27<1:45:59,  7.40s/it]  2%|▏         | 21/880 [02:35<1:49:56,  7.68s/it]  2%|▎         | 22/880 [02:43<1:52:02,  7.84s/it]  3%|▎         | 23/880 [02:52<1:57:15,  8.21s/it]  3%|▎         | 24/880 [03:06<2:20:55,  9.88s/it]  3%|▎         | 25/880 [03:14<2:11:20,  9.22s/it]  3%|▎         | 26/880 [03:22<2:06:47,  8.91s/it]  3%|▎         | 27/880 [03:32<2:11:50,  9.27s/it]  3%|▎         | 28/880 [03:46<2:31:54, 10.70s/it]  3%|▎         | 29/880 [03:54<2:17:26,  9.69s/it]  3%|▎         | 30/880 [04:02<2:11:04,  9.25s/it]  4%|▎         | 31/880 [04:10<2:07:14,  8.99s/it]  4%|▎         | 32/880 [04:20<2:12:35,  9.38s/it]  4%|▍         | 33/880 [04:31<2:16:02,  9.64s/it]  4%|▍         | 34/880 [04:41<2:18:19,  9.81s/it]  4%|▍         | 35/880 [04:50<2:15:27,  9.62s/it]  4%|▍         | 36/880 [05:00<2:16:26,  9.70s/it]  4%|▍         | 37/880 [05:09<2:14:02,  9.54s/it]  4%|▍         | 38/880 [05:19<2:13:27,  9.51s/it]  4%|▍         | 39/880 [05:29<2:16:20,  9.73s/it]  5%|▍         | 40/880 [05:38<2:13:46,  9.56s/it]W0205 12:50:32.957000 1640326 site-packages/torch/distributed/elastic/agent/server/api.py:725] Received 1 death signal, shutting down workers
+W0205 12:50:32.959000 1640326 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1640431 closing signal SIGHUP
+W0205 12:50:32.959000 1640326 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 1640432 closing signal SIGHUP
 Traceback (most recent call last):
   File "/root/anaconda3/envs/LLM/bin/accelerate", line 7, in <module>
     sys.exit(main())
@@ -983,4 +1018,4 @@ Traceback (most recent call last):
     time.sleep(monitor_interval)
   File "/root/anaconda3/envs/LLM/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 85, in _terminate_process_handler
     raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
-torch.distributed.elastic.multiprocessing.api.SignalException: Process 1554197 got signal: 1
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 1640326 got signal: 1

@@ -4,7 +4,7 @@ dataset_path: "./data"                                ## 데이터셋 저장 경
 multi_gpu: true
 
 ## SFTConfig
-max_length: 8192                                      ## 모델이 수용 가능한 최대 시퀀스 길이. 너무 긴 시퀀스가 일부라면 이를 잘 조절하여 truncation할 수 있음.
+max_length: 12288                                     ## 모델이 수용 가능한 최대 시퀀스 길이. 너무 긴 시퀀스가 일부라면 이를 잘 조절하여 truncation할 수 있음.
 output_dir: "./results/sft-multi-test"                ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
 run_name: "sft-multi-test"
