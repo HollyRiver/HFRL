@@ -213,7 +213,8 @@ if __name__ == "__main__":
     print("========== 학습 종료 ==========")
 
     ## ========== 추론 파일 종합 ===========
-    utils.excel_integrate(training_args.output_dir.split("/")[-1])
+    if not script_args.multi_gpu:
+        utils.excel_integrate(training_args.output_dir.split("/")[-1])
 
     ## ========== wandb 업로드 ==========
     # current_folders = set(next(os.walk("wandb"))[1])

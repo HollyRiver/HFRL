@@ -1,5 +1,12 @@
 ## nohup python sft_generate.py --adapter_name="adapter/Zip-Llama-sft" --output_name="gen_data.csv" --gen_nums=1 --temp=0.4 &
 
+## SFT에서 온전한 모델을 픽스하고, 해당 어뎁터를 삽입
+## temperature 설정은 1.0 정도로 해야 다양한 결과 나옴
+# nohup python sft_generate.py --adapter_name="adapter/Zip-Llama-sft"\
+#                              --output_name="gen_data.csv"\
+#                              --gen_nums=5\
+#                              --temp=1.0 &
+
 import os
 import argparse
 import torch

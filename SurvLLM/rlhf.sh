@@ -1,22 +1,32 @@
 ## 여기 있는거 한번에 다 안돼요. 성능상 한번에 해도 안되고.
 ## 그리고 실행할 때에는 &&가 아닌 &를 붙여야 합니다. 여긴 그냥 순차적으로 된다는 가정하에 작성했어요.
 
-nohup python csv_to_json_dataset.py --target="data/data_sample_20251111_01.csv"\
-                                    --encoding="cp949"\
+nohup python csv_to_json_dataset.py --target="data/data_sample1_for_SFT_20260205.csv"\
+                                    --encoding="utf-8"\
                                     --system="data/system_prompt.txt" &&
 
-nohup python SFT.py --config config/SFT_config.yaml > sft_log.txt &&
+nohup python SFT.py --config config/SFT_config_v1.1.2.yaml > logs/sft_log_v1.1.2.txt &&
 ## multi GPU 사용 시 fsdp_config_qlora.yaml 파일에서 num_processes에 GPU 숫자만 수정하여 아래를 전부 입력
 # nohup env \
 # accelerate launch --config_file "config/fsdp_config_qlora.yaml" \
 # SFT.py --config config/SFT_config_multi_GPU.yaml > sft_test.log &
 
-## SFT에서 온전한 모델을 픽스하고, 해당 어뎁터를 삽입
-## temperature 설정은 1.0 정도로 해야 다양한 결과 나옴
-nohup python sft_generate.py --adapter_name="adapter/Zip-Llama-sft"\
-                             --output_name="gen_data.csv"\
-                             --gen_nums=5\
-                             --temp=1.0 &&
+## generated_data for DPO를 생성
+nohup python csv_to_json_dataset.py --target="data/gen_data_for_dpo_20260205.csv"\
+                                    --encoding="utf-8"\
+                                    --system="data/system_prompt.txt" &
+
+## SFT에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트가 준비되었을 때
+nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
+                               --adapter_path="adapter/Zip-Llama-sft-v1.1.2"\
+                               --inference_data="data/gen_data_for_dpo_20260205.json"\
+                               --output_dir="data/generated_data_v1.1.2.csv"\
+                               --gen_nums=5\
+                               --sampling=True\
+                               --temperature=1.0\
+                               --repetition_penalty=1.0\
+                               --gpu_memory_util=0.9\
+                               --seed=42 &
 
 ## SFT에서 온전한 모델을 픽스하고, 데이터셋이 준비되었을 때
 nohup python csv_to_json_dataset.py --target="data/gen_data_20251118_for_dpo.csv"\

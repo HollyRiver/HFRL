@@ -16,6 +16,10 @@ SFT csv dataset input format:
         text: 시스템 프롬프트 다음에 기재될 Input Text.
         assistant: 모델이 학습할 Output Text. 직접 라벨링하거나(Human Feedback) 기계로 라벨링(AI Feedback)
 
+    tasks:
+        아래 세 개의 파일을 data 폴더에 생성
+        sft_train_dataset.json, sft_test_dataset.json, test_label
+
 DPO csv dataset input format:
     DPO 작업 수행에 필요한 데이터셋의 csv 포맷
 
@@ -25,12 +29,20 @@ DPO csv dataset input format:
         chosen: Input Text에 대한 답변으로써 선호되는 텍스트
         rejected: Input Text에 대한 답변으로써 chosen보다 선호되지 못하는 텍스트
 
+    tasks:
+        아래 두 개의 파일을 data 폴더에 생성
+        dpo_train_dataset.json, dpo_test_dataset.json
+
+
 Inference csv dataset input format:
     LLM으로부터 생성 작업을 수행하기 위해 필요한 데이터셋의 csv 포맷
 
     requirements:
         subject_id: 텍스트 인덱스
         text: Input Text. 해당 텍스트에 대한 답변을 반환하는 것이 목적
+
+    tasks:
+        target argument에 입력된 파일명에서 .csv를 제외한 앞의 이름의 json 파일 생성
 """
 
 if __name__ == "__main__":
