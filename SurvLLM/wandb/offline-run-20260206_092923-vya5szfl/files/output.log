@@ -1,0 +1,371 @@
+Generating train split: 90 examples [00:00, 13974.80 examples/s]
+Generating train split: 10 examples [00:00, 3435.70 examples/s]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.75s/it]
+Tokenizing train dataset: 100%|██████████| 90/90 [00:00<00:00, 245.47 examples/s]
+Packing train dataset: 100%|██████████| 90/90 [00:00<00:00, 9074.87 examples/s]
+Tokenizing eval dataset: 100%|██████████| 10/10 [00:00<00:00, 260.63 examples/s]
+Packing eval dataset: 100%|██████████| 10/10 [00:00<00:00, 3701.29 examples/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
+training dataset size: 90
+test dataset size: 10
+======== Log a few random samples from the processed training set ========
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+Sex:   M
+Service: NEUROSURGERY
+Allergies:
+No Known Allergies / Adverse Drug Reactions
+Attending: ___.
+Chief Complaint:
+Scalp hematoma with incidental CT finding.
+Major Surgical or Invasive Procedure:
+None
+History of Present Illness:
+Patient is a ___ year old male who reports slipping on ice
+one week ago and hitting the back of his head. He had immediate
+pain at the time, no loss of consciousness, no dizziness, no
+motor weakness, no numbness or tingling, no neck pain, no nausea
+or vomiting. The pain was well controlled with Aleve and ice
+packs for 6 days and then last night was seen by a family member
+that is a paramedic and recommended the patient go to the ED.
+Patient went to ___, was evaluated with a head CT which
+showed scalp hematoma and small incidental cerebellar lesion in
+one slice, measuring 1.4 x 0.8 cm. He was subsequently
+transferred to ___ for further evaluation and management.
+Today, the patient has minimal pain, only at the site of his
+scalp injury. Denies any other symptoms.
+Past Medical History:
+HTN, COPD, Hx of AAA s/p repair ___ years ago
+Social History:
+___
+Family History:
+Non-contributory
+Physical Exam:
+PHYSICAL EXAM:
+O: T: 97.9 BP: 128/72  HR: 65 R 18   O2Sats 94% RA
+Gen: WD/WN, comfortable, NAD.
+HEENT: Pupils: 3 -> 2mm bilaterally    EOMs full and intact;
+right occipital scalp hematoma, very tender to palpation
+Neck: Supple.
+Lungs: CTA bilaterally.
+Cardiac: RRR. S1/S2.
+Abd: Soft, NT, BS+
+Extrem: Warm and well-perfused.
+Neuro:
+Mental status: Awake and alert, cooperative with exam, normal
+affect.
+Orientation: Oriented to person, place, and date.
+Language: Speech fluent with good comprehension and repetition.
+Naming intact. No dysarthria or paraphasic errors.
+Cranial Nerves:
+I: Not tested
+II: Pupils equally round and reactive to light, 3 to
+2 mm bilaterally. Visual fields are full to confrontation.
+III, IV, VI: Extraocular movements intact bilaterally without
+nystagmus.
+V, VII: Facial strength and sensation intact and symmetric.
+VIII: Hearing intact to voice.
+IX, X: Palatal elevation symmetrical.
+XI: Sternocleidomastoid and trapezius normal bilaterally.
+XII: Tongue midline without fasciculations.
+Motor: Normal bulk and tone bilaterally. No abnormal movements,
+tremors. Strength full power ___ throughout. No pronator drift
+Sensation: Intact to light touch, propioception, pinprick and
+vibration bilaterally.
+Toes downgoing bilaterally
+Coordination: normal on finger-nose-finger, rapid alternating
+movements, heel to shin
+Pertinent Results:
+MRI Head with and without contrast:
+Impression: No significant abnormalities are seen on the MRI of
+the brain with and without  gadolinium.  No enhancing brain
+lesions, mass effect or hydrocephalus.
+The  hypodensity seen in the left superior cerebellar region on
+the CT was  likely secondary to partial volume averaging of
+adjacent CSF under the  tentorium.
+Brief Hospital Course:
+___ is a ___ year old male who was admitted to the
+Neurosurgery Service on ___ for work-up of an incidental
+finding on head CT. He subsequently had an MRI of the head with
+and without contrast which was normal. CT findings were likely
+artifact.
+The patient was discharged with instructions for follow-up in 8
+weeks with Dr. ___.
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Tiotropium Bromide 1 CAP IH DAILY
+2. Lisinopril 20 mg PO DAILY
+3. Hydrochlorothiazide 50 mg PO DAILY
+4. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH DAILY
+Discharge Medications:
+1. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH DAILY
+2. Lisinopril 20 mg PO DAILY
+3. Hydrochlorothiazide 50 mg PO DAILY
+4. Tiotropium Bromide 1 CAP IH DAILY
+Discharge Disposition:
+Home
+Discharge Diagnosis:
+Scalp hematoma
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+A male patient presented with scalp hematoma; on physical examination, BP 128/72, HR 65, RR 18 and Temp 97.9; admission labs showed WBC NA, RBC NA, Hgb NA, Hct NA, Plt NA, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose NA; the most diagnostically relevant finding was a right occipital scalp hematoma on MRI.<|eot_id|>
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
+Sex:   F
+Service: SURGERY
+Allergies:
+Ceclor / lisinopril / codeine / latex
+Attending: ___
+Chief Complaint:
+rectal cancer
+Major Surgical or Invasive Procedure:
+Flexible sigmoidoscopy, single-site laparoscopic low anterior
+resection with primary end-to-end colorectal anastomosis
+(ultralow).  Mobilization of splenic flexure.
+History of Present Illness:
+This is a ___ female patient that underwent an
+endoscopic excision of a polyp that was found to be a cancer.
+The cancer was not identified up to
+the first 10 cm from the rectum.  An MRI did not demonstrate any
+deep invasion.  The patient was scheduled for endoscopy possible
+transanal excision of the scar or low anterior resection.
+Past Medical History:
+PMH:
+HTN
+Reactive airway disease
+PSH:
+open chole
+Social History:
+___
+Family History:
+Relative Status   Age Problem              Onset Comments
+Mother   ___ ___  MYOCARDIAL
+                      INFARCTION
+                      BREAST CANCER              at age ___
+Father   Living       END STAGE RENAL
+                      DISEASE
+                      HYPERTENSION
+                      DIABETES MELLITUS
+Brother               MYOCARDIAL
+                      INFARCTION
+Comments: Numerous maternal relatives with cardiovascular
+          disease
+Physical Exam:
+Gen: NAD, AxOx3
+Card: RRR
+Pulm: no respiratory distress
+Abd: Soft, non-tender, non-distended, no rebound or guarding
+Wounds: c/d/I
+Ext: No edema, warm well-perfused
+Pertinent Results:
+___ 06:35AM BLOOD WBC-8.9 RBC-4.87 Hgb-13.1 Hct-43.0 MCV-88
+MCH-26.9 MCHC-30.5* RDW-14.4 RDWSD-46.2 Plt ___
+___ 07:24AM BLOOD WBC-12.3* RBC-5.17 Hgb-14.0 Hct-45.0
+MCV-87 MCH-27.1 MCHC-31.1* RDW-14.6 RDWSD-47.1* Plt ___
+___ 06:35AM BLOOD Glucose-105* UreaN-19 Creat-0.7 Na-143
+K-4.0 Cl-103 HCO3-31 AnGap-9*
+___ 07:24AM BLOOD Glucose-114* UreaN-23* Creat-0.8 Na-144
+K-4.6 Cl-102 HCO3-24 AnGap-18
+___ 06:35AM BLOOD Calcium-8.7 Phos-3.7 Mg-1.8
+___ 07:24AM BLOOD Calcium-9.0 Phos-4.2 Mg-2.2
+___ 07:24AM BLOOD CRP-38.8*
+Brief Hospital Course:
+Ms. ___ is a ___ year old female with history of rectal
+cancer who presented to pre-op holding at ___ on ___
+for a flexible sigmoidoscopy, single-site laparoscopic low
+anterior resection with primary end-to-end colorectal
+anastomosis. She tolerated the procedure well without
+complications (Please see operative note for further details).
+After a brief and uneventful stay in the PACU, the patient was
+transferred to the floor for further post-operative management.
+Postoperative course stable.
+ Neuro: Pain was well controlled on Tylenol and tramadol for
+breakthrough pain.
+ CV: The patient remained stable from a cardiovascular
+standpoint; vital signs were routinely monitored.
+ Pulm: The patient remained stable from a pulmonary standpoint;
+oxygen saturation was routinely monitored. She had good
+pulmonary toileting, as early ambulation and incentive
+spirometry were encouraged throughout hospitalization.
+ GI: The patient was initially kept NPO after the procedure. The
+patient was advanced to and tolerated a regular diet. Patient's
+intake and output were closely monitored. patient was started on
+psyllium wafer and loperamide for diarrhea.
+ GU: The patient had a Foley catheter that was removed prior to
+discharge. At time of discharge, the patient was voiding without
+difficulty. Urine output was monitored as indicated.
+ ID: The patient was closely monitored for signs and symptoms of
+infection and fever, of which there was none.
+ Heme: The patient received subcutaneous heparin and ___ dyne
+boots during this stay. She was encouraged to get up and
+ambulate as early as possible. The patient is being discharged
+on prophylactic Lovenox.
+ On POD#, the patient was discharged to home. At discharge, she
+was tolerating a regular diet, passing flatus, voiding, and
+ambulating independently. JP drain output was minimal and
+discontinued. She will follow-up in the clinic in 2 weeks. This
+information was communicated to the patient directly prior to
+discharge.
+ Post-Surgical Complications During Inpatient Admission:
+ [ ] Post-Operative Ileus resolving w/o NGT
+ [ ] Post-Operative Ileus requiring management with NGT
+ [ ] UTI
+ [ ] Wound Infection
+ [ ] Anastomotic Leak
+ [ ] Staple Line Bleed
+ [ ] Congestive Heart failure
+ [ ] ARF
+ [ ] Acute Urinary retention, failure to void after Foley D/C'd
+ [ ] Acute Urinary Retention requiring discharge with Foley
+Catheter
+ [ ] DVT
+ [ ] Pneumonia
+ [ ] Abscess
+ [x] None
+ Social Issues Causing a Delay in Discharge:
+ [ ] Delay in organization of ___ services
+ [ ] Difficulty finding appropriate rehab hospital disposition.
+ [ ] Lack of insurance coverage for ___ services
+ [ ] Lack of insurance coverage for prescribed medications.
+ [ ] Family not agreeable to discharge plan.
+ [ ] Patient knowledge deficit related to ileostomy delaying
+dispo
+ [x] No social factors contributing in delay of discharge.
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Losartan Potassium 100 mg PO DAILY
+2. Aspirin 81 mg PO DAILY
+3. amLODIPine 10 mg PO DAILY
+Discharge Medications:
+1.  Acetaminophen 1000 mg PO Q8H Duration: 7 Days
+2.  Enoxaparin Sodium 40 mg SC DAILY
+RX *enoxaparin 40 mg/0.4 mL 40 mg SC once a day Disp #*25
+Syringe Refills:*0
+3.  LOPERamide 2 mg PO QPM
+4.  Psyllium Wafer 1 WAF PO BID
+5.  TraMADol 50-100 mg PO Q6H:PRN Pain - Moderate
+  Reason for PRN duplicate override: Alternating agents for
+similar severity
+RX *tramadol 50 mg ___ tablet(s) by mouth every six (6) hours
+Disp #*15 Tablet Refills:*0
+6.  amLODIPine 10 mg PO DAILY
+7.  Aspirin 81 mg PO DAILY
+8.  Losartan Potassium 100 mg PO DAILY
+Discharge Disposition:
+Home
+Discharge Diagnosis:
+Rectal cancer.
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+A female patient presented with rectal cancer; on physical examination, BP NA, HR NA, RR NA, and Temp NA; admission labs showed WBC NA, RBC NA, Hgb NA, Hct NA, Plt NA, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose NA; the most diagnostically relevant finding was rectal cancer arising in a previously excised polyp, without evidence of deep invasion on MRI.<|eot_id|>
+======== Log a first sample from the processed training set ========
+masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
+  6%|▋         | 200/3200 [05:48<1:19:54,  1.60s/it]
+{'loss': 1.0304, 'grad_norm': 0.375, 'learning_rate': 4.945858913384683e-06, 'entropy': 2.2615440893173218, 'num_tokens': 2383030.0, 'mean_token_accuracy': 0.781991246342659, 'epoch': 10.0}
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+ 12%|█▎        | 400/3200 [12:46<1:26:41,  1.wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 19%|█▉        | 600/3200 [19:44<1:18:24,  1.wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 25%|██▌       | 800/3200 [26:45<1:02:54,  1.wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 31%|███▏      | 1000/3200 [33:46<1:03:45,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 38%|███▊      | 1200/3200 [40:50<58:28,  1.7wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 44%|████▍     | 1400/3200 [47:54<53:43,  1.7wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 50%|█████     | 1600/3200 [54:57<47:46,  1.7wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 56%|█████▋    | 1800/3200 [1:01:59<40:37,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 62%|██████▎   | 2000/3200 [1:09:01<35:16,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 69%|██████▉   | 2200/3200 [1:16:02<28:56,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 75%|███████▌  | 2400/3200 [1:23:03<23:26,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 81%|████████▏ | 2600/3200 [1:30:04<16:42,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 88%|████████▊ | 2800/3200 [1:37:05<12:01,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+ 94%|█████████▍| 3000/3200 [1:44:08<05:55,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+100%|██████████| 3200/3200 [1:51:08<00:00,  1wandb: WARNING URL not available in offline run
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+100%|██████████| 3200/3200 [1:52:18<00:00,  2.11s/it]
+{'eval_loss': 0.452382892370224, 'eval_runtime': 1.4714, 'eval_samples_per_second': 2.039, 'eval_steps_per_second': 2.039, 'eval_entropy': 2.280928134918213, 'eval_num_tokens': 2383030.0, 'eval_mean_token_accuracy': 0.9106003642082214, 'epoch': 10.0}
+Epoch 10 종료. 테스트 데이터셋 추론 시작...
+Epoch 10 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_10_results.csv
+{'loss': 0.2269, 'grad_norm': 0.408203125, 'learning_rate': 4.544326206085206e-06, 'entropy': 2.266621000766754, 'num_tokens': 4766060.0, 'mean_token_accuracy': 0.9375288736820221, 'epoch': 20.0}
+{'eval_loss': 0.37694820761680603, 'eval_runtime': 1.4759, 'eval_samples_per_second': 2.033, 'eval_steps_per_second': 2.033, 'eval_entropy': 2.2366106510162354, 'eval_num_tokens': 4766060.0, 'eval_mean_token_accuracy': 0.9154778321584066, 'epoch': 20.0}
+Epoch 20 종료. 테스트 데이터셋 추론 시작...
+Epoch 20 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_20_results.csv
+{'loss': 0.1814, 'grad_norm': 0.384765625, 'learning_rate': 3.8122819240784204e-06, 'entropy': 2.249395645260811, 'num_tokens': 7149090.0, 'mean_token_accuracy': 0.9467043203115463, 'epoch': 30.0}
+{'eval_loss': 0.3666030466556549, 'eval_runtime': 1.4602, 'eval_samples_per_second': 2.055, 'eval_steps_per_second': 2.055, 'eval_entropy': 2.222452243169149, 'eval_num_tokens': 7149090.0, 'eval_mean_token_accuracy': 0.9179237286249796, 'epoch': 30.0}
+Epoch 30 종료. 테스트 데이터셋 추론 시작...
+Epoch 30 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_30_results.csv
+{'loss': 0.1638, 'grad_norm': 0.23046875, 'learning_rate': 2.8680775846913323e-06, 'entropy': 2.237819191813469, 'num_tokens': 9532120.0, 'mean_token_accuracy': 0.9511987590789794, 'epoch': 40.0}
+{'eval_loss': 0.3654899597167969, 'eval_runtime': 1.4624, 'eval_samples_per_second': 2.051, 'eval_steps_per_second': 2.051, 'eval_entropy': 2.211961587270101, 'eval_num_tokens': 9532120.0, 'eval_mean_token_accuracy': 0.9172912041346232, 'epoch': 40.0}
+Epoch 40 종료. 테스트 데이터셋 추론 시작...
+Epoch 40 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_40_results.csv
+{'loss': 0.1562, 'grad_norm': 0.3359375, 'learning_rate': 1.8643651776736102e-06, 'entropy': 2.2317762321233747, 'num_tokens': 11915150.0, 'mean_token_accuracy': 0.9536330065131188, 'epoch': 50.0}
+{'eval_loss': 0.36731985211372375, 'eval_runtime': 1.4694, 'eval_samples_per_second': 2.042, 'eval_steps_per_second': 2.042, 'eval_entropy': 2.2083797454833984, 'eval_num_tokens': 11915150.0, 'eval_mean_token_accuracy': 0.9215361475944519, 'epoch': 50.0}
+Epoch 50 종료. 테스트 데이터셋 추론 시작...
+Epoch 50 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_50_results.csv
+{'loss': 0.1539, 'grad_norm': 0.212890625, 'learning_rate': 9.634175180042082e-07, 'entropy': 2.229607201218605, 'num_tokens': 14298180.0, 'mean_token_accuracy': 0.9547614511847496, 'epoch': 60.0}
+{'eval_loss': 0.3672323226928711, 'eval_runtime': 1.4799, 'eval_samples_per_second': 2.027, 'eval_steps_per_second': 2.027, 'eval_entropy': 2.2076474030812583, 'eval_num_tokens': 14298180.0, 'eval_mean_token_accuracy': 0.9209036429723104, 'epoch': 60.0}
+Epoch 60 종료. 테스트 데이터셋 추론 시작...
+Epoch 60 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_60_results.csv
+{'loss': 0.1534, 'grad_norm': 0.22265625, 'learning_rate': 3.1089317467267124e-07, 'entropy': 2.229400154352188, 'num_tokens': 16681210.0, 'mean_token_accuracy': 0.9547864827513695, 'epoch': 70.0}
+{'eval_loss': 0.36553946137428284, 'eval_runtime': 1.443, 'eval_samples_per_second': 2.079, 'eval_steps_per_second': 2.079, 'eval_entropy': 2.2073047161102295, 'eval_num_tokens': 16681210.0, 'eval_mean_token_accuracy': 0.9221686720848083, 'epoch': 70.0}
+Epoch 70 종료. 테스트 데이터셋 추론 시작...
+Epoch 70 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_70_results.csv
+{'loss': 0.1534, 'grad_norm': 0.400390625, 'learning_rate': 1.2287468145663895e-08, 'entropy': 2.2290805995464327, 'num_tokens': 19064240.0, 'mean_token_accuracy': 0.9547247529029846, 'epoch': 80.0}
+{'eval_loss': 0.36746203899383545, 'eval_runtime': 1.4444, 'eval_samples_per_second': 2.077, 'eval_steps_per_second': 2.077, 'eval_entropy': 2.2062836488087973, 'eval_num_tokens': 19064240.0, 'eval_mean_token_accuracy': 0.9179237286249796, 'epoch': 80.0}
+Epoch 80 종료. 테스트 데이터셋 추론 시작...
+Epoch 80 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_80_results.csv
+{'loss': 0.1457, 'grad_norm': 0.287109375, 'learning_rate': 4.884123234533698e-06, 'entropy': 2.223084952235222, 'num_tokens': 21447270.0, 'mean_token_accuracy': 0.957160210609436, 'epoch': 90.0}
+{'eval_loss': 0.3718987703323364, 'eval_runtime': 1.4485, 'eval_samples_per_second': 2.071, 'eval_steps_per_second': 2.071, 'eval_entropy': 2.19048539797465, 'eval_num_tokens': 21447270.0, 'eval_mean_token_accuracy': 0.9218172629674276, 'epoch': 90.0}
+Epoch 90 종료. 테스트 데이터셋 추론 시작...
+Epoch 90 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_90_results.csv
+{'loss': 0.1215, 'grad_norm': 0.26953125, 'learning_rate': 4.395086486509506e-06, 'entropy': 2.204196562767029, 'num_tokens': 23830300.0, 'mean_token_accuracy': 0.964567851126194, 'epoch': 100.0}
+{'eval_loss': 0.38736042380332947, 'eval_runtime': 1.4834, 'eval_samples_per_second': 2.022, 'eval_steps_per_second': 2.022, 'eval_entropy': 2.1718149979909263, 'eval_num_tokens': 23830300.0, 'eval_mean_token_accuracy': 0.9209878047307333, 'epoch': 100.0}
+Epoch 100 종료. 테스트 데이터셋 추론 시작...
+Epoch 100 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_100_results.csv
+{'loss': 0.1048, 'grad_norm': 0.3515625, 'learning_rate': 3.5996661403108196e-06, 'entropy': 2.1920207238197325, 'num_tokens': 26213330.0, 'mean_token_accuracy': 0.9693794995546341, 'epoch': 110.0}
+{'eval_loss': 0.40161991119384766, 'eval_runtime': 1.4694, 'eval_samples_per_second': 2.042, 'eval_steps_per_second': 2.042, 'eval_entropy': 2.159940799077352, 'eval_num_tokens': 26213330.0, 'eval_mean_token_accuracy': 0.9208893179893494, 'epoch': 110.0}
+Epoch 110 종료. 테스트 데이터셋 추론 시작...
+Epoch 110 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_110_results.csv
+{'loss': 0.0953, 'grad_norm': 0.2421875, 'learning_rate': 2.6264598876337183e-06, 'entropy': 2.1857122552394865, 'num_tokens': 28596360.0, 'mean_token_accuracy': 0.9725201377272605, 'epoch': 120.0}
+{'eval_loss': 0.4120335578918457, 'eval_runtime': 1.4863, 'eval_samples_per_second': 2.018, 'eval_steps_per_second': 2.018, 'eval_entropy': 2.1560057004292807, 'eval_num_tokens': 28596360.0, 'eval_mean_token_accuracy': 0.9179094036420187, 'epoch': 120.0}
+Epoch 120 종료. 테스트 데이터셋 추론 시작...
+Epoch 120 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_120_results.csv
+{'loss': 0.0915, 'grad_norm': 0.318359375, 'learning_rate': 1.6328085335463257e-06, 'entropy': 2.182536925673485, 'num_tokens': 30979390.0, 'mean_token_accuracy': 0.9739445081353187, 'epoch': 130.0}
+{'eval_loss': 0.4142272472381592, 'eval_runtime': 1.4483, 'eval_samples_per_second': 2.071, 'eval_steps_per_second': 2.071, 'eval_entropy': 2.1523658434549966, 'eval_num_tokens': 30979390.0, 'eval_mean_token_accuracy': 0.9216203093528748, 'epoch': 130.0}
+Epoch 130 종료. 테스트 데이터셋 추론 시작...
+Epoch 130 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_130_results.csv
+{'loss': 0.0903, 'grad_norm': 0.328125, 'learning_rate': 7.793582962362803e-07, 'entropy': 2.1815028125047684, 'num_tokens': 33362420.0, 'mean_token_accuracy': 0.9743325999379158, 'epoch': 140.0}
+{'eval_loss': 0.41205787658691406, 'eval_runtime': 1.4825, 'eval_samples_per_second': 2.024, 'eval_steps_per_second': 2.024, 'eval_entropy': 2.1511839230855307, 'eval_num_tokens': 33362420.0, 'eval_mean_token_accuracy': 0.919905404249827, 'epoch': 140.0}
+Epoch 140 종료. 테스트 데이터셋 추론 시작...
+Epoch 140 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_140_results.csv
+{'loss': 0.0901, 'grad_norm': 0.2890625, 'learning_rate': 2.0408871195764707e-07, 'entropy': 2.1813816702365876, 'num_tokens': 35745450.0, 'mean_token_accuracy': 0.9743681374192238, 'epoch': 150.0}
+{'eval_loss': 0.41409626603126526, 'eval_runtime': 1.4515, 'eval_samples_per_second': 2.067, 'eval_steps_per_second': 2.067, 'eval_entropy': 2.1505605379740396, 'eval_num_tokens': 35745450.0, 'eval_mean_token_accuracy': 0.9192728996276855, 'epoch': 150.0}
+Epoch 150 종료. 테스트 데이터셋 추론 시작...
+Epoch 150 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_150_results.csv
+{'loss': 0.09, 'grad_norm': 0.296875, 'learning_rate': 5.121841989974563e-12, 'entropy': 2.1813792806863783, 'num_tokens': 38128480.0, 'mean_token_accuracy': 0.9742968961596489, 'epoch': 160.0}
+{'eval_loss': 0.4172559678554535, 'eval_runtime': 1.4549, 'eval_samples_per_second': 2.062, 'eval_steps_per_second': 2.062, 'eval_entropy': 2.151301940282186, 'eval_num_tokens': 38128480.0, 'eval_mean_token_accuracy': 0.9186403950055441, 'epoch': 160.0}
+Epoch 160 종료. 테스트 데이터셋 추론 시작...
+Epoch 160 추론 결과 저장 완료: logs/sft-v1.1.2/epoch_160_results.csv
+{'train_runtime': 6738.5999, 'train_samples_per_second': 0.475, 'train_steps_per_second': 0.475, 'train_loss': 0.19053513288497925, 'epoch': 160.0}
+Working Time: 1:52:36
+========== 학습 종료 ==========
+총 16개의 파일이 'logs/sft-v1.1.2/sft-v1.1.2.xlsx' 파일 하나로 합쳐졌습니다.

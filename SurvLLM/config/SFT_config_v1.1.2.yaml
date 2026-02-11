@@ -1,4 +1,4 @@
-### v1.1.2 accumulation 다시 제거, 총 에폭 증가
+### v1.1.2 accumulation 다시 제거, 총 에폭 증가 -> 에폭 그대로 둬도 될듯
 
 ## ScriptArguments
 model_name: "meta-llama/Llama-3.1-8B-Instruct"   ## 사용할 모델명 (huggingface model name)
@@ -22,7 +22,7 @@ do_eval: true                                         ## evaluation loss 계산 
 eval_steps: 0.0625
 eval_strategy: "steps"                                 ## 일정 스탭마다 모델 평가
 optim: "adamw_torch_fused"                            ## optimizer 설정
-logging_steps: 0.0625
+logging_steps: 0.03125
 logging_strategy: "steps"                             ## 에폭별 로그 산출
 save_strategy: "steps"                                ## 일정 스탭마다 모델 저장
 save_steps: 0.0625

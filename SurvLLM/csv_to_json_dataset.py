@@ -18,7 +18,7 @@ SFT csv dataset input format:
 
     tasks:
         아래 세 개의 파일을 data 폴더에 생성
-        sft_train_dataset.json, sft_test_dataset.json, test_label
+        sft_train_dataset.json, sft_test_dataset.json, test_label_sft
 
 DPO csv dataset input format:
     DPO 작업 수행에 필요한 데이터셋의 csv 포맷
@@ -30,8 +30,8 @@ DPO csv dataset input format:
         rejected: Input Text에 대한 답변으로써 chosen보다 선호되지 못하는 텍스트
 
     tasks:
-        아래 두 개의 파일을 data 폴더에 생성
-        dpo_train_dataset.json, dpo_test_dataset.json
+        아래 세 개의 파일을 data 폴더에 생성
+        dpo_train_dataset.json, dpo_test_dataset.json, test_label_dpo.csv
 
 
 Inference csv dataset input format:
@@ -90,7 +90,7 @@ if __name__ == "__main__":
         for idx in range(test_ds.num_rows):
             lst.append({"subject_id": test_ds["subject_id"][idx], "label": test_ds["messages"][idx][2]["content"], "text": test_ds["messages"][idx][1]["content"]})
 
-        pd.DataFrame(lst).to_csv("data/test_label.csv", index = False, encoding = "utf-8-sig")
+        pd.DataFrame(lst).to_csv("data/test_label_sft.csv", index = False, encoding = "utf-8-sig")
 
         print("\n\nTest Label file was saved.")
 
@@ -122,7 +122,7 @@ if __name__ == "__main__":
         for idx in range(test_ds.num_rows):
             lst.append({"subject_id": test_ds["subject_id"][idx], "chosen": test_ds[idx]["chosen"][0]["content"], "rejected": test_ds[idx]["rejected"][0]["content"], "text": test_ds[idx]["prompt"][1]["content"]})
 
-        pd.DataFrame(lst).to_csv("data/dpo_test_label.csv", index = False, encoding = "utf-8-sig")
+        pd.DataFrame(lst).to_csv("data/test_label_dpo.csv", index = False, encoding = "utf-8-sig")
 
         print("\n\nTest Label file was saved.")
 

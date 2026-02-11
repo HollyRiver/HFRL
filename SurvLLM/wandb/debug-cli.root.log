@@ -317,3 +317,469 @@
 2026-02-06 09:05:36 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
 2026-02-06 09:05:37 INFO file stream finish called
 2026-02-06 09:05:38 INFO file stream finish is done
+2026-02-06 11:22:01 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-vya5szfl.wandb
+2026-02-06 11:22:02 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-06 11:22:02 INFO run started: vya5szfl with start time 1770370163.315074
+2026-02-06 11:22:02 INFO saving file wandb-metadata.json with policy now
+2026-02-06 11:22:02 INFO saving file wandb-metadata.json with policy now
+2026-02-06 11:22:02 INFO saving file requirements.txt with policy now
+2026-02-06 11:22:03 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:03 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-02-06 11:22:03 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:03 INFO Uploaded file /tmp/tmpr3b9y6unwandb/56a7cpbv-wandb-metadata.json
+2026-02-06 11:22:03 INFO Uploaded file /tmp/tmpr3b9y6unwandb/zl4kk5h6-requirements.txt
+2026-02-06 11:22:03 INFO Uploaded file /tmp/tmpr3b9y6unwandb/fyi3u6c3-wandb-metadata.json
+2026-02-06 11:22:03 WARNING Seen metric with glob (shouldn't happen)
+2026-02-06 11:22:04 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:05 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:05 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:06 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:06 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:06 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:07 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:07 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:07 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:22:08 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:22:08 INFO shutting down sender
+2026-02-06 11:22:08 WARNING Terminal output too large. Logging without processing.
+2026-02-06 11:22:09 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:09 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:09 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:22:10 INFO shutting down directory watcher
+2026-02-06 11:22:11 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:11 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-06 11:22:11 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-02-06 11:22:11 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-02-06 11:22:11 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-02-06 11:22:11 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-02-06 11:22:11 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-02-06 11:22:11 INFO shutting down file pusher
+2026-02-06 11:22:11 INFO waiting for file pusher
+2026-02-06 11:22:11 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:22:11 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:22:11 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:22:12 INFO file stream finish called
+2026-02-06 11:22:12 INFO file stream finish is done
+2026-02-06 11:24:15 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-vya5szfl.wandb
+2026-02-06 11:24:15 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-06 11:24:15 INFO run started: vya5szfl with start time 1770370163.315074
+2026-02-06 11:24:15 INFO saving file wandb-metadata.json with policy now
+2026-02-06 11:24:16 INFO saving file wandb-metadata.json with policy now
+2026-02-06 11:24:16 INFO saving file requirements.txt with policy now
+2026-02-06 11:24:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-02-06 11:24:16 INFO Uploaded file /tmp/tmpjlim8qjkwandb/zdw9fbnp-wandb-metadata.json
+2026-02-06 11:24:16 INFO Uploaded file /tmp/tmpjlim8qjkwandb/ylh25lfz-requirements.txt
+2026-02-06 11:24:17 INFO Uploaded file /tmp/tmpjlim8qjkwandb/xzx99aeg-wandb-metadata.json
+2026-02-06 11:24:17 WARNING Seen metric with glob (shouldn't happen)
+2026-02-06 11:24:17 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:18 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:18 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:19 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:20 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:20 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:24:21 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:22 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO saving file wandb-summary.json with policy end
+2026-02-06 11:24:23 INFO shutting down sender
+2026-02-06 11:24:23 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:23 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:24:24 INFO shutting down directory watcher
+2026-02-06 11:24:24 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:24 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-06 11:24:24 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-02-06 11:24:24 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-02-06 11:24:24 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-02-06 11:24:24 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-02-06 11:24:24 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-02-06 11:24:24 INFO shutting down file pusher
+2026-02-06 11:24:24 INFO waiting for file pusher
+2026-02-06 11:24:25 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-06 11:24:25 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-06 11:24:25 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-06 11:24:25 INFO file stream finish called
+2026-02-06 11:24:26 INFO file stream finish is done
+2026-02-10 05:53:44 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-ogomrqyi.wandb
+2026-02-10 05:53:45 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-10 05:53:45 INFO run started: ogomrqyi with start time 1770687556.533658
+2026-02-10 05:53:45 INFO saving file wandb-metadata.json with policy now
+2026-02-10 05:53:45 INFO saving file wandb-metadata.json with policy now
+2026-02-10 05:53:45 INFO saving file requirements.txt with policy now
+2026-02-10 05:53:46 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:46 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:46 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-02-10 05:53:46 INFO Uploaded file /tmp/tmp_7gcrt48wandb/4dow8w2s-wandb-metadata.json
+2026-02-10 05:53:46 INFO Uploaded file /tmp/tmp_7gcrt48wandb/9cpm9r2d-requirements.txt
+2026-02-10 05:53:46 INFO Uploaded file /tmp/tmp_7gcrt48wandb/r5rvppig-wandb-metadata.json
+2026-02-10 05:53:47 WARNING Seen metric with glob (shouldn't happen)
+2026-02-10 05:53:47 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:48 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:48 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:49 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:50 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:50 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:51 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:51 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:51 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:52 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:52 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 05:53:53 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:54 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:54 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:55 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO saving file wandb-summary.json with policy end
+2026-02-10 05:53:55 INFO shutting down sender
+2026-02-10 05:53:56 WARNING Terminal output too large. Logging without processing.
+2026-02-10 05:53:56 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:56 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:53:56 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 05:53:57 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:58 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:53:59 INFO shutting down directory watcher
+2026-02-10 05:54:00 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:54:00 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-10 05:54:00 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-02-10 05:54:00 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-02-10 05:54:00 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-02-10 05:54:00 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-02-10 05:54:00 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-02-10 05:54:00 INFO shutting down file pusher
+2026-02-10 05:54:00 INFO waiting for file pusher
+2026-02-10 05:54:00 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 05:54:00 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 05:54:01 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 05:54:01 INFO file stream finish called
+2026-02-10 05:54:02 INFO file stream finish is done
+2026-02-10 10:16:34 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-6f72hmx0.wandb
+2026-02-10 10:16:35 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-10 10:16:35 INFO run started: 6f72hmx0 with start time 1770703326.418017
+2026-02-10 10:16:35 INFO saving file wandb-metadata.json with policy now
+2026-02-10 10:16:35 INFO saving file wandb-metadata.json with policy now
+2026-02-10 10:16:35 INFO saving file requirements.txt with policy now
+2026-02-10 10:16:36 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:36 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-02-10 10:16:36 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:36 INFO Uploaded file /tmp/tmpbdqk8m6ewandb/k7x6l8fm-wandb-metadata.json
+2026-02-10 10:16:36 INFO Uploaded file /tmp/tmpbdqk8m6ewandb/8yu376ut-requirements.txt
+2026-02-10 10:16:36 INFO Uploaded file /tmp/tmpbdqk8m6ewandb/dazispxb-wandb-metadata.json
+2026-02-10 10:16:37 WARNING Seen metric with glob (shouldn't happen)
+2026-02-10 10:16:37 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:38 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:38 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:39 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:40 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:40 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:41 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:41 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:41 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:41 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:41 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:42 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:42 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 10:16:43 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:44 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:44 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:45 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO saving file wandb-summary.json with policy end
+2026-02-10 10:16:45 INFO shutting down sender
+2026-02-10 10:16:45 WARNING Terminal output too large. Logging without processing.
+2026-02-10 10:16:46 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:46 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 10:16:46 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:47 INFO shutting down directory watcher
+2026-02-10 10:16:48 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:48 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-02-10 10:16:48 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-02-10 10:16:48 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-02-10 10:16:48 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-02-10 10:16:48 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-02-10 10:16:48 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-02-10 10:16:48 INFO shutting down file pusher
+2026-02-10 10:16:48 INFO waiting for file pusher
+2026-02-10 10:16:48 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-02-10 10:16:48 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-02-10 10:16:49 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-02-10 10:16:49 INFO file stream finish called
+2026-02-10 10:16:50 INFO file stream finish is done

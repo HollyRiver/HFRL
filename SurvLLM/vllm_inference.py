@@ -3,10 +3,10 @@
 import os
 
 ## vLLM 왜이래... 되긴 됐는데...
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-os.environ["VLLM_USE_V1"] = "0" 
-os.environ["NCCL_P2P_DISABLE"] = "1"
-os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# os.environ["VLLM_USE_V1"] = "0" 
+# os.environ["NCCL_P2P_DISABLE"] = "1"
+# os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
@@ -75,18 +75,21 @@ if __name__ == "__main__":
     outputs = llm.generate(
         prompts, 
         sampling_params,
-        lora_request = LoRARequest("adapter", 1, os.path.join(adapter_path, "policy"))
+        lora_request = LoRARequest("adapter", 1, adapter_path if "sft" in adapter_path else os.path.join(adapter_path, "policy"))
     )
 
     data = []
     idx = inference_data["subject_id"]
 
     for i, output in enumerate(outputs):
-        row = {
-            "subject_id": idx[i//args.gen_nums],
-            "generated_text": output.outputs[0].text.strip()
-        }
-        data.append(row)
+        current_subject_id = idx[i]
+        
+        for j in range(args.gen_nums):
+            row = {
+                "subject_id": current_subject_id,
+                "generated_text": output.outputs[j].text.strip()
+            }
+            data.append(row)
 
     df = pd.DataFrame(data)
     df.to_csv(args.output_dir, index=False, encoding="utf-8-sig")

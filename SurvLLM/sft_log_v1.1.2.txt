@@ -1,344 +1,0 @@
-wandb: Loading settings from /root/HFRL/SurvLLM/wandb/settings
-wandb: Tracking run with wandb version 0.24.2
-wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-wandb: Run data is saved locally in /root/HFRL/SurvLLM/wandb/offline-run-20260206_092923-vya5szfl
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 90 examples [00:00, 13974.80 examples/s]
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 10 examples [00:00, 3435.70 examples/s]
-training dataset size: 90
-test dataset size: 10
-======== Log a few random samples from the processed training set ========
-<|begin_of_text|><|start_header_id|>system<|end_header_id|>
-
-You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
-
-Sex:   M
- 
-Service: NEUROSURGERY
- 
-Allergies: 
-No Known Allergies / Adverse Drug Reactions
- 
-Attending: ___.
- 
-Chief Complaint:
-Scalp hematoma with incidental CT finding.
- 
-Major Surgical or Invasive Procedure:
-None
-
- 
-History of Present Illness:
-Patient is a ___ year old male who reports slipping on ice
-one week ago and hitting the back of his head. He had immediate
-pain at the time, no loss of consciousness, no dizziness, no
-motor weakness, no numbness or tingling, no neck pain, no nausea
-or vomiting. The pain was well controlled with Aleve and ice
-packs for 6 days and then last night was seen by a family member
-that is a paramedic and recommended the patient go to the ED.
-Patient went to ___, was evaluated with a head CT which
-showed scalp hematoma and small incidental cerebellar lesion in
-one slice, measuring 1.4 x 0.8 cm. He was subsequently
-transferred to ___ for further evaluation and management.
-Today, the patient has minimal pain, only at the site of his
-scalp injury. Denies any other symptoms.
- 
-Past Medical History:
-HTN, COPD, Hx of AAA s/p repair ___ years ago
- 
-Social History:
-___
-Family History:
-Non-contributory
- 
-Physical Exam:
-PHYSICAL EXAM:
-O: T: 97.9 BP: 128/72  HR: 65 R 18   O2Sats 94% RA
-Gen: WD/WN, comfortable, NAD.
-HEENT: Pupils: 3 -> 2mm bilaterally    EOMs full and intact;
-right occipital scalp hematoma, very tender to palpation
-Neck: Supple.
-Lungs: CTA bilaterally.
-Cardiac: RRR. S1/S2.
-Abd: Soft, NT, BS+
-Extrem: Warm and well-perfused.
-Neuro:
-Mental status: Awake and alert, cooperative with exam, normal
-affect.
-Orientation: Oriented to person, place, and date.
-Language: Speech fluent with good comprehension and repetition.
-Naming intact. No dysarthria or paraphasic errors.
-
-Cranial Nerves:
-I: Not tested
-II: Pupils equally round and reactive to light, 3 to
-2 mm bilaterally. Visual fields are full to confrontation.
-III, IV, VI: Extraocular movements intact bilaterally without
-nystagmus.
-V, VII: Facial strength and sensation intact and symmetric.
-VIII: Hearing intact to voice.
-IX, X: Palatal elevation symmetrical.
-XI: Sternocleidomastoid and trapezius normal bilaterally.
-XII: Tongue midline without fasciculations.
-
-Motor: Normal bulk and tone bilaterally. No abnormal movements,
-tremors. Strength full power ___ throughout. No pronator drift
-
-Sensation: Intact to light touch, propioception, pinprick and
-vibration bilaterally.
-
-Toes downgoing bilaterally
-
-Coordination: normal on finger-nose-finger, rapid alternating
-movements, heel to shin
- 
-Pertinent Results:
-MRI Head with and without contrast: 
-Impression: No significant abnormalities are seen on the MRI of 
-the brain with and without  gadolinium.  No enhancing brain 
-lesions, mass effect or hydrocephalus.   
-  
-The  hypodensity seen in the left superior cerebellar region on 
-the CT was  likely secondary to partial volume averaging of 
-adjacent CSF under the  tentorium.  
-
- 
-Brief Hospital Course:
-___ is a ___ year old male who was admitted to the 
-Neurosurgery Service on ___ for work-up of an incidental 
-finding on head CT. He subsequently had an MRI of the head with 
-and without contrast which was normal. CT findings were likely 
-artifact.
-The patient was discharged with instructions for follow-up in 8 
-weeks with Dr. ___.
-
- 
-Medications on Admission:
-The Preadmission Medication list is accurate and complete.
-1. Tiotropium Bromide 1 CAP IH DAILY 
-2. Lisinopril 20 mg PO DAILY 
-3. Hydrochlorothiazide 50 mg PO DAILY 
-4. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH DAILY 
-
- 
-Discharge Medications:
-1. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH DAILY 
-2. Lisinopril 20 mg PO DAILY 
-3. Hydrochlorothiazide 50 mg PO DAILY 
-4. Tiotropium Bromide 1 CAP IH DAILY 
-
- 
-Discharge Disposition:
-Home
- 
-Discharge Diagnosis:
-Scalp hematoma
-
- 
-Discharge Condition:
-Mental Status: Clear and coherent.
-Level of Consciousness: Alert and interactive.
-Activity Status: Ambulatory - Independent.
-
- 
-<|eot_id|><|start_header_id|>assistant<|end_header_id|>
-
-A male patient presented with scalp hematoma; on physical examination, BP 128/72, HR 65, RR 18 and Temp 97.9; admission labs showed WBC NA, RBC NA, Hgb NA, Hct NA, Plt NA, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose NA; the most diagnostically relevant finding was a right occipital scalp hematoma on MRI.<|eot_id|>
-<|begin_of_text|><|start_header_id|>system<|end_header_id|>
-
-You are the world’s leading expert in survival analysis. From a discharge summary, extract Chief Complaint, Physical Exam, and Admission Labs and produce one sentence. The sentence will be used for hazard calculation, so be precise, clinically accurate, and concise.<|eot_id|><|start_header_id|>user<|end_header_id|>
-
-Sex:   F
- 
-Service: SURGERY
- 
-Allergies: 
-Ceclor / lisinopril / codeine / latex
- 
-Attending: ___
- 
-Chief Complaint:
-rectal cancer
- 
-Major Surgical or Invasive Procedure:
-Flexible sigmoidoscopy, single-site laparoscopic low anterior 
-resection with primary end-to-end colorectal anastomosis 
-(ultralow).  Mobilization of splenic flexure.
-
- 
-History of Present Illness:
-This is a ___ female patient that underwent an 
-endoscopic excision of a polyp that was found to be a cancer.  
-The cancer was not identified up to
-the first 10 cm from the rectum.  An MRI did not demonstrate any 
-deep invasion.  The patient was scheduled for endoscopy possible 
-transanal excision of the scar or low anterior resection.
-
- 
-Past Medical History:
-PMH: 
-HTN
-Reactive airway disease
-
-PSH: 
-open chole
-
- 
-Social History:
-___
-Family History:
-Relative Status   Age Problem              Onset Comments       
-Mother   ___ ___  MYOCARDIAL                                
-                      INFARCTION                                
-                      BREAST CANCER              at age ___      
-
-Father   Living       END STAGE RENAL                           
-                      DISEASE                                   
-                      HYPERTENSION                              
-                      DIABETES MELLITUS                         
-
-Brother               MYOCARDIAL                                
-                      INFARCTION                                
-
-Comments: Numerous maternal relatives with cardiovascular       
-          disease                                               
-
- 
-Physical Exam:
-Gen: NAD, AxOx3
-Card: RRR
-Pulm: no respiratory distress
-Abd: Soft, non-tender, non-distended, no rebound or guarding 
-Wounds: c/d/I
-Ext: No edema, warm well-perfused
-
- 
-Pertinent Results:
-___ 06:35AM BLOOD WBC-8.9 RBC-4.87 Hgb-13.1 Hct-43.0 MCV-88 
-MCH-26.9 MCHC-30.5* RDW-14.4 RDWSD-46.2 Plt ___
-___ 07:24AM BLOOD WBC-12.3* RBC-5.17 Hgb-14.0 Hct-45.0 
-MCV-87 MCH-27.1 MCHC-31.1* RDW-14.6 RDWSD-47.1* Plt ___
-___ 06:35AM BLOOD Glucose-105* UreaN-19 Creat-0.7 Na-143 
-K-4.0 Cl-103 HCO3-31 AnGap-9*
-___ 07:24AM BLOOD Glucose-114* UreaN-23* Creat-0.8 Na-144 
-K-4.6 Cl-102 HCO3-24 AnGap-18
-___ 06:35AM BLOOD Calcium-8.7 Phos-3.7 Mg-1.8
-___ 07:24AM BLOOD Calcium-9.0 Phos-4.2 Mg-2.2
-___ 07:24AM BLOOD CRP-38.8*
- 
-Brief Hospital Course:
-Ms. ___ is a ___ year old female with history of rectal 
-cancer who presented to pre-op holding at ___ on ___ 
-for a flexible sigmoidoscopy, single-site laparoscopic low 
-anterior resection with primary end-to-end colorectal 
-anastomosis. She tolerated the procedure well without 
-complications (Please see operative note for further details). 
-After a brief and uneventful stay in the PACU, the patient was 
-transferred to the floor for further post-operative management.  
-Postoperative course stable.
-
- Neuro: Pain was well controlled on Tylenol and tramadol for 
-breakthrough pain.  
- CV: The patient remained stable from a cardiovascular 
-standpoint; vital signs were routinely monitored.  
- Pulm: The patient remained stable from a pulmonary standpoint; 
-oxygen saturation was routinely monitored. She had good 
-pulmonary toileting, as early ambulation and incentive 
-spirometry were encouraged throughout hospitalization.  
- GI: The patient was initially kept NPO after the procedure. The 
-patient was advanced to and tolerated a regular diet. Patient's 
-intake and output were closely monitored. patient was started on 
-psyllium wafer and loperamide for diarrhea. 
- GU: The patient had a Foley catheter that was removed prior to 
-discharge. At time of discharge, the patient was voiding without 
-difficulty. Urine output was monitored as indicated.  
- ID: The patient was closely monitored for signs and symptoms of 
-infection and fever, of which there was none.  
- Heme: The patient received subcutaneous heparin and ___ dyne 
-boots during this stay. She was encouraged to get up and 
-ambulate as early as possible. The patient is being discharged 
-on prophylactic Lovenox.  
- On POD#, the patient was discharged to home. At discharge, she 
-was tolerating a regular diet, passing flatus, voiding, and 
-ambulating independently. JP drain output was minimal and 
-discontinued. She will follow-up in the clinic in 2 weeks. This 
-information was communicated to the patient directly prior to 
-discharge. 
- 
- Post-Surgical Complications During Inpatient Admission:  
- [ ] Post-Operative Ileus resolving w/o NGT  
- [ ] Post-Operative Ileus requiring management with NGT  
- [ ] UTI  
- [ ] Wound Infection  
- [ ] Anastomotic Leak  
- [ ] Staple Line Bleed  
- [ ] Congestive Heart failure  
- [ ] ARF  
- [ ] Acute Urinary retention, failure to void after Foley D/C'd  
-
- [ ] Acute Urinary Retention requiring discharge with Foley 
-Catheter  
- [ ] DVT  
- [ ] Pneumonia  
- [ ] Abscess  
- [x] None  
- Social Issues Causing a Delay in Discharge:  
- [ ] Delay in organization of ___ services  
- [ ] Difficulty finding appropriate rehab hospital disposition.  
-
- [ ] Lack of insurance coverage for ___ services  
- [ ] Lack of insurance coverage for prescribed medications.  
- [ ] Family not agreeable to discharge plan.  
- [ ] Patient knowledge deficit related to ileostomy delaying 
-dispo  
- [x] No social factors contributing in delay of discharge.  
- 
- 
-Medications on Admission:
-The Preadmission Medication list is accurate and complete.
-1. Losartan Potassium 100 mg PO DAILY 
-2. Aspirin 81 mg PO DAILY 
-3. amLODIPine 10 mg PO DAILY 
-
- 
-Discharge Medications:
-1.  Acetaminophen 1000 mg PO Q8H Duration: 7 Days  
-2.  Enoxaparin Sodium 40 mg SC DAILY 
-RX *enoxaparin 40 mg/0.4 mL 40 mg SC once a day Disp #*25 
-Syringe Refills:*0 
-3.  LOPERamide 2 mg PO QPM  
-4.  Psyllium Wafer 1 WAF PO BID  
-5.  TraMADol 50-100 mg PO Q6H:PRN Pain - Moderate 
-  Reason for PRN duplicate override: Alternating agents for 
-similar severity
-RX *tramadol 50 mg ___ tablet(s) by mouth every six (6) hours 
-Disp #*15 Tablet Refills:*0 
-6.  amLODIPine 10 mg PO DAILY  
-7.  Aspirin 81 mg PO DAILY  
-8.  Losartan Potassium 100 mg PO DAILY  
-
- 
-Discharge Disposition:
-Home
- 
-Discharge Diagnosis:
-Rectal cancer.
-
- 
-Discharge Condition:
-Mental Status: Clear and coherent.
-Level of Consciousness: Alert and interactive.
-Activity Status: Ambulatory - Independent.
-
- 
-<|eot_id|><|start_header_id|>assistant<|end_header_id|>
-
-A female patient presented with rectal cancer; on physical examination, BP NA, HR NA, RR NA, and Temp NA; admission labs showed WBC NA, RBC NA, Hgb NA, Hct NA, Plt NA, MCV NA, MCH NA, MCHC NA, RDW NA, and Glucose NA; the most diagnostically relevant finding was rectal cancer arising in a previously excised polyp, without evidence of deep invasion on MRI.<|eot_id|>
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.20s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:07,  3.55s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.64s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.30s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.75s/it]
-Tokenizing train dataset:   0%|          | 0/90 [00:00<?, ? examples/s]Tokenizing train dataset:  29%|██▉       | 26/90 [00:00<00:00, 252.58 examples/s]Tokenizing train dataset:  63%|██████▎   | 57/90 [00:00<00:00, 282.24 examples/s]Tokenizing train dataset:  99%|█████████▉| 89/90 [00:00<00:00, 294.35 examples/s]Tokenizing train dataset: 100%|██████████| 90/90 [00:00<00:00, 245.47 examples/s]
-Packing train dataset:   0%|          | 0/90 [00:00<?, ? examples/s]Packing train dataset: 100%|██████████| 90/90 [00:00<00:00, 9074.87 examples/s]
-Tokenizing eval dataset:   0%|          | 0/10 [00:00<?, ? examples/s]Tokenizing eval dataset: 100%|██████████| 10/10 [00:00<00:00, 260.63 examples/s]
-Packing eval dataset:   0%|          | 0/10 [00:00<?, ? examples/s]Packing eval dataset: 100%|██████████| 10/10 [00:00<00:00, 3701.29 examples/s]
-The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128009}.
-======== Log a first sample from the processed training set ========
-masking area: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ...
-  0%|          | 0/3200 [00:00<?, ?it/s]  0%|          | 1/3200 [00:02<2:09:30,  2.43s/it]  0%|          | 2/3200 [00:04<1:43:46,  1.95s/it]  0%|          | 3/3200 [00:05<1:34:30,  1.77s/it]  0%|          | 4/3200 [00:07<1:32:34,  1.74s/it]  0%|          | 5/3200 [00:09<1:34:06,  1.77s/it]  0%|          | 6/3200 [00:10<1:33:28,  1.76s/it]  0%|          | 7/3200 [00:12<1:34:58,  1.78s/it]  0%|          | 8/3200 [00:14<1:34:58,  1.79s/it]  0%|          | 9/3200 [00:16<1:35:01,  1.79s/it]  0%|          | 10/3200 [00:17<1:33:35,  1.76s/it]  0%|          | 11/3200 [00:19<1:33:10,  1.75s/it]  0%|          | 12/3200 [00:21<1:33:49,  1.77s/it]  0%|          | 13/3200 [00:23<1:33:13,  1.76s/it]  0%|          | 14/3200 [00:24<1:31:16,  1.72s/it]  0%|          | 15/3200 [00:26<1:31:07,  1.72s/it]  0%|          | 16/3200 [00:28<1:31:14,  1.72s/it]  1%|          | 17/3200 [00:29<1:21:26,  1.54s/it]  1%|          | 18/3200 [00:31<1:25:34,  1.61s/it]  1%|          | 19/3200 [00:32<1:26:30,  1.63s/it]  1%|          | 20/3200 [00:34<1:30:09,  1.70s/it]  1%|          | 21/3200 [00:36<1:34:44,  1.79s/it]  1%|          | 22/3200 [00:38<1:32:57,  1.75s/it]  1%|          | 23/3200 [00:40<1:32:23,  1.74s/it]  1%|          | 24/3200 [00:41<1:22:18,  1.55s/it]  1%|          | 25/3200 [00:43<1:25:35,  1.62s/it]  1%|          | 26/3200 [00:44<1:27:42,  1.66s/it]  1%|          | 27/3200 [00:46<1:31:06,  1.72s/it]  1%|          | 28/3200 [00:48<1:29:54,  1.70s/it]  1%|          | 29/3200 [00:50<1:31:39,  1.73s/it]  1%|          | 30/3200 [00:51<1:30:10,  1.71s/it]  1%|          | 31/3200 [00:53<1:30:26,  1.71s/it]  1%|          | 32/3200 [00:55<1:30:51,  1.72s/it]  1%|          | 33/3200 [00:56<1:28:46,  1.68s/it]  1%|          | 34/3200 [00:58<1:30:47,  1.72s/it]  1%|          | 35/3200 [01:00<1:30:39,  1.72s/it]  1%|          | 36/3200 [01:02<1:31:07,  1.73s/it]  1%|          | 37/3200 [01:03<1:32:32,  1.76s/it]  1%|          | 38/3200 [01:05<1:34:01,  1.78s/it]  1%|          | 39/3200 [01:07<1:34:21,  1.79s/it]  1%|▏         | 40/3200 [01:09<1:37:08,  1.84s/it]  1%|▏         | 41/3200 [01:11<1:39:29,  1.89s/it]  1%|▏         | 42/3200 [01:13<1:37:22,  1.85s/it]  1%|▏         | 43/3200 [01:15<1:36:02,  1.83s/it]  1%|▏         | 44/3200 [01:16<1:36:44,  1.84s/it]  1%|▏         | 45/3200 [01:18<1:34:41,  1.80s/it]  1%|▏         | 46/3200 [01:20<1:32:13,  1.75s/it]  1%|▏         | 47/3200 [01:22<1:33:05,  1.77s/it]  2%|▏         | 48/3200 [01:23<1:33:42,  1.78s/it]  2%|▏         | 49/3200 [01:25<1:33:11,  1.77s/it]  2%|▏         | 50/3200 [01:27<1:33:39,  1.78s/it]  2%|▏         | 51/3200 [01:29<1:34:12,  1.79s/it]  2%|▏         | 52/3200 [01:30<1:33:07,  1.77s/it]  2%|▏         | 53/3200 [01:32<1:22:37,  1.58s/it]  2%|▏         | 54/3200 [01:33<1:26:57,  1.66s/it]  2%|▏         | 55/3200 [01:35<1:27:20,  1.67s/it]  2%|▏         | 56/3200 [01:37<1:28:53,  1.70s/it]  2%|▏         | 57/3200 [01:39<1:29:24,  1.71s/it]  2%|▏         | 58/3200 [01:40<1:27:35,  1.67s/it]  2%|▏         | 59/3200 [01:42<1:30:16,  1.72s/it]  2%|▏         | 60/3200 [01:44<1:31:19,  1.74s/it]  2%|▏         | 61/3200 [01:46<1:35:21,  1.82s/it]  2%|▏         | 62/3200 [01:48<1:35:09,  1.82s/it]  2%|▏         | 63/3200 [01:49<1:34:16,  1.80s/it]  2%|▏         | 64/3200 [01:51<1:35:22,  1.82s/it]  2%|▏         | 65/3200 [01:53<1:35:09,  1.82s/it]  2%|▏         | 66/3200 [01:55<1:35:31,  1.83s/it]  2%|▏         | 67/3200 [01:57<1:35:26,  1.83s/it]  2%|▏         | 68/3200 [01:58<1:33:07,  1.78s/it]  2%|▏         | 69/3200 [02:00<1:22:33,  1.58s/it]  2%|▏         | 70/3200 [02:01<1:23:28,  1.60s/it]  2%|▏         | 71/3200 [02:03<1:24:18,  1.62s/it]  2%|▏         | 72/3200 [02:05<1:27:19,  1.67s/it]  2%|▏         | 73/3200 [02:06<1:28:44,  1.70s/it]  2%|▏         | 74/3200 [02:08<1:29:34,  1.72s/it]  2%|▏         | 75/3200 [02:10<1:31:39,  1.76s/it]  2%|▏         | 76/3200 [02:12<1:28:59,  1.71s/it]  2%|▏         | 77/3200 [02:13<1:29:19,  1.72s/it]  2%|▏         | 78/3200 [02:15<1:29:31,  1.72s/it]  2%|▏         | 79/3200 [02:17<1:29:23,  1.72s/it]  2%|▎         | 80/3200 [02:19<1:31:33,  1.76s/it]  3%|▎         | 81/3200 [02:21<1:34:46,  1.82s/it]  3%|▎         | 82/3200 [02:23<1:35:16,  1.83s/it]  3%|▎         | 83/3200 [02:24<1:32:53,  1.79s/it]  3%|▎         | 84/3200 [02:26<1:31:57,  1.77s/it]  3%|▎         | 85/3200 [02:28<1:29:59,  1.73s/it]  3%|▎         | 86/3200 [02:29<1:31:12,  1.76s/it]  3%|▎         | 87/3200 [02:31<1:32:04,  1.77s/it]  3%|▎         | 88/3200 [02:33<1:31:56,  1.77s/it]  3%|▎         | 89/3200 [02:35<1:29:58,  1.74s/it]  3%|▎         | 90/3200 [02:36<1:31:06,  1.76s/it]  3%|▎         | 91/3200 [02:38<1:32:57,  1.79s/it]  3%|▎         | 92/3200 [02:40<1:32:09,  1.78s/it]  3%|▎         | 93/3200 [02:42<1:31:08,  1.76s/it]  3%|▎         | 94/3200 [02:43<1:28:29,  1.71s/it]  3%|▎         | 95/3200 [02:45<1:29:10,  1.72s/it]  3%|▎         | 96/3200 [02:47<1:29:43,  1.73s/it]  3%|▎         | 97/3200 [02:48<1:20:02,  1.55s/it]  3%|▎         | 98/3200 [02:50<1:24:16,  1.63s/it]  3%|▎         | 99/3200 [02:52<1:26:21,  1.67s/it]  3%|▎         | 100/3200 [02:54<1:31:00,  1.76s/it]  3%|▎         | 101/3200 [02:56<1:34:07,  1.82s/it]  3%|▎         | 102/3200 [02:57<1:31:54,  1.78s/it]  3%|▎         | 103/3200 [02:59<1:32:21,  1.79s/it]  3%|▎         | 104/3200 [03:00<1:21:50,  1.59s/it]  3%|▎         | 105/3200 [03:02<1:24:16,  1.63s/it]  3%|▎         | 106/3200 [03:04<1:27:03,  1.69s/it]  3%|▎         | 107/3200 [03:05<1:28:16,  1.71s/it]  3%|▎         | 108/3200 [03:07<1:27:13,  1.69s/it]  3%|▎         | 109/3200 [03:09<1:30:01,  1.75s/it]  3%|▎         | 110/3200 [03:11<1:29:41,  1.74s/it]  3%|▎         | 111/3200 [03:12<1:30:04,  1.75s/it]  4%|▎         | 112/3200 [03:14<1:31:05,  1.77s/it]  4%|▎         | 113/3200 [03:16<1:29:16,  1.74s/it]  4%|▎         | 114/3200 [03:18<1:30:38,  1.76s/it]  4%|▎         | 115/3200 [03:20<1:31:57,  1.79s/it]  4%|▎         | 116/3200 [03:21<1:28:52,  1.73s/it]  4%|▎         | 117/3200 [03:23<1:29:15,  1.74s/it]  4%|▎         | 118/3200 [03:25<1:30:59,  1.77s/it]  4%|▎         | 119/3200 [03:27<1:30:21,  1.76s/it]  4%|▍         | 120/3200 [03:28<1:32:10,  1.80s/it]  4%|▍         | 121/3200 [03:30<1:35:17,  1.86s/it]  4%|▍         | 122/3200 [03:32<1:32:04,  1.79s/it]  4%|▍         | 123/3200 [03:34<1:31:03,  1.78s/it]  4%|▍         | 124/3200 [03:36<1:32:12,  1.80s/it]  4%|▍         | 125/3200 [03:37<1:30:56,  1.77s/it]  4%|▍         | 126/3200 [03:39<1:20:45,  1.58s/it]  4%|▍         | 127/3200 [03:40<1:20:56,  1.58s/it]  4%|▍         | 128/3200 [03:42<1:24:35,  1.65s/it]  4%|▍         | 129/3200 [03:44<1:27:02,  1.70s/it]  4%|▍         | 130/3200 [03:46<1:28:03,  1.72s/it]  4%|▍         | 131/3200 [03:47<1:28:36,  1.73s/it]  4%|▍         | 132/3200 [03:49<1:28:54,  1.74s/it]  4%|▍         | 133/3200 [03:51<1:28:02,  1.72s/it]  4%|▍         | 134/3200 [03:52<1:28:19,  1.73s/it]  4%|▍         | 135/3200 [03:54<1:29:45,  1.76s/it]  4%|▍         | 136/3200 [03:56<1:28:04,  1.72s/it]  4%|▍         | 137/3200 [03:58<1:29:18,  1.75s/it]  4%|▍         | 138/3200 [04:00<1:31:11,  1.79s/it]  4%|▍         | 139/3200 [04:01<1:32:05,  1.81s/it]  4%|▍         | 140/3200 [04:03<1:32:34,  1.82s/it]  4%|▍         | 141/3200 [04:05<1:35:10,  1.87s/it]  4%|▍         | 142/3200 [04:07<1:35:15,  1.87s/it]  4%|▍         | 143/3200 [04:09<1:34:59,  1.86s/it]  4%|▍         | 144/3200 [04:11<1:33:28,  1.84s/it]  5%|▍         | 145/3200 [04:13<1:33:37,  1.84s/it]  5%|▍         | 146/3200 [04:14<1:30:46,  1.78s/it]  5%|▍         | 147/3200 [04:16<1:30:08,  1.77s/it]  5%|▍         | 148/3200 [04:18<1:29:29,  1.76s/it]  5%|▍         | 149/3200 [04:20<1:30:12,  1.77s/it]  5%|▍         | 150/3200 [04:21<1:28:15,  1.74s/it]  5%|▍         | 151/3200 [04:23<1:29:25,  1.76s/it]  5%|▍         | 152/3200 [04:25<1:29:19,  1.76s/it]  5%|▍         | 153/3200 [04:26<1:28:51,  1.75s/it]  5%|▍         | 154/3200 [04:28<1:26:25,  1.70s/it]  5%|▍         | 155/3200 [04:30<1:28:11,  1.74s/it]  5%|▍         | 156/3200 [04:32<1:27:48,  1.73s/it]  5%|▍         | 157/3200 [04:33<1:27:06,  1.72s/it]  5%|▍         | 158/3200 [04:35<1:27:48,  1.73s/it]  5%|▍         | 159/3200 [04:36<1:18:20,  1.55s/it]  5%|▌         | 160/3200 [04:38<1:24:16,  1.66s/it]  5%|▌         | 161/3200 [04:40<1:30:17,  1.78s/it]  5%|▌         | 162/3200 [04:42<1:31:20,  1.80s/it]  5%|▌         | 163/3200 [04:44<1:31:35,  1.81s/it]  5%|▌         | 164/3200 [04:46<1:30:53,  1.80s/it]  5%|▌         | 165/3200 [04:47<1:31:05,  1.80s/it]  5%|▌         | 166/3200 [04:49<1:32:13,  1.82s/it]  5%|▌         | 167/3200 [04:51<1:28:41,  1.75s/it]  5%|▌         | 168/3200 [04:52<1:18:56,  1.56s/it]  5%|▌         | 169/3200 [04:54<1:20:18,  1.59s/it]  5%|▌         | 170/3200 [04:55<1:22:11,  1.63s/it]  5%|▌         | 171/3200 [04:57<1:24:59,  1.68s/it]  5%|▌         | 172/3200 [04:59<1:26:07,  1.71s/it]  5%|▌         | 173/3200 [05:01<1:28:19,  1.75s/it]  5%|▌         | 174/3200 [05:03<1:28:35,  1.76s/it]  5%|▌         | 175/3200 [05:04<1:28:32,  1.76s/it]  6%|▌         | 176/3200 [05:06<1:28:07,  1.75s/it]  6%|▌         | 177/3200 [05:08<1:26:32,  1.72s/it]  6%|▌         | 178/3200 [05:09<1:26:56,  1.73s/it]  6%|▌         | 179/3200 [05:11<1:26:56,  1.73s/it]  6%|▌         | 180/3200 [05:13<1:27:47,  1.74s/it]  6%|▌         | 181/3200 [05:15<1:32:01,  1.83s/it]  6%|▌         | 182/3200 [05:17<1:30:18,  1.80s/it]  6%|▌         | 183/3200 [05:18<1:29:17,  1.78s/it]

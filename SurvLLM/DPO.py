@@ -1,5 +1,5 @@
 ## ↓ run
-## nohup python DPO.py --config config/DPO_config.yaml & > dpo_config.out
+## nohup python DPO.py --config config/DPO_config.yaml > dpo_config.out &
 
 ## imports
 from datasets import load_dataset
