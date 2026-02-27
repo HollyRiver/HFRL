@@ -32,6 +32,7 @@ class ScriptArguments:
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
     adapter_name: str = field(default = None, metadata = {"help": "SFT 완료된 어뎁터"})
     multi_gpu: bool = field(default = False, metadata = {"help": "Multi-GPU 사용 여부"})
+    name_tag: str = field(default = '', metadata = {"help": "dpo_***_dataset{tag}.json 형식으로 입력됨"})
 
 
 def timer(func):
@@ -77,8 +78,8 @@ def seeding(seed):
 @timer
 def main(script_args, training_args):
     ## loading dataset
-    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_train_dataset.json"), split = "train")
-    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_test_dataset.json"), split = "train")
+    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, f"dpo_train_dataset{script_args.name_tag}.json"), split = "train")
+    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, f"dpo_test_dataset{script_args.name_tag}.json"), split = "train")
 
     ## 토크나이저 로드 및 설정
     tokenizer = AutoTokenizer.from_pretrained(

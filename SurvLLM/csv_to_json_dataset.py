@@ -50,6 +50,7 @@ if __name__ == "__main__":
     parser.add_argument("--target", type = str, default = None, help = "변환할 csv 파일 위치")
     parser.add_argument("--encoding", type = str, default = "utf-8", help = "변환할 파일 인코딩")
     parser.add_argument("--system", type = str, default = "data/system_prompt.txt", help = "시스템 프롬프트 기재 txt 파일 위치")
+    parser.add_argument("--name_tag", type = str, default = "", help = "생성 파일 뒤에 붙여질 태그")
 
     args = parser.parse_args()
 
@@ -81,8 +82,8 @@ if __name__ == "__main__":
         train_ds = train_ds.map(lambda sample: remove_hangul(sample, column = "messages"))
         train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
 
-        train_ds["train"].to_json("data/sft_train_dataset.json", orient = "records")
-        train_ds["test"].to_json("data/sft_test_dataset.json", orient = "records")
+        train_ds["train"].to_json(f"data/sft_train_dataset{args.name_tag}.json", orient = "records")
+        train_ds["test"].to_json(f"data/sft_test_dataset{args.name_tag}.json", orient = "records")
 
         test_ds = train_ds["test"]
         lst = []
@@ -112,8 +113,8 @@ if __name__ == "__main__":
         train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
         train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
 
-        train_ds["train"].to_json("data/dpo_train_dataset.json", orient = "records")
-        train_ds["test"].to_json("data/dpo_test_dataset.json", orient = "records")
+        train_ds["train"].to_json(f"data/dpo_train_dataset.json{args.name_tag}", orient = "records")
+        train_ds["test"].to_json(f"data/dpo_test_dataset{args.name_tag}.json", orient = "records")
 
         test_ds = train_ds["test"]
 

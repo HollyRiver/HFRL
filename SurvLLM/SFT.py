@@ -38,6 +38,7 @@ class ScriptArguments:
     dataset_path: str = field(default = None, metadata = {"help": "dataset directory"})
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
     multi_gpu: bool = field(default = False, metadata = {"help": "Multi-GPU 사용 여부"})
+    name_tag: str = field(default = '', metadata = {"help": "sft_***_dataset{tag}.json 형식으로 입력됨"})
 
 @dataclass
 class LoraArguments:
@@ -92,8 +93,8 @@ def seeding(seed):
 @timer
 def main(script_args, training_args, lora_kwargs):
     ## loading dataset
-    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "sft_train_dataset.json"), split = "train")
-    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "sft_test_dataset.json"), split = "train")
+    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, f"sft_train_dataset{script_args.name_tag}.json"), split = "train")
+    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, f"sft_test_dataset{script_args.name_tag}.json"), split = "train")
 
     print(f"training dataset size: {train_ds.num_rows}\ntest dataset size: {test_ds.num_rows}")
 
