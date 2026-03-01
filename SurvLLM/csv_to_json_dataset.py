@@ -5,6 +5,10 @@ from utils import remove_hangul
 
 """
 csv 파일을 json 포맷의 SFT/DPO/Inference dataset으로 변환하기 위한 코드
+    assistant 열이 존재 -> SFT
+    chosen 열이 존재 -> DPO
+    그외 -> Inference dataset
+
 시스템 프롬프트는 txt 파일로 저장되어 입력됩니다. 프롬프트를 변경하고 싶으면 해당 파일을 수정하세요.
 
 SFT csv dataset input format:
@@ -51,6 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("--encoding", type = str, default = "utf-8", help = "변환할 파일 인코딩")
     parser.add_argument("--system", type = str, default = "data/system_prompt.txt", help = "시스템 프롬프트 기재 txt 파일 위치")
     parser.add_argument("--name_tag", type = str, default = "", help = "생성 파일 뒤에 붙여질 태그")
+    parser.add_argument("--ppo", type = bool, default = False, help = "ppo 데이터셋으로 만들 것인지 여부")
 
     args = parser.parse_args()
 
@@ -141,6 +146,14 @@ if __name__ == "__main__":
         train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
         train_ds = train_ds.map(lambda sample: remove_hangul(sample, column = "messages"))
 
-        train_ds.to_json(f"{args.target.split(".")[0]}.json", orient = "records")
+        if args.ppo:
+            train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
+            train_ds["train"].to_json(f"data/ppo_train_dataset.json{args.name_tag}", orient = "records")
+            train_ds["test"].to_json(f"data/ppo_test_dataset{args.name_tag}.json", orient = "records")
 
-        print("\n\nInference dataset was generated.")
+            print("\n\nPPO dataset was generated.")
+
+        else:
+            train_ds.to_json(f"{args.target.split(".")[0]}.json", orient = "records")
+
+            print("\n\nInference dataset was generated.")

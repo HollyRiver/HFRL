@@ -10,3 +10,58 @@
 
 
 Test Label file was saved.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 17083.45 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16905.12 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 44200.58 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  81%|████████  | 1619/2000 [00:00<00:00, 16126.15 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 13976.38 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.15ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.12ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 77.71ba/s]
+
+
+Inference dataset was generated.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16463.36 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16287.01 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 47351.26 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  84%|████████▍ | 1686/2000 [00:00<00:00, 16798.90 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 14938.79 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 14.24ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 14.20ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 71.88ba/s]
+
+
+PPO dataset was generated.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16155.67 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 15978.24 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 48107.82 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  88%|████████▊ | 1752/2000 [00:00<00:00, 17456.84 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 15223.23 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.80ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.78ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 78.04ba/s]
+
+
+PPO dataset was generated.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 17284.05 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 17092.57 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 44127.81 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  82%|████████▏ | 1630/2000 [00:00<00:00, 16244.59 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 14278.92 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 12.76ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 12.73ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 72.04ba/s]
+
+
+PPO dataset was generated.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16724.73 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16558.32 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 45260.16 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  82%|████████▏ | 1630/2000 [00:00<00:00, 16241.62 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 14256.47 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.30ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.28ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 82.62ba/s]
+
+
+PPO dataset was generated.

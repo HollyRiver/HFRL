@@ -3,8 +3,12 @@
 
 ## imports
 from datasets import load_dataset
-from trl import PPOConfig, PPOTrainer, TrlParser
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, set_seed
+from trl import TrlParser
+from trl.experimental.ppo import PPOTrainer, PPOConfig
+from transformers import (
+    AutoModelForCausalLM, AutoModelForSequenceClassification,
+    AutoTokenizer, BitsAndBytesConfig, set_seed
+)
 import torch
 
 from peft import PeftModel
@@ -31,7 +35,9 @@ class ScriptArguments:
     dataset_path: str = field(default = None, metadata = {"help": "dataset directory"})
     model_name: str = field(default = None, metadata = {"help": "사용할 모델 ID"})
     adapter_name: str = field(default = None, metadata = {"help": "SFT 완료된 어뎁터"})
+    rm_name: str = field(default = None, metadata = {"help": "RM adapter"})
     multi_gpu: bool = field(default = False, metadata = {"help": "Multi-GPU 사용 여부"})
+    max_length: int = field(default = 8192, metadata = {"help": "최대 토큰 사이즈"})
 
 
 def timer(func):
@@ -77,14 +83,15 @@ def seeding(seed):
 @timer
 def main(script_args, training_args):
     ## loading dataset
-    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_train_dataset.json"), split = "train")
-    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "dpo_test_dataset.json"), split = "train")
+    train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_train_dataset.json"), split = "train")
+    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_test_dataset.json"), split = "train")
 
     ## 토크나이저 로드 및 설정
     tokenizer = AutoTokenizer.from_pretrained(
         script_args.model_name,
-        use_fast = True,            ## Rust로 구현된 Fast Tokenizer 사용 (Qwen, RoPE, ChatGLM 등의 특이한 구조에서는 호환 안됨)
-        trust_remote_code = True)   ## 모델 코드 전체 다운로드 후 사용
+        use_fast = True,
+        trust_remote_code = True
+    )
     tokenizer.pad_token = tokenizer.eos_token       ## 패딩할 토큰 설정
     tokenizer.padding_side = "left"                 ## 디코더이므로 왼쪽을 패딩 (마지막 토큰을 보고 생성)
 
@@ -108,6 +115,24 @@ def main(script_args, training_args):
 
     tokenizer.chat_template = LLAMA_3_CHAT_TEMPLATE
 
+    def prepare_ppo_dataset(examples):
+        prompt_strings = [
+            tokenizer.apply_chat_template(msg, tokenize=False, add_generation_prompt=True)
+            for msg in examples["messages"]
+        ]
+
+        tokens = tokenizer(
+            prompt_strings,
+            truncation=True,
+            max_length=script_args.max_length,
+            padding=False
+        )
+
+        return tokens
+
+    train_ds = train_ds.map(prepare_ppo_dataset, batched=True, remove_columns=train_ds.column_names)
+    test_ds = test_ds.map(prepare_ppo_dataset, batched=True, remove_columns=test_ds.column_names)
+
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
         load_in_4bit = True,                        ## 4비트 양자화
@@ -121,7 +146,7 @@ def main(script_args, training_args):
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name,
         device_map = None if script_args.multi_gpu else "cuda:0",
-        use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradienc_checkpointing과 동시 사용 불가
+        use_cache = False,                          ## VRAM 캐시 미사용, 추론 속도 저하. gradient_checkpointing과 동시 사용 불가
         low_cpu_mem_usage = True,                   ## CPU RAM 사용량 적게 사용...
         attn_implementation = "flash_attention_2",  ## flash_attention 연산 사용. sdpa가 더 빠르고 효율적일 수도 있음.
         trust_remote_code = True,
@@ -139,41 +164,83 @@ def main(script_args, training_args):
 
     model.load_adapter(script_args.adapter_name, adapter_name = "reference")
     model.set_adapter("policy")
-
-    if training_args.gradient_checkpointing:
-        model.gradient_checkpointing_enable()
-
-    if script_args.multi_gpu:
-        model.enable_input_require_grads()
-        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": True})
-        model.config.use_cache = False
-        
-        print("\n[FSDP FINAL SOLUTION] Converting EVERYTHING to bfloat16 (Adapters + LayerNorms)...")
-    
-        # 1. 모든 파라미터 순회
-        for _, param in model.named_parameters():
-            if param.dtype == torch.float32:
-                param.data = param.data.to(torch.bfloat16)
-
-        print("✅ All target parameters cast to bfloat16.")
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
 
     training_args.model_adapter_name = "policy"
     training_args.ref_adapter_name = "reference"
 
+    ## Reward Model 로드
+    reward_model = AutoModelForSequenceClassification.from_pretrained(
+        script_args.model_name,
+        num_labels = 1,
+        device_map = None if script_args.multi_gpu else "cuda:0",
+        use_cache = False,
+        low_cpu_mem_usage = True,  
+        attn_implementation = "flash_attention_2",
+        trust_remote_code = True,
+        quantization_config = bnb_config,
+        dtype = torch.bfloat16
+    )
+
+    value_model = AutoModelForSequenceClassification.from_pretrained(
+        script_args.model_name,
+        num_labels = 1,
+        device_map = None if script_args.multi_gpu else "cuda:0",
+        use_cache = False,
+        low_cpu_mem_usage = True,  
+        attn_implementation = "flash_attention_2",
+        trust_remote_code = True,
+        quantization_config = bnb_config,
+        dtype = torch.bfloat16
+    )
+
+    reward_model = PeftModel.from_pretrained(
+        reward_model,
+        script_args.rm_name,
+        is_trainable = False
+    )
+
+    value_model = PeftModel.from_pretrained(
+        value_model,
+        script_args.rm_name,
+        is_trainable = True
+    )
+
+    value_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+
+    model.config.pad_token_id = tokenizer.pad_token_id
+    model.generation_config.pad_token_id = tokenizer.pad_token_id
+    reward_model.config.pad_token_id = tokenizer.pad_token_id
+    value_model.config.pad_token_id = tokenizer.pad_token_id
+
     trainer = PPOTrainer(
-        model,
+        model = model,
+        ref_model = None,
+        reward_model = reward_model,
+        value_model = value_model,
         args = training_args,
         train_dataset= train_ds,
         eval_dataset = test_ds,
         processing_class = tokenizer
     )
 
-    ## 학습이 중단된 경우 이어서 진행할 수 있도록 설정
-    checkpoint = None
-    if training_args.resume_from_checkpoint is not None:
-        checkpoint = training_args.resume_from_checkpoint
+    ## Monkey Patching
+    def custom_gc_disable():
+        if hasattr(trainer.model, "policy"):
+            trainer.model.policy.gradient_checkpointing_disable()
+        if hasattr(trainer.model, "value_model"):
+            trainer.model.value_model.gradient_checkpointing_disable()
 
-    trainer.train(resume_from_checkpoint = checkpoint)
+    def custom_gc_enable(*args, **kwargs):
+        if hasattr(trainer.model, "policy"):
+            trainer.model.policy.gradient_checkpointing_enable(*args, **kwargs)
+        if hasattr(trainer.model, "value_model"):
+            trainer.model.value_model.gradient_checkpointing_enable(*args, **kwargs)
+
+    trainer.model.gradient_checkpointing_disable = custom_gc_disable
+    trainer.model.gradient_checkpointing_enable = custom_gc_enable
+
+    trainer.train()
 
     ## (분산 GPU 사용 시) 중간 체크포인트는 분할되어 저장, 훈련 종료 후 전체 상태 딕셔너리로 저장
     if trainer.is_fsdp_enabled:
