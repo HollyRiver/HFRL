@@ -20,6 +20,7 @@ import numpy as np
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 wandb.init(project = "RLHF")
 
 torch.backends.cuda.matmul.allow_tf32 = True

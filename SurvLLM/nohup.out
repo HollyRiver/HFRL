@@ -65,3 +65,13 @@ Label column does not found. Start to generate inference dataset.
 
 
 PPO dataset was generated.
+
+==============================
+Label column does not found. Start to generate inference dataset.
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16611.34 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 16436.94 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 44642.58 examples/s]
+Map:   0%|          | 0/2000 [00:00<?, ? examples/s]Map:  81%|████████  | 1611/2000 [00:00<00:00, 16050.17 examples/s]Map: 100%|██████████| 2000/2000 [00:00<00:00, 14127.87 examples/s]
+Creating json from Arrow format:   0%|          | 0/2 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.18ba/s]Creating json from Arrow format: 100%|██████████| 2/2 [00:00<00:00, 13.15ba/s]
+
+
+PPO dataset was generated.

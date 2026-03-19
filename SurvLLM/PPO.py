@@ -24,6 +24,7 @@ import numpy as np
 
 ## Zombie Process 발생 방지
 os.environ["WANDB_MODE"] = "offline"    ## 수동 업데이트: wandb sync --include-offline ./wandb/offline-*
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 wandb.init(project = "RLHF")
 
 torch.backends.cuda.matmul.allow_tf32 = True
@@ -82,9 +83,8 @@ def seeding(seed):
 
 @timer
 def main(script_args, training_args):
-    ## loading dataset
+    ## loading dataset; eval_dataset 없으니까 오류나는데?
     train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_train_dataset.json"), split = "train")
-    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_test_dataset.json"), split = "train")
 
     ## 토크나이저 로드 및 설정
     tokenizer = AutoTokenizer.from_pretrained(
@@ -131,7 +131,6 @@ def main(script_args, training_args):
         return tokens
 
     train_ds = train_ds.map(prepare_ppo_dataset, batched=True, remove_columns=train_ds.column_names)
-    test_ds = test_ds.map(prepare_ppo_dataset, batched=True, remove_columns=test_ds.column_names)
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
@@ -158,16 +157,33 @@ def main(script_args, training_args):
     model = PeftModel.from_pretrained(
         model,
         script_args.adapter_name,
-        is_trainable=True,
+        is_trainable = True,
         adapter_name="policy",
     )
 
-    model.load_adapter(script_args.adapter_name, adapter_name = "reference")
-    model.set_adapter("policy")
-    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    ref_model = AutoModelForCausalLM.from_pretrained(
+        script_args.model_name,
+        device_map = None if script_args.multi_gpu else "cuda:0",
+        use_cache = False,
+        low_cpu_mem_usage = True,
+        attn_implementation = "flash_attention_2",
+        trust_remote_code = True,
+        quantization_config = bnb_config,
+        dtype = torch.bfloat16
+    )
 
-    training_args.model_adapter_name = "policy"
-    training_args.ref_adapter_name = "reference"
+    ref_model.load_adapter(
+        script_args.adapter_name,
+        is_trainable = False,
+        # adapter_name = "reference"
+    )
+
+    # model.set_adapter("policy")
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    model.enable_input_require_grads()
+
+    # training_args.model_adapter_name = "policy"
+    # training_args.ref_adapter_name = "reference"
 
     ## Reward Model 로드
     reward_model = AutoModelForSequenceClassification.from_pretrained(
@@ -207,20 +223,21 @@ def main(script_args, training_args):
     )
 
     value_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    value_model.enable_input_require_grads()
 
     model.config.pad_token_id = tokenizer.pad_token_id
     model.generation_config.pad_token_id = tokenizer.pad_token_id
+
     reward_model.config.pad_token_id = tokenizer.pad_token_id
     value_model.config.pad_token_id = tokenizer.pad_token_id
 
     trainer = PPOTrainer(
         model = model,
-        ref_model = None,
+        ref_model = ref_model,
         reward_model = reward_model,
         value_model = value_model,
         args = training_args,
         train_dataset= train_ds,
-        eval_dataset = test_ds,
         processing_class = tokenizer
     )
 
@@ -239,6 +256,13 @@ def main(script_args, training_args):
 
     trainer.model.gradient_checkpointing_disable = custom_gc_disable
     trainer.model.gradient_checkpointing_enable = custom_gc_enable
+
+    # 훈련에 참여하는 파라미터가 0이 아닌지 확인
+    print("=== Policy Model Trainable Parameters ===")
+    trainer.model.policy.print_trainable_parameters()
+    
+    print("=== Value Model Trainable Parameters ===")
+    trainer.model.value_model.print_trainable_parameters()
 
     trainer.train()
 
