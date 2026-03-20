@@ -85,6 +85,7 @@ def seeding(seed):
 def main(script_args, training_args):
     ## loading dataset; eval_dataset 없으니까 오류나는데?
     train_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_train_dataset.json"), split = "train")
+    test_ds = load_dataset("json", data_files = os.path.join(script_args.dataset_path, "ppo_test_dataset.json"), split = "train")
 
     ## 토크나이저 로드 및 설정
     tokenizer = AutoTokenizer.from_pretrained(
@@ -131,6 +132,7 @@ def main(script_args, training_args):
         return tokens
 
     train_ds = train_ds.map(prepare_ppo_dataset, batched=True, remove_columns=train_ds.column_names)
+    test_ds = test_ds.map(prepare_ppo_dataset, batched=True, remove_columns=test_ds.column_names)
 
     ## 양자화 설정
     bnb_config = BitsAndBytesConfig(
@@ -238,6 +240,7 @@ def main(script_args, training_args):
         value_model = value_model,
         args = training_args,
         train_dataset= train_ds,
+        eval_dataset = test_ds,
         processing_class = tokenizer
     )
 

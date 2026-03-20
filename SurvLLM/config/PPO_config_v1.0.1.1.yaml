@@ -2,17 +2,17 @@
 
 ## ScriptArguments
 model_name: "meta-llama/Llama-3.1-8B-Instruct"        ## 사용할 모델명 (huggingface model name)
-adapter_name: "adapter/Zip-Llama-sft-v1.1.2"
+adapter_name: "adapter/Zip-Llama-sft-v1.0.0"
 dataset_path: "./data"                                ## 데이터셋 저장 경로
-rm_name: "adapter/RM-Llama-v1.1.2.7"
+rm_name: "adapter/RM-Llama-v1.0.1"
 max_length: 16384
 
 ## PPOConfig
 response_length: 512                                  ## 모델 생성 최대 길이
 stop_token: "eos"                                     ## 토크나이저의 eos 토큰을 생성 종료 토큰으로 설정
-output_dir: "./results/ppo-v1.1.2.6"                  ## 튜닝된 모델 저장 위치
+output_dir: "./results/ppo-v1.0.1.1"                  ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
-run_name: "ppo-v1.1.2.6"
+run_name: "ppo-v1.0.1.1"
 learning_rate: 1e-6                                   ## update matrix 학습률
 lr_scheduler_type: "cosine_with_min_lr"               ## 코사인 스케줄러 사용 + 최소 학습률 지정 (최대의 10%)
 lr_scheduler_kwargs:

@@ -147,7 +147,9 @@ if __name__ == "__main__":
         train_ds = train_ds.map(lambda sample: remove_hangul(sample, column = "messages"))
 
         if args.ppo:
-            train_ds.to_json(f"data/ppo_train_dataset.json{args.name_tag}", orient = "records")
+            train_ds = train_ds.train_test_split(test_size = 4, seed = 42)
+            train_ds["train"].to_json(f"data/ppo_train_dataset.json{args.name_tag}", orient = "records")
+            train_ds["test"].to_json(f"data/ppo_test_dataset{args.name_tag}.json", orient = "records")
 
             print("\n\nPPO dataset was generated.")
 
