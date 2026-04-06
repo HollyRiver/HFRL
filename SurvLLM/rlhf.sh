@@ -43,14 +43,14 @@ nohup python DPO.py --config config/DPO_config_v1.1.0.yaml > logs/dpo_log_v1.1.0
 # NCCL_TIMEOUT=600 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True accelerate launch --config_file "config/fsdp_config_qlora_dpo.yaml" \
 # DPO.py --config config/DPO_config_multi_GPU.yaml > dpo_test.log &
 
-nohup python csv_to_json_dataset.py --target="data/data_all.csv"\
+nohup python csv_to_json_dataset.py --target="data/inference_data.csv"\
                                     --encoding="utf-8"\
                                     --system="data/system_prompt.txt" &&
 
 ## DPO에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트가 준비되었을 때
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
                                --adapter_path="adapter/Zip-Llama-aligned-v1.1.1"\
-                               --inference_data="data/data_all.json"\
+                               --inference_data="data/inference_data.json"\
                                --output_dir="data/inference_all.csv"\
                                --sampling=True\
                                --repetition_penalty=1.0\
