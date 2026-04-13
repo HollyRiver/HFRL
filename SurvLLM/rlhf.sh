@@ -32,13 +32,18 @@ nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instru
                                --gpu_memory_util=0.9\
                                --seed=42 &
 
+## SFT 완료 모델 추론 결과를 LLM으로 선호도 레이블링
+nohup python preference_AIF.py --model_name="Qwen/Qwen3-30B-A3B"\
+                               --preference_name="data/generated_data_v1.2.0.csv"\
+                               --discharge_name="data/gen_data_for_dpo_20260221.csv" &
+
 ## SFT에서 온전한 모델을 픽스하고, 데이터셋이 준비되었을 때
 nohup python csv_to_json_dataset.py --target="data/data_sample_max_for_DPO_20260205.csv"\
                                     --encoding="utf-8"\
                                     --system="data/system_prompt.txt" &&
 
 nohup python DPO.py --config config/DPO_config_v1.1.0.yaml > logs/dpo_log_v1.1.0.txt &&
-## Adapter Twice Load로 일단 되긴 하는데, 메모리 더 많이 먹음...
+## Multi-GPU를 사용할 경우: Adapter Twice Load로 일단 되긴 하는데, 메모리 더 많이 먹음...
 # nohup env \
 # NCCL_TIMEOUT=600 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True accelerate launch --config_file "config/fsdp_config_qlora_dpo.yaml" \
 # DPO.py --config config/DPO_config_multi_GPU.yaml > dpo_test.log &

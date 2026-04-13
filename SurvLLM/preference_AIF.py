@@ -9,6 +9,7 @@ import numpy as np
 
 import torch
 import json
+import argparse
 
 def build_system_content(original_text):
     return (
@@ -54,86 +55,92 @@ def build_system_content(original_text):
         "{\"1\": 1, \"2\": 3, \"3\": 2, \"4\": 4, \"5\": 5}"
     )
 
-model_name = "Qwen/Qwen3-30B-A3B"
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model_name", type = str, default = "Qwen/Qwen3-30B-A3B", help = "Inference Model")
+    parser.add_argument("--preference_name", type = str, default = None, help = "Preference Dataset Name (Long Format)")
+    parser.add_argument("--discharge_name", type = str, default = None, help = "동일한 인덱스를 가지는 퇴원요약지 데이터셋")
 
-llm = LLM(
-    model = model_name,
-    dtype = torch.bfloat16,
-    trust_remote_code = True,
-    max_model_len = 32768,
-    gpu_memory_utilization = 0.9
-)
+    args = parser.parse_args()
 
-df_gen = pd.read_csv("data/generated_data_v1.1.2.csv")
-df_discharge = pd.read_csv("data/gen_data_for_dpo_20260221.csv")
+    llm = LLM(
+        model = args.model_name,
+        dtype = torch.bfloat16,
+        trust_remote_code = True,
+        max_model_len = 32768,
+        gpu_memory_utilization = 0.9
+    )
 
-summarized_text = df_gen.pivot_table(index = "subject_id", values = "generated_text",
-                                     aggfunc = (lambda x: "\n\n".join([f"[{i+1}{"st" if i == 0 else "nd" if i == 1 else "rd" if i == 2 else "th"} generated text]\n\"\"\"\n{t}\n\"\"\"" for i, t in enumerate(x)])))\
-                                        .reset_index()
-df_gen = df_gen.assign(gen_num = [(i%5)+1 for i in range(df_gen.shape[0])])
-df_wide = df_gen.pivot(index = "subject_id", columns = "gen_num", values = "generated_text").reset_index()
-full_text = pd.merge(summarized_text, df_discharge[["subject_id", "text"]]).assign(system = lambda _df: _df.text.map(build_system_content)).drop(["text"], axis = 1)
+    df_gen = pd.read_csv(args.preference_name)
+    df_discharge = pd.read_csv(args.discharge_name)
 
-ds = Dataset.from_pandas(full_text)
-columns_to_remove = [f for f in list(ds.features) if f not in "subject_id"]
+    summarized_text = df_gen.pivot_table(index = "subject_id", values = "generated_text",
+                                        aggfunc = (lambda x: "\n\n".join([f"[{i+1}{"st" if i == 0 else "nd" if i == 1 else "rd" if i == 2 else "th"} generated text]\n\"\"\"\n{t}\n\"\"\"" for i, t in enumerate(x)])))\
+                                            .reset_index()
+    df_gen = df_gen.assign(gen_num = [(i%5)+1 for i in range(df_gen.shape[0])])
+    df_wide = df_gen.pivot(index = "subject_id", columns = "gen_num", values = "generated_text").reset_index()
+    full_text = pd.merge(summarized_text, df_discharge[["subject_id", "text"]]).assign(system = lambda _df: _df.text.map(build_system_content)).drop(["text"], axis = 1)
 
-ds = ds.map(
-    lambda sample:
-    {"messages": [
-        {"role": "system", "content": sample["system"]},
-        {"role": "user", "content": sample["generated_text"]}
-    ]}
-)
+    ds = Dataset.from_pandas(full_text)
+    columns_to_remove = [f for f in list(ds.features) if f not in "subject_id"]
 
-sampling_params = SamplingParams(temperature = 0.0, max_tokens = 64, structured_outputs=StructuredOutputsParams(json={"type": "object"}))
-tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast = True)
+    ds = ds.map(
+        lambda sample:
+        {"messages": [
+            {"role": "system", "content": sample["system"]},
+            {"role": "user", "content": sample["generated_text"]}
+        ]}
+    )
 
-def template_dataset(example):
-    return {"prompt": tokenizer.apply_chat_template(example["messages"], tokenize = False, add_generation_prompt = True)}
+    sampling_params = SamplingParams(temperature = 0.0, max_tokens = 64, structured_outputs=StructuredOutputsParams(json={"type": "object"}))
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name, use_fast = True)
 
-inference_data = ds.map(template_dataset, remove_columns = ["messages"])
-prompts = inference_data["prompt"]
+    def template_dataset(example):
+        return {"prompt": tokenizer.apply_chat_template(example["messages"], tokenize = False, add_generation_prompt = True)}
 
-outputs = llm.generate(prompts, sampling_params)
+    inference_data = ds.map(template_dataset, remove_columns = ["messages"])
+    prompts = inference_data["prompt"]
 
-data = []
-idx = inference_data["subject_id"]
+    outputs = llm.generate(prompts, sampling_params)
 
-for i, output in enumerate(outputs):
-    current_subject_id = idx[i]
+    data = []
+    idx = inference_data["subject_id"]
 
-    try:
-        label = json.loads(output.outputs[0].text.strip())
-    except:
-        label = pd.NA
+    for i, output in enumerate(outputs):
+        current_subject_id = idx[i]
 
-    row = {
-        "subject_id": current_subject_id,
-        "label": label
-    }
-    
-    data.append(row)
+        try:
+            label = json.loads(output.outputs[0].text.strip())
+        except:
+            label = pd.NA
 
-df = pd.DataFrame(data)
+        row = {
+            "subject_id": current_subject_id,
+            "label": label
+        }
+        
+        data.append(row)
 
-data = []
+    df = pd.DataFrame(data)
 
-for id, label in df.itertuples(index = False):
-    if set(label.keys()) == {"1", "2", "3", "4", "5"} and max(label.values()) == 5 and min(label.values()) == 1:
-        ## 순위의 중복이 있을 경우 제일 먼저 것만 선택
-        max_idx = np.argmax(list(label)) + 1
-        min_idx = np.argmin(list(label)) + 1
-    else:
-        continue
+    data = []
 
-    row = {
-        "subject_id": id,
-        "text": df_discharge.loc[df_discharge.subject_id == id, "text"].item(),
-        "chosen": df_wide.loc[df_wide.subject_id == id, max_idx].item(),
-        "rejected": df_wide.loc[df_wide.subject_id == id, min_idx].item()
-    }
+    for id, label in df.itertuples(index = False):
+        if set(label.keys()) == {"1", "2", "3", "4", "5"} and max(label.values()) == 5 and min(label.values()) == 1:
+            ## 순위의 중복이 있을 경우 제일 먼저 것만 선택
+            max_idx = np.argmax(list(label)) + 1
+            min_idx = np.argmin(list(label)) + 1
+        else:
+            continue
 
-    data.append(row)
+        row = {
+            "subject_id": id,
+            "text": df_discharge.loc[df_discharge.subject_id == id, "text"].item(),
+            "chosen": df_wide.loc[df_wide.subject_id == id, min_idx].item(),
+            "rejected": df_wide.loc[df_wide.subject_id == id, max_idx].item()
+        }
 
-dpo_dataset = pd.DataFrame(data)
-# dpo_dataset.to_csv("data/dpo_dataset.csv", index = False, encoding = "utf-8-sig")
+        data.append(row)
+
+    dpo_dataset = pd.DataFrame(data).loc[(lambda _df: _df.chosen != _df.rejected)]
+    # dpo_dataset.to_csv("data/dpo_dataset.csv", index = False, encoding = "utf-8-sig")
