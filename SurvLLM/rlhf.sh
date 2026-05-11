@@ -1,7 +1,7 @@
 ## 여기 있는거 한번에 다 안돼요. 성능상 한번에 해도 안되고.
 ## 그리고 실행할 때에는 &&가 아닌 &를 붙여야 합니다. 여긴 그냥 순차적으로 된다는 가정하에 작성했어요.
 
-nohup python csv_to_json_dataset.py --target="data/data_sample1_for_SFT_20260221.csv"\
+nohup python csv_to_json_dataset.py --target="data/data_sample1_for_SFT_20260205.csv"\
                                     --encoding="utf-8"\
                                     --system="data/system_prompt.txt" &&
 
@@ -12,7 +12,7 @@ nohup python SFT.py --config config/SFT_config_v1.2.0.yaml > logs/sft_log_v1.2.0
 # SFT.py --config config/SFT_config_multi_GPU.yaml > sft_test.log &
 
 ## generated_data for DPO를 생성
-nohup python csv_to_json_dataset.py --target="data/gen_data_for_dpo_20260221.csv"\
+nohup python csv_to_json_dataset.py --target="data/dpo_prompt_data.csv"\
                                     --encoding="utf-8"\
                                     --system="data/system_prompt.txt" &
 
@@ -23,7 +23,7 @@ nohup python gen_llama_nf4.py &&
 ## !!!어댑터 저장 폴더에는 무조건 "sft"라는 키워드를 넣어주세요, 그래야 인식합니다!!!
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
                                --adapter_path="adapter/Zip-Llama-sft-v1.2.0"\
-                               --inference_data="data/gen_data_for_dpo_20260221.json"\
+                               --inference_data="data/dpo_prompt_data.json"\
                                --output_dir="data/generated_data_v1.2.0.csv"\
                                --gen_nums=5\
                                --sampling=True\
@@ -35,7 +35,7 @@ nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instru
 ## SFT 완료 모델 추론 결과를 LLM으로 선호도 레이블링
 nohup python preference_AIF.py --model_name="Qwen/Qwen3-30B-A3B"\
                                --preference_name="data/generated_data_v1.2.0.csv"\
-                               --discharge_name="data/gen_data_for_dpo_20260221.csv" &
+                               --discharge_name="data/dpo_prompt_data.csv" &
 
 ## SFT에서 온전한 모델을 픽스하고, 데이터셋이 준비되었을 때
 nohup python csv_to_json_dataset.py --target="data/data_sample_max_for_DPO_20260205.csv"\
@@ -56,7 +56,7 @@ nohup python csv_to_json_dataset.py --target="data/inference_data.csv"\
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
                                --adapter_path="adapter/Zip-Llama-aligned-v1.1.1"\
                                --inference_data="data/inference_data.json"\
-                               --output_dir="data/inference_all.csv"\
+                               --output_dir="inference/inference_all.csv"\
                                --sampling=True\
                                --repetition_penalty=1.0\
                                --gpu_memory_util=0.9\
