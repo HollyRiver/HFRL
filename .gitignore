@@ -1,6 +1,7 @@
 *.json
 *.safetensors
 **/base_model
+**/inference
 **/results
 **/data
 **/logs
