@@ -1,3 +1,6 @@
+# nohup python preference_AIF.py --preference_name="data/generated_data_v1.1.2.csv" \
+#                                --discharge_name="data/dpo_prompt_data.csv" &
+
 ## 최신 vllm 버전 및 리눅스 24.04 이상 권장
 from vllm import LLM, SamplingParams
 from vllm.sampling_params import StructuredOutputsParams
