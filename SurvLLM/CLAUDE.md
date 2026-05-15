@@ -23,6 +23,7 @@ python csv_to_json_dataset.py --target=data/<file>.csv --encoding=utf-8 --system
 ```
 
 ### Training (single GPU)
+Config and Log versions are just specify example.
 ```bash
 nohup python SFT.py --config config/SFT_config_v1.2.0.yaml   > logs/sft_log_v1.2.0.txt   &
 nohup python RM.py  --config config/RM_config_v1.1.2.7.yaml  > logs/rm_log_v1.1.2.7.txt  &
@@ -120,4 +121,4 @@ After `csv_to_json_dataset.py`, training JSON files are conversational (`message
 - **Sequence lengths are large** (`max_length: 16384`, sometimes 32k for vLLM). Per the README, expect ≥100GB VRAM + ≥200GB system RAM for the documented config.
 - **flash-attention-2 is required** (`attn_implementation="flash_attention_2"`). Ubuntu 20.04 needs a GLibc bump; 22.04+ recommended.
 - **Adapter folder naming matters** — see "Adapter directory convention" above. Renaming an SFT adapter to drop `sft` will silently route inference to a non-existent `policy/` subdir.
-- **`preference_AIF.py` returns strict single-line JSON** (`{"1": rank, ..., "5": rank}`) via vLLM `StructuredOutputsParams`. Rows whose labels do not satisfy `{1..5}` with min=1 and max=5 are dropped from the DPO pairs.
+- **`preference_AIF.py` returns strict single-line JSON** (`{"1": rank, ..., "5": rank}`) via vLLM `StructuredOutputsParams`. Subject_ids whose 5 generations are all identical are filtered out before inference (no preference signal possible). After labeling, rows are dropped when the label is not a dict over `{"1".."5"}`, any value falls outside 1–5, or all 5 values are equal. With valid labels, the lowest score (best) becomes `chosen` and the highest (worst) becomes `rejected`; ties resolve to the earliest position.

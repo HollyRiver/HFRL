@@ -82,10 +82,16 @@ if __name__ == "__main__":
                                             .reset_index()
     df_gen = df_gen.assign(gen_num = [(i%5)+1 for i in range(df_gen.shape[0])])
     df_wide = df_gen.pivot(index = "subject_id", columns = "gen_num", values = "generated_text").reset_index()
+
+    ## 5개 생성문이 모두 동일한 subject_id는 LLM 평가 자체를 건너뜀 (선호도 산출 불가)
+    gen_cols = [1, 2, 3, 4, 5]
+    non_trivial_ids = df_wide.loc[df_wide[gen_cols].nunique(axis = 1) > 1, "subject_id"]
+    summarized_text = summarized_text.loc[summarized_text["subject_id"].isin(non_trivial_ids)].reset_index(drop = True)
+
     full_text = pd.merge(summarized_text, df_discharge[["subject_id", "text"]]).assign(system = lambda _df: _df.text.map(build_system_content)).drop(["text"], axis = 1)
 
     ds = Dataset.from_pandas(full_text)
-    columns_to_remove = [f for f in list(ds.features) if f not in "subject_id"]
+    # columns_to_remove = [f for f in list(ds.features) if f not in "subject_id"] ## 이거 왜 넣었음? 나중에 결과물 확인해보고 제거하든 반영하든...
 
     ds = ds.map(
         lambda sample:
@@ -129,21 +135,35 @@ if __name__ == "__main__":
     data = []
 
     for id, label in df.itertuples(index = False):
-        if set(label.keys()) == {"1", "2", "3", "4", "5"} and max(label.values()) == 5 and min(label.values()) == 1:
-            ## 순위의 중복이 있을 경우 제일 먼저 것만 선택
-            max_idx = np.argmax(list(label)) + 1
-            min_idx = np.argmin(list(label)) + 1
-        else:
+        ## JSON 파싱 실패(label=NA) 또는 dict가 아닌 경우 스킵
+        if not isinstance(label, dict):
             continue
+        if set(label.keys()) != {"1", "2", "3", "4", "5"}:
+            continue
+
+        ## 키 순서를 명시적으로 고정한 뒤 값 기준으로 best/worst 위치를 찾는다.
+        ## 점수 1 = 가장 우수(chosen), 5 = 가장 열등(rejected)
+        values = np.array([label[k] for k in ["1", "2", "3", "4", "5"]])
+
+        ## 허용 범위(1~5)를 벗어난 점수는 제외
+        if values.min() < 1 or values.max() > 5:
+            continue
+        ## 모든 값이 동일하면 선호 비교가 불가능하므로 스킵 (예: {3,3,3,3,3})
+        if values.min() == values.max():
+            continue
+
+        ## 순위 동률이면 argmin/argmax는 가장 앞 위치를 반환
+        best_idx = int(np.argmin(values)) + 1
+        worst_idx = int(np.argmax(values)) + 1
 
         row = {
             "subject_id": id,
             "text": df_discharge.loc[df_discharge.subject_id == id, "text"].item(),
-            "chosen": df_wide.loc[df_wide.subject_id == id, min_idx].item(),
-            "rejected": df_wide.loc[df_wide.subject_id == id, max_idx].item()
+            "chosen": df_wide.loc[df_wide.subject_id == id, best_idx].item(),
+            "rejected": df_wide.loc[df_wide.subject_id == id, worst_idx].item()
         }
 
         data.append(row)
 
     dpo_dataset = pd.DataFrame(data).loc[(lambda _df: _df.chosen != _df.rejected)]
-    # dpo_dataset.to_csv("data/dpo_dataset.csv", index = False, encoding = "utf-8-sig")
+    dpo_dataset.to_csv("data/dpo_dataset.csv", index = False, encoding = "utf-8-sig")
