@@ -1,5 +1,5 @@
 # python dropna.py --inference SFT_v1.1.2.csv\
-#                  --discharge data_all_20260205_수정01.csv\
+#                  --discharge inference_data.csv\
 #                  --save-path ../inference_dataset &
 
 import argparse
