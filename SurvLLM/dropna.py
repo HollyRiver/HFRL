@@ -1,11 +1,13 @@
+## exclude는 리스트 값을 넣을 수 있음: --exclude Plt Hct
 # python dropna.py --inference SFT_v1.1.2.csv\
-#                  --discharge inference_data.csv\
-#                  --save-path ../inference_dataset &
+#                  --discharge data_all_20260205.csv\
+#                  --save-path ../inference_dataset\
+#                  --exclude Plt &
 
 import argparse
 import re
 from pathlib import Path
-from typing import Optional
+from typing import Iterable, Optional
 
 import pandas as pd
 
@@ -77,6 +79,28 @@ def parse_row(text: str) -> dict:
 
 # ── Report helpers ─────────────────────────────────────────────────────
 
+def normalize_exclude(exclude: Optional[Iterable[str]]) -> set[str]:
+    excluded = {v.strip().lower() for v in (exclude or []) if v and v.strip()}
+    unknown = excluded - set(CLINICAL_VARS)
+    if unknown:
+        raise ValueError(
+            f"Unknown covariates in --exclude: {sorted(unknown)}. Allowed: {CLINICAL_VARS}"
+        )
+    return excluded
+
+
+def compute_nafl(df: pd.DataFrame, excluded: set[str]) -> pd.Series:
+    check_cols = [c for c in df.columns if c not in excluded]
+    return df[check_cols].isna().any(axis=1).map({True: "Y", False: "N"})
+
+
+def build_out_name(inference_name: str, excluded: set[str]) -> str:
+    p = Path(inference_name)
+    if not excluded:
+        return f"dataset_n_{p.name}"
+    return f"dataset_n_{p.stem}_excl_{'_'.join(sorted(excluded))}{p.suffix}"
+
+
 def print_na_summary(sampling: pd.DataFrame) -> None:
     na_cols = ["sex"] + CLINICAL_VARS
     summary = pd.DataFrame({
@@ -119,6 +143,16 @@ def parse_args() -> argparse.Namespace:
         metavar="DIR",
         help="directory containing inference CSVs and where output is written (default: ../inference_dataset)",
     )
+    parser.add_argument(
+        "-e", "--exclude",
+        nargs="*",
+        default=None,
+        metavar="VAR",
+        help=(
+            "covariates to exclude from NA filtering (case-insensitive, e.g. --exclude Plt Hct); "
+            "rows with NaN in these columns are still kept as complete cases (default: None)"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -152,12 +186,13 @@ def main() -> None:
     # 0 → NaN (clinically impossible values)
     sampling[CLINICAL_VARS] = sampling[CLINICAL_VARS].replace(0, float("nan"))
 
-    # Row-level completeness flag
-    sampling["nafl"] = sampling.isna().any(axis=1).map({True: "Y", False: "N"})
+    # Row-level completeness flag (skips covariates listed in --exclude)
+    excluded = normalize_exclude(args.exclude)
+    sampling["nafl"] = compute_nafl(sampling, excluded)
 
     # Save complete cases
     sampling_n = sampling[sampling["nafl"] == "N"].copy()
-    out_path = save_path / f"dataset_n_{inference_name}"
+    out_path = save_path / build_out_name(inference_name, excluded)
     sampling_n.to_csv(out_path, index=False, encoding="utf-8")
     print(f"Complete cases (nafl == N): {len(sampling_n)}")
     print(f"Saved → {out_path}")
