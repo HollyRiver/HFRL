@@ -122,7 +122,7 @@ if __name__ == "__main__":
         train_ds = train_ds.map(remove_columns = columns_to_remove, batched = False)
         train_ds = train_ds.train_test_split(test_size = 0.1, seed = 42)
 
-        train_ds["train"].to_json(f"data/dpo_train_dataset.json{args.name_tag}", orient = "records")
+        train_ds["train"].to_json(f"data/dpo_train_dataset{args.name_tag}.json", orient = "records")
         train_ds["test"].to_json(f"data/dpo_test_dataset{args.name_tag}.json", orient = "records")
 
         test_ds = train_ds["test"]
