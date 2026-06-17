@@ -14394,3 +14394,494 @@
 2026-04-02 04:13:16 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
 2026-04-02 04:13:17 INFO file stream finish called
 2026-04-02 04:13:19 INFO file stream finish is done
+2026-06-16 16:16:17 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-73eqwd2h.wandb
+2026-06-16 16:16:17 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-06-16 16:16:17 INFO run started: 73eqwd2h with start time 1781610456.63203
+2026-06-16 16:16:18 INFO saving file wandb-metadata.json with policy now
+2026-06-16 16:16:18 INFO saving file wandb-metadata.json with policy now
+2026-06-16 16:16:18 INFO saving file requirements.txt with policy now
+2026-06-16 16:16:18 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:18 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:18 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-06-16 16:16:19 INFO Uploaded file /tmp/tmppov0_8kswandb/998gwgs4-wandb-metadata.json
+2026-06-16 16:16:19 INFO Uploaded file /tmp/tmppov0_8kswandb/tss50j4b-requirements.txt
+2026-06-16 16:16:19 ERROR upload_file exception for url='https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/73eqwd2h/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T161619Z&X-Goog-Expires=86399&X-Goog-Signature=0e015e522d2a344372c66f50ab91dae4c42e90f414c3df5eedc4f4addcb96b9bd139617c8f5310a065c9906f8f81c6c1d96716bb2e7267fcf7905238b72c7f1f22c4f0709b48b60bc8d492f490f8c32d4bd7042c674529e4bb5e1e8be18604bee08d38200287ad4363a6e1141f5ed9920ca7de61a8bad6cf273ad9cf2780a5312afc30f9404da2a9405cad3bcba20ef83004ef05475aebd8ec73f51342fd9e63b2e0280a033391d584a4820c97659b20cea198f915d5366978dcad5e004d03750ffd88b69e152d0511fd0bb28ab936926305010fea29e16b0bb33a4801358c2c950cfb0c243ce67b845ea8e0c790f16627c272345fb3cce89c0afe88e8278de2&X-Goog-SignedHeaders=host&X-User=hollyriver'
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/73eqwd2h/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T161619Z&X-Goog-Expires=86399&X-Goog-Signature=0e015e522d2a344372c66f50ab91dae4c42e90f414c3df5eedc4f4addcb96b9bd139617c8f5310a065c9906f8f81c6c1d96716bb2e7267fcf7905238b72c7f1f22c4f0709b48b60bc8d492f490f8c32d4bd7042c674529e4bb5e1e8be18604bee08d38200287ad4363a6e1141f5ed9920ca7de61a8bad6cf273ad9cf2780a5312afc30f9404da2a9405cad3bcba20ef83004ef05475aebd8ec73f51342fd9e63b2e0280a033391d584a4820c97659b20cea198f915d5366978dcad5e004d03750ffd88b69e152d0511fd0bb28ab936926305010fea29e16b0bb33a4801358c2c950cfb0c243ce67b845ea8e0c790f16627c272345fb3cce89c0afe88e8278de2&X-Goog-SignedHeaders=host&X-User=hollyriver
+2026-06-16 16:16:19 ERROR Failed to upload file: /tmp/tmppov0_8kswandb/5tzdh5q5-wandb-metadata.json
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 319, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 157, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3068, in upload_file
+    get_sentry().reraise(e)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/analytics/sentry.py", line 190, in reraise
+    raise exc.with_traceback(tb)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/73eqwd2h/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T161619Z&X-Goog-Expires=86399&X-Goog-Signature=0e015e522d2a344372c66f50ab91dae4c42e90f414c3df5eedc4f4addcb96b9bd139617c8f5310a065c9906f8f81c6c1d96716bb2e7267fcf7905238b72c7f1f22c4f0709b48b60bc8d492f490f8c32d4bd7042c674529e4bb5e1e8be18604bee08d38200287ad4363a6e1141f5ed9920ca7de61a8bad6cf273ad9cf2780a5312afc30f9404da2a9405cad3bcba20ef83004ef05475aebd8ec73f51342fd9e63b2e0280a033391d584a4820c97659b20cea198f915d5366978dcad5e004d03750ffd88b69e152d0511fd0bb28ab936926305010fea29e16b0bb33a4801358c2c950cfb0c243ce67b845ea8e0c790f16627c272345fb3cce89c0afe88e8278de2&X-Goog-SignedHeaders=host&X-User=hollyriver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 125, in push
+    self._api.upload_file_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        upload_url,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        extra_headers=extra_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 45, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 403: <?xml version='1.0' encoding='UTF-8'?><Error><Code>AccessDenied</Code><Message>Access denied.</Message><Details>gorilla-files-url-signer@wandb-production.iam.gserviceaccount.com does not have storage.objects.delete access to the Google Cloud Storage object.</Details></Error>
+2026-06-16 16:16:19 ERROR Failed to upload file: /tmp/tmppov0_8kswandb/5tzdh5q5-wandb-metadata.json
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 319, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 157, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3068, in upload_file
+    get_sentry().reraise(e)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/analytics/sentry.py", line 190, in reraise
+    raise exc.with_traceback(tb)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/73eqwd2h/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T161619Z&X-Goog-Expires=86399&X-Goog-Signature=0e015e522d2a344372c66f50ab91dae4c42e90f414c3df5eedc4f4addcb96b9bd139617c8f5310a065c9906f8f81c6c1d96716bb2e7267fcf7905238b72c7f1f22c4f0709b48b60bc8d492f490f8c32d4bd7042c674529e4bb5e1e8be18604bee08d38200287ad4363a6e1141f5ed9920ca7de61a8bad6cf273ad9cf2780a5312afc30f9404da2a9405cad3bcba20ef83004ef05475aebd8ec73f51342fd9e63b2e0280a033391d584a4820c97659b20cea198f915d5366978dcad5e004d03750ffd88b69e152d0511fd0bb28ab936926305010fea29e16b0bb33a4801358c2c950cfb0c243ce67b845ea8e0c790f16627c272345fb3cce89c0afe88e8278de2&X-Goog-SignedHeaders=host&X-User=hollyriver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/step_upload.py", line 220, in run_and_notify
+    self._do_upload(event)
+    ~~~~~~~~~~~~~~~^^^^^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/step_upload.py", line 240, in _do_upload
+    job.run()
+    ~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 57, in run
+    self.push()
+    ~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 125, in push
+    self._api.upload_file_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        upload_url,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        extra_headers=extra_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 45, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 403: <?xml version='1.0' encoding='UTF-8'?><Error><Code>AccessDenied</Code><Message>Access denied.</Message><Details>gorilla-files-url-signer@wandb-production.iam.gserviceaccount.com does not have storage.objects.delete access to the Google Cloud Storage object.</Details></Error>
+2026-06-16 16:16:19 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:20 WARNING Seen metric with glob (shouldn't happen)
+2026-06-16 16:16:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:21 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:23 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:24 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:25 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:25 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:25 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:25 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:25 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:26 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:26 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:26 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 16:16:27 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:28 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:28 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:29 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:30 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:30 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO saving file wandb-summary.json with policy end
+2026-06-16 16:16:31 INFO shutting down sender
+2026-06-16 16:16:31 WARNING Terminal output too large. Logging without processing.
+2026-06-16 16:16:31 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 16:16:31 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:31 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:32 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:33 INFO shutting down directory watcher
+2026-06-16 16:16:34 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:34 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-06-16 16:16:34 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-06-16 16:16:34 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-06-16 16:16:34 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-06-16 16:16:34 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-06-16 16:16:34 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-06-16 16:16:34 INFO shutting down file pusher
+2026-06-16 16:16:34 INFO waiting for file pusher
+2026-06-16 16:16:35 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 16:16:35 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 16:16:35 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 16:16:36 INFO file stream finish called
+2026-06-16 16:16:38 INFO file stream finish is done
+2026-06-16 19:25:02 INFO open for scan: /root/HFRL/SurvLLM/wandb/latest-run/run-1abh1owv.wandb
+2026-06-16 19:25:03 INFO watching files in: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-06-16 19:25:03 INFO run started: 1abh1owv with start time 1781626605.393792
+2026-06-16 19:25:03 INFO saving file wandb-metadata.json with policy now
+2026-06-16 19:25:03 INFO saving file wandb-metadata.json with policy now
+2026-06-16 19:25:03 INFO saving file requirements.txt with policy now
+2026-06-16 19:25:04 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:04 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json
+2026-06-16 19:25:04 INFO Uploaded file /tmp/tmpqdjrogq9wandb/6fhoyvfl-wandb-metadata.json
+2026-06-16 19:25:04 INFO Uploaded file /tmp/tmpqdjrogq9wandb/3drfa2q9-requirements.txt
+2026-06-16 19:25:04 ERROR upload_file exception for url='https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/1abh1owv/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T192504Z&X-Goog-Expires=86399&X-Goog-Signature=9793409746e28bf0054bd37f1b2f7d40de4a9cbd8d42cb831d9e956d370d9f017f2290959f0aacdc6addc2d203fd5c4142125dc50d14778be3406ecd1dfc4e6a6c2689ab95fa9fb7fa2dd2adbc1526d87c7ff105dd7e8f110af5fb7450e29ddbba561489733238c1f2912e76b92f9903364bbfa911209de526a46adab3dbce759401a0e5681ccd15abea6ac310d46e4768b805152fe13257455c007ac56e7a9054158503232e0ce0425d8ea6dd69ffb0a47e8d971df3ff032ab814778c14a276e4d52150d5522afcb99aaf0c19a78a8a9104f40d197d2c7ee0b446c33781ebefa080bf8868e5610a3160b86f6f7421c827c2ebe2575113108c9dc608f4a37b85&X-Goog-SignedHeaders=host&X-User=hollyriver'
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/1abh1owv/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T192504Z&X-Goog-Expires=86399&X-Goog-Signature=9793409746e28bf0054bd37f1b2f7d40de4a9cbd8d42cb831d9e956d370d9f017f2290959f0aacdc6addc2d203fd5c4142125dc50d14778be3406ecd1dfc4e6a6c2689ab95fa9fb7fa2dd2adbc1526d87c7ff105dd7e8f110af5fb7450e29ddbba561489733238c1f2912e76b92f9903364bbfa911209de526a46adab3dbce759401a0e5681ccd15abea6ac310d46e4768b805152fe13257455c007ac56e7a9054158503232e0ce0425d8ea6dd69ffb0a47e8d971df3ff032ab814778c14a276e4d52150d5522afcb99aaf0c19a78a8a9104f40d197d2c7ee0b446c33781ebefa080bf8868e5610a3160b86f6f7421c827c2ebe2575113108c9dc608f4a37b85&X-Goog-SignedHeaders=host&X-User=hollyriver
+2026-06-16 19:25:04 ERROR Failed to upload file: /tmp/tmpqdjrogq9wandb/bpv4a6ot-wandb-metadata.json
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 319, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 157, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3068, in upload_file
+    get_sentry().reraise(e)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/analytics/sentry.py", line 190, in reraise
+    raise exc.with_traceback(tb)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/1abh1owv/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T192504Z&X-Goog-Expires=86399&X-Goog-Signature=9793409746e28bf0054bd37f1b2f7d40de4a9cbd8d42cb831d9e956d370d9f017f2290959f0aacdc6addc2d203fd5c4142125dc50d14778be3406ecd1dfc4e6a6c2689ab95fa9fb7fa2dd2adbc1526d87c7ff105dd7e8f110af5fb7450e29ddbba561489733238c1f2912e76b92f9903364bbfa911209de526a46adab3dbce759401a0e5681ccd15abea6ac310d46e4768b805152fe13257455c007ac56e7a9054158503232e0ce0425d8ea6dd69ffb0a47e8d971df3ff032ab814778c14a276e4d52150d5522afcb99aaf0c19a78a8a9104f40d197d2c7ee0b446c33781ebefa080bf8868e5610a3160b86f6f7421c827c2ebe2575113108c9dc608f4a37b85&X-Goog-SignedHeaders=host&X-User=hollyriver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 125, in push
+    self._api.upload_file_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        upload_url,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        extra_headers=extra_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 45, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 403: <?xml version='1.0' encoding='UTF-8'?><Error><Code>AccessDenied</Code><Message>Access denied.</Message><Details>gorilla-files-url-signer@wandb-production.iam.gserviceaccount.com does not have storage.objects.delete access to the Google Cloud Storage object.</Details></Error>
+2026-06-16 19:25:04 ERROR Failed to upload file: /tmp/tmpqdjrogq9wandb/bpv4a6ot-wandb-metadata.json
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 319, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 157, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3068, in upload_file
+    get_sentry().reraise(e)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/analytics/sentry.py", line 190, in reraise
+    raise exc.with_traceback(tb)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3043, in upload_file
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://storage.googleapis.com/wandb-production.appspot.com/hollyriver-jbnu/RLHF/1abh1owv/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260616%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260616T192504Z&X-Goog-Expires=86399&X-Goog-Signature=9793409746e28bf0054bd37f1b2f7d40de4a9cbd8d42cb831d9e956d370d9f017f2290959f0aacdc6addc2d203fd5c4142125dc50d14778be3406ecd1dfc4e6a6c2689ab95fa9fb7fa2dd2adbc1526d87c7ff105dd7e8f110af5fb7450e29ddbba561489733238c1f2912e76b92f9903364bbfa911209de526a46adab3dbce759401a0e5681ccd15abea6ac310d46e4768b805152fe13257455c007ac56e7a9054158503232e0ce0425d8ea6dd69ffb0a47e8d971df3ff032ab814778c14a276e4d52150d5522afcb99aaf0c19a78a8a9104f40d197d2c7ee0b446c33781ebefa080bf8868e5610a3160b86f6f7421c827c2ebe2575113108c9dc608f4a37b85&X-Goog-SignedHeaders=host&X-User=hollyriver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/LLM/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/step_upload.py", line 220, in run_and_notify
+    self._do_upload(event)
+    ~~~~~~~~~~~~~~~^^^^^^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/step_upload.py", line 240, in _do_upload
+    job.run()
+    ~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 57, in run
+    self.push()
+    ~~~~~~~~~^^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/filesync/upload_job.py", line 125, in push
+    self._api.upload_file_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        upload_url,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        extra_headers=extra_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/anaconda3/envs/LLM/lib/python3.13/site-packages/wandb/apis/normalize.py", line 45, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 403: <?xml version='1.0' encoding='UTF-8'?><Error><Code>AccessDenied</Code><Message>Access denied.</Message><Details>gorilla-files-url-signer@wandb-production.iam.gserviceaccount.com does not have storage.objects.delete access to the Google Cloud Storage object.</Details></Error>
+2026-06-16 19:25:05 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:05 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:05 WARNING Seen metric with glob (shouldn't happen)
+2026-06-16 19:25:06 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:07 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:07 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:08 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:09 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:09 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:10 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:11 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:11 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:11 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:11 INFO file/dir created: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 19:25:12 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:13 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:13 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:14 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:15 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO saving file wandb-summary.json with policy end
+2026-06-16 19:25:15 INFO shutting down sender
+2026-06-16 19:25:15 WARNING Terminal output too large. Logging without processing.
+2026-06-16 19:25:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 19:25:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:17 INFO shutting down directory watcher
+2026-06-16 19:25:17 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:17 INFO scan: /root/HFRL/SurvLLM/wandb/latest-run/files
+2026-06-16 19:25:17 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/output.log output.log
+2026-06-16 19:25:17 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/requirements.txt requirements.txt
+2026-06-16 19:25:17 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-metadata.json wandb-metadata.json
+2026-06-16 19:25:17 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml config.yaml
+2026-06-16 19:25:17 INFO scan save: /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json wandb-summary.json
+2026-06-16 19:25:17 INFO shutting down file pusher
+2026-06-16 19:25:17 INFO waiting for file pusher
+2026-06-16 19:25:17 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/wandb-summary.json
+2026-06-16 19:25:17 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
+2026-06-16 19:25:18 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/output.log
+2026-06-16 19:25:18 INFO file stream finish called
+2026-06-16 19:25:20 INFO file stream finish is done

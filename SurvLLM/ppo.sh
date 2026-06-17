@@ -1,5 +1,5 @@
 ## 선호도 데이터셋이 준비되었을 때 사용
-nohup python RM.py --config config/RM_config_v1.1.2.3.yaml > logs/rm_log_v1.1.2.3.txt &
+nohup python RM.py --config config/RM_config_v1.1.2.7H.yaml > logs/rm_log_v1.1.2.7H.txt &
 
 ## ppo 데이터셋 준비
 nohup python csv_to_json_dataset.py --target="data/ppo_dataset.csv"\
@@ -8,7 +8,7 @@ nohup python csv_to_json_dataset.py --target="data/ppo_dataset.csv"\
                                     --ppo=true &
 
 ## 단순 입력 프롬프트만 존재하는 데이터 사용
-nohup python PPO.py --config config/PPO_config_v1.1.2.10.yaml > logs/ppo_log_v1.1.2.10.txt &
+nohup python PPO.py --config config/PPO_config_v1.1.2.9H.yaml > logs/ppo_log_v1.1.2.9H.txt &
 
 ## PPO에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트가 준비되었을 때
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\

@@ -9,9 +9,9 @@ name_tag: "_HF"                                       ## AIF -> _AIF / HF -> _HF
 ## DPOConfig
 max_length: 16384                                     ## 모델이 수용 가능한 최대 시퀀스 길이
 max_prompt_length: 15360                              ## 최대 프롬프트 시퀀스 길이 (1024 뺐음)
-output_dir: "./results/dpo-v1.1.1"                    ## 튜닝된 모델 저장 위치
+output_dir: "./results/dpo-v1.1.2.1H"                 ## 튜닝된 모델 저장 위치
 report_to: "wandb"                                    ## 튜닝 로그 리포트 (토큰 등록 필요)
-run_name: "dpo-v1.1.1"                                ## wandb 전달 이름
+run_name: "dpo-v1.1.2.1H"                             ## wandb 전달 이름
 learning_rate: 2e-7                                   ## update matrix 학습률. 1e-7을 표준으로 증가시키며 확인
 lr_scheduler_type: "cosine_with_min_lr"               ## 코사인 스케줄러 사용 + 최소 학습률 지정 (최대의 10%)
 lr_scheduler_kwargs:
