@@ -55,9 +55,9 @@ nohup python csv_to_json_dataset.py --target="data/inference_data.csv"\
 
 ## DPO에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트가 준비되었을 때
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
-                               --adapter_path="adapter/DPO-Llama-v1.1.2.1H"\
+                               --adapter_path="adapter/DPO-Llama-v1.1.2.2H"\
                                --inference_data="data/inference_data.json"\
-                               --output_dir="inference/inference_DPO_RLHF_v1.1.2.1.csv"\
+                               --output_dir="inference/inference_DPO_RLHF_v1.1.2.2.csv"\
                                --sampling=True\
                                --repetition_penalty=1.0\
                                --gpu_memory_util=0.9\
