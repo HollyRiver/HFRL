@@ -1,0 +1,1 @@
+nohup python --preference_name generated_data_v1.1.2.csv --output_name AIF_Llama_Preference_v1.1.2.csv &
