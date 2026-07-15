@@ -1,6 +1,6 @@
 # nohup python preference_AIF.py --model_name="Qwen/Qwen3-30B-A3B" \
-#                                --preference_name="data/generated_data_v1.2.0.csv" \
-#                                --discharge_name="data/dpo_prompt_data.csv" &
+#                                --preference_name="data/generated_data_v1.1.2.csv" \
+#                                --output_name="data/Preference_AIF_Llama_v1.1.2.csv" &
 
 """
 vLLM 판정 모델(AI Feedback)로 5개 생성문의 상대 순위를 매겨 DPO 선호도 데이터셋을 생성하는 코드
@@ -24,12 +24,14 @@ import numpy as np
 import torch
 import json
 import re
+import os
 import argparse
 
 N_GENERATIONS = 5                       ## subject_id 당 생성문 개수
 GEN_COLS = list(range(1, N_GENERATIONS + 1))
 MAX_MODEL_LEN = 32768
-MAX_NEW_TOKENS = 512                    ## 추론(reasoning) 토큰 + 순위 JSON
+MAX_NEW_TOKENS = 8192                   ## 추론(reasoning) 토큰 + 순위 JSON. 시드 42에서 truncate 없음을 확인
+BASE_SEED = 42                          ## 재현성 고정. 재시도 회차마다 +1하여 다른 추론 경로 탐색
 
 ## 유저 프롬프트 템플릿. 변경할 일이 없으므로 별도 파일 대신 코드에 내장
 USER_PROMPT_TEMPLATE = """Below is the ORIGINAL discharge summary of a patient. This is the ground-truth clinical record.
@@ -82,7 +84,7 @@ def parse_rank_label(json_text: str) -> dict[str, int] | None:
     ## 허용 범위(1~5)를 벗어난 순위는 제외
     if min(values) < 1 or max(values) > N_GENERATIONS:
         return None
-    ## 모든 순위가 동일하면 선호 비교가 불가능하므로 스킵 (예: {3,3,3,3,3})
+    ## 모든 순위가 동일하면 선호 비교가 불가능하므로 스킵 (예: {3,3,3,3,3}). 부분 동률은 허용
     if len(set(values)) == 1:
         return None
 
@@ -111,6 +113,11 @@ def extract_rank_label(raw_text: str) -> dict[str, int] | None:
     return None
 
 
+def resolve_data_path(name: str) -> str:
+    """디렉토리 없이 파일 이름만 주어지면 data/ 폴더 기준으로 해석한다."""
+    return name if os.path.dirname(name) else os.path.join("data", name)
+
+
 def build_wide_generations(df_gen: pd.DataFrame) -> pd.DataFrame:
     """long format 생성 데이터를 subject_id 당 생성문 5개를 열(1~5)로 갖는 wide format으로 변환."""
     ## 행 순서가 subject_id 당 정확히 5행 단위라는 가정 대신 groupby로 안전하게 생성 번호 부여
@@ -130,26 +137,33 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type = str, default = "Qwen/Qwen3-30B-A3B", help = "Inference Model")
     parser.add_argument("--preference_name", type = str, default = None, help = "Preference Dataset Name (Long Format)")
-    parser.add_argument("--discharge_name", type = str, default = "dpo_prompt_data.csv", help = "동일한 인덱스를 가지는 퇴원요약지 데이터셋")
+    parser.add_argument("--discharge_name", type = str, default = "data/dpo_prompt_data.csv", help = "동일한 인덱스를 가지는 퇴원요약지 데이터셋")
     parser.add_argument("--system_prompt", type = str, default = "preference_system_prompt.txt", help = "평가 기준 시스템 프롬프트 txt 파일 위치")
     parser.add_argument("--output_name", type = str, default = None, help = "생성될 DPO 데이터셋 저장 위치")
+    parser.add_argument("--max_new_tokens", type = int, default = MAX_NEW_TOKENS, help = "추론(reasoning) 토큰 포함 최대 생성 길이")
+    parser.add_argument("--max_retries", type = int, default = 2, help = "실패(잘림/무효 JSON) 건 재샘플링 횟수. 회차마다 시드 +1, 생성 예산 2배 확장")
 
     args = parser.parse_args()
 
     if args.preference_name is None or args.output_name is None:
         parser.error("--preference_name과 --output_name은 필수 인자입니다.")
 
+    ## csv 인자에 파일 이름만 주어지면 data/ 폴더 기준으로 해석 (시스템 프롬프트는 저장소 루트)
+    preference_path = resolve_data_path(args.preference_name)
+    discharge_path = resolve_data_path(args.discharge_name)
+    output_path = resolve_data_path(args.output_name)
+
     ## ---------- 데이터 준비 (모델 로드 전에 수행하여 입력 문제 시 빠르게 실패) ----------
     with open(args.system_prompt, "r", encoding = "utf-8") as f:
         system_prompt = f.read().strip()
 
-    df_gen = pd.read_csv(args.preference_name)
-    df_discharge = pd.read_csv(args.discharge_name)
+    df_gen = pd.read_csv(preference_path)
+    df_discharge = pd.read_csv(discharge_path)
 
     if not {"subject_id", "generated_text"}.issubset(df_gen.columns):
-        raise ValueError(f"{args.preference_name}에 subject_id, generated_text 열이 필요합니다.")
+        raise ValueError(f"{preference_path}에 subject_id, generated_text 열이 필요합니다.")
     if not {"subject_id", "text"}.issubset(df_discharge.columns):
-        raise ValueError(f"{args.discharge_name}에 subject_id, text 열이 필요합니다.")
+        raise ValueError(f"{discharge_path}에 subject_id, text 열이 필요합니다.")
 
     ## 두 CSV의 subject_id dtype이 다르면(int64 vs object) merge가 조용히 빈 결과를 내므로 str로 통일
     df_gen = df_gen.assign(subject_id = df_gen["subject_id"].astype(str))
@@ -186,15 +200,16 @@ if __name__ == "__main__":
 
     ## 컨텍스트 길이 초과 프롬프트가 하나라도 있으면 vLLM 실행 전체가 실패하므로 사전에 제외
     prompt_lengths = [len(ids) for ids in tokenizer(prompts, add_special_tokens = False)["input_ids"]]
-    keep_mask = [(length + MAX_NEW_TOKENS) <= MAX_MODEL_LEN for length in prompt_lengths]
+    keep_mask = [(length + args.max_new_tokens) <= MAX_MODEL_LEN for length in prompt_lengths]
 
     if not all(keep_mask):
         dropped_ids = df_eval.loc[[not keep for keep in keep_mask], "subject_id"].tolist()
         print(f"[Warning] 컨텍스트 길이({MAX_MODEL_LEN}) 초과로 subject_id {len(dropped_ids)}건 제외: {dropped_ids[:10]} ...")
         df_eval = df_eval.loc[keep_mask].reset_index(drop = True)
         prompts = [prompt for prompt, keep in zip(prompts, keep_mask) if keep]
+        prompt_lengths = [length for length, keep in zip(prompt_lengths, keep_mask) if keep]
 
-    ## ---------- LLM 추론 ----------
+    ## ---------- LLM 추론 (실패 건은 시드를 바꾸고 예산을 늘려 재시도) ----------
     llm = LLM(
         model = args.model_name,
         dtype = torch.bfloat16,
@@ -203,31 +218,66 @@ if __name__ == "__main__":
         gpu_memory_utilization = 0.9
     )
 
-    ## 추론(reasoning)을 허용하기 위해 출력 형태 제한(structured outputs)을 두지 않음
-    sampling_params = SamplingParams(temperature = 0.0, max_tokens = MAX_NEW_TOKENS)
-
-    outputs = llm.generate(prompts, sampling_params)
-
-    ## ---------- 순위 파싱 및 DPO 데이터셋 구성 ----------
     subject_ids = df_eval["subject_id"].tolist()
     texts = df_eval["text"].tolist()
     gen_matrix = df_eval[GEN_COLS].to_numpy()
 
+    n_prompts = len(prompts)
+    labels: list[dict | None] = [None] * n_prompts
+    raw_records: list[dict] = [{} for _ in range(n_prompts)]
+    pending = list(range(n_prompts))
+
+    for attempt in range(args.max_retries + 1):
+        if len(pending) == 0:
+            break
+
+        ## 추론(reasoning)을 허용하기 위해 출력 형태 제한(structured outputs)을 두지 않음
+        ## 샘플링 값은 Qwen3 thinking 모드 권장값 (greedy는 반복 위험으로 비권장)
+        ## 재시도마다 시드 +1로 다른 추론 경로를 탐색하고, 생성 예산을 2배씩 확장 (컨텍스트 한도 내)
+        budget = args.max_new_tokens * (2 ** attempt)
+        batch_params = [
+            SamplingParams(
+                temperature = 0.6,
+                top_p = 0.95,
+                top_k = 20,
+                max_tokens = min(budget, MAX_MODEL_LEN - prompt_lengths[i]),
+                seed = BASE_SEED + attempt
+            )
+            for i in pending
+        ]
+
+        outputs = llm.generate([prompts[i] for i in pending], batch_params)
+
+        failed = []
+
+        for i, output in zip(pending, outputs):
+            completion = output.outputs[0]
+
+            ## 예산 도달로 잘린 출력(finish_reason != stop)은 순위를 신뢰할 수 없으므로 무효 처리
+            label = extract_rank_label(completion.text) if completion.finish_reason == "stop" else None
+            labels[i] = label
+            raw_records[i] = {
+                "subject_id": subject_ids[i],
+                "attempt": attempt + 1,
+                "finish_reason": completion.finish_reason,
+                "raw_output": completion.text
+            }
+
+            if label is None:
+                failed.append(i)
+
+        print(f"[Attempt {attempt + 1}/{args.max_retries + 1}] {len(pending)}건 중 성공 {len(pending) - len(failed)}건 / 실패 {len(failed)}건 (생성 예산 {budget} 토큰)")
+        pending = failed
+
+    ## ---------- 결과 저장 및 DPO 데이터셋 구성 ----------
+    ## 판정 모델 원 출력(subject별 마지막 시도 기준) 저장 — 사후 분석 및 프롬프트 튜닝용
+    raw_output_path = output_path.replace(".csv", "_raw.csv")
+    pd.DataFrame(raw_records).to_csv(raw_output_path, index = False, encoding = "utf-8-sig")
+
     data = []
-    n_invalid_label = 0
-    n_truncated = 0
 
-    for i, output in enumerate(outputs):
-        raw_text = output.outputs[0].text
-        label = extract_rank_label(raw_text)
-
+    for i, label in enumerate(labels):
         if label is None:
-            n_invalid_label += 1
-
-            ## 추론이 잘려 무효 처리된 건수는 별도 집계 (MAX_NEW_TOKENS 조정 판단용)
-            if "<think>" in raw_text and "</think>" not in raw_text:
-                n_truncated += 1
-
             continue
 
         ## 순위 1 = 가장 우수(chosen), 5 = 가장 열등(rejected)
@@ -247,11 +297,16 @@ if __name__ == "__main__":
             "rejected": rejected
         })
 
+    n_failed = len(pending)
+    n_truncated = sum(1 for i in pending if raw_records[i]["finish_reason"] != "stop")
+
+    print(f"\n평가 대상 {n_prompts}건 중 최종 실패 {n_failed}건(잘림 {n_truncated}건, 무효 JSON {n_failed - n_truncated}건), 동일 텍스트 쌍 {n_prompts - n_failed - len(data)}건 제외")
+    print(f"판정 모델 원 출력 저장: {raw_output_path}")
+
     if len(data) == 0:
-        raise SystemExit("[Error] 유효한 선호도 쌍이 생성되지 않았습니다. 판정 모델 출력을 확인하세요.")
+        raise SystemExit(f"[Error] 유효한 선호도 쌍이 생성되지 않았습니다. {raw_output_path}에서 판정 모델 출력을 확인하세요.")
 
     dpo_dataset = pd.DataFrame(data)
-    dpo_dataset.to_csv(args.output_name, index = False, encoding = "utf-8-sig")
+    dpo_dataset.to_csv(output_path, index = False, encoding = "utf-8-sig")
 
-    print(f"\n평가 대상 {len(df_eval)}건 중 유효하지 않은 라벨 {n_invalid_label}건(추론 잘림 {n_truncated}건 포함), 동일 텍스트 쌍 {len(df_eval) - n_invalid_label - len(data)}건 제외")
-    print(f"DPO 데이터셋 {len(dpo_dataset)}건 저장 완료: {args.output_name}")
+    print(f"DPO 데이터셋 {len(dpo_dataset)}건 저장 완료: {output_path}")
