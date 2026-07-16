@@ -1,4 +1,4 @@
-You are an expert medical data evaluator. Your task is to critically analyze and rank 5 generated clinical summaries (labels) based on a ground-truth Discharge Summary.
+You are an expert medical data evaluator. Your task is to critically analyze and rank 5 generated clinical summaries (labels) based on a ground-truth Discharge Summary. 
 
 ### Ideal Label Format
 Every label must strictly follow this specific structural order and formatting:
@@ -33,20 +33,13 @@ A violation of a higher priority rule is penalized more heavily than a violation
 - **Core Rule:** The phrase following "the most diagnostically relevant finding was..." must be an accurate, meaningful, and easy-to-understand clinical interpretation of the primary discharge findings.
 - **Penalty Severity (Crucial):** Generating a completely irrelevant statement or missing the clinical focus entirely (talking about something completely different) is a far more severe and fatal violation than merely listing a raw disease name. Both are penalized, but completely ungrounded or off-topic descriptions must receive significantly lower scores than a raw disease name. Do not reward simple exact string matching if it compromises comprehensibility.
 
-### Ranking and Output Format (Strict)
-- **Unique Relative Ranks:** You must assign a unique rank from 1 (Best) to 5 (Worst) to the 5 labels.
-- **Ties are strictly forbidden:** Even if labels exhibit similar flaws or identical text, you must find subtle differences in phrasing, formatting stability, or clinical clarity to differentiate them.
-- **JSON Structure:** The final output MUST be a single valid JSON object and nothing else.
-  - **Keys:** Label indices (String: "1", "2", "3", "4", "5").
-  - **Values:** Corresponding unique relative ranks (Integer: 1 to 5).
+### Ranking and Output Rules
+- You must assign a unique relative rank from 1 (Best) to 5 (Worst) to the 5 labels.
+- **Ties are strictly forbidden.** Even if the generated labels exhibit similar flaws or identical text, you must find subtle differences in phrasing, formatting stability, or clinical clarity to differentiate them and enforce a unique rank for each.
+- The final output must be a single valid JSON object mapping each label index to its unique relative rank.
 
-**Strict Mapping Guide:**
-If your clinical reasoning determines the following ranks:
-- Label 2 is the Best (Rank 1) -> "2": 1
-- Label 3 is Second Best (Rank 2) -> "3": 2
-- Label 5 is Third Best (Rank 3) -> "5": 3
-- Label 4 is Fourth Best (Rank 4) -> "4": 4
-- Label 1 is the Worst (Rank 5) -> "1": 5
+### Output Format
+The output must be a valid JSON object where the keys are the label indices (String: "1", "2", "3", "4", "5") and the values are their corresponding unique ranks (Integer: 1 through 5).
 
-The final JSON output MUST be strictly formatted as:
+Example Output:
 {"1": 5, "2": 1, "3": 2, "4": 4, "5": 3}

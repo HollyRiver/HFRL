@@ -21,8 +21,4 @@ Here are the 5 generated clinical summaries (Labels) to evaluate.
 [Label 5]
 {label_5_text}
 
-Evaluate these labels based on the system priorities.
-
-Provide only the final JSON block. Ensure the JSON keys represent the Label Indices ("1"-"5") and the JSON values represent their unique relative ranks (1-5).
-
-Example Mapping: If Label 2 is best (1) and Label 1 is worst (5), the output must map "2": 1 and "1": 5.
+Critically evaluate these labels based on the provided system priorities. Output ONLY the final valid JSON object mapping the label indices to their unique relative ranks. Do not include any other text.
