@@ -38,10 +38,10 @@ nohup python preference_AIF.py --model_name="Qwen/Qwen3-30B-A3B"\
                                --discharge_name="data/dpo_prompt_data.csv" &
 
 ## SFT에서 온전한 모델을 픽스하고, 데이터셋이 준비되었을 때
-nohup python csv_to_json_dataset.py --target="data/HF_Llama_Preference_v1.1.2.csv"\
+nohup python csv_to_json_dataset.py --target="data/Preference_AIF_Llama_v1.1.2.csv"\
                                     --encoding="utf-8"\
                                     --system="data/system_prompt.txt"\
-                                    --name_tag="_HF" &&
+                                    --name_tag="_AIF" &&
 
 nohup python DPO.py --config config/DPO_config_v1.1.2.2H.yaml > logs/dpo_log_v1.1.2.2H.txt &&
 ## Multi-GPU를 사용할 경우: Adapter Twice Load로 일단 되긴 하는데, 메모리 더 많이 먹음...

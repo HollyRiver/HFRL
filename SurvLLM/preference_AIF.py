@@ -29,6 +29,7 @@ import argparse
 
 N_GENERATIONS = 5                       ## subject_id 당 생성문 개수
 GEN_COLS = list(range(1, N_GENERATIONS + 1))
+LABEL_KEYS = [f"Label {i}" for i in GEN_COLS]   ## 판정 JSON의 키 (시스템 프롬프트의 출력 형식과 일치해야 함)
 MAX_MODEL_LEN = 32768
 MAX_NEW_TOKENS = 8192                   ## 추론(reasoning) 토큰 + 순위 JSON. 시드 42에서 truncate 없음을 확인
 BASE_SEED = 42                          ## 재현성 고정. 재시도 회차마다 +1하여 다른 추론 경로 탐색
@@ -73,7 +74,7 @@ def parse_rank_label(json_text: str) -> dict[str, int] | None:
     except json.JSONDecodeError:
         return None
 
-    if not isinstance(label, dict) or set(label.keys()) != {str(i) for i in GEN_COLS}:
+    if not isinstance(label, dict) or set(label.keys()) != set(LABEL_KEYS):
         return None
 
     values = list(label.values())
@@ -282,7 +283,7 @@ if __name__ == "__main__":
 
         ## 순위 1 = 가장 우수(chosen), 5 = 가장 열등(rejected)
         ## 순위 동률이면 argmin/argmax는 가장 앞 위치를 반환
-        ranks = [label[str(k)] for k in GEN_COLS]
+        ranks = [label[key] for key in LABEL_KEYS]
         chosen = gen_matrix[i][int(np.argmin(ranks))]
         rejected = gen_matrix[i][int(np.argmax(ranks))]
 

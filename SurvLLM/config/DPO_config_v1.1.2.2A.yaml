@@ -1,4 +1,4 @@
-## DPO v1.1.2.2(RLAIF): 글로벌 배치 크기 조정 (accumulation x8), 학습률/에폭 조정
+## DPO v1.1.2.2(RLAIF): 글로벌 배치 크기 조정 (accumulation x8), 학습률/에폭 조정, AIF 데이터셋 변경
 
 ## ScriptArguments
 model_name: "meta-llama/Llama-3.1-8B-Instruct"        ## base model

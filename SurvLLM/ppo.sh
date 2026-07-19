@@ -1,5 +1,5 @@
 ## 선호도 데이터셋이 준비되었을 때 사용
-nohup python RM.py --config config/RM_config_v1.1.2.7H.yaml > logs/rm_log_v1.1.2.7H.txt &
+nohup python RM.py --config config/RM_config_v1.1.2.8A.yaml > logs/rm_log_v1.1.2.8A.txt &
 
 ## ppo 데이터셋 준비
 nohup python csv_to_json_dataset.py --target="data/ppo_dataset.csv"\

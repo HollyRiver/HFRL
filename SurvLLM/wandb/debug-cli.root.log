@@ -15901,3 +15901,777 @@ wandb.errors.errors.CommError: HTTP 403: <?xml version='1.0' encoding='UTF-8'?><
 2026-07-04 18:36:32 INFO Uploaded file /root/HFRL/SurvLLM/wandb/latest-run/files/config.yaml
 2026-07-04 18:36:33 INFO file stream finish called
 2026-07-04 18:36:36 INFO file stream finish is done
+2026-07-19 00:56:12 INFO open for scan: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/run-r15mdbsv.wandb
+2026-07-19 00:56:13 INFO watching files in: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files
+2026-07-19 00:56:13 INFO run started: r15mdbsv with start time 1784332740.913128
+2026-07-19 00:56:13 INFO saving file wandb-metadata.json with policy now
+2026-07-19 00:56:13 INFO saving file wandb-metadata.json with policy now
+2026-07-19 00:56:13 INFO saving file requirements.txt with policy now
+2026-07-19 00:56:14 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:14 INFO file/dir created: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-metadata.json
+2026-07-19 00:56:14 INFO file/dir created: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:14 INFO Uploaded file /tmp/tmproo8xkkswandb/mscakrmd-wandb-metadata.json
+2026-07-19 00:56:14 INFO Uploaded file /tmp/tmproo8xkkswandb/osoh8hh6-requirements.txt
+2026-07-19 00:56:14 INFO Uploaded file /tmp/tmproo8xkkswandb/oy37bcbo-wandb-metadata.json
+2026-07-19 00:56:15 WARNING Seen metric with glob (shouldn't happen)
+2026-07-19 00:56:15 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:16 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:17 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:18 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:19 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:20 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:21 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:21 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:21 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:22 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:22 INFO file/dir created: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:23 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmp_roh1o65
+2026-07-19 00:56:24 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjI1Mg==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': None}}
+2026-07-19 00:56:24 INFO saving file media/table/completions_1_2cb1f61b4b61a99bf8ab.table.json with policy now
+2026-07-19 00:56:24 INFO Uploaded file /tmp/tmproo8xkkswandb/3okldc8t-media/table/completions_1_2cb1f61b4b61a99bf8ab.table.json
+2026-07-19 00:56:25 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:26 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:27 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:27 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:28 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:28 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:28 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmpynepupd6
+2026-07-19 00:56:29 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjQ2Nw==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjI1Mg==', 'versionIndex': 0}}}
+2026-07-19 00:56:29 INFO saving file media/table/completions_34_f3b8e786a3f9c2b52a3a.table.json with policy now
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:29 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:30 INFO Uploaded file /tmp/tmproo8xkkswandb/1yul6i1w-media/table/completions_34_f3b8e786a3f9c2b52a3a.table.json
+2026-07-19 00:56:30 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:30 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:31 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmp1co2q4ua
+2026-07-19 00:56:32 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjU2Mw==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjQ2Nw==', 'versionIndex': 1}}}
+2026-07-19 00:56:32 INFO saving file media/table/completions_67_932d061e20d4430285b3.table.json with policy now
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:32 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:33 INFO Uploaded file /tmp/tmproo8xkkswandb/z913k2aa-media/table/completions_67_932d061e20d4430285b3.table.json
+2026-07-19 00:56:33 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:34 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmpk8sjbut1
+2026-07-19 00:56:34 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:35 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjY1NA==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjU2Mw==', 'versionIndex': 2}}}
+2026-07-19 00:56:35 INFO saving file media/table/completions_100_15a65c329623c00e4c54.table.json with policy now
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:35 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:36 INFO Uploaded file /tmp/tmproo8xkkswandb/prkev6jb-media/table/completions_100_15a65c329623c00e4c54.table.json
+2026-07-19 00:56:36 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:37 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmpxbpbbwoo
+2026-07-19 00:56:38 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjc0Ng==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MjY1NA==', 'versionIndex': 3}}}
+2026-07-19 00:56:38 INFO saving file media/table/completions_133_fe075548eb59cc62de6a.table.json with policy now
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjc0Ng==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjc0Ng==', 'versionIndex': 4}}}
+2026-07-19 00:56:38 INFO saving file media/table/completions_166_fe075548eb59cc62de6a.table.json with policy now
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:38 INFO Uploaded file /tmp/tmproo8xkkswandb/3zgypf45-media/table/completions_133_fe075548eb59cc62de6a.table.json
+2026-07-19 00:56:39 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:39 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:39 INFO Uploaded file /tmp/tmproo8xkkswandb/xzcqt5rj-media/table/completions_166_fe075548eb59cc62de6a.table.json
+2026-07-19 00:56:40 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmp6j4aj8a4
+2026-07-19 00:56:41 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:41 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjg1Nw==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjc0Ng==', 'versionIndex': 4}}}
+2026-07-19 00:56:41 INFO saving file media/table/completions_199_b718c87f48d5598a66c3.table.json with policy now
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:41 INFO Uploaded file /tmp/tmproo8xkkswandb/0hqcvxmo-media/table/completions_199_b718c87f48d5598a66c3.table.json
+2026-07-19 00:56:42 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:43 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:43 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmpxlfgfcf7
+2026-07-19 00:56:44 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjk2MA==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjg1Nw==', 'versionIndex': 5}}}
+2026-07-19 00:56:44 INFO saving file media/table/completions_232_2cf8aaf869128984d296.table.json with policy now
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:44 INFO Uploaded file /tmp/tmproo8xkkswandb/gevzducd-media/table/completions_232_2cf8aaf869128984d296.table.json
+2026-07-19 00:56:45 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:45 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:45 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmp2yj9pe76
+2026-07-19 00:56:46 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MzA2NQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5Mjk2MA==', 'versionIndex': 6}}}
+2026-07-19 00:56:46 INFO saving file media/table/completions_265_0afcff626c23fc4c8d6f.table.json with policy now
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:46 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:47 INFO Uploaded file /tmp/tmproo8xkkswandb/wvzeg9id-media/table/completions_265_0afcff626c23fc4c8d6f.table.json
+2026-07-19 00:56:47 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:47 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:48 INFO Uploaded file /root/.local/share/wandb/artifacts/staging/tmp2x4ykmvk
+2026-07-19 00:56:49 INFO sent artifact run-r15mdbsv-completions - {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MzE3NQ==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNzkyMTgyMTI=', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzE2MjQ5MzA2NQ==', 'versionIndex': 7}}}
+2026-07-19 00:56:49 INFO saving file media/table/completions_298_7d23d673102b489035d9.table.json with policy now
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO saving file wandb-summary.json with policy end
+2026-07-19 00:56:49 INFO shutting down sender
+2026-07-19 00:56:49 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:49 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:49 INFO Uploaded file /tmp/tmproo8xkkswandb/8q0vgnun-media/table/completions_298_7d23d673102b489035d9.table.json
+2026-07-19 00:56:51 INFO shutting down directory watcher
+2026-07-19 00:56:51 INFO file/dir modified: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:51 INFO scan: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log output.log
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/requirements.txt requirements.txt
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-metadata.json wandb-metadata.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml config.yaml
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json wandb-summary.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_34_f3b8e786a3f9c2b52a3a.table.json media/table/completions_34_f3b8e786a3f9c2b52a3a.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_199_b718c87f48d5598a66c3.table.json media/table/completions_199_b718c87f48d5598a66c3.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_67_932d061e20d4430285b3.table.json media/table/completions_67_932d061e20d4430285b3.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_232_2cf8aaf869128984d296.table.json media/table/completions_232_2cf8aaf869128984d296.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_298_7d23d673102b489035d9.table.json media/table/completions_298_7d23d673102b489035d9.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_166_fe075548eb59cc62de6a.table.json media/table/completions_166_fe075548eb59cc62de6a.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_1_2cb1f61b4b61a99bf8ab.table.json media/table/completions_1_2cb1f61b4b61a99bf8ab.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_133_fe075548eb59cc62de6a.table.json media/table/completions_133_fe075548eb59cc62de6a.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_100_15a65c329623c00e4c54.table.json media/table/completions_100_15a65c329623c00e4c54.table.json
+2026-07-19 00:56:51 INFO scan save: /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/media/table/completions_265_0afcff626c23fc4c8d6f.table.json media/table/completions_265_0afcff626c23fc4c8d6f.table.json
+2026-07-19 00:56:51 INFO shutting down file pusher
+2026-07-19 00:56:51 INFO waiting for file pusher
+2026-07-19 00:56:52 INFO Uploaded file /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/config.yaml
+2026-07-19 00:56:52 INFO Uploaded file /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/wandb-summary.json
+2026-07-19 00:56:53 INFO Uploaded file /root/HFRL/SurvLLM/wandb/offline-run-20260717_235900-r15mdbsv/files/output.log
+2026-07-19 00:56:53 INFO file stream finish called
+2026-07-19 00:56:55 INFO file stream finish is done

@@ -2,7 +2,7 @@ You are an expert medical data evaluator. Your task is to critically analyze and
 
 ### Ideal Label Format
 Every label must strictly follow this specific structural order and formatting:
-"A [Sex] patient presented with [Chief Complaint] on physical examination, BP [BP], HR [HR], RR [RR], and Temp [Temp]; admission labs showed WBC [WBC], RBC [RBC], Hgb [Hgb], Hct [Hct], Plt [Plt], MCV [MCV], MCH [MCH], MCHC [MCHC], RDW [RDW], and Glucose [Glucose]; the most diagnostically relevant finding was [Discharge Diagnosis]."
+"A [Sex] patient presented with [Chief Complaint] on physical examination, BP [BP], HR [HR], RR [RR], and Temp [Temp]; admission labs showed WBC [WBC], RBC [RBC], Hgb [Hgb], Hct [Hct], Plt [Plt], MCV [MCV], MCH [MCH], MCHC [MCHC], RDW [RDW], and Glucose [Glucose]; the most diagnostically relevant finding was [Finding]."
 
 ### Evaluation Priorities (Strict Order)
 A violation of a higher priority rule is penalized more heavily than a violation of a lower priority rule. However, your final ranking must be an integrated, comprehensive assessment that weighs all rule violations and clinical quality gaps together.
@@ -37,16 +37,16 @@ A violation of a higher priority rule is penalized more heavily than a violation
 - **Unique Relative Ranks:** You must assign a unique rank from 1 (Best) to 5 (Worst) to the 5 labels.
 - **Ties are strictly forbidden:** Even if labels exhibit similar flaws or identical text, you must find subtle differences in phrasing, formatting stability, or clinical clarity to differentiate them.
 - **JSON Structure:** The final output MUST be a single valid JSON object and nothing else.
-  - **Keys:** Label indices (String: "1", "2", "3", "4", "5").
+  - **Keys:** The exact label identifiers (String: "Label 1", "Label 2", "Label 3", "Label 4", "Label 5").
   - **Values:** Corresponding unique relative ranks (Integer: 1 to 5).
 
 **Strict Mapping Guide:**
 If your clinical reasoning determines the following ranks:
-- Label 2 is the Best (Rank 1) -> "2": 1
-- Label 3 is Second Best (Rank 2) -> "3": 2
-- Label 5 is Third Best (Rank 3) -> "5": 3
-- Label 4 is Fourth Best (Rank 4) -> "4": 4
-- Label 1 is the Worst (Rank 5) -> "1": 5
+- Label 2 is the Best (Rank 1) -> "Label 2": 1
+- Label 3 is Second Best (Rank 2) -> "Label 3": 2
+- Label 5 is Third Best (Rank 3) -> "Label 5": 3
+- Label 4 is Fourth Best (Rank 4) -> "Label 4": 4
+- Label 1 is the Worst (Rank 5) -> "Label 1": 5
 
 The final JSON output MUST be strictly formatted as:
-{"1": 5, "2": 1, "3": 2, "4": 4, "5": 3}
+{"Label 1": 5, "Label 2": 1, "Label 3": 2, "Label 4": 4, "Label 5": 3}
