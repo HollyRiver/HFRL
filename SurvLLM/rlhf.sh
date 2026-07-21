@@ -43,7 +43,7 @@ nohup python csv_to_json_dataset.py --target="data/Preference_AIF_Llama_v1.1.2.c
                                     --system="data/system_prompt.txt"\
                                     --name_tag="_AIF" &&
 
-nohup python DPO.py --config config/DPO_config_v1.1.2.2H.yaml > logs/dpo_log_v1.1.2.2H.txt &&
+nohup python DPO.py --config config/DPO_config_v1.1.2.2A.yaml > logs/dpo_log_v1.1.2.2A.txt &&
 ## Multi-GPU를 사용할 경우: Adapter Twice Load로 일단 되긴 하는데, 메모리 더 많이 먹음...
 # nohup env \
 # NCCL_TIMEOUT=600 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True accelerate launch --config_file "config/fsdp_config_qlora_dpo.yaml" \
@@ -55,9 +55,9 @@ nohup python csv_to_json_dataset.py --target="data/inference_data.csv"\
 
 ## DPO에서 온전한 모델을 픽스하고, 양자화된 base model이 따로 저장되었으며, 추론에 사용할 프롬프트가 준비되었을 때
 nohup python vllm_inference.py --base_model_path="base_model/Llama-3.1-8B-Instruct-nf4"\
-                               --adapter_path="adapter/DPO-Llama-v1.1.2.2H"\
+                               --adapter_path="adapter/DPO-Llama-v1.1.2.2A"\
                                --inference_data="data/inference_data.json"\
-                               --output_dir="inference/inference_DPO_RLHF_v1.1.2.2.csv"\
+                               --output_dir="inference/inference_DPO_RLAIF_v1.1.2.2.csv"\
                                --sampling=True\
                                --repetition_penalty=1.0\
                                --gpu_memory_util=0.9\

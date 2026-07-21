@@ -269,6 +269,10 @@ def main(script_args, training_args):
 
     trainer.train()
 
+    ## 최종 가중치 기준 생성 테이블 1회 추가 기록
+    ## (생성 트리거가 update 1에 고정되어 마지막 update에서는 생성이 발생하지 않는 문제 보완)
+    trainer.generate_completions(sampling = True)
+
     ## (분산 GPU 사용 시) 중간 체크포인트는 분할되어 저장, 훈련 종료 후 전체 상태 딕셔너리로 저장
     if trainer.is_fsdp_enabled:
         trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT")
